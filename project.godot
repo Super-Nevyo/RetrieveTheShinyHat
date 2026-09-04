@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="PuzzleMetroid"
+run/main_scene="uid://dskbuk2wcsi4p"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 

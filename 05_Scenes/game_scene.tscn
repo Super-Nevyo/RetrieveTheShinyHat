@@ -10,6 +10,7 @@ size = Vector2(128, 128)
 [node name="GameScene" type="Node2D" unique_id=568535215]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=325375785]
+position = Vector2(154, 486)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1414172989]
 shape = SubResource("CapsuleShape2D_qsmb2")

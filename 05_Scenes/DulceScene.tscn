@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dskbuk2wcsi4p"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_kw6nx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcwj4"]
+size = Vector2(128, 128)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kw6nx"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_bgewv"]
+
+[node name="DulceScene" type="Node2D" unique_id=1910544872]
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=797271732]
+position = Vector2(581, 600)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=1633885897]
+texture = SubResource("ImageTexture_kw6nx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1961580873]
+shape = SubResource("RectangleShape2D_mcwj4")
+debug_color = Color(0.8810293, 0.00035867037, 0.821721, 0.41960785)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1699941767]
+position = Vector2(293, 514)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1540327578]
+shape = SubResource("CapsuleShape2D_kw6nx")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1106590688]
+texture = SubResource("ImageTexture_bgewv")
