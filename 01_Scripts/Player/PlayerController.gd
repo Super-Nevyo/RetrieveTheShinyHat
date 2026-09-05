@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var jump_velocity: float = -300
 @export var acceleration: float = 1800
 @export var deceleration: float = 1800
+@export var sprint_mult: float = 1.5
 
 #===ANIMATION
 @onready var player_anim: AnimatedSprite2D = $PlayerAnim #the $ is godots shortway of saying "get node" - so we are getting the node already created
@@ -20,8 +21,8 @@ func _physics_process(delta: float) -> void: #function needed always to handle p
 	if not is_on_floor():
 		velocity += get_gravity() * delta #so i need to assign what is floor so this auto detects. Its not by layers or tags!!
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor(): #need to clean up and create my own input system?
+	# Handle jump
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 	
 	# Handle float maybe in the future but essentially is without "just" on the func
@@ -29,14 +30,31 @@ func _physics_process(delta: float) -> void: #function needed always to handle p
 		velocity.y = jump_velocity
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
-	if direction != 0:
-		player_anim.flip_h = direction > 0 #built in flip horizontal and vertical (v)
+	var current_speed := speed
+	
+	if Input.is_action_pressed("sprint"):
+		current_speed = speed * sprint_mult
+	
+	update_animation(direction)
+
 	if direction:
 		velocity.x = move_toward(
-			velocity.x, direction * speed, acceleration * delta)
+			velocity.x, direction * current_speed, acceleration * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, deceleration * delta)
 
 	move_and_slide() #this is what is actually performing the movement
+
+
+func update_animation(direction: float) -> void:
+	
+	if direction != 0:
+		player_anim.flip_h = direction > 0 #built in flip horizontal and vertical (v)
+
+	if not is_on_floor():
+		player_anim.play("Jump")
+	elif direction != 0: #elif if inbetween if and else > serves as "otherwise if"
+		player_anim.play("Walk")
+	else:
+		player_anim.play("Idle")

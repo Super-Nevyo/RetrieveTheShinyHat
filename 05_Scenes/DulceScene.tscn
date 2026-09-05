@@ -58,6 +58,14 @@ region = Rect2(32, 224, 32, 32)
 atlas = ExtResource("1_5dhs0")
 region = Rect2(0, 224, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t8oc"]
+atlas = ExtResource("1_5dhs0")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2ggp"]
+atlas = ExtResource("1_5dhs0")
+region = Rect2(160, 224, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ug24x"]
 atlas = ExtResource("1_5dhs0")
 region = Rect2(128, 224, 32, 32)
@@ -82,7 +90,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y6lt1")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack",
 "speed": 5.0
 }, {
@@ -106,6 +114,17 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4t8oc")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_w2ggp")
+}],
+"loop": 0,
+"name": &"Jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -134,8 +153,12 @@ tile_map_data = PackedByteArray("AAAIABEAAAAAAAAAAAAJABEAAAAAAAAAAAAKABEAAAAAAAA
 tile_set = SubResource("TileSet_kw6nx")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="." unique_id=1699941767]
-position = Vector2(293, 520)
+position = Vector2(298, 528)
 script = ExtResource("1_55sfy")
+speed = 200.0
+jump_velocity = -200.0
+acceleration = 1000.0
+deceleration = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter" unique_id=1540327578]
 position = Vector2(-1, 4)
@@ -143,5 +166,5 @@ shape = SubResource("CapsuleShape2D_kw6nx")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="PlayerCharacter" unique_id=1951753678]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Walk"
-frame_progress = 0.25226277
+animation = &"Idle"
+autoplay = "Idle"
