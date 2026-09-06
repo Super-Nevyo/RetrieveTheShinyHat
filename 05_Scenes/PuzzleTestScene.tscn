@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b1nwi3qjrhsps"]
+
+[ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="1_ppkka"]
+[ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="2_3c2uc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
+size = Vector2(1144, 20)
+
+[node name="PuzzleTestScene" type="Node2D" unique_id=1037801544]
+
+[node name="Door" parent="." unique_id=425038002 instance=ExtResource("1_ppkka")]
+position = Vector2(860, 536)
+
+[node name="Switch" parent="." unique_id=150077233 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("2_3c2uc")]
+position = Vector2(493, 513)
+AttachedNodes = [NodePath("../Door")]
+ActivationAmount = Array[float]([1.0])
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1382155975]
+position = Vector2(451, 546)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=411846921]
+position = Vector2(126, 0)
+shape = SubResource("RectangleShape2D_qsmb2")
