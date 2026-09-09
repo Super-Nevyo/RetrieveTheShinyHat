@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://dskbuk2wcsi4p"]
 
 [ext_resource type="Texture2D" uid="uid://cumy037pxwh0u" path="res://03_Art/TempAssets/TemEnv.png" id="1_8xi8v"]
-[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/player_character.tscn" id="2_55sfy"]
+[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="2_55sfy"]
+[ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="3_y6lt1"]
+[ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="4_gxv0f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6lt1"]
 texture = ExtResource("1_8xi8v")
@@ -38,3 +40,9 @@ tile_set = SubResource("TileSet_kw6nx")
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("2_55sfy")]
 position = Vector2(298, 528)
+
+[node name="Switch" parent="." unique_id=150077233 instance=ExtResource("3_y6lt1")]
+position = Vector2(375, 522)
+
+[node name="Door" parent="." unique_id=425038002 instance=ExtResource("4_gxv0f")]
+position = Vector2(529, 543)

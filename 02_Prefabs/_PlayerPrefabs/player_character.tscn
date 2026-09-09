@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://x4v15ufut2cx" path="res://01_Scripts/Player/PlayerController.gd" id="1_q2jwi"]
 [ext_resource type="Texture2D" uid="uid://1o7e48jyccc5" path="res://03_Art/TempAssets/Animals.png" id="2_ydyhr"]
+[ext_resource type="Script" uid="uid://c8jhfob34xjcm" path="res://01_Scripts/WorldInteractions/AttackHitbox.gd" id="3_md7ae"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kw6nx"]
 height = 24.0
@@ -57,14 +58,20 @@ region = Rect2(64, 224, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgewv"]
 animations = [{
 "frames": [{
-"duration": 1.2,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_55sfy")
 }, {
-"duration": 1.2,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_8xi8v")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_y6lt1")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_8xi8v")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_55sfy")
 }],
 "loop": 0,
 "name": &"Attack",
@@ -118,6 +125,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
+size = Vector2(18, 30)
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452]
 script = ExtResource("1_q2jwi")
 speed = 200.0
@@ -125,11 +135,27 @@ jump_velocity = -200.0
 acceleration = 1000.0
 deceleration = 500.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1189309324]
-position = Vector2(-1, 4)
+[node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
+position = Vector2(3, 4)
 shape = SubResource("CapsuleShape2D_kw6nx")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Idle"
+animation = &"Attack"
 autoplay = "Idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("3_md7ae")
+
+[node name="HitBox" type="CollisionShape2D" parent="AttackHitBox" unique_id=34871703]
+position = Vector2(-10, 1)
+shape = SubResource("RectangleShape2D_kw6nx")
+disabled = true
+
+[connection signal="animation_finished" from="PlayerAnim" to="." method="_on_player_anim_animation_finished"]
+[connection signal="area_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_area_entered"]
+[connection signal="area_entered" from="AttackHitBox" to="AttackHitBox" method="_on_area_entered"]

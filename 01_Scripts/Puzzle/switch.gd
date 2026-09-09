@@ -4,9 +4,9 @@ extends Node2D
 @export var ActivationAmount:Array[float]
 var SwitchFlipped: bool = false
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+#func _on_area_2d_body_entered(body: Node2D) -> void:
 	#once the unique identier is set, make an if statement
-		UseSwitch()
+#		UseSwitch()
 
 
 func UseSwitch():
