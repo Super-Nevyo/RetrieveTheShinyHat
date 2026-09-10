@@ -40,6 +40,10 @@ tile_set = SubResource("TileSet_kw6nx")
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("2_55sfy")]
 position = Vector2(328, 528)
+speed = 100.0
+acceleration = 500.0
+friction = 250.0
+jump_height = 65.0
 
 [node name="Switch" parent="." unique_id=150077233 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("3_y6lt1")]
 position = Vector2(375, 522)
