@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="1_ppkka"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="2_3c2uc"]
+[ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/PressurePlate.tscn" id="3_3c2uc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(1144, 20)
@@ -22,3 +23,11 @@ position = Vector2(451, 546)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=411846921]
 position = Vector2(126, 0)
 shape = SubResource("RectangleShape2D_qsmb2")
+
+[node name="PressurePlate" parent="." unique_id=1796088267 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("3_3c2uc")]
+position = Vector2(642, 535)
+AttachedNodes = [NodePath("../Door2")]
+ActivationAmount = Array[float]([1.0])
+
+[node name="Door2" parent="." unique_id=783541424 instance=ExtResource("1_ppkka")]
+position = Vector2(976, 538)

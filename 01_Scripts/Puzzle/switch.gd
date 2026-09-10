@@ -1,21 +1,5 @@
-extends Node2D
-
-@export var AttachedNodes:Array[Node2D]
-@export var ActivationAmount:Array[float]
-var SwitchFlipped: bool = false
-
-#func _on_area_2d_body_entered(body: Node2D) -> void:
-	#once the unique identier is set, make an if statement
-#		UseSwitch()
+extends "res://01_Scripts/Puzzle/PuzzleActivator.gd"
 
 
 func UseSwitch():
-	SwitchFlipped = !SwitchFlipped
-	if AttachedNodes.size() == ActivationAmount.size():
-		for i in range(AttachedNodes.size()):
-			if AttachedNodes[i].has_method("ActivatePuzzle"):
-				AttachedNodes[i].ActivatePuzzle(ActivationAmount[i] * 1.0 if SwitchFlipped else -1.0)
-	else:
-		for i in range(AttachedNodes.size()):
-			if AttachedNodes[i].has_method("ActivatePuzzle"):
-				AttachedNodes[i].ActivatePuzzle(ActivationAmount[0] * 1.0 if SwitchFlipped else -1.0)
+	ActivatePuzzle()
