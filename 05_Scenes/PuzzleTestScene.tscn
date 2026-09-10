@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="1_ppkka"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="2_3c2uc"]
 [ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/PressurePlate.tscn" id="3_3c2uc"]
+[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="4_415yb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(1144, 20)
@@ -31,3 +32,6 @@ ActivationAmount = Array[float]([1.0])
 
 [node name="Door2" parent="." unique_id=783541424 instance=ExtResource("1_ppkka")]
 position = Vector2(976, 538)
+
+[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("4_415yb")]
+position = Vector2(229, 467)
