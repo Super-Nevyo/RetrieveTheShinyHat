@@ -6,12 +6,20 @@ extends CharacterBody2D
 
 #===MOVEMENT
 @export var speed: float = 300
-@export var jump_velocity: float = -300
 @export var acceleration: float = 1800
 @export var friction: float = 500
 @export var sprint_mult: float = 1.5
 var direction_x : float
 var current_speed : float
+
+#===JUMP
+@export var jump_height : float = 100
+@export var jump_time_full_up : float = 0.5
+@export var jump_time_down : float = 0.4
+
+@onready var jump_velocity: float = -(2.0 * jump_height) / jump_time_full_up
+@onready var jump_gravity: float = (2.0 * jump_height) / (jump_time_full_up * jump_time_full_up)
+@onready var fall_gravity: float = (2.0 * jump_height) / (jump_time_full_up * jump_time_down)
 
 #===ATTACK
 @onready var attack_hit_box: CollisionShape2D = $AttackHitBox/HitBox
@@ -45,7 +53,13 @@ func move(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += get_custom_gravity() * delta
+
+func get_custom_gravity():
+	if velocity.y < 0.0:
+		return jump_gravity
+	else:
+		return fall_gravity
 
 func start_attack():
 	is_attacking = true
