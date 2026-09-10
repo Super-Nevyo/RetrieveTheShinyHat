@@ -4,5 +4,4 @@ extends Area2D
 class_name AttackReceiver
 
 func receive_attack():
-	get_parent().UseSwitch()
 	print ("Ouch I have been attacked uwu")

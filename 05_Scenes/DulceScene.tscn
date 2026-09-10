@@ -39,10 +39,12 @@ tile_map_data = PackedByteArray("AAAIABEAAAAAAAAAAAAJABEAAAAAAAAAAAAKABEAAAAAAAA
 tile_set = SubResource("TileSet_kw6nx")
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("2_55sfy")]
-position = Vector2(298, 528)
+position = Vector2(328, 528)
 
-[node name="Switch" parent="." unique_id=150077233 instance=ExtResource("3_y6lt1")]
+[node name="Switch" parent="." unique_id=150077233 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("3_y6lt1")]
 position = Vector2(375, 522)
+AttachedNodes = [NodePath("../Door")]
+ActivationAmount = Array[float]([1.0])
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("4_gxv0f")]
 position = Vector2(529, 543)

@@ -12,11 +12,13 @@ extends CharacterBody2D
 @export var sprint_mult: float = 1.5
 
 #===ATTACK
+@onready var attack_hit_box: CollisionShape2D = $AttackHitBox/HitBox
+@onready var attack_collision: Area2D = $AttackHitBox
+@export var attack_offset: float = 16
 var is_attacking: bool = false
 
 #===ANIMATION
 @onready var player_anim: AnimatedSprite2D = $PlayerAnim #the $ is godots shortway of references. Also drag from scene tab into script
-@onready var attack_hit_box: CollisionShape2D = $AttackHitBox/HitBox
 
 func _physics_process(delta: float) -> void: #function needed always to handle physics in godot. Like Fixed Update in unity
 	#delta controls how much time has passed since the last phys update (time delta time)
@@ -27,10 +29,6 @@ func _physics_process(delta: float) -> void: #function needed always to handle p
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
-	
-	# Handle float maybe in the future but essentially is without "just" on the func
-	if Input.is_action_pressed("jump"):
-		velocity.y = jump_velocity
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
@@ -39,7 +37,8 @@ func _physics_process(delta: float) -> void: #function needed always to handle p
 	if Input.is_action_pressed("sprint"):
 		current_speed = speed * sprint_mult
 	
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_just_pressed("attack"):
+		is_attacking = false
 		start_attack()
 	
 	update_animation(direction)
@@ -69,6 +68,7 @@ func update_animation(direction: float) -> void:
 		
 	if direction != 0:
 		player_anim.flip_h = direction > 0 #built in flip horizontal and vertical (v)
+		attack_collision.position.x = direction * attack_offset
 
 	if not is_on_floor():
 		player_anim.play("Jump")
