@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bisdihm2cu5se"]
+
+[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="1_kmjnh"]
+[ext_resource type="Script" uid="uid://c65san5kq2b3e" path="res://01_Scripts/_Manager/RoomManager.gd" id="2_8w24r"]
+[ext_resource type="PackedScene" uid="uid://4mys1h3bphdm" path="res://05_Scenes/Room_a1.tscn" id="3_8w24r"]
+
+[node name="Gameplay" type="Node2D" unique_id=1255228697]
+
+[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("1_kmjnh")]
+position = Vector2(328, 528)
+
+[node name="RoomContainer" type="Node2D" parent="." unique_id=1312875347]
+
+[node name="RoomManager" type="Node2D" parent="RoomContainer" unique_id=1411798338 node_paths=PackedStringArray("room_container")]
+script = ExtResource("2_8w24r")
+starting_room = ExtResource("3_8w24r")
+room_container = NodePath("..")
