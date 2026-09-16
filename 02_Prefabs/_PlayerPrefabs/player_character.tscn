@@ -131,9 +131,7 @@ size = Vector2(18, 30)
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452]
 script = ExtResource("1_q2jwi")
 speed = 200.0
-jump_velocity = -200.0
 acceleration = 1000.0
-deceleration = 500.0
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
 position = Vector2(3, 4)
@@ -141,10 +139,8 @@ shape = SubResource("CapsuleShape2D_kw6nx")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Attack"
+animation = &"Climb"
 autoplay = "Idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
 collision_layer = 4
