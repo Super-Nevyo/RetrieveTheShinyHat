@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="1_kmjnh"]
 [ext_resource type="Script" uid="uid://c65san5kq2b3e" path="res://01_Scripts/_Manager/RoomManager.gd" id="2_8w24r"]
 [ext_resource type="PackedScene" uid="uid://4mys1h3bphdm" path="res://05_Scenes/Room_a1.tscn" id="3_8w24r"]
+[ext_resource type="PackedScene" uid="uid://dmvfv5ufu6knl" path="res://05_Scenes/Room_a2.tscn" id="4_l4u23"]
 
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
 
@@ -15,3 +16,4 @@ position = Vector2(328, 528)
 script = ExtResource("2_8w24r")
 starting_room = ExtResource("3_8w24r")
 room_container = NodePath("..")
+test_room = ExtResource("4_l4u23")
