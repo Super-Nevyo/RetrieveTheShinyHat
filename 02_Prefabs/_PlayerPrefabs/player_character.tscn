@@ -128,12 +128,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(18, 30)
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
 script = ExtResource("1_q2jwi")
 speed = 200.0
-jump_velocity = -200.0
 acceleration = 1000.0
-deceleration = 500.0
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
 position = Vector2(3, 4)

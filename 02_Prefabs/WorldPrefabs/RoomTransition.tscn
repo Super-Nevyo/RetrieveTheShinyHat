@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bhkg7dsrv6pv"]
+
+[ext_resource type="Script" uid="uid://de1sn6ht6bt73" path="res://01_Scripts/WorldInteractions/RoomTransition.gd" id="1_ixs34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
+size = Vector2(32, 96)
+
+[node name="RoomTransition" type="Node2D" unique_id=306758002]
+script = ExtResource("1_ixs34")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=280245681]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=2142929976]
+shape = SubResource("RectangleShape2D_kw6nx")
+debug_color = Color(0.72996724, 0.32573476, 0.86402094, 0.41960785)
+
+[node name="ArrivalPoint" type="Marker2D" parent="." unique_id=1345594044]
+position = Vector2(-48, 0)
