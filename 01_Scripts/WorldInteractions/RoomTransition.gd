@@ -1,4 +1,5 @@
 extends Node2D
+class_name RoomTransition
 
 signal transition_started(transition_id: String)
 
