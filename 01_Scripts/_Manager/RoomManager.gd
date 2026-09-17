@@ -1,4 +1,7 @@
 extends Node2D
+
+class_name RoomTransition
+
 @export var starting_room: PackedScene #calls a godot scene prefab
 @export var room_container: Node2D
 @export var test_room: PackedScene
@@ -20,8 +23,10 @@ func load_room(room_scene: PackedScene) -> void:
 		current_room.queue_free()
 	
 	current_room = room_scene.instantiate()
-	var trigger = current_room.get_node("RoomTransition_A2")
-	trigger.transition_started.connect(_on_transition_started)
+	
+	for child in current_room.get_children(): #needed to get children nodes and look for them
+		if child is RoomTransition: #if the node uses the room transition script the connect the signal
+			child._on_transition_started.connect(_on_transition_started) #connects listener
 	
 	room_container.add_child.call_deferred(current_room) #ask room container to add the room to a child
 
