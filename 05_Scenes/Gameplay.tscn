@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://4mys1h3bphdm" path="res://05_Scenes/Room_a1.tscn" id="3_8w24r"]
 [ext_resource type="PackedScene" uid="uid://dmvfv5ufu6knl" path="res://05_Scenes/Room_a2.tscn" id="4_l4u23"]
 [ext_resource type="Script" uid="uid://bvyll42gdi632" path="res://01_Scripts/WorldInteractions/MapRoom.gd" id="5_khsvw"]
+[ext_resource type="PackedScene" uid="uid://7pv8mb0dju1x" path="res://05_Scenes/Room_a3.tscn" id="6_7pddy"]
 [ext_resource type="Script" uid="uid://cjlfmchl8gn8" path="res://01_Scripts/WorldInteractions/MapTransition.gd" id="6_jsr1b"]
 
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
@@ -32,9 +33,23 @@ script = ExtResource("5_khsvw")
 room_id = "a2"
 room_scene = ExtResource("4_l4u23")
 
-[node name="ConnectionA1_A2" type="Node2D" parent="WorldMap" unique_id=2077472050 node_paths=PackedStringArray("room_a", "room_b")]
+[node name="MapRoom_A3" type="Node2D" parent="WorldMap" unique_id=339446033]
+script = ExtResource("5_khsvw")
+room_id = "a3"
+room_scene = ExtResource("6_7pddy")
+
+[node name="Node2D" type="Node2D" parent="WorldMap" unique_id=1648242519]
+
+[node name="ConnectionA1_A2" type="Node2D" parent="WorldMap/Node2D" unique_id=2077472050 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
-room_a = NodePath("../MapRoom_A1")
+room_a = NodePath("../../MapRoom_A1")
 exit_a_id = "a1_to_a2"
-room_b = NodePath("../MapRoom_A2")
+room_b = NodePath("../../MapRoom_A2")
 exit_b_id = "a2_to_a1"
+
+[node name="ConnectionA2_A3" type="Node2D" parent="WorldMap/Node2D" unique_id=1297447449 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../MapRoom_A2")
+exit_a_id = "a2_to_a3"
+room_b = NodePath("../../MapRoom_A3")
+exit_b_id = "a3_to_a2"
