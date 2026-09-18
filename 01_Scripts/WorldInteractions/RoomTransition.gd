@@ -10,8 +10,8 @@ func _ready() -> void:
 
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		print("Transition started from ", transition_data.transition_id)
-		
 		#this is what emits the signal (emit)
 		transition_started.emit(transition_data.transition_id) #scriptable objects are back babyyyyy
 	
+func get_arrival_point() -> Marker2D:
+	return get_node("ArrivalPoint") as Marker2D

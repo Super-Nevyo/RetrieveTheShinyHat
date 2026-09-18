@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://4mys1h3bphdm" path="res://05_Scenes/Room_a1.tscn" id="3_8w24r"]
 [ext_resource type="PackedScene" uid="uid://dmvfv5ufu6knl" path="res://05_Scenes/Room_a2.tscn" id="4_l4u23"]
 [ext_resource type="Script" uid="uid://bvyll42gdi632" path="res://01_Scripts/WorldInteractions/MapRoom.gd" id="5_khsvw"]
+[ext_resource type="Script" uid="uid://cvitv2plkwb3d" path="res://01_Scripts/WorldInteractions/WorldMap.gd" id="5_wg5p8"]
 [ext_resource type="PackedScene" uid="uid://7pv8mb0dju1x" path="res://05_Scenes/Room_a3.tscn" id="6_7pddy"]
 [ext_resource type="Script" uid="uid://cjlfmchl8gn8" path="res://01_Scripts/WorldInteractions/MapTransition.gd" id="6_jsr1b"]
 
@@ -15,13 +16,16 @@ position = Vector2(328, 528)
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=1312875347]
 
-[node name="RoomManager" type="Node2D" parent="RoomContainer" unique_id=1411798338 node_paths=PackedStringArray("room_container")]
+[node name="RoomManager" type="Node2D" parent="RoomContainer" unique_id=1411798338 node_paths=PackedStringArray("room_container", "world_map", "player")]
 script = ExtResource("2_8w24r")
 starting_room = ExtResource("3_8w24r")
-room_container = NodePath("..")
 test_room = ExtResource("4_l4u23")
+room_container = NodePath("..")
+world_map = NodePath("../../WorldMap")
+player = NodePath("../../PlayerCharacter")
 
 [node name="WorldMap" type="Node2D" parent="." unique_id=1035054344]
+script = ExtResource("5_wg5p8")
 
 [node name="MapRoom_A1" type="Node2D" parent="WorldMap" unique_id=638557349]
 script = ExtResource("5_khsvw")
@@ -38,16 +42,16 @@ script = ExtResource("5_khsvw")
 room_id = "a3"
 room_scene = ExtResource("6_7pddy")
 
-[node name="Node2D" type="Node2D" parent="WorldMap" unique_id=1648242519]
+[node name="Connections" type="Node2D" parent="WorldMap" unique_id=1648242519]
 
-[node name="ConnectionA1_A2" type="Node2D" parent="WorldMap/Node2D" unique_id=2077472050 node_paths=PackedStringArray("room_a", "room_b")]
+[node name="ConnectionA1_A2" type="Node2D" parent="WorldMap/Connections" unique_id=2077472050 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
 room_a = NodePath("../../MapRoom_A1")
 exit_a_id = "a1_to_a2"
 room_b = NodePath("../../MapRoom_A2")
 exit_b_id = "a2_to_a1"
 
-[node name="ConnectionA2_A3" type="Node2D" parent="WorldMap/Node2D" unique_id=1297447449 node_paths=PackedStringArray("room_a", "room_b")]
+[node name="ConnectionA2_A3" type="Node2D" parent="WorldMap/Connections" unique_id=1297447449 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
 room_a = NodePath("../../MapRoom_A2")
 exit_a_id = "a2_to_a3"

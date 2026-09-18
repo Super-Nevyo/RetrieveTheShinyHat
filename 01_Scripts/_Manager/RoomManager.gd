@@ -1,8 +1,13 @@
 extends Node2D
 
 @export var starting_room: PackedScene #calls a godot scene prefab
-@export var room_container: Node2D
 @export var test_room: PackedScene
+
+@export var room_container: Node2D
+
+@export var world_map: WorldMap
+@export var player: CharacterBody2D
+
 
 #var is_transitioning: bool
 
@@ -28,9 +33,24 @@ func load_room(room_scene: PackedScene) -> void:
 	
 	room_container.add_child.call_deferred(current_room) #ask room container to add the room to a child
 
-func _on_transition_started(transition_id: String) -> void: #calls the transition data resource
-	print("Manager received exit ID: ", transition_id)
-
+func _on_transition_started(transition_id: String) -> void: #Signals the world map to find the connection to an exit
+	
+	var connection = world_map.find_connection(transition_id)
+	print("Touched: ", connection.name)
+	
+	var new_destination = MapRoom
+	var destination_exit_id: String
+	
+	#if the player uses a connection, the system knows what exit to spawn the player. End to end connection (what room and what exit in that room, not amount of exits)
+	
+	if transition_id == connection.exit_a_id:
+		new_destination = connection.room_b
+		destination_exit_id = connection.exit_b_id
+	else:
+		new_destination = connection.room_a
+		destination_exit_id = connection.exit_a_id
+		
+	
 
 #func _input(event: InputEvent) -> void:
 #	handle_test_input(event)
