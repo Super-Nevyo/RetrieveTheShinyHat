@@ -12,7 +12,7 @@ extends Node2D
 #var is_transitioning: bool
 
 #rooms
-var current_room: Node2D #will need id and resource later
+var current_room: Node2D
 
 func _ready() -> void:
 	load_room(starting_room)
@@ -23,9 +23,9 @@ func load_room(room_scene: PackedScene) -> void:
 		return
 	
 	if is_instance_valid(current_room):
-		current_room.queue_free()
+		current_room.queue_free() # for now clears the previous room -- to do a save state/what is saved between rooms
 	
-	current_room = room_scene.instantiate()
+	current_room = room_scene.instantiate() #same for the next room
 	
 	for child in current_room.get_children(): #needed to get children nodes and look for them
 		if child is RoomTransition: #if the node uses the room transition script the connect the signal
@@ -38,19 +38,31 @@ func _on_transition_started(transition_id: String) -> void: #Signals the world m
 	var connection = world_map.find_connection(transition_id)
 	print("Touched: ", connection.name)
 	
-	var new_destination = MapRoom
-	var destination_exit_id: String
+	var _new_destination: MapRoom
+	var _destination_exit_id: String
 	
-	#if the player uses a connection, the system knows what exit to spawn the player. End to end connection (what room and what exit in that room, not amount of exits)
+	#if the player uses a connection, the system knows what exit to spawn the player.
+	# End to end connection (what room and what exit in that room, not amount of exits)
 	
 	if transition_id == connection.exit_a_id:
-		new_destination = connection.room_b
-		destination_exit_id = connection.exit_b_id
+		_new_destination = connection.room_b
+		_destination_exit_id = connection.exit_b_id
 	else:
-		new_destination = connection.room_a
-		destination_exit_id = connection.exit_a_id
+		_new_destination = connection.room_a
+		_destination_exit_id = connection.exit_a_id
 		
+	var new_room = _new_destination.room_scene.can_instantiate() #create a copy of a room scene
+	var room_metadata = new_room.get_node("MapMetadata") as MapMetadata
+	var room_exit = room_metadata.find_exit(_destination_exit_id)
+	var arrival_point = room_exit.get_arrival_point() #need the marker2d global position later
 	
+
+#do the room change to new room with node2d and marker2d - remove old room and bring new room
+#get the player to the arrival point position properly
+
+
+#--
+
 
 #func _input(event: InputEvent) -> void:
 #	handle_test_input(event)
