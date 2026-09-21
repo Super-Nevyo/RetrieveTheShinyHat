@@ -53,6 +53,9 @@ tile_set = SubResource("TileSet_kw6nx")
 position = Vector2(176, 496)
 transition_data = SubResource("Resource_gfs1v")
 
+[node name="ArrivalPoint" parent="RoomTransition_A3" index="1" unique_id=1345594044]
+position = Vector2(40, 30)
+
 [node name="RoomTransition_A4" parent="." unique_id=306758002 instance=ExtResource("3_nr73n")]
 position = Vector2(976, 175)
 transition_data = SubResource("Resource_rg0ti")

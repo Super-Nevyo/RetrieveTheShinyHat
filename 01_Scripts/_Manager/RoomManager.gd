@@ -50,12 +50,15 @@ func _on_transition_started(transition_id: String) -> void: #Signals the world m
 	else:
 		_new_destination = connection.room_a
 		_destination_exit_id = connection.exit_a_id
-		
-	var new_room = _new_destination.room_scene.can_instantiate() #create a copy of a room scene
-	var room_metadata = new_room.get_node("MapMetadata") as MapMetadata
+	
+	load_room(_new_destination.room_scene)
+	await current_room.ready
+
+	var room_metadata = current_room.get_node("MapMetadata") as MapMetadata
 	var room_exit = room_metadata.find_exit(_destination_exit_id)
 	var arrival_point = room_exit.get_arrival_point() #need the marker2d global position later
 	
+	player.global_position = arrival_point.global_position
 
 #do the room change to new room with node2d and marker2d - remove old room and bring new room
 #get the player to the arrival point position properly

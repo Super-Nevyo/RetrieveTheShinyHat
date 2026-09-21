@@ -17,4 +17,4 @@ shape = SubResource("RectangleShape2D_kw6nx")
 debug_color = Color(0.72996724, 0.32573476, 0.86402094, 0.41960785)
 
 [node name="ArrivalPoint" type="Marker2D" parent="." unique_id=1345594044]
-position = Vector2(-48, 0)
+position = Vector2(-40, 30)
