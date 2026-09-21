@@ -34,8 +34,10 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 size = Vector2(225, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgewv"]
+size = Vector2(125, 30)
 
 [node name="Room_A1" type="Node2D" unique_id=1910544872]
+metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_jutxl")
@@ -57,6 +59,9 @@ transition_data = SubResource("Resource_sh0j4")
 position = Vector2(302, 500)
 script = ExtResource("5_ipvnd")
 
+[node name="AcidSurface" type="Marker2D" parent="AcidPit" unique_id=196727150]
+position = Vector2(0, -50)
+
 [node name="AcidSprite" type="Sprite2D" parent="AcidPit" unique_id=1002496213]
 position = Vector2(0.4999919, 9)
 scale = Vector2(1.7578125, 1)
@@ -66,16 +71,16 @@ texture = ExtResource("5_jutxl")
 shape = SubResource("RectangleShape2D_kw6nx")
 debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
 
-[node name="FloatingPlatform" type="RigidBody2D" parent="." unique_id=1549459913]
+[node name="FloatingPlatform" type="RigidBody2D" parent="." unique_id=1549459913 node_paths=PackedStringArray("acid_surface")]
 position = Vector2(300, 450.00003)
 script = ExtResource("7_yg4m1")
-water_level = 430.0
+acid_surface = NodePath("../AcidPit/AcidSurface")
 stiffness = 120.0
+damping = 6.0
 
 [node name="Sprite2D" type="Sprite2D" parent="FloatingPlatform" unique_id=637636405]
 scale = Vector2(1, 0.25)
 texture = ExtResource("5_jutxl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloatingPlatform" unique_id=1974279517]
-scale = Vector2(6, 1.4880087)
 shape = SubResource("RectangleShape2D_bgewv")
