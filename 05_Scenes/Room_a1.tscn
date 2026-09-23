@@ -97,7 +97,7 @@ ActivationAmount = Array[float]([1.0])
 position = Vector2(948, 544)
 
 [node name="PuzzleDoor" parent="." unique_id=1068746293 instance=ExtResource("9_r2pl0")]
-position = Vector2(848, 479)
+position = Vector2(751, 479)
 
 [node name="PressurePlate" parent="." unique_id=1796088267 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("10_8kv6w")]
 position = Vector2(510, 544)

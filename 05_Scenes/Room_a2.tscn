@@ -44,7 +44,7 @@ tile_map_data = PackedByteArray("AAAIABEAAAAAAAAAAAAJABEAAAAAAAAAAAAKABEAAAAAAAA
 tile_set = SubResource("TileSet_kw6nx")
 
 [node name="RoomTransition_A1" parent="." unique_id=1645771860 instance=ExtResource("2_78anx")]
-position = Vector2(82, 496)
+position = Vector2(176, 496)
 transition_data = SubResource("Resource_gfs1v")
 
 [node name="ArrivalPoint" parent="RoomTransition_A1" index="1" unique_id=1345594044]

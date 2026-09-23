@@ -24,16 +24,31 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 		return
 	
 	if is_instance_valid(current_room):
-		current_room.queue_free() # for now clears the previous room -- to do a save state/what is saved between rooms
+		
+		for child in current_room.get_children(): 
+			if child is PuzzleActivator:
+				activated_puzzles.remember_active(child.puzzle_id, current_room_id, child.SwitchFlipped) #calls dictionary
+		
+		current_room.queue_free() #room gets removed
 	
 	current_room_id = room_id
-	current_room = room_scene.instantiate() #same for the next room
+	current_room = room_scene.instantiate()
 	
 	for child in current_room.get_children(): #needed to get children nodes and look for them
 		if child is RoomTransition: #if the node uses the room transition script the connect the signal
 			child.transition_started.connect(_on_transition_started) #connects listener
 	
 	room_container.add_child.call_deferred(current_room) #ask room container to add the room to a child
+	await current_room.ready
+	
+	if activated_puzzles.activepuzzles.has(current_room_id):
+		for child in current_room.get_children():
+			if child is PuzzleActivator:
+				var remembered_state: bool = activated_puzzles.puzzle_state(child.puzzle_id, current_room_id)
+				
+				if child.SwitchFlipped != remembered_state:
+					child.ActivatePuzzle()
+
 
 func _on_transition_started(transition_id: String) -> void: #Signals the world map to find the connection to an exit
 	
@@ -53,26 +68,10 @@ func _on_transition_started(transition_id: String) -> void: #Signals the world m
 		_new_destination = connection.room_a
 		_destination_exit_id = connection.exit_a_id
 	
-	load_room(_new_destination.room_scene, _new_destination.room_id)
-	await current_room.ready
+	await load_room(_new_destination.room_scene, _new_destination.room_id)
 
 	var room_metadata = current_room.get_node("MapMetadata") as MapMetadata
 	var room_exit = room_metadata.find_exit(_destination_exit_id)
 	var arrival_point = room_exit.get_arrival_point() #need the marker2d global position later
 	
 	player.global_position = arrival_point.global_position
-
-#do the room change to new room with node2d and marker2d - remove old room and bring new room
-#get the player to the arrival point position properly
-
-
-#--
-
-
-#func _input(event: InputEvent) -> void:
-#	handle_test_input(event)
-
-#func handle_test_input(event: InputEvent) -> void:
-#	if event.is_action_pressed("test_transition") and not event.is_echo():
-#		print("Called room change test")
-#		load_room(test_room)
