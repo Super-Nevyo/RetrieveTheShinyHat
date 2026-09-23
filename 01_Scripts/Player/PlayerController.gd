@@ -11,6 +11,7 @@ extends CharacterBody2D
 @export var friction: float = 500
 @export var sprint_mult: float = 1.5
 var direction_x : float
+var direction_y : float
 var current_speed : float
 
 var velo: Vector2 = Vector2.ZERO
@@ -24,17 +25,28 @@ var velo: Vector2 = Vector2.ZERO
 @onready var jump_gravity: float = (2.0 * jump_height) / (jump_time_full_up * jump_time_full_up)
 @onready var fall_gravity: float = (2.0 * jump_height) / (jump_time_full_up * jump_time_down)
 
+#===SWIM
+var bodies_of_water:int = 0
+
 #===ATTACK
 @onready var attack_hit_box: CollisionShape2D = $AttackHitBox/HitBox
 @onready var attack_collision: Area2D = $AttackHitBox
 @export var attack_offset: float = 16
 var is_attacking: bool = false
 
+#===GETHIT
+@export var MaxHP : float = 100
+@onready var currentHP : float = MaxHP
+@export var DmgLayer : int = 15
+
 #===ANIMATION
 @onready var player_anim: AnimatedSprite2D = $PlayerAnim #the $ is godots shortway of references. Also drag from scene tab into script
 
 #===STATE MACHINE
 @onready var MyStateMachine = PlayerStateMachine.new(self)
+
+#===INVENTORY
+@onready var MyInventory : InventoryInfo = InventoryInfo.new(self)
 
 func _ready() -> void:
 	MyStateMachine.Initialize(MyStateMachine.Move)
@@ -43,11 +55,11 @@ func _physics_process(delta: float) -> void:
 	get_input()
 	MyStateMachine.Update(delta)
 	velocity = velo
-	#move(delta)
 	move_and_slide() #this is what is actually performing the movement
 	
 func get_input():
 	direction_x = Input.get_axis("move_left", "move_right")
+	direction_y = Input.get_axis("move_up", "move_down")
 	if Input.is_action_just_pressed("jump"):
 		MyStateMachine.Jump()
 	
@@ -57,13 +69,6 @@ func get_input():
 	if Input.is_action_just_pressed("attack") and !is_attacking:
 		MyStateMachine.Attack()
 
-#func move(delta):
-#	if direction_x:
-#		velocity.x = move_toward(velocity.x, direction_x * speed, acceleration * delta)
-#	else:
-#		velocity.x = move_toward(velocity.x, 0, friction * delta)
-#	if not is_on_floor():
-#		velocity.y += get_custom_gravity() * delta
 
 func get_custom_gravity():
 	if velocity.y < 0.0:
@@ -71,29 +76,44 @@ func get_custom_gravity():
 	else:
 		return fall_gravity
 
-#func start_attack():
-#	is_attacking = true
-#	player_anim.play("Attack")
-#	attack_hit_box.set_deferred("disabled", false)
-
 func finish_attack():
 	is_attacking = false
 	attack_hit_box.set_deferred("disabled", true)
 	
-#func update_animation(direction: float) -> void:
-#	
-#	if is_attacking:
-#		return
-#	if direction != 0:
-#		player_anim.flip_h = direction > 0 #built in flip horizontal and vertical (v)
-#		attack_collision.position.x = direction * attack_offset
-#	if not is_on_floor():
-#		player_anim.play("Jump")
-#	elif direction != 0: #elif if inbetween if and else > serves as "otherwise if"
-#		player_anim.play("Walk")
-#	else:
-#		player_anim.play("Idle")
 
 func _on_player_anim_animation_finished() -> void:
 	if player_anim.animation == "Attack":
 		finish_attack()
+
+func take_damage(type: int,amount:float):
+	# maybe i should make a static function to handle this globally and better?
+	var was_hit = false
+	if type % 2 == 1 && DmgLayer % 2 == 1:
+		currentHP -= amount
+		was_hit = true
+	elif type % 4 == 2 && (DmgLayer - DmgLayer % 2) % 4 == 2:
+		currentHP -= 2 * amount
+		was_hit = true
+	elif type % 8 == 4 && (DmgLayer - DmgLayer % 4) % 8 == 4:
+		currentHP -= MaxHP * amount
+		was_hit = true
+	if was_hit:
+		# trigger vfx related to dmg
+		print("dmg Taken")
+		if currentHP <= 0:
+			die()
+	
+	pass
+
+func die():
+	pass
+
+func change_water(entering:bool):
+	if entering:
+		bodies_of_water += 1
+		if bodies_of_water == 1:
+			MyStateMachine.ChangeState(MyStateMachine.Swim)
+	else:
+		bodies_of_water -= 1
+		if bodies_of_water == 0:
+			MyStateMachine.ChangeState(MyStateMachine.Fall)

@@ -4,11 +4,13 @@ var Player: PlayerController
 var CurrentState:PlayerState
 var Move:PSMove
 var Fall:PSFalling
+var Swim:PSSwim
 
 func _init(player: PlayerController):
 	Player = player
 	Move = PSMove.new(Player)
 	Fall = PSFalling.new(Player)
+	Swim = PSSwim.new(Player)
 
 func Update(delta:float):
 	CurrentState.Update(delta)

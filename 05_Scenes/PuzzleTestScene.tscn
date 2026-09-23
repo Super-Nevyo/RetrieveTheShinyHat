@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="2_3c2uc"]
 [ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/PressurePlate.tscn" id="3_3c2uc"]
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="4_415yb"]
+[ext_resource type="PackedScene" uid="uid://vcn01q1ejf05" path="res://02_Prefabs/Liquid.tscn" id="5_wexxd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(1144, 20)
@@ -35,3 +36,7 @@ position = Vector2(976, 538)
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("4_415yb")]
 position = Vector2(229, 467)
+
+[node name="Liquid" parent="." unique_id=1959433390 instance=ExtResource("5_wexxd")]
+position = Vector2(367, 501)
+scale = Vector2(5, 5)
