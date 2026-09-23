@@ -2,6 +2,8 @@ extends Node2D
 
 @export var AttachedNodes:Array[Node2D]
 @export var ActivationAmount:Array[float]
+
+@export var puzzle_id: String
 var SwitchFlipped: bool = false
 
 

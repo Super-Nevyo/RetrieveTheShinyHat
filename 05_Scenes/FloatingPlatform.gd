@@ -8,7 +8,7 @@ class_name FloatingPlatform
 @export var stiffness: float = 1.0
 
 #Damp force = -linear velocity+damping strenght
-@export var damping: float = 10.0
+#@export var damping: float = 10.0
 
 func _physics_process(_delta: float) -> void:
 	
@@ -17,11 +17,9 @@ func _physics_process(_delta: float) -> void:
 	if depth >= 0: #if its at water level
 		#hookes law applied here
 		var bouyancy_force: float = stiffness * depth
-		var damp_force = -linear_velocity.y * damping
+		#var damp_force = -linear_velocity.y * damping
 		
-		constant_force = Vector2 (0, -bouyancy_force + damp_force) #built positional force
+		constant_force = Vector2 (0, -bouyancy_force) #built positional force
 	
 	else:
 		constant_force = Vector2.ZERO
-		
-# to add: calculate the force 

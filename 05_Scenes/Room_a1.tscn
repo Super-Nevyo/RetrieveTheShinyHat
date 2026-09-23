@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://b1m8fdhupmphl" path="res://05_Scenes/Acid.gd" id="5_ipvnd"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="5_jutxl"]
 [ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="7_yg4m1"]
+[ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="8_ol72s"]
+[ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="9_r2pl0"]
+[ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/PressurePlate.tscn" id="10_8kv6w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6lt1"]
 texture = ExtResource("1_sh0j4")
@@ -73,10 +76,10 @@ debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
 
 [node name="FloatingPlatform" type="RigidBody2D" parent="." unique_id=1549459913 node_paths=PackedStringArray("acid_surface")]
 position = Vector2(300, 450.00003)
+linear_damp = 6.0
 script = ExtResource("7_yg4m1")
 acid_surface = NodePath("../AcidPit/AcidSurface")
 stiffness = 120.0
-damping = 6.0
 
 [node name="Sprite2D" type="Sprite2D" parent="FloatingPlatform" unique_id=637636405]
 scale = Vector2(1, 0.25)
@@ -84,3 +87,19 @@ texture = ExtResource("5_jutxl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloatingPlatform" unique_id=1974279517]
 shape = SubResource("RectangleShape2D_bgewv")
+
+[node name="Switch" parent="." unique_id=150077233 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("8_ol72s")]
+position = Vector2(922, 409)
+AttachedNodes = [NodePath("../ExitDoor")]
+ActivationAmount = Array[float]([1.0])
+
+[node name="ExitDoor" parent="." unique_id=425038002 instance=ExtResource("9_r2pl0")]
+position = Vector2(948, 544)
+
+[node name="PuzzleDoor" parent="." unique_id=1068746293 instance=ExtResource("9_r2pl0")]
+position = Vector2(848, 479)
+
+[node name="PressurePlate" parent="." unique_id=1796088267 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("10_8kv6w")]
+position = Vector2(510, 544)
+AttachedNodes = [NodePath("../PuzzleDoor")]
+ActivationAmount = Array[float]([-1.0])

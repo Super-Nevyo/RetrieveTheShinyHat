@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cvitv2plkwb3d" path="res://01_Scripts/WorldInteractions/WorldMap.gd" id="5_wg5p8"]
 [ext_resource type="PackedScene" uid="uid://7pv8mb0dju1x" path="res://05_Scenes/Room_a3.tscn" id="6_7pddy"]
 [ext_resource type="Script" uid="uid://cjlfmchl8gn8" path="res://01_Scripts/WorldInteractions/MapTransition.gd" id="6_jsr1b"]
+[ext_resource type="Script" uid="uid://dvmlf5pudw6e2" path="res://01_Scripts/WorldInteractions/RoomPersistances.gd" id="9_e2ro4"]
 
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
 
@@ -16,13 +17,13 @@ position = Vector2(657, 528)
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=1312875347]
 
-[node name="RoomManager" type="Node2D" parent="RoomContainer" unique_id=1411798338 node_paths=PackedStringArray("room_container", "world_map", "player")]
+[node name="RoomManager" type="Node2D" parent="RoomContainer" unique_id=1411798338 node_paths=PackedStringArray("starting_room", "room_container", "world_map", "player", "activated_puzzles")]
 script = ExtResource("2_8w24r")
-starting_room = ExtResource("3_8w24r")
-test_room = ExtResource("4_l4u23")
+starting_room = NodePath("../../WorldMap/MapRoom_A1")
 room_container = NodePath("..")
 world_map = NodePath("../../WorldMap")
 player = NodePath("../../PlayerCharacter")
+activated_puzzles = NodePath("../../RoomPersistances")
 
 [node name="WorldMap" type="Node2D" parent="." unique_id=1035054344]
 script = ExtResource("5_wg5p8")
@@ -57,3 +58,6 @@ room_a = NodePath("../../MapRoom_A2")
 exit_a_id = "a2_to_a3"
 room_b = NodePath("../../MapRoom_A3")
 exit_b_id = "a3_to_a2"
+
+[node name="RoomPersistances" type="Node2D" parent="." unique_id=944023517]
+script = ExtResource("9_e2ro4")

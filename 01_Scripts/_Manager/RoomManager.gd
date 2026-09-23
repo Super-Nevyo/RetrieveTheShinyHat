@@ -1,23 +1,24 @@
 extends Node2D
 
-@export var starting_room: PackedScene #calls a godot scene prefab
-@export var test_room: PackedScene
+@export var starting_room: MapRoom
 
 @export var room_container: Node2D
 
 @export var world_map: WorldMap
 @export var player: CharacterBody2D
 
-
 #var is_transitioning: bool
-
 #rooms
 var current_room: Node2D
+var current_room_id: String
+
+@export var activated_puzzles: RoomPersistances
 
 func _ready() -> void:
-	load_room(starting_room)
+	load_room(starting_room.room_scene, starting_room.room_id)
 
-func load_room(room_scene: PackedScene) -> void:
+func load_room(room_scene: PackedScene, room_id: String) -> void:
+	
 	if room_scene == null:
 		print("Assign a room scene in the inspector")
 		return
@@ -25,6 +26,7 @@ func load_room(room_scene: PackedScene) -> void:
 	if is_instance_valid(current_room):
 		current_room.queue_free() # for now clears the previous room -- to do a save state/what is saved between rooms
 	
+	current_room_id = room_id
 	current_room = room_scene.instantiate() #same for the next room
 	
 	for child in current_room.get_children(): #needed to get children nodes and look for them
@@ -51,7 +53,7 @@ func _on_transition_started(transition_id: String) -> void: #Signals the world m
 		_new_destination = connection.room_a
 		_destination_exit_id = connection.exit_a_id
 	
-	load_room(_new_destination.room_scene)
+	load_room(_new_destination.room_scene, _new_destination.room_id)
 	await current_room.ready
 
 	var room_metadata = current_room.get_node("MapMetadata") as MapMetadata
