@@ -129,6 +129,7 @@ animations = [{
 size = Vector2(18, 30)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_q2jwi")
 speed = 200.0
 acceleration = 1000.0

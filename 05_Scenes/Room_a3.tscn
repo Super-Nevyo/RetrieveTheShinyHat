@@ -68,5 +68,9 @@ position = Vector2(318, 80)
 rotation = 1.5707964
 transition_data = SubResource("Resource_hrbvd")
 
+[node name="ArrivalPoint" parent="RoomTransition_00" index="1" unique_id=1345594044]
+position = Vector2(-13, 13.999999)
+
 [editable path="RoomTransition_A3"]
 [editable path="RoomTransition_A4"]
+[editable path="RoomTransition_00"]

@@ -7,7 +7,8 @@ extends Node2D
 @export var world_map: WorldMap
 @export var player: CharacterBody2D
 
-#var is_transitioning: bool
+var is_transitioning: bool = false
+
 #rooms
 var current_room: Node2D
 var current_room_id: String
@@ -52,6 +53,11 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 
 func _on_transition_started(transition_id: String) -> void: #Signals the world map to find the connection to an exit
 	
+	if is_transitioning:
+		return
+	
+	is_transitioning = true
+	
 	var connection = world_map.find_connection(transition_id)
 	print("Touched: ", connection.name)
 	
@@ -73,5 +79,9 @@ func _on_transition_started(transition_id: String) -> void: #Signals the world m
 	var room_metadata = current_room.get_node("MapMetadata") as MapMetadata
 	var room_exit = room_metadata.find_exit(_destination_exit_id)
 	var arrival_point = room_exit.get_arrival_point() #need the marker2d global position later
+	var room_scene = get_tree()
 	
 	player.global_position = arrival_point.global_position
+	
+	await room_scene.physics_frame
+	is_transitioning = false

@@ -92,6 +92,7 @@ shape = SubResource("RectangleShape2D_bgewv")
 position = Vector2(922, 409)
 AttachedNodes = [NodePath("../ExitDoor")]
 ActivationAmount = Array[float]([1.0])
+puzzle_id = "exit_switch"
 
 [node name="ExitDoor" parent="." unique_id=425038002 instance=ExtResource("9_r2pl0")]
 position = Vector2(948, 544)
@@ -102,4 +103,5 @@ position = Vector2(751, 479)
 [node name="PressurePlate" parent="." unique_id=1796088267 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("10_8kv6w")]
 position = Vector2(510, 544)
 AttachedNodes = [NodePath("../PuzzleDoor")]
-ActivationAmount = Array[float]([-1.0])
+ActivationAmount = Array[float]([1.0])
+puzzle_id = "door_plate"
