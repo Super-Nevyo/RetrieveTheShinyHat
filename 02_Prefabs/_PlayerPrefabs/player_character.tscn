@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://1o7e48jyccc5" path="res://03_Art/TempAssets/Animals.png" id="2_ydyhr"]
 [ext_resource type="Script" uid="uid://c8jhfob34xjcm" path="res://01_Scripts/WorldInteractions/AttackHitbox.gd" id="3_md7ae"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kw6nx"]
-height = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wdy"]
+size = Vector2(76, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55sfy"]
 atlas = ExtResource("2_ydyhr")
@@ -128,16 +128,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(18, 30)
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_q2jwi")
 speed = 200.0
 acceleration = 1000.0
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
-position = Vector2(3, 4)
-shape = SubResource("CapsuleShape2D_kw6nx")
+z_index = 1
+position = Vector2(3, 7.5)
+shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
+scale = Vector2(3, 2)
 sprite_frames = SubResource("SpriteFrames_bgewv")
 animation = &"Climb"
 autoplay = "Idle"
