@@ -40,3 +40,7 @@ position = Vector2(229, 467)
 [node name="Liquid" parent="." unique_id=1959433390 instance=ExtResource("5_wexxd")]
 position = Vector2(367, 501)
 scale = Vector2(5, 5)
+
+[node name="Liquid2" parent="." unique_id=593745260 instance=ExtResource("5_wexxd")]
+position = Vector2(437.00003, 401.00003)
+scale = Vector2(5, 5)

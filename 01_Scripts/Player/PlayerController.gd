@@ -6,6 +6,7 @@ extends CharacterBody2D
 # Extend later if theres time: swim, be launched?, dash, pogo?
 
 #===MOVEMENT
+# Ground
 @export var speed: float = 300
 @export var acceleration: float = 1800
 @export var friction: float = 500
@@ -13,6 +14,11 @@ extends CharacterBody2D
 var direction_x : float
 var direction_y : float
 var current_speed : float
+
+# Submerged
+@export var swim_speed: float = 300
+@export var swim_acceleration: float = 800
+@export var swim_friction: float = 100
 
 var velo: Vector2 = Vector2.ZERO
 
