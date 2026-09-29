@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgubd8cqbbchk"]
 
 [ext_resource type="Script" uid="uid://x4v15ufut2cx" path="res://01_Scripts/Player/PlayerController.gd" id="1_q2jwi"]
+[ext_resource type="Texture2D" uid="uid://dwsdetorxv71" path="res://03_Art/_Player/charattack.png" id="2_g7cil"]
 [ext_resource type="Texture2D" uid="uid://1o7e48jyccc5" path="res://03_Art/TempAssets/Animals.png" id="2_ydyhr"]
 [ext_resource type="Script" uid="uid://c8jhfob34xjcm" path="res://01_Scripts/WorldInteractions/AttackHitbox.gd" id="3_md7ae"]
 [ext_resource type="Texture2D" uid="uid://holao8ilrmtn" path="res://03_Art/_Player/car96.png" id="4_g7cil"]
@@ -8,17 +9,25 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wdy"]
 size = Vector2(60, 37.179485)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_55sfy"]
-atlas = ExtResource("2_ydyhr")
-region = Rect2(64, 256, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_aydsc"]
+atlas = ExtResource("2_g7cil")
+region = Rect2(0, 198, 144, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8xi8v"]
-atlas = ExtResource("2_ydyhr")
-region = Rect2(32, 256, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmcxg"]
+atlas = ExtResource("2_g7cil")
+region = Rect2(144, 198, 144, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y6lt1"]
-atlas = ExtResource("2_ydyhr")
-region = Rect2(0, 256, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpf37"]
+atlas = ExtResource("2_g7cil")
+region = Rect2(288, 198, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qys1"]
+atlas = ExtResource("2_g7cil")
+region = Rect2(432, 198, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jelw"]
+atlas = ExtResource("2_g7cil")
+region = Rect2(576, 198, 144, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxv0f"]
 atlas = ExtResource("2_ydyhr")
@@ -75,20 +84,20 @@ region = Rect2(99, 0, 96, 96)
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgewv"]
 animations = [{
 "frames": [{
-"duration": 0.7,
-"texture": SubResource("AtlasTexture_55sfy")
+"duration": 0.45,
+"texture": SubResource("AtlasTexture_aydsc")
 }, {
-"duration": 0.7,
-"texture": SubResource("AtlasTexture_8xi8v")
+"duration": 0.45,
+"texture": SubResource("AtlasTexture_dmcxg")
 }, {
-"duration": 0.7,
-"texture": SubResource("AtlasTexture_y6lt1")
+"duration": 0.45,
+"texture": SubResource("AtlasTexture_gpf37")
 }, {
-"duration": 0.7,
-"texture": SubResource("AtlasTexture_8xi8v")
+"duration": 0.45,
+"texture": SubResource("AtlasTexture_5qys1")
 }, {
-"duration": 0.7,
-"texture": SubResource("AtlasTexture_55sfy")
+"duration": 0.45,
+"texture": SubResource("AtlasTexture_2jelw")
 }],
 "loop": 0,
 "name": &"Attack",
@@ -117,16 +126,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.8,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_urycm")
 }, {
-"duration": 0.8,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_qslpj")
 }, {
-"duration": 0.8,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_0eu4l")
 }, {
-"duration": 0.8,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_kb8hf")
 }],
 "loop": 0,
@@ -134,13 +143,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.2,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xc1es")
 }, {
-"duration": 1.2,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sudbt")
 }, {
-"duration": 1.2,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0gpal")
 }],
 "loop": 1,
@@ -160,7 +169,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
-size = Vector2(18, 30)
+size = Vector2(16.017548, 58)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
 collision_layer = 2
@@ -176,9 +185,8 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Idle"
+animation = &"Attack"
 autoplay = "Idle"
-frame_progress = 0.18889046
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
 position = Vector2(48, 35)
@@ -188,7 +196,7 @@ collision_mask = 8
 script = ExtResource("3_md7ae")
 
 [node name="HitBox" type="CollisionShape2D" parent="AttackHitBox" unique_id=34871703]
-position = Vector2(-10.087725, -4)
+position = Vector2(-7.570177, -18)
 shape = SubResource("RectangleShape2D_kw6nx")
 disabled = true
 
