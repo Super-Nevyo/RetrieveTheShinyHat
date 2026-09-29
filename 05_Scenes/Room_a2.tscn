@@ -23,8 +23,8 @@ sources/0 = SubResource("TileSetAtlasSource_y6lt1")
 
 [sub_resource type="Resource" id="Resource_gfs1v"]
 script = ExtResource("3_hrbvd")
-display_name = "A2 to A1"
-transition_id = "a2_to_a1"
+display_name = "a2_exit_a"
+transition_id = "a2_exit_a"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_hrbvd"]

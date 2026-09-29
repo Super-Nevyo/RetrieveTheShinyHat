@@ -95,7 +95,7 @@ ActivationAmount = Array[float]([1.0])
 puzzle_id = "exit_switch"
 
 [node name="ExitDoor" parent="." unique_id=425038002 instance=ExtResource("9_r2pl0")]
-position = Vector2(948, 544)
+position = Vector2(932, 215)
 
 [node name="PuzzleDoor" parent="." unique_id=1068746293 instance=ExtResource("9_r2pl0")]
 position = Vector2(751, 479)
