@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cv2gct0dh0q70"]
+
+[ext_resource type="Script" uid="uid://cn1jnsbvxg6jq" path="res://02_Prefabs/UIPrefabs/inventory_ui.gd" id="1_tfwfs"]
+[ext_resource type="Texture2D" uid="uid://d0kaqmiym3ns8" path="res://03_Art/Items/Empty.png" id="2_38hn0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsmb2"]
+bg_color = Color(0.6, 0.27058825, 0.25882354, 1)
+
+[node name="InventoryUi" type="Control" unique_id=1475960093 node_paths=PackedStringArray("item_icon")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfwfs")
+item_icon = [NodePath("Control/InventoryPanel/VBoxContainer/Item1"), NodePath("Control/InventoryPanel/VBoxContainer/Item2"), NodePath("Control/InventoryPanel/VBoxContainer/Item3"), NodePath("Control/InventoryPanel/VBoxContainer/Item4")]
+
+[node name="Control" type="Control" parent="." unique_id=113626927]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = -200.0
+offset_right = 133.0
+offset_bottom = 200.0
+grow_vertical = 2
+
+[node name="InventoryPanel" type="PanelContainer" parent="Control" unique_id=1056060949]
+custom_minimum_size = Vector2(100, 400)
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 400.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qsmb2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/InventoryPanel" unique_id=148226027]
+layout_mode = 2
+
+[node name="Item1" type="TextureRect" parent="Control/InventoryPanel/VBoxContainer" unique_id=640361941]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_38hn0")
+
+[node name="Item2" type="TextureRect" parent="Control/InventoryPanel/VBoxContainer" unique_id=711225488]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_38hn0")
+
+[node name="Item3" type="TextureRect" parent="Control/InventoryPanel/VBoxContainer" unique_id=1809508486]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_38hn0")
+
+[node name="Item4" type="TextureRect" parent="Control/InventoryPanel/VBoxContainer" unique_id=1521500715]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_38hn0")
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=2074897383]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 200.0
+offset_bottom = 100.0
+texture = ExtResource("2_38hn0")
