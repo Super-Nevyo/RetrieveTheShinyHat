@@ -13,7 +13,11 @@ func ActivatePuzzle():
 	if AttachedNodes.size() == ActivationAmount.size():
 		for i in range(AttachedNodes.size()):
 			if AttachedNodes[i].has_method("ActivatePuzzle"):
-				AttachedNodes[i].ActivatePuzzle(ActivationAmount[i] * 1.0 if SwitchFlipped else -1.0)
+				if SwitchFlipped:
+					AttachedNodes[i].ActivatePuzzle(ActivationAmount[i] * 1.0)
+				elif !SwitchFlipped:
+					AttachedNodes[i].ActivatePuzzle(ActivationAmount[i] * -1.0)
+				#AttachedNodes[i].ActivatePuzzle(ActivationAmount[i] * 1.0 if SwitchFlipped else -1.0)
 	else:
 		for i in range(AttachedNodes.size()):
 			if AttachedNodes[i].has_method("ActivatePuzzle"):
