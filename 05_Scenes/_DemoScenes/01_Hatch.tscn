@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="4_xpqxw"]
 [ext_resource type="Script" uid="uid://b1m8fdhupmphl" path="res://05_Scenes/Acid.gd" id="5_grwq3"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="6_0wd3o"]
-[ext_resource type="PackedScene" uid="uid://vcn01q1ejf05" path="res://02_Prefabs/Liquid.tscn" id="6_m1v14"]
+[ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="6_m1v14"]
 [ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="7_uq4bb"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="8_4bc4g"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="9_6avm4"]
@@ -94,9 +94,9 @@ position = Vector2(1231, 994)
 scale = Vector2(2.6799977, 1.2800025)
 script = ExtResource("5_grwq3")
 
-[node name="Liquid" parent="AcidPit" unique_id=1959433390 instance=ExtResource("6_m1v14")]
-position = Vector2(0, 17.968716)
-scale = Vector2(11.239696, -6.4815073)
+[node name="Liquid2" parent="AcidPit" unique_id=1959433390 instance=ExtResource("6_m1v14")]
+position = Vector2(0, 10)
+scale = Vector2(12, 6)
 
 [node name="AcidSurface" type="Marker2D" parent="AcidPit" unique_id=196727150]
 position = Vector2(0, -51.5624)

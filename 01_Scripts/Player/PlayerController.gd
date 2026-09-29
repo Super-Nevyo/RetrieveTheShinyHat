@@ -44,6 +44,7 @@ var is_attacking: bool = false
 @export var MaxHP : float = 100
 @onready var currentHP : float = MaxHP
 @export var DmgLayer : int = 15
+var isdead : bool = false
 
 #===ANIMATION
 @onready var player_anim: AnimatedSprite2D = $PlayerAnim #the $ is godots shortway of references. Also drag from scene tab into script
@@ -58,6 +59,8 @@ func _ready() -> void:
 	MyStateMachine.Initialize(MyStateMachine.Move)
 
 func _physics_process(delta: float) -> void:
+	if isdead:
+		return
 	get_input()
 	MyStateMachine.Update(delta)
 	velocity = velo
@@ -92,6 +95,8 @@ func _on_player_anim_animation_finished() -> void:
 		finish_attack()
 
 func take_damage(type: int,amount:float):
+	print(amount)
+	print(type)
 	# maybe i should make a static function to handle this globally and better?
 	var was_hit = false
 	if type % 2 == 1 && DmgLayer % 2 == 1:
@@ -112,7 +117,7 @@ func take_damage(type: int,amount:float):
 	pass
 
 func die():
-	pass
+	isdead = true
 
 func change_water(entering:bool):
 	if entering:
