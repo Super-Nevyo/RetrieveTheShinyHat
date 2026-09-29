@@ -58,6 +58,7 @@ func _on_transition_started(transition_id: String) -> void: #Signals the world m
 	
 	is_transitioning = true
 	
+	print("Exit ID received: ", transition_id)
 	var connection = world_map.find_connection(transition_id)
 	print("Touched: ", connection.name)
 	
