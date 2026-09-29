@@ -13,8 +13,9 @@
 
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
 
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("1_kmjnh")]
+[node name="PlayerCharacter" parent="." unique_id=1797284452 node_paths=PackedStringArray("inventoryUI") instance=ExtResource("1_kmjnh")]
 position = Vector2(209, 776)
+inventoryUI = NodePath("../InventoryUi")
 jump_height = 150.0
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=1312875347]
