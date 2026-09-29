@@ -41,8 +41,8 @@ sources/0 = SubResource("TileSetAtlasSource_y6lt1")
 
 [sub_resource type="Resource" id="Resource_sh0j4"]
 script = ExtResource("4_xpqxw")
-display_name = "Hatch Room"
-transition_id = "hatch_to_room2"
+display_name = "hatch"
+transition_id = "hatch_exit_a"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_m1v14"]
@@ -84,6 +84,9 @@ tile_set = SubResource("TileSet_kw6nx")
 [node name="transition_room2" parent="." unique_id=306758002 instance=ExtResource("3_dabev")]
 position = Vector2(1904, 880)
 transition_data = SubResource("Resource_sh0j4")
+
+[node name="ArrivalPoint" parent="transition_room2" index="1" unique_id=1345594044]
+position = Vector2(-81, 30)
 
 [node name="transition_carapace" parent="." unique_id=1724436172 instance=ExtResource("3_dabev")]
 position = Vector2(16, 470)
@@ -157,30 +160,9 @@ DoorStartPosition = 0.0
 DoorMovePosition = -500.0
 
 [node name="ExitA_Door" parent="." unique_id=690248518 instance=ExtResource("9_6avm4")]
-position = Vector2(1875, 928)
+position = Vector2(1875, 832)
 
-[node name="Door" parent="." unique_id=1523588435 instance=ExtResource("9_6avm4")]
-position = Vector2(1860, 806)
-rotation = 1.5707964
-scale = Vector2(1, 0.25)
-
-[node name="Door2" parent="." unique_id=1215432477 instance=ExtResource("9_6avm4")]
-position = Vector2(1860, 779)
-rotation = 1.5707964
-scale = Vector2(1, 0.25)
-
-[node name="Door3" parent="." unique_id=1110900560 instance=ExtResource("9_6avm4")]
-position = Vector2(1863, 748)
-rotation = 1.5707964
-scale = Vector2(1, 0.25)
-
-[node name="Pickup" parent="." unique_id=483234207 instance=ExtResource("11_32aom")]
-position = Vector2(68.00012, 880.99994)
-itemInfo = ExtResource("12_c0g1b")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickup" unique_id=376726750]
-texture = ExtResource("12_epmgc")
-
+[editable path="transition_room2"]
 [editable path="transition_carapace"]
 [editable path="A1_Switch"]
 [editable path="A2_Switch"]
