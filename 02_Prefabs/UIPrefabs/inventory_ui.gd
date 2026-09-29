@@ -1,4 +1,5 @@
 extends Control
+class_name InventoryUI
 
 @export var item_icon: Array[TextureRect]
 

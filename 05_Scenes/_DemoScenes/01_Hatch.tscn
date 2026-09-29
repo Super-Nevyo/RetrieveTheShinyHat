@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="7_uq4bb"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="8_4bc4g"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="9_6avm4"]
+[ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/Pickup.tscn" id="11_32aom"]
+[ext_resource type="Texture2D" uid="uid://d1u4gfybi1o3l" path="res://03_Art/Items/AcidProofCarapace.png" id="12_epmgc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6lt1"]
 texture = ExtResource("2_m1v14")
@@ -170,6 +172,12 @@ scale = Vector2(1, 0.25)
 position = Vector2(1863, 748)
 rotation = 1.5707964
 scale = Vector2(1, 0.25)
+
+[node name="Pickup" parent="." unique_id=483234207 instance=ExtResource("11_32aom")]
+position = Vector2(68.00012, 880.99994)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickup" unique_id=376726750]
+texture = ExtResource("12_epmgc")
 
 [editable path="transition_carapace"]
 [editable path="A1_Switch"]

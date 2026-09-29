@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://4mys1h3bphdm" path="res://05_Scenes/Room_a1.tscn" id="6_e8wdy"]
 [ext_resource type="Script" uid="uid://cjlfmchl8gn8" path="res://01_Scripts/WorldInteractions/MapTransition.gd" id="6_jsr1b"]
 [ext_resource type="Script" uid="uid://dvmlf5pudw6e2" path="res://01_Scripts/WorldInteractions/RoomPersistances.gd" id="9_e2ro4"]
+[ext_resource type="PackedScene" uid="uid://cv2gct0dh0q70" path="res://02_Prefabs/UIPrefabs/InventoryUI.tscn" id="10_wjgey"]
 
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
 
@@ -62,3 +63,7 @@ exit_b_id = "a3_to_a2"
 
 [node name="RoomPersistances" type="Node2D" parent="." unique_id=944023517]
 script = ExtResource("9_e2ro4")
+
+[node name="InventoryUi" parent="." unique_id=1475960093 instance=ExtResource("10_wjgey")]
+offset_top = 540.0
+offset_bottom = 540.0

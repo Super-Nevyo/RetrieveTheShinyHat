@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AcidProofCarapace" format=3 uid="uid://yc6fyaxbjhq5"]
+
+[ext_resource type="Script" uid="uid://cv4ucm2x24qr8" path="res://01_Scripts/Inventory/AcidProofCaripace.gd" id="1_8b3wk"]
+[ext_resource type="Texture2D" uid="uid://d1u4gfybi1o3l" path="res://03_Art/Items/AcidProofCarapace.png" id="2_tgkt8"]
+
+[resource]
+script = ExtResource("1_8b3wk")
+tex = ExtResource("2_tgkt8")
+metadata/_custom_type_script = "uid://cv4ucm2x24qr8"

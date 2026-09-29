@@ -1,4 +1,5 @@
 extends Item
+class_name AcidProofCarapace
 
 func Enter(Player: PlayerController):
 	Player.DmgLayer -= 4

@@ -5,6 +5,8 @@ extends CharacterBody2D
 # Player should: walk, attack, jump, climb ladders
 # Extend later if theres time: swim, be launched?, dash, pogo?
 
+@export var inventoryUI : InventoryUI
+
 #===MOVEMENT
 # Ground
 @export var speed: float = 300
@@ -128,3 +130,8 @@ func change_water(entering:bool):
 		bodies_of_water -= 1
 		if bodies_of_water == 0:
 			MyStateMachine.ChangeState(MyStateMachine.Fall)
+
+func add_item(item:Item, index: int):
+	MyInventory.AddItem(item,index)
+	inventoryUI.ChangeInventoryUI(index, item.tex)
+	pass

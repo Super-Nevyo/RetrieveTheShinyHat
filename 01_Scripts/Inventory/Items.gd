@@ -1,7 +1,7 @@
 class_name Item
 extends Resource
 
-
+@export var tex : Texture2D
 
 func Enter(Player: PlayerController):
 	pass

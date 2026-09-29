@@ -62,6 +62,7 @@ layout_mode = 2
 texture = ExtResource("2_38hn0")
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=2074897383]
+visible = false
 layout_mode = 0
 offset_left = 100.0
 offset_right = 200.0
