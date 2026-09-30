@@ -10,9 +10,6 @@
 [ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="7_uq4bb"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="8_4bc4g"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="9_6avm4"]
-[ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/Pickup.tscn" id="11_32aom"]
-[ext_resource type="Resource" uid="uid://yc6fyaxbjhq5" path="res://Sprites/Acidproof.tres" id="12_c0g1b"]
-[ext_resource type="Texture2D" uid="uid://d1u4gfybi1o3l" path="res://03_Art/Items/AcidProofCarapace.png" id="12_epmgc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6lt1"]
 texture = ExtResource("2_m1v14")
@@ -140,18 +137,18 @@ scale = Vector2(2, 2)
 
 [node name="A1_Switch" parent="." unique_id=150077233 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("8_4bc4g")]
 position = Vector2(814, 881)
-AttachedNodes = [NodePath("../A1_AcidPlatform"), NodePath("../ExitA_Door"), NodePath("../Door")]
-ActivationAmount = Array[float]([1.0, 0.34, 1.0])
+AttachedNodes = [NodePath("../A1_AcidPlatform"), NodePath("../ExitA_Door")]
+ActivationAmount = Array[float]([1.0, 0.34])
 
 [node name="A2_Switch" parent="." unique_id=2142488282 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("8_4bc4g")]
 position = Vector2(814, 273)
-AttachedNodes = [NodePath("../ExitA_Door"), NodePath("../Door2")]
-ActivationAmount = Array[float]([0.34, 1.0])
+AttachedNodes = [NodePath("../ExitA_Door")]
+ActivationAmount = Array[float]([0.34])
 
 [node name="A3_Switch" parent="." unique_id=443261928 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("8_4bc4g")]
 position = Vector2(1520, 752)
-AttachedNodes = [NodePath("../A1_AcidPlatform"), NodePath("../ExitA_Door"), NodePath("../Door3")]
-ActivationAmount = Array[float]([-0.9, 0.34, 1.0])
+AttachedNodes = [NodePath("../A1_AcidPlatform"), NodePath("../ExitA_Door")]
+ActivationAmount = Array[float]([-0.9, 0.34])
 
 [node name="A1_AcidPlatform" parent="." unique_id=425038002 instance=ExtResource("9_6avm4")]
 position = Vector2(1135, 1059)

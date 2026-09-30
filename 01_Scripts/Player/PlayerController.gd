@@ -5,7 +5,9 @@ extends CharacterBody2D
 # Player should: walk, attack, jump, climb ladders
 # Extend later if theres time: swim, be launched?, dash, pogo?
 
-@export var inventoryUI : InventoryUI
+#===SIGNALS
+signal HealthChanged(new: float, maxHp: float)
+signal ItemCollected(index: int, item: Item)
 
 #===MOVEMENT
 # Ground
@@ -97,8 +99,6 @@ func _on_player_anim_animation_finished() -> void:
 		finish_attack()
 
 func take_damage(type: int,amount:float):
-	print(amount)
-	print(type)
 	# maybe i should make a static function to handle this globally and better?
 	var was_hit = false
 	if type % 2 == 1 && DmgLayer % 2 == 1:
@@ -112,7 +112,7 @@ func take_damage(type: int,amount:float):
 		was_hit = true
 	if was_hit:
 		# trigger vfx related to dmg
-		print("dmg Taken")
+		HealthChanged.emit(currentHP,MaxHP)
 		if currentHP <= 0:
 			die()
 	
@@ -133,5 +133,6 @@ func change_water(entering:bool):
 
 func add_item(item:Item, index: int):
 	MyInventory.AddItem(item,index)
-	inventoryUI.ChangeInventoryUI(index, item.tex)
+	ItemCollected.emit(index,item)
+	#inventoryUI.ChangeInventoryUI(index, item.tex)
 	pass

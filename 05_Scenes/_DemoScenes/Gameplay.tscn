@@ -8,13 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://by7l7bpjlhpma" path="res://05_Scenes/_DemoScenes/02_Hatch.tscn" id="6_5xdmq"]
 [ext_resource type="Script" uid="uid://cjlfmchl8gn8" path="res://01_Scripts/WorldInteractions/MapTransition.gd" id="6_jsr1b"]
 [ext_resource type="Script" uid="uid://dvmlf5pudw6e2" path="res://01_Scripts/WorldInteractions/RoomPersistances.gd" id="9_e2ro4"]
-[ext_resource type="PackedScene" uid="uid://cv2gct0dh0q70" path="res://02_Prefabs/UIPrefabs/InventoryUI.tscn" id="10_wjgey"]
+[ext_resource type="PackedScene" uid="uid://bx4nw0mno0ya3" path="res://02_Prefabs/UIPrefabs/GameHud.tscn" id="9_e8wdy"]
 
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
 
-[node name="PlayerCharacter" parent="." unique_id=1797284452 node_paths=PackedStringArray("inventoryUI") instance=ExtResource("1_kmjnh")]
+[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("1_kmjnh")]
 position = Vector2(209, 776)
-inventoryUI = NodePath("../InventoryUi")
 jump_height = 150.0
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=1312875347]
@@ -59,6 +58,5 @@ exit_b_id = "hatch_exit_a"
 [node name="RoomPersistances" type="Node2D" parent="." unique_id=944023517]
 script = ExtResource("9_e2ro4")
 
-[node name="InventoryUi" parent="." unique_id=1475960093 instance=ExtResource("10_wjgey")]
-offset_top = 540.0
-offset_bottom = 540.0
+[node name="GameHud" parent="." unique_id=1741115912 instance=ExtResource("9_e8wdy")]
+anchors_preset = -1

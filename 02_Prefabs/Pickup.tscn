@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dbj83dtmk7hmb"]
 
-[ext_resource type="Script" uid="uid://b4x025f135lyu" path="res://02_Prefabs/pickup.gd" id="1_i5qnj"]
+[ext_resource type="Script" uid="uid://b4x025f135lyu" path="res://01_Scripts/Inventory/pickup.gd" id="1_i5qnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 

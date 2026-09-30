@@ -8,8 +8,7 @@ func _init(player: PlayerController) -> void:
 	Player = player
 
 func AddItem(item: Item, slot: int) -> void:
-	if Items[slot - 1] != null:
-		Items[slot - 1].Exit(Player)
-	Items[slot - 1] = item
-	Items[slot - 1].Enter(Player)
-	pass
+	if Items[slot] != null:
+		Items[slot].Exit(Player)
+	Items[slot] = item
+	Items[slot].Enter(Player)
