@@ -213,10 +213,12 @@ animations = [{
 size = Vector2(16.017548, 58)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
+scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_q2jwi")
 speed = 200.0
 acceleration = 1000.0
+jump_time_down = 0.3
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
 z_index = 1
@@ -226,8 +228,10 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Idle"
+animation = &"Jump"
 autoplay = "Idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
 position = Vector2(48, 35)
