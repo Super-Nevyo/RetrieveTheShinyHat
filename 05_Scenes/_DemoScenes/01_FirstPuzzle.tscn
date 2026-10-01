@@ -78,16 +78,16 @@ sources/0 = SubResource("TileSetAtlasSource_y6lt1")
 sources/1 = SubResource("TileSetAtlasSource_32aom")
 sources/2 = SubResource("TileSetAtlasSource_epmgc")
 
-[sub_resource type="Resource" id="Resource_sh0j4"]
-script = ExtResource("4_xpqxw")
-display_name = "To_Puzzle2"
-transition_id = "puzzle2_e"
-metadata/_custom_type_script = "uid://uu6skijk5c6s"
-
 [sub_resource type="Resource" id="Resource_m1v14"]
 script = ExtResource("4_xpqxw")
 display_name = "To_Initial"
 transition_id = "initial_e"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_sh0j4"]
+script = ExtResource("4_xpqxw")
+display_name = "To_Puzzle2"
+transition_id = "puzzle2_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
@@ -96,7 +96,7 @@ size = Vector2(230, 125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgewv"]
 size = Vector2(125, 30)
 
-[node name="Room_A2" type="Node2D" unique_id=1910544872]
+[node name="Puzzle1Room" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
@@ -133,19 +133,19 @@ tile_set = SubResource("TileSet_kw6nx")
 z_index = -10
 tile_set = SubResource("TileSet_kw6nx")
 
-[node name="transition_puzzle2" parent="." unique_id=306758002 instance=ExtResource("3_dabev")]
-position = Vector2(1848, 744)
-transition_data = SubResource("Resource_sh0j4")
-
-[node name="ArrivalPoint" parent="transition_puzzle2" index="1" unique_id=1345594044]
-position = Vector2(-81, 30)
-
 [node name="transition_initial" parent="." unique_id=1724436172 instance=ExtResource("3_dabev")]
 position = Vector2(296, 360)
 transition_data = SubResource("Resource_m1v14")
 
 [node name="ArrivalPoint" parent="transition_initial" index="1" unique_id=1345594044]
 position = Vector2(63, 21)
+
+[node name="transition_puzzle2" parent="." unique_id=306758002 instance=ExtResource("3_dabev")]
+position = Vector2(1848, 744)
+transition_data = SubResource("Resource_sh0j4")
+
+[node name="ArrivalPoint" parent="transition_puzzle2" index="1" unique_id=1345594044]
+position = Vector2(-81, 30)
 
 [node name="AcidPit" type="Area2D" parent="." unique_id=1497553372]
 position = Vector2(1271.9999, 843)
@@ -216,8 +216,8 @@ position = Vector2(1803, 792)
 [node name="BrainBoss" parent="." unique_id=1698662619 instance=ExtResource("11_3ga1j")]
 position = Vector2(2139, 160)
 
-[editable path="transition_puzzle2"]
 [editable path="transition_initial"]
+[editable path="transition_puzzle2"]
 [editable path="A1_Switch"]
 [editable path="A2_Switch"]
 [editable path="A3_Switch"]

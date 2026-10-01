@@ -83,10 +83,10 @@ sources/3 = SubResource("TileSetAtlasSource_m4bha")
 [sub_resource type="Resource" id="Resource_m1v14"]
 script = ExtResource("5_aam35")
 display_name = "To_FirstPuzzle"
-transition_id = "firstpuzzle_w"
+transition_id = "puzzle1_w"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
-[node name="Room_A2" type="Node2D" unique_id=1910544872]
+[node name="InitialRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]

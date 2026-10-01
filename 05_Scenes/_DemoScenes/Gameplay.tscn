@@ -36,7 +36,19 @@ room_scene = ExtResource("5_e8wdy")
 [node name="FirstPuzzleRoom" type="Node2D" parent="WorldMap" unique_id=638557349]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
-room_id = "hatch"
+room_id = "puzzle1"
+room_scene = ExtResource("5_e2ro4")
+
+[node name="SecondPuzzleRoom" type="Node2D" parent="WorldMap" unique_id=221931391]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "puzzle2"
+room_scene = ExtResource("5_e2ro4")
+
+[node name="BossRoom" type="Node2D" parent="WorldMap" unique_id=818333461]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "stomachboss"
 room_scene = ExtResource("5_e2ro4")
 
 [node name="Connections" type="Node2D" parent="WorldMap" unique_id=1648242519]
@@ -44,7 +56,7 @@ room_scene = ExtResource("5_e2ro4")
 [node name="Connection_Initial_First" type="Node2D" parent="WorldMap/Connections" unique_id=2077472050 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
 room_a = NodePath("../../InitialRoom")
-exit_a_id = "firstpuzzle_w"
+exit_a_id = "puzzle1_w"
 room_b = NodePath("../../FirstPuzzleRoom")
 exit_b_id = "initial_e"
 
@@ -53,7 +65,35 @@ script = ExtResource("6_jsr1b")
 room_a = NodePath("../../FirstPuzzleRoom")
 exit_a_id = "initial_e"
 room_b = NodePath("../../InitialRoom")
-exit_b_id = "firstpuzzle_w"
+exit_b_id = "puzzle1_w"
+
+[node name="Connection_First_Second" type="Node2D" parent="WorldMap/Connections" unique_id=807796574 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../FirstPuzzleRoom")
+exit_a_id = "puzzle2_e"
+room_b = NodePath("../../SecondPuzzleRoom")
+exit_b_id = "puzzle1_w"
+
+[node name="Connection_Second_First" type="Node2D" parent="WorldMap/Connections" unique_id=1397824350 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../SecondPuzzleRoom")
+exit_a_id = "puzzle1_w"
+room_b = NodePath("../../FirstPuzzleRoom")
+exit_b_id = "puzzle2_e"
+
+[node name="Connection_Second_Boss" type="Node2D" parent="WorldMap/Connections" unique_id=1776887137 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../SecondPuzzleRoom")
+exit_a_id = "boss_w"
+room_b = NodePath("../../BossRoom")
+exit_b_id = "puzzle3_e"
+
+[node name="Connection_Boss_Second" type="Node2D" parent="WorldMap/Connections" unique_id=1951184563 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../BossRoom")
+exit_a_id = "puzzle3_e"
+room_b = NodePath("../../SecondPuzzleRoom")
+exit_b_id = "boss_w"
 
 [node name="RoomPersistances" type="Node2D" parent="." unique_id=944023517]
 script = ExtResource("9_e2ro4")
