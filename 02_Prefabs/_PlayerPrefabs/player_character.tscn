@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://x4v15ufut2cx" path="res://01_Scripts/Player/PlayerController.gd" id="1_q2jwi"]
 [ext_resource type="Texture2D" uid="uid://dwsdetorxv71" path="res://03_Art/_Player/charattack.png" id="2_g7cil"]
 [ext_resource type="Texture2D" uid="uid://1o7e48jyccc5" path="res://03_Art/TempAssets/Animals.png" id="2_ydyhr"]
+[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="3_aydsc"]
 [ext_resource type="Script" uid="uid://c8jhfob34xjcm" path="res://01_Scripts/WorldInteractions/AttackHitbox.gd" id="3_md7ae"]
 [ext_resource type="Texture2D" uid="uid://holao8ilrmtn" path="res://03_Art/_Player/car96.png" id="4_g7cil"]
 
@@ -28,6 +29,26 @@ region = Rect2(432, 198, 144, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2jelw"]
 atlas = ExtResource("2_g7cil")
 region = Rect2(576, 198, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hng6t"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(0, 196, 98, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4af73"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(98, 196, 98, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv848"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(196, 196, 98, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii0vn"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(294, 196, 98, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awa51"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(392, 196, 98, 98)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxv0f"]
 atlas = ExtResource("2_ydyhr")
@@ -101,6 +122,26 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_hng6t")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_4af73")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_xv848")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_ii0vn")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_awa51")
+}],
+"loop": 1,
+"name": &"Brain",
 "speed": 5.0
 }, {
 "frames": [{
@@ -185,7 +226,7 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Attack"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]

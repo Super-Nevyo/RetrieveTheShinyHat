@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://7cbkrkj2573a"]
+
+[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="1_dnopr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgd2t"]
+atlas = ExtResource("1_dnopr")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h17ca"]
+atlas = ExtResource("1_dnopr")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vexkq"]
+atlas = ExtResource("1_dnopr")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kw6nx"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_tgd2t")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_h17ca")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vexkq")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="BrainBoss" type="Node2D" unique_id=1698662619]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1075912230]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_kw6nx")
+animation = &"Idle"
+frame_progress = 0.34565443
