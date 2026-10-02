@@ -13,5 +13,5 @@ func _ready() -> void:
 func change_healthbar(new:float, max:float) -> void:
 	HPBar.change_healthbar(new,max)
 
-func change_inventory_UI(index: int, tex: Texture2D) -> void:
-	InvUI.ChangeInventoryUI(index,tex)
+func change_inventory_UI(index: int, item: Item) -> void:
+	InvUI.ChangeInventoryUI(index,item.tex)
