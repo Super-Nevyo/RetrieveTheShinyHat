@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://bx4nw0mno0ya3"]
+[gd_scene format=3 uid="uid://cn2rn15pdxosc"]
 
 [ext_resource type="Script" uid="uid://b717txvf74q2t" path="res://01_Scripts/Inventory/game_hud.gd" id="1_awiqt"]
-[ext_resource type="PackedScene" uid="uid://5mdfk0y7f3wi" path="res://02_Prefabs/UIPrefabs/Healthbar.tscn" id="1_ppufa"]
+[ext_resource type="PackedScene" uid="uid://gu6uawxsrxl8" path="res://02_Prefabs/UIPrefabs/Healthbar.tscn" id="1_ppufa"]
 [ext_resource type="PackedScene" uid="uid://cv2gct0dh0q70" path="res://02_Prefabs/UIPrefabs/InventoryUI.tscn" id="2_awiqt"]
+[ext_resource type="PackedScene" uid="uid://dxfwg2fx08ek" path="res://02_Prefabs/UIPrefabs/BreathBar.tscn" id="4_vk3oh"]
 
 [node name="GameHud" type="Control" unique_id=1741115912]
 layout_mode = 3
@@ -16,14 +17,26 @@ script = ExtResource("1_awiqt")
 [node name="Healthbar" parent="." unique_id=919437759 instance=ExtResource("1_ppufa")]
 layout_mode = 1
 offset_left = 100.0
-offset_top = 320.0
+offset_top = 541.0
 offset_right = 100.0
-offset_bottom = 320.0
+offset_bottom = 541.0
 rotation = 1.5707964
 
 [node name="InventoryUi" parent="." unique_id=1475960093 instance=ExtResource("2_awiqt")]
 layout_mode = 1
-offset_left = 100.0
-offset_top = 320.0
-offset_right = 100.0
-offset_bottom = 320.0
+offset_left = 135.0
+offset_top = 541.0
+offset_right = 135.0
+offset_bottom = 541.0
+
+[node name="BreathBar" parent="." unique_id=646066472 instance=ExtResource("4_vk3oh")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 25.0
+offset_top = 440.0
+offset_right = 25.0
+offset_bottom = 440.0
+grow_horizontal = 1
+grow_vertical = 1

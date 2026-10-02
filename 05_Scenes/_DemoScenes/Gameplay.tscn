@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dixvl57y0khmo" path="res://05_Scenes/_DemoScenes/02_TraversalRoom.tscn" id="7_6ij2g"]
 [ext_resource type="PackedScene" uid="uid://bvcua432id2v8" path="res://05_Scenes/_DemoScenes/03_BossRoom.tscn" id="8_qfl1h"]
 [ext_resource type="Script" uid="uid://dvmlf5pudw6e2" path="res://01_Scripts/WorldInteractions/RoomPersistances.gd" id="9_e2ro4"]
-[ext_resource type="PackedScene" uid="uid://bx4nw0mno0ya3" path="res://02_Prefabs/UIPrefabs/GameHud.tscn" id="9_e8wdy"]
+[ext_resource type="PackedScene" uid="uid://cn2rn15pdxosc" path="res://02_Prefabs/UIPrefabs/GameHud.tscn" id="9_e8wdy"]
 
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
 
@@ -90,15 +90,3 @@ script = ExtResource("9_e2ro4")
 anchors_preset = -1
 offset_top = 46.0
 offset_bottom = 46.0
-
-[node name="Healthbar" parent="GameHud" index="0" unique_id=919437759]
-offset_top = 541.0
-offset_bottom = 541.0
-
-[node name="InventoryUi" parent="GameHud" index="1" unique_id=1475960093]
-offset_left = 135.0
-offset_top = 541.0
-offset_right = 135.0
-offset_bottom = 541.0
-
-[editable path="GameHud"]

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b1nwi3qjrhsps"]
 
+[ext_resource type="PackedScene" uid="uid://cn2rn15pdxosc" path="res://02_Prefabs/UIPrefabs/GameHud.tscn" id="1_1lcwi"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="1_ppkka"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="2_3c2uc"]
 [ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/PressurePlate.tscn" id="3_3c2uc"]
@@ -10,6 +11,8 @@
 size = Vector2(1144, 20)
 
 [node name="PuzzleTestScene" type="Node2D" unique_id=1037801544]
+
+[node name="GameHud" parent="." unique_id=1741115912 instance=ExtResource("1_1lcwi")]
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("1_ppkka")]
 position = Vector2(860, 536)
@@ -36,6 +39,7 @@ activation_amount = Array[float]([1.0])
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("4_415yb")]
 position = Vector2(229, 467)
+breath_decay = 10.0
 
 [node name="Liquid" parent="." unique_id=1959433390 instance=ExtResource("5_wexxd")]
 position = Vector2(77.00003, 495.99997)
