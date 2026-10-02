@@ -5,7 +5,7 @@ class_name SecretArea
 @export var reveal_id: String
 
 @onready var cover: CanvasItem = $Cover
-@onready var reveal_trigger: Area2D = $Trigger
+@onready var reveal_trigger: Area2D = $RevealSecret
 
 var persistance: RoomPersistances
 
@@ -30,5 +30,9 @@ func reveal_now() -> void:
 	reveal_trigger.set_deferred("monitoring", false)
 
 func _on_reveal_trigger_body_entered(body: Node2D) -> void:
+	if body is PlayerController:
+		reveal()
+
+func _on_reveal_secret_body_entered(body: Node2D) -> void:
 	if body is PlayerController:
 		reveal()
