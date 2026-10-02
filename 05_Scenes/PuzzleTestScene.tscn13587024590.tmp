@@ -14,7 +14,6 @@ size = Vector2(1144, 20)
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("1_ppkka")]
 position = Vector2(860, 536)
 DoorMovePosition = Vector2(100, 100)
-move_speed = 2.0
 signal_id = 1
 
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("2_3c2uc")]

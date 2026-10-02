@@ -198,23 +198,17 @@ position = Vector2(510, 549)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 
-[node name="A1_Switch" parent="." unique_id=150077233 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("8_4bc4g")]
+[node name="A1_Switch" parent="." unique_id=150077233 instance=ExtResource("8_4bc4g")]
 visible = false
 position = Vector2(814, 881)
-AttachedNodes = [NodePath("../A1_AcidPlatform"), NodePath("../ExitA_Door")]
-ActivationAmount = Array[float]([1.0, 0.34])
 
-[node name="A2_Switch" parent="." unique_id=2142488282 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("8_4bc4g")]
+[node name="A2_Switch" parent="." unique_id=2142488282 instance=ExtResource("8_4bc4g")]
 visible = false
 position = Vector2(814, 273)
-AttachedNodes = [NodePath("../ExitA_Door")]
-ActivationAmount = Array[float]([0.34])
 
-[node name="A3_Switch" parent="." unique_id=443261928 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("8_4bc4g")]
+[node name="A3_Switch" parent="." unique_id=443261928 instance=ExtResource("8_4bc4g")]
 visible = false
 position = Vector2(1520, 752)
-AttachedNodes = [NodePath("../A1_AcidPlatform"), NodePath("../ExitA_Door")]
-ActivationAmount = Array[float]([-0.9, 0.34])
 
 [node name="A1_AcidPlatform" parent="." unique_id=425038002 instance=ExtResource("9_6avm4")]
 visible = false
