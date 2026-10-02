@@ -7,13 +7,15 @@ func _init(player:PlayerController):
 	Player = player
 
 func Enter():
-	pass
+	Player.player_anim.play("Swimming")
 
 func Exit():
 	pass
 
 func Update(delta:float):
-	if Player.direction_x :
+	if Player.direction_x != 0:
+		Player.player_anim.flip_h = Player.direction_x > 0
+	if Player.direction_x:
 		Player.velo.x = move_toward(Player.velo.x, Player.direction_x * Player.swim_speed, Player.swim_acceleration * delta)
 	else:
 		Player.velo.x = move_toward(Player.velo.x, 0, Player.swim_friction * delta)

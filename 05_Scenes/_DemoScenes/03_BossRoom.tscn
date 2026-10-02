@@ -81,7 +81,7 @@ sources/2 = SubResource("TileSetAtlasSource_epmgc")
 [sub_resource type="Resource" id="Resource_sh0j4"]
 script = ExtResource("5_hgay3")
 display_name = "To_Puzzle3"
-transition_id = "puzzle3_e"
+transition_id = "boss_exit_w"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]

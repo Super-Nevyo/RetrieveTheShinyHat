@@ -53,12 +53,6 @@ texture_region_size = Vector2i(48, 48)
 resource_name = "TempEnvNew"
 texture = ExtResource("3_b506u")
 texture_region_size = Vector2i(48, 48)
-3:0/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 2:1/0 = 0
@@ -83,7 +77,7 @@ sources/3 = SubResource("TileSetAtlasSource_m4bha")
 [sub_resource type="Resource" id="Resource_m1v14"]
 script = ExtResource("5_aam35")
 display_name = "To_FirstPuzzle"
-transition_id = "puzzle1_w"
+transition_id = "initial_exit_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [node name="InitialRoom" type="Node2D" unique_id=1910544872]
@@ -141,6 +135,9 @@ AttachedNodes = [NodePath("../A1_LiftPlatform")]
 ActivationAmount = Array[float]([15.0])
 puzzle_id = "liftplatform"
 
+[node name="Sprite2D" parent="A1_Switch/Area2D" parent_id_path=PackedInt32Array(150077233, 424739996) index="1" unique_id=1092581678]
+position = Vector2(1240, -572)
+
 [node name="A1_1_Switch" parent="." unique_id=633924250 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("11_lnsoe")]
 position = Vector2(1288, 809)
 AttachedNodes = [NodePath("../A1_LiftPlatform")]
@@ -152,6 +149,9 @@ position = Vector2(1664, 375)
 AttachedNodes = [NodePath("../A2_Door")]
 ActivationAmount = Array[float]([-1.0])
 puzzle_id = "openexit"
+
+[node name="Sprite2D" parent="A2_Switch/Area2D" parent_id_path=PackedInt32Array(2142488282, 424739996) index="1" unique_id=1092581678]
+position = Vector2(-366, -57)
 
 [node name="A3_Switch" parent="." unique_id=443261928 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("11_lnsoe")]
 position = Vector2(397, 155)
