@@ -3,6 +3,7 @@ class_name RoomPersistances
 
 #dictionary of active puzzles in a room, needs to know what room is it, what is the puzzle and wether is on or off
 var activepuzzles = {}
+var revealedsecrets = {} #dictionary of secret rooms
 
 #records the puzzle that was activated
 func remember_active(puzzle_id: String, room_id: String, is_active: bool) -> void:
@@ -10,7 +11,21 @@ func remember_active(puzzle_id: String, room_id: String, is_active: bool) -> voi
 		activepuzzles [room_id] = {}
 		
 	activepuzzles[room_id][puzzle_id] = is_active #stores the puzzle state
-	
 
 func puzzle_state (puzzle_id: String, room_id: String) -> bool:
 	return activepuzzles [room_id][puzzle_id]
+	
+	
+func remember_secret(room_id: String, reveal_id: String) -> void:
+	if not revealedsecrets.has(room_id):
+		revealedsecrets [room_id] = {}
+	revealedsecrets[room_id][reveal_id] = true
+	
+func is_revealed(room_id: String, reveal_id: String) -> bool:
+	if not revealedsecrets.has(room_id):
+		return false
+	
+	if not revealedsecrets[room_id].has(reveal_id):
+		return false
+	
+	return revealedsecrets[room_id][reveal_id]

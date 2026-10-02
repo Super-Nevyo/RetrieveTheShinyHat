@@ -82,7 +82,7 @@ exit_a_id = "traversal_exit_e"
 room_b = NodePath("../../BossRoom")
 exit_b_id = "boss_exit_w"
 
-[node name="RoomPersistances" type="Node2D" parent="." unique_id=944023517]
+[node name="RoomPersistances" type="Node2D" parent="." unique_id=944023517 groups=["room_persistance"]]
 script = ExtResource("9_e2ro4")
 
 [node name="GameHud" parent="." unique_id=1741115912 instance=ExtResource("9_e8wdy")]
