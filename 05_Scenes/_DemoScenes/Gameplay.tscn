@@ -58,7 +58,7 @@ room_scene = ExtResource("8_qfl1h")
 [node name="Connection_First_Carapace" type="Node2D" parent="WorldMap/Connections" unique_id=2077472050 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
 room_a = NodePath("../../Puzzle1")
-exit_a_id = "puzzle1_exit_w"
+exit_a_id = "puzzle1_exit_wcarapace"
 room_b = NodePath("../../ItemRoom1")
 exit_b_id = "carapace_exit_w"
 
