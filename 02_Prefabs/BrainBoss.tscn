@@ -37,4 +37,4 @@ animations = [{
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kw6nx")
 animation = &"Idle"
-frame_progress = 0.34565443
+frame_progress = 0.8094266

@@ -16,7 +16,7 @@
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("1_kmjnh")]
 z_index = 15
-position = Vector2(400, 600)
+position = Vector2(440, 624)
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=1312875347]
 
@@ -67,7 +67,7 @@ script = ExtResource("6_jsr1b")
 room_a = NodePath("../../Puzzle1")
 exit_a_id = "puzzle1_exit_wsecret"
 room_b = NodePath("../../ItemRoom1")
-exit_b_id = "carapace_exit_secret"
+exit_b_id = "carapace_exit_esecret"
 
 [node name="Connection_First_Traversal" type="Node2D" parent="WorldMap/Connections" unique_id=807796574 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")

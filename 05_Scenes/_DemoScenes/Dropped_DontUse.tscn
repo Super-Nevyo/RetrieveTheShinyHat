@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://by7l7bpjlhpma"]
 
 [ext_resource type="Script" uid="uid://bhc6vbhh2bcx0" path="res://01_Scripts/WorldInteractions/MapMetadata.gd" id="1_5w6lh"]
-[ext_resource type="Texture2D" uid="uid://dtpd7mv0rc4ne" path="res://03_Art/TempAssets/TemEnvUp.png" id="2_6kcdq"]
 [ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="3_w77it"]
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="4_2nyw4"]
 [ext_resource type="Script" uid="uid://b1m8fdhupmphl" path="res://05_Scenes/Acid.gd" id="5_wkigx"]
@@ -11,30 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="9_frlb5"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="10_2tlhh"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6lt1"]
-texture = ExtResource("2_6kcdq")
-margins = Vector2i(16, 16)
-separation = Vector2i(16, 16)
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-2:0/0 = 0
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_kw6nx"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_y6lt1")
 
 [sub_resource type="Resource" id="Resource_5w6lh"]
 script = ExtResource("4_2nyw4")
@@ -122,20 +100,14 @@ position = Vector2(510, 549)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 
-[node name="A1_Switch" parent="." unique_id=150077233 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("10_2tlhh")]
+[node name="A1_Switch" parent="." unique_id=150077233 instance=ExtResource("10_2tlhh")]
 position = Vector2(814, 881)
-AttachedNodes = [NodePath("../A1_AcidPlatform"), NodePath("../ExitA_Door")]
-ActivationAmount = Array[float]([1.0, 0.34])
 
-[node name="A2_Switch" parent="." unique_id=2142488282 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("10_2tlhh")]
+[node name="A2_Switch" parent="." unique_id=2142488282 instance=ExtResource("10_2tlhh")]
 position = Vector2(814, 273)
-AttachedNodes = [NodePath("../ExitA_Door")]
-ActivationAmount = Array[float]([0.34])
 
-[node name="A3_Switch" parent="." unique_id=443261928 node_paths=PackedStringArray("AttachedNodes") instance=ExtResource("10_2tlhh")]
+[node name="A3_Switch" parent="." unique_id=443261928 instance=ExtResource("10_2tlhh")]
 position = Vector2(1520, 752)
-AttachedNodes = [NodePath("../A1_AcidPlatform"), NodePath("../ExitA_Door")]
-ActivationAmount = Array[float]([-1.0, 0.34])
 
 [node name="A1_AcidPlatform" parent="." unique_id=425038002 instance=ExtResource("9_frlb5")]
 position = Vector2(1135, 1059)
