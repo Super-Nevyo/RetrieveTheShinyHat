@@ -10,9 +10,15 @@ func Enter():
 	Player.player_anim.play("Swimming")
 
 func Exit():
-	pass
+	Player.current_breath = Player.max_breath
+	Player.BreathChanged.emit(Player.current_breath)
 
 func Update(delta:float):
+	Player.current_breath -= Player.breath_decay * delta
+	Player.BreathChanged.emit(Player.current_breath)
+	if Player.current_breath <= 0:
+		Player.take_damage(1,Player.drown_dmg)
+		Player.current_breath += Player.breath_decay * Player.drown_relief
 	if Player.direction_x != 0:
 		Player.player_anim.flip_h = Player.direction_x > 0
 	if Player.direction_x:

@@ -8,6 +8,7 @@ extends CharacterBody2D
 #===SIGNALS
 signal HealthChanged(new: float, maxHp: float)
 signal ItemCollected(index: int, item: Item)
+signal BreathChanged(breath:float)
 
 #===MOVEMENT
 # Ground
@@ -23,6 +24,11 @@ var current_speed : float
 @export var swim_speed: float = 300
 @export var swim_acceleration: float = 800
 @export var swim_friction: float = 100
+var max_breath : float = 100 #this is 100 because the bar has a max of 100
+@onready var current_breath : float = max_breath
+@export var breath_decay : float = 1
+@export var drown_dmg : float = 10
+@export var drown_relief : float = 2
 
 var velo: Vector2 = Vector2.ZERO
 

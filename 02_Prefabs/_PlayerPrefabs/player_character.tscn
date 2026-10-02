@@ -217,6 +217,7 @@ collision_layer = 2
 script = ExtResource("1_q2jwi")
 speed = 200.0
 acceleration = 1000.0
+breath_decay = 5.0
 jump_time_down = 0.3
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
