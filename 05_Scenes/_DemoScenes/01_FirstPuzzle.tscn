@@ -80,8 +80,8 @@ sources/2 = SubResource("TileSetAtlasSource_epmgc")
 
 [sub_resource type="Resource" id="Resource_m1v14"]
 script = ExtResource("4_xpqxw")
-display_name = "To_Initial"
-transition_id = "puzzle1_exit_w"
+display_name = "To_CarapaceSecret"
+transition_id = "puzzle1_exit_wsecret"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_sh0j4"]
@@ -140,7 +140,14 @@ transition_data = SubResource("Resource_m1v14")
 [node name="ArrivalPoint" parent="transition_initial" index="1" unique_id=1345594044]
 position = Vector2(60, 27)
 
-[node name="transition_puzzle2" parent="." unique_id=306758002 instance=ExtResource("3_dabev")]
+[node name="transition_secret" parent="." unique_id=306758002 instance=ExtResource("3_dabev")]
+position = Vector2(295, 935)
+transition_data = SubResource("Resource_m1v14")
+
+[node name="ArrivalPoint" parent="transition_secret" index="1" unique_id=1345594044]
+position = Vector2(60, 27)
+
+[node name="transition_puzzle2" parent="." unique_id=1122006064 instance=ExtResource("3_dabev")]
 position = Vector2(1848, 744)
 transition_data = SubResource("Resource_sh0j4")
 
@@ -220,6 +227,7 @@ position = Vector2(1803, 792)
 position = Vector2(2139, 160)
 
 [editable path="transition_initial"]
+[editable path="transition_secret"]
 [editable path="transition_puzzle2"]
 [editable path="A1_Switch"]
 [editable path="A2_Switch"]

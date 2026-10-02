@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="1_kmjnh"]
 [ext_resource type="Script" uid="uid://c65san5kq2b3e" path="res://01_Scripts/_Manager/RoomManager.gd" id="2_8w24r"]
+[ext_resource type="PackedScene" uid="uid://d16myrmq1kru" path="res://05_Scenes/_DemoScenes/00_CarapaceRoom.tscn" id="5_6ij2g"]
 [ext_resource type="PackedScene" uid="uid://ceo7k687ylrlw" path="res://05_Scenes/_DemoScenes/01_FirstPuzzle.tscn" id="5_e2ro4"]
-[ext_resource type="PackedScene" uid="uid://b6yur1cji6hw2" path="res://05_Scenes/_DemoScenes/00_InitialRoom.tscn" id="5_e8wdy"]
 [ext_resource type="Script" uid="uid://bvyll42gdi632" path="res://01_Scripts/WorldInteractions/MapRoom.gd" id="5_khsvw"]
 [ext_resource type="Script" uid="uid://cvitv2plkwb3d" path="res://01_Scripts/WorldInteractions/WorldMap.gd" id="5_wg5p8"]
 [ext_resource type="Script" uid="uid://cjlfmchl8gn8" path="res://01_Scripts/WorldInteractions/MapTransition.gd" id="6_jsr1b"]
-[ext_resource type="PackedScene" uid="uid://dixvl57y0khmo" path="res://05_Scenes/_DemoScenes/02_SecondPuzzle.tscn" id="7_6ij2g"]
+[ext_resource type="PackedScene" uid="uid://dixvl57y0khmo" path="res://05_Scenes/_DemoScenes/02_TraversalRoom.tscn" id="7_6ij2g"]
 [ext_resource type="PackedScene" uid="uid://bvcua432id2v8" path="res://05_Scenes/_DemoScenes/03_BossRoom.tscn" id="8_qfl1h"]
 [ext_resource type="Script" uid="uid://dvmlf5pudw6e2" path="res://01_Scripts/WorldInteractions/RoomPersistances.gd" id="9_e2ro4"]
 [ext_resource type="PackedScene" uid="uid://bx4nw0mno0ya3" path="res://02_Prefabs/UIPrefabs/GameHud.tscn" id="9_e8wdy"]
@@ -15,13 +15,13 @@
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("1_kmjnh")]
-position = Vector2(1557, 157)
+position = Vector2(400, 600)
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=1312875347]
 
 [node name="RoomManager" type="Node2D" parent="RoomContainer" unique_id=1411798338 node_paths=PackedStringArray("starting_room", "room_container", "world_map", "player", "activated_puzzles")]
 script = ExtResource("2_8w24r")
-starting_room = NodePath("../../WorldMap/InitialRoom")
+starting_room = NodePath("../../WorldMap/Puzzle1")
 room_container = NodePath("..")
 world_map = NodePath("../../WorldMap")
 player = NodePath("../../PlayerCharacter")
@@ -30,49 +30,55 @@ activated_puzzles = NodePath("../../RoomPersistances")
 [node name="WorldMap" type="Node2D" parent="." unique_id=1035054344]
 script = ExtResource("5_wg5p8")
 
-[node name="InitialRoom" type="Node2D" parent="WorldMap" unique_id=1770045339]
+[node name="ItemRoom1" type="Node2D" parent="WorldMap" unique_id=566807680]
 script = ExtResource("5_khsvw")
-room_id = "initial"
-room_scene = ExtResource("5_e8wdy")
+room_id = "item_carapace"
+room_scene = ExtResource("5_6ij2g")
 
-[node name="FirstPuzzleRoom" type="Node2D" parent="WorldMap" unique_id=638557349]
-position = Vector2(-4, 0)
+[node name="Puzzle1" type="Node2D" parent="WorldMap" unique_id=1770045339]
 script = ExtResource("5_khsvw")
 room_id = "puzzle1"
 room_scene = ExtResource("5_e2ro4")
 
-[node name="SecondPuzzleRoom" type="Node2D" parent="WorldMap" unique_id=221931391]
+[node name="Traversal1" type="Node2D" parent="WorldMap" unique_id=221931391]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
-room_id = "puzzle2"
+room_id = "traversal1"
 room_scene = ExtResource("7_6ij2g")
 
 [node name="BossRoom" type="Node2D" parent="WorldMap" unique_id=818333461]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
-room_id = "stomachboss"
+room_id = "stomach_boss"
 room_scene = ExtResource("8_qfl1h")
 
 [node name="Connections" type="Node2D" parent="WorldMap" unique_id=1648242519]
 
-[node name="Connection_Initial_First" type="Node2D" parent="WorldMap/Connections" unique_id=2077472050 node_paths=PackedStringArray("room_a", "room_b")]
+[node name="Connection_First_Carapace" type="Node2D" parent="WorldMap/Connections" unique_id=2077472050 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
-room_a = NodePath("../../InitialRoom")
-exit_a_id = "initial_exit_e"
-room_b = NodePath("../../FirstPuzzleRoom")
-exit_b_id = "puzzle1_exit_w"
+room_a = NodePath("../../Puzzle1")
+exit_a_id = "puzzle1_exit_w"
+room_b = NodePath("../../ItemRoom1")
+exit_b_id = "carapace_exit_w"
 
-[node name="Connection_First_Second" type="Node2D" parent="WorldMap/Connections" unique_id=807796574 node_paths=PackedStringArray("room_a", "room_b")]
+[node name="Connection_First_CarapaceSecret" type="Node2D" parent="WorldMap/Connections" unique_id=1385997582 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
-room_a = NodePath("../../FirstPuzzleRoom")
+room_a = NodePath("../../Puzzle1")
+exit_a_id = "puzzle1_exit_wsecret"
+room_b = NodePath("../../ItemRoom1")
+exit_b_id = "carapace_exit_secret"
+
+[node name="Connection_First_Traversal" type="Node2D" parent="WorldMap/Connections" unique_id=807796574 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../Puzzle1")
 exit_a_id = "puzzle1_exit_e"
-room_b = NodePath("../../SecondPuzzleRoom")
-exit_b_id = "puzzle2_exit_w"
+room_b = NodePath("../../Traversal1")
+exit_b_id = "traversal_exit_w"
 
 [node name="Connection_Second_Boss" type="Node2D" parent="WorldMap/Connections" unique_id=1776887137 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
-room_a = NodePath("../../SecondPuzzleRoom")
-exit_a_id = "puzzle2_exit_e"
+room_a = NodePath("../../Traversal1")
+exit_a_id = "traversal_exit_e"
 room_b = NodePath("../../BossRoom")
 exit_b_id = "boss_exit_w"
 
