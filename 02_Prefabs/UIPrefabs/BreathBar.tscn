@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dxfwg2fx08ek"]
+
+[ext_resource type="Texture2D" uid="uid://d0kaqmiym3ns8" path="res://03_Art/Items/Empty.png" id="1_jddh1"]
+[ext_resource type="Script" uid="uid://x2imsrt3jfq3" path="res://01_Scripts/Inventory/breath_bar.gd" id="1_u6i24"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4aysw"]
+bg_color = Color(0.7005971, 0.44838083, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p2tw8"]
+texture = ExtResource("1_jddh1")
+axis_stretch_horizontal = 1
+modulate_color = Color(0.10779586, 0.34480074, 1, 1)
+
+[node name="BreathBar" type="Control" unique_id=646066472]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u6i24")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1225315549]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4aysw")
+theme_override_styles/fill = SubResource("StyleBoxTexture_p2tw8")
+value = 100.0
+show_percentage = false
