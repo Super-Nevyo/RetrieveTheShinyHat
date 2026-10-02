@@ -69,6 +69,7 @@ size = Vector2(230, 125)
 size = Vector2(125, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7jyp"]
+size = Vector2(173, 51)
 
 [sub_resource type="Animation" id="Animation_uf0fo"]
 resource_name = "EndingAnimation"
@@ -268,9 +269,12 @@ position = Vector2(1118, 578)
 
 [node name="EndingTrigger" type="Area2D" parent="." unique_id=1000559646]
 position = Vector2(1101, 931)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("10_uf0fo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndingTrigger" unique_id=1317730497]
+position = Vector2(0.5, -14.5)
 shape = SubResource("RectangleShape2D_o7jyp")
 
 [node name="EndingAnimation" type="AnimationPlayer" parent="EndingTrigger" unique_id=513905450]
@@ -282,6 +286,8 @@ position = Vector2(1102, 895)
 sprite_frames = SubResource("SpriteFrames_kw6nx")
 animation = &"BossBite"
 frame = 1
+
+[connection signal="body_entered" from="EndingTrigger" to="EndingTrigger" method="_on_body_entered"]
 
 [editable path="transition_traversal"]
 [editable path="BrainBoss"]
