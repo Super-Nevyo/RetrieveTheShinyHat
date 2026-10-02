@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cmeda3rens1nd"]
+
+[ext_resource type="Script" uid="uid://bk2t56akx61pm" path="res://01_Scripts/WorldInteractions/secret_area.gd" id="1_41f3y"]
+[ext_resource type="Texture2D" uid="uid://bome11uw75l7m" path="res://03_Art/TempAssets/EnvSizes.png" id="2_7cyit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nj36i"]
+texture = ExtResource("2_7cyit")
+texture_region_size = Vector2i(48, 48)
+
+[sub_resource type="TileSet" id="TileSet_g7rlf"]
+tile_size = Vector2i(48, 48)
+sources/0 = SubResource("TileSetAtlasSource_nj36i")
+
+[node name="SecretArea" type="Area2D" unique_id=788524278]
+script = ExtResource("1_41f3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1565396475]
+shape = SubResource("RectangleShape2D_kw6nx")
+
+[node name="Cover" type="TileMapLayer" parent="." unique_id=1660859305]
+tile_set = SubResource("TileSet_g7rlf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

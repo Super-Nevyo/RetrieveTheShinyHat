@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://x4v15ufut2cx" path="res://01_Scripts/Player/PlayerController.gd" id="1_q2jwi"]
 [ext_resource type="Texture2D" uid="uid://dwsdetorxv71" path="res://03_Art/_Player/charattack.png" id="2_g7cil"]
-[ext_resource type="Texture2D" uid="uid://1o7e48jyccc5" path="res://03_Art/TempAssets/Animals.png" id="2_ydyhr"]
 [ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="3_aydsc"]
 [ext_resource type="Script" uid="uid://c8jhfob34xjcm" path="res://01_Scripts/WorldInteractions/AttackHitbox.gd" id="3_md7ae"]
 [ext_resource type="Texture2D" uid="uid://holao8ilrmtn" path="res://03_Art/_Player/car96.png" id="4_g7cil"]
@@ -50,13 +49,13 @@ region = Rect2(294, 196, 98, 98)
 atlas = ExtResource("3_aydsc")
 region = Rect2(392, 196, 98, 98)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gxv0f"]
-atlas = ExtResource("2_ydyhr")
-region = Rect2(160, 256, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4msjd"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(196, 98, 98, 98)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r6ql3"]
-atlas = ExtResource("2_ydyhr")
-region = Rect2(192, 256, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lnuv"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(294, 98, 98, 98)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igetw"]
 atlas = ExtResource("4_g7cil")
@@ -146,10 +145,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.5,
-"texture": SubResource("AtlasTexture_gxv0f")
+"texture": SubResource("AtlasTexture_4msjd")
 }, {
 "duration": 1.5,
-"texture": SubResource("AtlasTexture_r6ql3")
+"texture": SubResource("AtlasTexture_5lnuv")
 }],
 "loop": 1,
 "name": &"Climb",
@@ -213,10 +212,12 @@ animations = [{
 size = Vector2(16.017548, 58)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
+scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_q2jwi")
 speed = 200.0
 acceleration = 1000.0
+jump_time_down = 0.3
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
 z_index = 1
@@ -226,8 +227,9 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Idle"
+animation = &"Climb"
 autoplay = "Idle"
+frame_progress = 0.21459728
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
 position = Vector2(48, 35)

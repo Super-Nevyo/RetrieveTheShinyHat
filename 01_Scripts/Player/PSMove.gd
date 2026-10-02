@@ -33,7 +33,7 @@ func update_animation(direction: float) -> void:
 	if Player.is_attacking:
 		return
 	if direction != 0:
-		Player.player_anim.flip_h = direction > 0 #built in flip horizontal and vertical (v)
+		Player.player_anim.flip_h = direction < 0 #built in flip horizontal and vertical (v)
 		Player.attack_collision.position.x = direction * Player.attack_offset
 	if direction != 0: #elif if inbetween if and else > serves as "otherwise if"
 		Player.player_anim.play("Walk")

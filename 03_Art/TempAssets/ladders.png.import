@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1o7e48jyccc5"
-path="res://.godot/imported/Animals.png-2d576f41b82bc1612d6da327fd287498.ctex"
+uid="uid://bs6pclf131rjg"
+path="res://.godot/imported/ladders.png-4dae6148e9634ddbbf90baa58581c3d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://03_Art/TempAssets/Animals.png"
-dest_files=["res://.godot/imported/Animals.png-2d576f41b82bc1612d6da327fd287498.ctex"]
+source_file="res://03_Art/TempAssets/ladders.png"
+dest_files=["res://.godot/imported/ladders.png-4dae6148e9634ddbbf90baa58581c3d0.ctex"]
 
 [params]
 
