@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://n42r34pmo1fh"]
+
+[ext_resource type="Script" uid="uid://bgcenp5dmv46d" path="res://01_Scripts/Puzzle/light.gd" id="1_6pw1d"]
+[ext_resource type="Shader" uid="uid://b2laatuqwwc7s" path="res://02_Prefabs/PuzzlePrefabs/ColourChangeShader.gdshader" id="1_q4gqc"]
+[ext_resource type="Texture2D" uid="uid://dwa2xm2fk72b5" path="res://03_Art/Environment/Lights/Lights.png" id="2_6pw1d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qsmb2"]
+shader = ExtResource("1_q4gqc")
+shader_parameter/image_in = ExtResource("2_6pw1d")
+
+[node name="Light" type="Node2D" unique_id=2073561881]
+scale = Vector2(4, 4)
+script = ExtResource("1_6pw1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=87334520]
+texture_filter = 1
+material = SubResource("ShaderMaterial_qsmb2")
+texture = ExtResource("2_6pw1d")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
