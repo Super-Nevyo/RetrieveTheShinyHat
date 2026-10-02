@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="7_vq8gf"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="8_tqexp"]
 [ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="9_fa4ga"]
+[ext_resource type="Script" uid="uid://ixs13tk61ybs" path="res://01_Scripts/EndGameTrigger.gd" id="10_uf0fo"]
+[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="11_p5xto"]
 [ext_resource type="PackedScene" uid="uid://7cbkrkj2573a" path="res://02_Prefabs/BrainBoss.tscn" id="12_qavg7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3llcm"]
@@ -65,6 +67,123 @@ size = Vector2(230, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgewv"]
 size = Vector2(125, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7jyp"]
+
+[sub_resource type="Animation" id="Animation_uf0fo"]
+resource_name = "EndingAnimation"
+length = 3.0000000000000004
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CinematicPlayer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1102, 895), Vector2(1080, 710)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CinematicPlayer:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.26666668, 0.36666667, 0.46666667, 0.56666666, 0.6996738, 0.9011619, 1.0997568, 1.3001825, 1.501164, 1.698533, 2.0033853, 2.30231, 2.4666667, 2.6103857),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 3, 3, 4, 3, 2, 3, 4, 3, 4, 3, 2, 4]
+}
+
+[sub_resource type="Animation" id="Animation_p5xto"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CinematicPlayer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1102, 895)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CinematicPlayer:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p5xto"]
+_data = {
+&"EndingAnimation": SubResource("Animation_uf0fo"),
+&"RESET": SubResource("Animation_p5xto")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o0x7"]
+atlas = ExtResource("11_p5xto")
+region = Rect2(0, 196, 98, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8orwl"]
+atlas = ExtResource("11_p5xto")
+region = Rect2(98, 196, 98, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alcqo"]
+atlas = ExtResource("11_p5xto")
+region = Rect2(196, 196, 98, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blv6u"]
+atlas = ExtResource("11_p5xto")
+region = Rect2(294, 196, 98, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgay3"]
+atlas = ExtResource("11_p5xto")
+region = Rect2(392, 196, 98, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kw6nx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o0x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8orwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alcqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blv6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgay3")
+}],
+"loop": 1,
+"name": &"BossBite",
+"speed": 5.0
+}]
 
 [node name="BossRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
@@ -147,4 +266,22 @@ shape = SubResource("RectangleShape2D_bgewv")
 [node name="BrainBoss" parent="." unique_id=1698662619 instance=ExtResource("12_qavg7")]
 position = Vector2(1118, 578)
 
+[node name="EndingTrigger" type="Area2D" parent="." unique_id=1000559646]
+position = Vector2(1101, 931)
+script = ExtResource("10_uf0fo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndingTrigger" unique_id=1317730497]
+shape = SubResource("RectangleShape2D_o7jyp")
+
+[node name="EndingAnimation" type="AnimationPlayer" parent="EndingTrigger" unique_id=513905450]
+libraries/ = SubResource("AnimationLibrary_p5xto")
+
+[node name="CinematicPlayer" type="AnimatedSprite2D" parent="." unique_id=58707786]
+visible = false
+position = Vector2(1102, 895)
+sprite_frames = SubResource("SpriteFrames_kw6nx")
+animation = &"BossBite"
+frame = 1
+
 [editable path="transition_traversal"]
+[editable path="BrainBoss"]
