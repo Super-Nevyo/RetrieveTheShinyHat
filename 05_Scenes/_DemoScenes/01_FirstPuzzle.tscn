@@ -11,6 +11,13 @@
 [ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="7_uq4bb"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="8_4bc4g"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="9_6avm4"]
+[ext_resource type="PackedScene" uid="uid://n42r34pmo1fh" path="res://02_Prefabs/PuzzlePrefabs/Light.tscn" id="12_udues"]
+[ext_resource type="Shader" uid="uid://cub6disctfoaq" path="res://PaletteSwap.tres" id="13_y3j3e"]
+[ext_resource type="Texture2D" uid="uid://coudayyvfsttn" path="res://06_Extras/PalletSwaps/BluePalletOn.png" id="14_bnkqy"]
+[ext_resource type="Texture2D" uid="uid://lqx8b31wm4mv" path="res://06_Extras/PalletSwaps/GreenPalletOn.png" id="14_j4sty"]
+[ext_resource type="Texture2D" uid="uid://docn0xg4wss2r" path="res://06_Extras/PalletSwaps/DefaultPallet.png" id="15_bnkqy"]
+[ext_resource type="Texture2D" uid="uid://ds8wv51qapj7k" path="res://06_Extras/PalletSwaps/GreenPalletOff.png" id="16_1gdf8"]
+[ext_resource type="Texture2D" uid="uid://biowk03c2mfwa" path="res://06_Extras/PalletSwaps/BluePalletOff.png" id="16_3xloq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epmgc"]
 resource_name = "TempEnvNew"
@@ -54,6 +61,30 @@ size = Vector2(230, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgewv"]
 size = Vector2(125, 30)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4or4"]
+shader = ExtResource("13_y3j3e")
+shader_parameter/original_palette = ExtResource("15_bnkqy")
+shader_parameter/new_palette = ExtResource("14_bnkqy")
+shader_parameter/colours_count = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_re327"]
+shader = ExtResource("13_y3j3e")
+shader_parameter/original_palette = ExtResource("15_bnkqy")
+shader_parameter/new_palette = ExtResource("16_3xloq")
+shader_parameter/colours_count = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xloq"]
+shader = ExtResource("13_y3j3e")
+shader_parameter/original_palette = ExtResource("15_bnkqy")
+shader_parameter/new_palette = ExtResource("14_j4sty")
+shader_parameter/colours_count = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jh3jw"]
+shader = ExtResource("13_y3j3e")
+shader_parameter/original_palette = ExtResource("15_bnkqy")
+shader_parameter/new_palette = ExtResource("16_1gdf8")
+shader_parameter/colours_count = 5
 
 [node name="Puzzle1" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
@@ -181,20 +212,20 @@ signal_id = 3
 
 [node name="A1_Switch" parent="." unique_id=150077233 instance=ExtResource("8_4bc4g")]
 position = Vector2(967, 630)
-attached_ids = Array[int]([1, 2, 3])
-activation_amount = Array[float]([0.34, 1.0, -1.0])
+attached_ids = Array[int]([1, 2, 3, 10])
+activation_amount = Array[float]([0.34, 1.0, -1.0, 1.0])
 puzzle_id = "platform_and_door"
 
 [node name="A2_Switch" parent="." unique_id=2142488282 instance=ExtResource("8_4bc4g")]
 position = Vector2(1204, 332)
-attached_ids = Array[int]([1, 3])
-activation_amount = Array[float]([0.34, 0.5])
+attached_ids = Array[int]([1, 3, 11])
+activation_amount = Array[float]([0.34, 0.5, 1.0])
 puzzle_id = "door"
 
 [node name="A3_Switch" parent="." unique_id=443261928 instance=ExtResource("8_4bc4g")]
 position = Vector2(1628, 727)
-attached_ids = Array[int]([1, 2, 3])
-activation_amount = Array[float]([0.34, -1.0, 0.5])
+attached_ids = Array[int]([1, 2, 3, 12])
+activation_amount = Array[float]([0.34, -1.0, 0.5, 1.0])
 
 [node name="A1_AcidPlatform" parent="." unique_id=425038002 instance=ExtResource("9_6avm4")]
 z_index = 5
@@ -210,11 +241,100 @@ DoorMovePosition = Vector2(0, 110)
 move_speed = 2.0
 signal_id = 1
 
+[node name="Lights" type="Node" parent="." unique_id=2084832459]
+
+[node name="BlueLight" parent="Lights" unique_id=2073561881 instance=ExtResource("12_udues")]
+position = Vector2(1607, 796)
+signal_id = 12
+
+[node name="Sprite2D" parent="Lights/BlueLight" index="0" unique_id=87334520]
+material = SubResource("ShaderMaterial_v4or4")
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Lights/BlueLight" index="1" unique_id=401355035]
+material = SubResource("ShaderMaterial_re327")
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="BlueLight2" parent="Lights" unique_id=2080983485 instance=ExtResource("12_udues")]
+position = Vector2(1745, 801)
+signal_id = 12
+
+[node name="Sprite2D" parent="Lights/BlueLight2" index="0" unique_id=87334520]
+material = SubResource("ShaderMaterial_v4or4")
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Lights/BlueLight2" index="1" unique_id=401355035]
+material = SubResource("ShaderMaterial_re327")
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="BlueLight3" parent="Lights" unique_id=292082311 instance=ExtResource("12_udues")]
+position = Vector2(408, 466)
+signal_id = 12
+
+[node name="Sprite2D" parent="Lights/BlueLight3" index="0" unique_id=87334520]
+material = SubResource("ShaderMaterial_v4or4")
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Lights/BlueLight3" index="1" unique_id=401355035]
+material = SubResource("ShaderMaterial_re327")
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="RedLight" parent="Lights" unique_id=852194727 instance=ExtResource("12_udues")]
+position = Vector2(972, 700)
+signal_id = 10
+
+[node name="RedLight2" parent="Lights" unique_id=669768584 instance=ExtResource("12_udues")]
+position = Vector2(1849, 792)
+signal_id = 10
+
+[node name="RedLight3" parent="Lights" unique_id=142699152 instance=ExtResource("12_udues")]
+position = Vector2(1567, 1020)
+signal_id = 10
+
+[node name="GreenLight" parent="Lights" unique_id=512392304 instance=ExtResource("12_udues")]
+position = Vector2(1203, 410)
+signal_id = 11
+
+[node name="Sprite2D" parent="Lights/GreenLight" index="0" unique_id=87334520]
+material = SubResource("ShaderMaterial_3xloq")
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Lights/GreenLight" index="1" unique_id=401355035]
+material = SubResource("ShaderMaterial_jh3jw")
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="GreenLight2" parent="Lights" unique_id=157126842 instance=ExtResource("12_udues")]
+position = Vector2(1801, 793)
+signal_id = 11
+
+[node name="Sprite2D" parent="Lights/GreenLight2" index="0" unique_id=87334520]
+material = SubResource("ShaderMaterial_3xloq")
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Lights/GreenLight2" index="1" unique_id=401355035]
+material = SubResource("ShaderMaterial_jh3jw")
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="GreenLight3" parent="Lights" unique_id=1826235581 instance=ExtResource("12_udues")]
+position = Vector2(408, 519)
+signal_id = 11
+
+[node name="Sprite2D" parent="Lights/GreenLight3" index="0" unique_id=87334520]
+material = SubResource("ShaderMaterial_3xloq")
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Lights/GreenLight3" index="1" unique_id=401355035]
+material = SubResource("ShaderMaterial_jh3jw")
+region_rect = Rect2(16, 0, 16, 16)
+
 [editable path="SecretAreaCarapaceDown"]
 [editable path="SecretAreaCarapaceUp"]
 [editable path="transition_puzzle2"]
 [editable path="transition_carapace"]
 [editable path="transition_carapacesecret"]
-[editable path="A1_Switch"]
-[editable path="A2_Switch"]
-[editable path="A3_Switch"]
+[editable path="Lights/BlueLight"]
+[editable path="Lights/BlueLight2"]
+[editable path="Lights/BlueLight3"]
+[editable path="Lights/GreenLight"]
+[editable path="Lights/GreenLight2"]
+[editable path="Lights/GreenLight3"]

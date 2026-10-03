@@ -33,5 +33,5 @@ offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxFlat_4aysw")
 theme_override_styles/fill = SubResource("StyleBoxTexture_p2tw8")
 value = 100.0
-fill_mode = 3
+fill_mode = 2
 show_percentage = false

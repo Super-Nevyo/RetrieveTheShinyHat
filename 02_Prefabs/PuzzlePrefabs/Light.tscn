@@ -1,18 +1,38 @@
 [gd_scene format=3 uid="uid://n42r34pmo1fh"]
 
 [ext_resource type="Script" uid="uid://bgcenp5dmv46d" path="res://01_Scripts/Puzzle/light.gd" id="1_6pw1d"]
-[ext_resource type="Shader" uid="uid://b2laatuqwwc7s" path="res://02_Prefabs/PuzzlePrefabs/ColourChangeShader.gdshader" id="1_q4gqc"]
+[ext_resource type="Shader" uid="uid://cub6disctfoaq" path="res://PaletteSwap.tres" id="2_2evnb"]
 [ext_resource type="Texture2D" uid="uid://dwa2xm2fk72b5" path="res://03_Art/Environment/Lights/Lights.png" id="2_6pw1d"]
+[ext_resource type="Texture2D" uid="uid://dvne45xxop4du" path="res://06_Extras/PalletSwaps/RedPalletOn.png" id="3_0cgjf"]
+[ext_resource type="Texture2D" uid="uid://docn0xg4wss2r" path="res://06_Extras/PalletSwaps/DefaultPallet.png" id="4_b6veg"]
+[ext_resource type="Texture2D" uid="uid://cs38mv3vlmxmc" path="res://06_Extras/PalletSwaps/RedPalletOff.png" id="6_b6veg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ry4t4"]
+shader = ExtResource("2_2evnb")
+shader_parameter/original_palette = ExtResource("4_b6veg")
+shader_parameter/new_palette = ExtResource("3_0cgjf")
+shader_parameter/colours_count = 5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qsmb2"]
-shader = ExtResource("1_q4gqc")
-shader_parameter/image_in = ExtResource("2_6pw1d")
+shader = ExtResource("2_2evnb")
+shader_parameter/original_palette = ExtResource("4_b6veg")
+shader_parameter/new_palette = ExtResource("6_b6veg")
+shader_parameter/colours_count = 5
 
-[node name="Light" type="Node2D" unique_id=2073561881]
+[node name="Light" type="Node2D" unique_id=2073561881 node_paths=PackedStringArray("on_sprite")]
 scale = Vector2(4, 4)
 script = ExtResource("1_6pw1d")
+on_sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=87334520]
+z_index = 1
+texture_filter = 1
+material = SubResource("ShaderMaterial_ry4t4")
+texture = ExtResource("2_6pw1d")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=401355035]
 texture_filter = 1
 material = SubResource("ShaderMaterial_qsmb2")
 texture = ExtResource("2_6pw1d")
