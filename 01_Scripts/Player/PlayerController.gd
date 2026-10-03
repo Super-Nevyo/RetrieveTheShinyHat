@@ -126,6 +126,7 @@ func take_damage(type: int,amount:float):
 
 func die():
 	isdead = true
+	get_tree().change_scene_to_file("res://05_Scenes/_DemoScenes/LoseScene.tscn")
 
 func change_water(entering:bool):
 	if entering:
