@@ -209,7 +209,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
-size = Vector2(16.017548, 58)
+size = Vector2(22.263165, 58)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
 scale = Vector2(0.8, 0.8)
@@ -219,6 +219,8 @@ speed = 200.0
 acceleration = 1000.0
 breath_decay = 5.0
 jump_time_down = 0.3
+attack_offset = 25.0
+throw_speed = 500.0
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
 z_index = 1
@@ -228,22 +230,24 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Jump"
+animation = &"Attack"
 autoplay = "Idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
-position = Vector2(48, 35)
+position = Vector2(0, 35)
 scale = Vector2(2.2799988, 1)
 collision_layer = 4
 collision_mask = 8
 script = ExtResource("3_md7ae")
 
 [node name="HitBox" type="CollisionShape2D" parent="AttackHitBox" unique_id=34871703]
-position = Vector2(-7.570177, -18)
+position = Vector2(0, -18)
+scale = Vector2(0.9999999, 0.99999994)
 shape = SubResource("RectangleShape2D_kw6nx")
 disabled = true
+
+[node name="HoldPosition" type="Node2D" parent="." unique_id=2105991285]
+position = Vector2(0, -20)
 
 [connection signal="animation_finished" from="PlayerAnim" to="." method="_on_player_anim_animation_finished"]
 [connection signal="area_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_area_entered"]

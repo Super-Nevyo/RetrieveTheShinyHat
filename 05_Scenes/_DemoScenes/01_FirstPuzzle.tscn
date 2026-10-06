@@ -226,6 +226,7 @@ puzzle_id = "door"
 position = Vector2(1628, 727)
 attached_ids = Array[int]([1, 2, 3, 12])
 activation_amount = Array[float]([0.34, -1.0, 0.5, 1.0])
+puzzle_id = "door_unplatform"
 
 [node name="A1_AcidPlatform" parent="." unique_id=425038002 instance=ExtResource("9_6avm4")]
 z_index = 5

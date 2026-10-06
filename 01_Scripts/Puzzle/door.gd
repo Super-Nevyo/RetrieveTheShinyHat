@@ -18,8 +18,6 @@ func _physics_process(delta: float) -> void:
 	if !has_reached_position:
 		if ActivationAmount >= 1:
 			step = clamp(step + move_speed * delta,0,1)
-			print(step)
-			print(DoorMovePosition.y - DoorStartPosition.y)
 			#Door.position = Vector2(lerp(Door.position.x, DoorMovePosition.x, abs(DoorMovePosition.x - DoorStartPosition.x) * move_speed),lerp(Door.position.y, DoorMovePosition.y, abs(DoorStartPosition.y - DoorMovePosition.y) * move_speed))
 			Door.position = lerp(DoorStartPosition, DoorMovePosition, step)
 			if abs((DoorMovePosition - Door.position).length())<0.1:

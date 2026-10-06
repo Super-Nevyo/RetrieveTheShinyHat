@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/PressurePlate.tscn" id="3_3c2uc"]
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="4_415yb"]
 [ext_resource type="PackedScene" uid="uid://vcn01q1ejf05" path="res://02_Prefabs/Liquid.tscn" id="5_wexxd"]
+[ext_resource type="PackedScene" uid="uid://b5kgqbsnaxirq" path="res://02_Prefabs/PuzzlePrefabs/Box.tscn" id="7_828q7"]
+[ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/RisingAcid.tscn" id="8_0imss"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(1144, 20)
@@ -42,9 +44,16 @@ position = Vector2(229, 467)
 breath_decay = 10.0
 
 [node name="Liquid" parent="." unique_id=1959433390 instance=ExtResource("5_wexxd")]
-position = Vector2(77.00003, 495.99997)
-scale = Vector2(5, 5)
+position = Vector2(1073, 415)
+scale = Vector2(20, 20)
 
 [node name="Liquid2" parent="." unique_id=593745260 instance=ExtResource("5_wexxd")]
 position = Vector2(147.00006, 396)
 scale = Vector2(5, 5)
+
+[node name="Box" parent="." unique_id=2045710612 instance=ExtResource("7_828q7")]
+position = Vector2(596, 502)
+freeze_mode = 1
+does_respawn = true
+
+[node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("8_0imss")]

@@ -20,7 +20,7 @@ func Update(delta:float):
 		Player.take_damage(1,Player.drown_dmg)
 		Player.current_breath += Player.breath_decay * Player.drown_relief
 	if Player.direction_x != 0:
-		Player.player_anim.flip_h = Player.direction_x > 0
+		Player.player_anim.flip_h = Player.direction_x < 0
 	if Player.direction_x:
 		Player.velo.x = move_toward(Player.velo.x, Player.direction_x * Player.swim_speed, Player.swim_acceleration * delta)
 	else:
