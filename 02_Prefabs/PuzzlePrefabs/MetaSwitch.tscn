@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://nv8l1gfvbm8"]
 
+[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="1_3h7lk"]
+[ext_resource type="Script" uid="uid://d3pljbm41hish" path="res://01_Scripts/Puzzle/meta_puzzle_activator.gd" id="1_v66fc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
+
 [node name="MetaSwitch" type="Node2D" unique_id=54792963]
+script = ExtResource("1_v66fc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=806894423]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1420565738]
+shape = SubResource("RectangleShape2D_qsmb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=1203515253]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_3h7lk")

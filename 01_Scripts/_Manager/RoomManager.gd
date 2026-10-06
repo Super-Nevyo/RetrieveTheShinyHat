@@ -28,7 +28,8 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 		
 		for child in current_room.get_children(): 
 			if child is PuzzleActivator:
-				activated_puzzles.remember_active(child.puzzle_id, current_room_id, child.switch_flipped) #calls dictionary
+				if child.puzzle_id != null:
+					activated_puzzles.remember_active(child.puzzle_id, current_room_id, child.switch_flipped) #calls dictionary
 		
 		current_room.queue_free() #room gets removed
 	
@@ -45,10 +46,11 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 	if activated_puzzles.activepuzzles.has(current_room_id):
 		for child in current_room.get_children():
 			if child is PuzzleActivator:
-				var remembered_state: bool = activated_puzzles.puzzle_state(child.puzzle_id, current_room_id)
-				
-				if child.switch_flipped != remembered_state:
-					child.ActivatePuzzle()
+				if child.puzzle_id != null:
+					var remembered_state: bool = activated_puzzles.puzzle_state(child.puzzle_id, current_room_id)
+					
+					if child.switch_flipped != remembered_state:
+						child.ActivatePuzzle()
 
 
 func _on_transition_started(transition_id: String) -> void: #Signals the world map to find the connection to an exit
