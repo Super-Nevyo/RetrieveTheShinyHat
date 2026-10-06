@@ -14,7 +14,7 @@
 collision_layer = 64
 physics_material_override = SubResource("PhysicsMaterial_qsmb2")
 script = ExtResource("1_o0tdg")
-speed = 10.0
+float_speed = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91981022]
 shape = SubResource("RectangleShape2D_4aysw")
