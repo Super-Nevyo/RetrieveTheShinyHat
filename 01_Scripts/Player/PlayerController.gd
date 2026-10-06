@@ -56,6 +56,10 @@ var is_attacking: bool = false
 @export var DmgLayer : int = 15
 var isdead : bool = false
 
+#===CARRYING
+@onready var hold_position : Node2D = $HoldPosition
+@export var throw_speed : float = 100
+
 #===ANIMATION
 @onready var player_anim: AnimatedSprite2D = $PlayerAnim #the $ is godots shortway of references. Also drag from scene tab into script
 
@@ -97,11 +101,13 @@ func get_custom_gravity():
 
 func finish_attack():
 	is_attacking = false
+	player_anim.offset.x = 0
 	attack_hit_box.set_deferred("disabled", true)
 	
 
 func _on_player_anim_animation_finished() -> void:
 	if player_anim.animation == "Attack":
+		player_anim.offset.x = 0
 		finish_attack()
 
 func take_damage(type: int,amount:float):

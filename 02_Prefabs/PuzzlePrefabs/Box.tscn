@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b5kgqbsnaxirq"]
+
+[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="1_5a2w0"]
+[ext_resource type="Script" uid="uid://bshdgv6fifpv6" path="res://01_Scripts/Puzzle/box.gd" id="1_o0tdg"]
+[ext_resource type="Script" uid="uid://bjh1ho7ltd810" path="res://01_Scripts/Puzzle/BoxReveiver.gd" id="2_v735s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qsmb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4aysw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2tw8"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1254739137]
+collision_layer = 64
+physics_material_override = SubResource("PhysicsMaterial_qsmb2")
+script = ExtResource("1_o0tdg")
+speed = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91981022]
+shape = SubResource("RectangleShape2D_4aysw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1438745487]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_5a2w0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1176936152]
+collision_layer = 8
+script = ExtResource("2_v735s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2027208278]
+shape = SubResource("RectangleShape2D_p2tw8")
