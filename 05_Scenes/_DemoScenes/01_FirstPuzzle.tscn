@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://docn0xg4wss2r" path="res://06_Extras/PalletSwaps/DefaultPallet.png" id="15_bnkqy"]
 [ext_resource type="Texture2D" uid="uid://ds8wv51qapj7k" path="res://06_Extras/PalletSwaps/GreenPalletOff.png" id="16_1gdf8"]
 [ext_resource type="Texture2D" uid="uid://biowk03c2mfwa" path="res://06_Extras/PalletSwaps/BluePalletOff.png" id="16_3xloq"]
+[ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/RisingAcid.tscn" id="19_1gdf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epmgc"]
 resource_name = "TempEnvNew"
@@ -335,6 +336,8 @@ region_rect = Rect2(16, 0, 16, 16)
 [node name="Sprite2D2" parent="Lights/GreenLight3" index="1" unique_id=401355035]
 material = SubResource("ShaderMaterial_jh3jw")
 region_rect = Rect2(16, 0, 16, 16)
+
+[node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("19_1gdf8")]
 
 [editable path="SecretAreaCarapaceDown"]
 [editable path="SecretAreaCarapaceUp"]

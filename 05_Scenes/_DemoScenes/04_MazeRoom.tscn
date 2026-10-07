@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b1m8fdhupmphl" path="res://05_Scenes/Acid.gd" id="5_ldgay"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="6_jawqj"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="7_74bjv"]
+[ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/RisingAcid.tscn" id="8_qp7jc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3llcm"]
 
@@ -136,6 +137,8 @@ texture = ExtResource("7_74bjv")
 position = Vector2(0, 12.272721)
 shape = SubResource("RectangleShape2D_kw6nx")
 debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
+
+[node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("8_qp7jc")]
 
 [editable path="transition_traversal"]
 [editable path="transition_boss"]

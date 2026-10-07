@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="6_gxwij"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="7_8l2gj"]
 [ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="8_t485o"]
+[ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/RisingAcid.tscn" id="10_bno8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epmgc"]
 resource_name = "TempEnvNew"
@@ -142,6 +143,8 @@ texture = ExtResource("7_8l2gj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloatingPlatform" unique_id=1974279517]
 shape = SubResource("RectangleShape2D_bgewv")
+
+[node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("10_bno8p")]
 
 [editable path="SecretArea"]
 [editable path="transition_puzzle1"]
