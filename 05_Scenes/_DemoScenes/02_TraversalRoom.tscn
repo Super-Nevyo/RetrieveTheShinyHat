@@ -47,7 +47,7 @@ size = Vector2(230, 125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgewv"]
 size = Vector2(125, 30)
 
-[node name="Puzzle2Room" type="Node2D" unique_id=1910544872]
+[node name="Traversal" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
