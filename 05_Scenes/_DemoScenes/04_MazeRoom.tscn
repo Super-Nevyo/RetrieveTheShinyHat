@@ -1,16 +1,12 @@
-[gd_scene format=4 uid="uid://bvcua432id2v8"]
+[gd_scene format=4 uid="uid://bpga0md4y38jd"]
 
-[ext_resource type="Script" uid="uid://bhc6vbhh2bcx0" path="res://01_Scripts/WorldInteractions/MapMetadata.gd" id="1_5o0x7"]
-[ext_resource type="Texture2D" uid="uid://bome11uw75l7m" path="res://03_Art/TempAssets/EnvSizes.png" id="3_alcqo"]
-[ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="4_blv6u"]
-[ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="5_hgay3"]
-[ext_resource type="Script" uid="uid://b1m8fdhupmphl" path="res://05_Scenes/Acid.gd" id="6_ecbmx"]
-[ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="7_vq8gf"]
-[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="8_tqexp"]
-[ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="9_fa4ga"]
-[ext_resource type="Script" uid="uid://ixs13tk61ybs" path="res://01_Scripts/EndGameTrigger.gd" id="10_uf0fo"]
-[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="11_p5xto"]
-[ext_resource type="PackedScene" uid="uid://7cbkrkj2573a" path="res://02_Prefabs/BrainBoss.tscn" id="12_qavg7"]
+[ext_resource type="Script" uid="uid://bhc6vbhh2bcx0" path="res://01_Scripts/WorldInteractions/MapMetadata.gd" id="1_h4bfu"]
+[ext_resource type="Texture2D" uid="uid://bome11uw75l7m" path="res://03_Art/TempAssets/EnvSizes.png" id="2_6n4an"]
+[ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="3_rg0cf"]
+[ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="4_f40ku"]
+[ext_resource type="Script" uid="uid://b1m8fdhupmphl" path="res://05_Scenes/Acid.gd" id="5_ldgay"]
+[ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="6_jawqj"]
+[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="7_74bjv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3llcm"]
 
@@ -37,7 +33,7 @@ texture_region_size = Vector2i(48, 48)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epmgc"]
 resource_name = "TempEnvNew"
-texture = ExtResource("3_alcqo")
+texture = ExtResource("2_6n4an")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -57,145 +53,30 @@ sources/1 = SubResource("TileSetAtlasSource_32aom")
 sources/2 = SubResource("TileSetAtlasSource_epmgc")
 
 [sub_resource type="Resource" id="Resource_sh0j4"]
-script = ExtResource("5_hgay3")
-display_name = "To_Maze"
-transition_id = "boss_exit_w"
+script = ExtResource("4_f40ku")
+display_name = "To_Traversal"
+transition_id = "maze_exit_w"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_04q6i"]
+script = ExtResource("4_f40ku")
+display_name = "To_Boss"
+transition_id = "maze_exit_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(230, 125)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgewv"]
-size = Vector2(125, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7jyp"]
-size = Vector2(173, 51)
-
-[sub_resource type="Animation" id="Animation_uf0fo"]
-resource_name = "EndingAnimation"
-length = 3.0000000000000004
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CinematicPlayer:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1102, 895), Vector2(1080, 710)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../CinematicPlayer:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.26666668, 0.36666667, 0.46666667, 0.56666666, 0.6996738, 0.9011619, 1.0997568, 1.3001825, 1.501164, 1.698533, 2.0033853, 2.30231, 2.4666667, 2.6103857),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 3, 3, 4, 3, 2, 3, 4, 3, 4, 3, 2, 4]
-}
-
-[sub_resource type="Animation" id="Animation_p5xto"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../CinematicPlayer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1102, 895)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CinematicPlayer:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_p5xto"]
-_data = {
-&"EndingAnimation": SubResource("Animation_uf0fo"),
-&"RESET": SubResource("Animation_p5xto")
-}
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5o0x7"]
-atlas = ExtResource("11_p5xto")
-region = Rect2(0, 196, 98, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8orwl"]
-atlas = ExtResource("11_p5xto")
-region = Rect2(98, 196, 98, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_alcqo"]
-atlas = ExtResource("11_p5xto")
-region = Rect2(196, 196, 98, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_blv6u"]
-atlas = ExtResource("11_p5xto")
-region = Rect2(294, 196, 98, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hgay3"]
-atlas = ExtResource("11_p5xto")
-region = Rect2(392, 196, 98, 98)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kw6nx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5o0x7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8orwl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_alcqo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_blv6u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hgay3")
-}],
-"loop": 1,
-"name": &"BossBite",
-"speed": 5.0
-}]
-
-[node name="BossRoom" type="Node2D" unique_id=1910544872]
+[node name="MazeRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 visible = false
-script = ExtResource("1_5o0x7")
-transitions = [NodePath("../transition_maze"), null]
+script = ExtResource("1_h4bfu")
+transitions = [NodePath("../transition_traversal"), null]
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1118345256]
-tile_map_data = PackedByteArray("AAAmABUAAgACAAAAAAAmAAEAAgACAAAAAAAmAAIAAgACAAAAAAAmAAMAAgACAAAAAAAmAAQAAgACAAAAAAAmAAUAAgACAAAAAAAmAAYAAgACAAAAAAAmAAcAAgACAAAAAAAmAAgAAgACAAAAAAAmAAkAAgACAAAAAAAmAAoAAgACAAAAAAAmAAsAAgACAAAAAAAmAAwAAgACAAAAAAAmAA0AAgACAAAAAAAmAA4AAgACAAAAAAAmAA8AAgACAAAAAAAmABAAAgACAAAAAAAmABEAAgACAAAAAAAmABIAAgACAAAAAAAmABMAAQACAAAAAAAmABQAAQACAAAAAAAlABUAAgACAAAAAAAkABUAAgACAAAAAAAjABUAAgACAAAAAAAiABUAAgACAAAAAAAhABUAAgACAAAAAAAgABUAAgACAAAAAAAfABUAAgACAAAAAAAeABUAAgACAAAAAAAdABUAAgACAAAAAAAcABUAAgACAAAAAAAbABUAAgACAAAAAAAaABUAAgABAAAAAAATABUAAgABAAAAAAASABUAAgACAAAAAAARABUAAgACAAAAAAAQABUAAgACAAAAAAAPABUAAgACAAAAAAAOABUAAgACAAAAAAANABUAAgACAAAAAAAMABUAAgACAAAAAAALABUAAgACAAAAAAAKABUAAgACAAAAAAAJABUAAgACAAAAAAAIABUAAgACAAAAAAAHABUAAgACAAAAAAAHAAEAAgACAAAAAAAIAAEAAgACAAAAAAAJAAEAAgACAAAAAAAKAAEAAgACAAAAAAALAAEAAgACAAAAAAAMAAEAAgACAAAAAAANAAEAAgACAAAAAAAOAAEAAgACAAAAAAAPAAEAAgACAAAAAAAQAAEAAgACAAAAAAARAAEAAgACAAAAAAASAAEAAgACAAAAAAATAAEAAgACAAAAAAAUAAEAAgACAAAAAAAVAAEAAgACAAAAAAAWAAEAAgACAAAAAAAXAAEAAgACAAAAAAAYAAEAAgACAAAAAAAZAAEAAgACAAAAAAAaAAEAAgACAAAAAAAbAAEAAgACAAAAAAAcAAEAAgACAAAAAAAdAAEAAgACAAAAAAAeAAEAAgACAAAAAAAfAAEAAgACAAAAAAAgAAEAAgACAAAAAAAhAAEAAgACAAAAAAAiAAEAAgACAAAAAAAjAAEAAgACAAAAAAAkAAEAAgACAAAAAAAlAAEAAgACAAAAAAAHAAIAAgACAAAAAAAHAAMAAgACAAAAAAAHAAQAAgACAAAAAAAHAAUAAgACAAAAAAAHAAYAAgACAAAAAAAHAAcAAgACAAAAAAAHAAgAAgACAAAAAAAHAAkAAgACAAAAAAAHAAoAAgACAAAAAAAHAAsAAgACAAAAAAAHAAwAAgACAAAAAAAHAA0AAgACAAAAAAAHAA4AAgABAAAAAAAHABEAAgABAAAAAAAHABIAAgACAAAAAAAHABMAAgACAAAAAAAHABQAAgACAAAAAAAIABEAAgABAAAAAAAIABIAAgACAAAAAAAIABMAAgACAAAAAAAIABQAAgACAAAAAAAUAAcAAgACAAAAAAAUAAgAAgACAAAAAAAVAAcAAgACAAAAAAAVAAgAAQABAAAAAAAWAAcAAQABAAAAAAAWAAgAAQABAAAAAAAXAAcAAQABAAAAAAAXAAgAAQABAAAAAAAYAAcAAgACAAAAAAAYAAgAAQABAAAAAAAZAAcAAgACAAAAAAAZAAgAAgACAAAAAAAUAAIAAgACAAAAAAAUAAMAAgACAAAAAAAUAAQAAgACAAAAAAAUAAUAAgACAAAAAAAUAAYAAgACAAAAAAAVAAIAAgACAAAAAAAVAAMAAgACAAAAAAAVAAQAAgACAAAAAAAVAAUAAgACAAAAAAAVAAYAAgACAAAAAAAWAAIAAgACAAAAAAAWAAMAAgACAAAAAAAWAAQAAgACAAAAAAAWAAUAAgACAAAAAAAWAAYAAgACAAAAAAAXAAIAAgACAAAAAAAXAAMAAgACAAAAAAAXAAQAAgACAAAAAAAXAAUAAgACAAAAAAAXAAYAAgACAAAAAAAYAAIAAgACAAAAAAAYAAMAAgACAAAAAAAYAAQAAgACAAAAAAAYAAUAAgACAAAAAAAYAAYAAgACAAAAAAAZAAIAAgACAAAAAAAZAAMAAgACAAAAAAAZAAQAAgACAAAAAAAZAAUAAgACAAAAAAAZAAYAAgACAAAAAAAJABEAAgABAAAAAAAJABIAAgACAAAAAAAJABMAAgACAAAAAAAJABQAAgACAAAAAAAKABEAAgABAAAAAAAKABIAAgACAAAAAAAKABMAAgACAAAAAAAKABQAAgACAAAAAAALABEAAgABAAAAAAALABIAAgABAAAAAAALABMAAgACAAAAAAALABQAAgACAAAAAAAMABIAAgABAAAAAAAMABMAAgABAAAAAAAMABQAAgACAAAAAAANABMAAgABAAAAAAANABQAAgABAAAAAAAOABQAAgABAAAAAAAPABQAAgABAAAAAAAQABQAAgABAAAAAAARABQAAgABAAAAAAASABQAAgABAAAAAAAbABQAAgABAAAAAAAcABQAAgABAAAAAAAdABQAAgABAAAAAAAeABQAAgABAAAAAAAfABQAAgABAAAAAAAgABMAAgABAAAAAAAgABQAAgABAAAAAAAhABIAAgABAAAAAAAhABMAAgABAAAAAAAhABQAAgACAAAAAAAiABEAAgABAAAAAAAiABIAAgABAAAAAAAiABMAAgACAAAAAAAiABQAAgACAAAAAAAjABEAAgABAAAAAAAjABIAAgACAAAAAAAjABMAAgACAAAAAAAjABQAAgACAAAAAAAkABEAAgABAAAAAAAkABIAAgACAAAAAAAkABMAAgACAAAAAAAkABQAAgACAAAAAAAlABEAAgABAAAAAAAlABIAAgACAAAAAAAlABMAAgACAAAAAAAlABQAAgACAAAAAAAUAAkAAQABAAAAAAAVAAkAAQAAAAAAAAAWAAkAAQAAAAAAAAAXAAkAAQAAAAAAAAAYAAkAAQAAAAAAAAAZAAkAAQABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAmABUAAgACAAAAAAAmAAEAAgACAAAAAAAmAAIAAgACAAAAAAAmAAMAAgACAAAAAAAmAAQAAgACAAAAAAAmAAUAAgACAAAAAAAmAAYAAgACAAAAAAAmAAcAAgACAAAAAAAmAAgAAgACAAAAAAAmAAkAAgACAAAAAAAmAAoAAgACAAAAAAAmAAsAAgACAAAAAAAmAAwAAgACAAAAAAAmAA0AAgACAAAAAAAmAA4AAgACAAAAAAAmABEAAgACAAAAAAAmABIAAgACAAAAAAAmABMAAQACAAAAAAAmABQAAQACAAAAAAAlABUAAgACAAAAAAAkABUAAgACAAAAAAAjABUAAgACAAAAAAAiABUAAgACAAAAAAAhABUAAgACAAAAAAAgABUAAgACAAAAAAAfABUAAgACAAAAAAAeABUAAgACAAAAAAAdABUAAgACAAAAAAAcABUAAgACAAAAAAAbABUAAgACAAAAAAAaABUAAgACAAAAAAATABUAAgACAAAAAAASABUAAgACAAAAAAARABUAAgACAAAAAAAQABUAAgACAAAAAAAPABUAAgACAAAAAAAOABUAAgACAAAAAAANABUAAgACAAAAAAAMABUAAgACAAAAAAALABUAAgACAAAAAAAKABUAAgACAAAAAAAJABUAAgACAAAAAAAIABUAAgACAAAAAAAHABUAAgACAAAAAAAHAAEAAgACAAAAAAAIAAEAAgACAAAAAAAJAAEAAgACAAAAAAAKAAEAAgACAAAAAAALAAEAAgACAAAAAAAMAAEAAgACAAAAAAANAAEAAgACAAAAAAAOAAEAAgACAAAAAAAPAAEAAgACAAAAAAAQAAEAAgACAAAAAAARAAEAAgACAAAAAAASAAEAAgACAAAAAAATAAEAAgACAAAAAAAUAAEAAgACAAAAAAAVAAEAAgACAAAAAAAWAAEAAgACAAAAAAAXAAEAAgACAAAAAAAYAAEAAgACAAAAAAAZAAEAAgACAAAAAAAaAAEAAgACAAAAAAAbAAEAAgACAAAAAAAcAAEAAgACAAAAAAAdAAEAAgACAAAAAAAeAAEAAgACAAAAAAAfAAEAAgACAAAAAAAgAAEAAgACAAAAAAAhAAEAAgACAAAAAAAiAAEAAgACAAAAAAAjAAEAAgACAAAAAAAkAAEAAgACAAAAAAAlAAEAAgACAAAAAAAHAAIAAgACAAAAAAAHAAMAAgACAAAAAAAHAAQAAgACAAAAAAAHAAUAAgACAAAAAAAHAAYAAgACAAAAAAAHAAcAAgACAAAAAAAHAAgAAgACAAAAAAAHAAkAAgACAAAAAAAHAAoAAgACAAAAAAAHAAsAAgACAAAAAAAHAAwAAgACAAAAAAAHAA0AAgACAAAAAAAHAA4AAgACAAAAAAAHABEAAgACAAAAAAAHABIAAgACAAAAAAAHABMAAgACAAAAAAAHABQAAgACAAAAAAAIABEAAgABAAAAAAAIABIAAgACAAAAAAAIABMAAgACAAAAAAAIABQAAgACAAAAAAAUAAcAAgACAAAAAAAUAAgAAgACAAAAAAAVAAcAAgACAAAAAAAVAAgAAQABAAAAAAAWAAcAAQABAAAAAAAWAAgAAQABAAAAAAAXAAcAAQABAAAAAAAXAAgAAQABAAAAAAAYAAcAAgACAAAAAAAYAAgAAQABAAAAAAAZAAcAAgACAAAAAAAZAAgAAgACAAAAAAAUAAIAAgACAAAAAAAUAAMAAgACAAAAAAAUAAQAAgACAAAAAAAUAAUAAgACAAAAAAAUAAYAAgACAAAAAAAVAAIAAgACAAAAAAAVAAMAAgACAAAAAAAVAAQAAgACAAAAAAAVAAUAAgACAAAAAAAVAAYAAgACAAAAAAAWAAIAAgACAAAAAAAWAAMAAgACAAAAAAAWAAQAAgACAAAAAAAWAAUAAgACAAAAAAAWAAYAAgACAAAAAAAXAAIAAgACAAAAAAAXAAMAAgACAAAAAAAXAAQAAgACAAAAAAAXAAUAAgACAAAAAAAXAAYAAgACAAAAAAAYAAIAAgACAAAAAAAYAAMAAgACAAAAAAAYAAQAAgACAAAAAAAYAAUAAgACAAAAAAAYAAYAAgACAAAAAAAZAAIAAgACAAAAAAAZAAMAAgACAAAAAAAZAAQAAgACAAAAAAAZAAUAAgACAAAAAAAZAAYAAgACAAAAAAAJABEAAgABAAAAAAAJABIAAgACAAAAAAAJABMAAgACAAAAAAAJABQAAgACAAAAAAAKABEAAgABAAAAAAAKABIAAgACAAAAAAAKABMAAgACAAAAAAAKABQAAgACAAAAAAALABEAAgABAAAAAAALABIAAgABAAAAAAALABMAAgACAAAAAAALABQAAgACAAAAAAAMABIAAgABAAAAAAAMABMAAgABAAAAAAAMABQAAgACAAAAAAANABMAAgABAAAAAAANABQAAgABAAAAAAAOABQAAgABAAAAAAAPABQAAgABAAAAAAAQABQAAgABAAAAAAARABQAAgABAAAAAAASABQAAgABAAAAAAAbABQAAgABAAAAAAAcABQAAgABAAAAAAAdABQAAgABAAAAAAAeABQAAgABAAAAAAAfABQAAgABAAAAAAAgABMAAgABAAAAAAAgABQAAgABAAAAAAAhABIAAgABAAAAAAAhABMAAgABAAAAAAAhABQAAgACAAAAAAAiABEAAgABAAAAAAAiABIAAgABAAAAAAAiABMAAgACAAAAAAAiABQAAgACAAAAAAAjABEAAgABAAAAAAAjABIAAgACAAAAAAAjABMAAgACAAAAAAAjABQAAgACAAAAAAAkABEAAgABAAAAAAAkABIAAgACAAAAAAAkABMAAgACAAAAAAAkABQAAgACAAAAAAAlABEAAgABAAAAAAAlABIAAgACAAAAAAAlABMAAgACAAAAAAAlABQAAgACAAAAAAAUAAkAAQABAAAAAAAVAAkAAQAAAAAAAAAWAAkAAQAAAAAAAAAXAAkAAQAAAAAAAAAYAAkAAQAAAAAAAAAZAAkAAQABAAAAAAAUABUAAgACAAAAAAAVABUAAgACAAAAAAAWABUAAgACAAAAAAAXABUAAgACAAAAAAAYABUAAgACAAAAAAAZABUAAgACAAAAAAA=")
 tile_set = SubResource("TileSet_kw6nx")
 
 [node name="Stairs" type="TileMapLayer" parent="." unique_id=735187542]
@@ -219,20 +100,26 @@ z_index = -5
 tile_map_data = PackedByteArray("AAATABQAAQAAAAEAAAAUABQAAQAAAAEAAAAVABQAAQAAAAEAAAAWABQAAQAAAAEAAAAXABQAAQAAAAEAAAAYABQAAQAAAAEAAAAZABQAAQAAAAEAAAAaABQAAQAAAAEAAAAUABUAAQAAAAEAAAAVABUAAQAAAAEAAAAWABUAAQAAAAEAAAAXABUAAQAAAAEAAAAYABUAAQAAAAEAAAAZABUAAQAAAAEAAAAUABYAAQAAAAEAAAAVABYAAQAAAAEAAAAWABYAAQAAAAEAAAAXABYAAQAAAAEAAAAYABYAAQAAAAEAAAAZABYAAQAAAAEAAAA=")
 tile_set = SubResource("TileSet_kw6nx")
 
-[node name="transition_maze" parent="." unique_id=306758002 instance=ExtResource("4_blv6u")]
+[node name="transition_traversal" parent="." unique_id=306758002 instance=ExtResource("3_rg0cf")]
 position = Vector2(351, 768)
 transition_data = SubResource("Resource_sh0j4")
 
-[node name="ArrivalPoint" parent="transition_maze" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="transition_traversal" index="1" unique_id=1345594044]
 position = Vector2(99, 17)
 
+[node name="transition_boss" parent="." unique_id=1900879623 instance=ExtResource("3_rg0cf")]
+position = Vector2(1806, 769)
+transition_data = SubResource("Resource_04q6i")
+
+[node name="ArrivalPoint" parent="transition_boss" index="1" unique_id=1345594044]
+position = Vector2(-85, 17)
+
 [node name="AcidPit" type="Area2D" parent="." unique_id=1497553372]
-visible = false
 position = Vector2(1104, 1074)
 scale = Vector2(2.3599977, 2.2000012)
-script = ExtResource("6_ecbmx")
+script = ExtResource("5_ldgay")
 
-[node name="Liquid2" parent="AcidPit" unique_id=1959433390 instance=ExtResource("7_vq8gf")]
+[node name="Liquid2" parent="AcidPit" unique_id=1959433390 instance=ExtResource("6_jawqj")]
 position = Vector2(0, 10)
 scale = Vector2(9.135591, 6)
 
@@ -243,51 +130,12 @@ position = Vector2(0, -51.5624)
 visible = false
 position = Vector2(0.4999919, 9)
 scale = Vector2(1.7578125, 1)
-texture = ExtResource("8_tqexp")
+texture = ExtResource("7_74bjv")
 
 [node name="Collider" type="CollisionShape2D" parent="AcidPit" unique_id=928415247]
 position = Vector2(0, 12.272721)
 shape = SubResource("RectangleShape2D_kw6nx")
 debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
 
-[node name="FloatingPlatform" type="RigidBody2D" parent="." unique_id=1549459913 node_paths=PackedStringArray("acid_surface")]
-position = Vector2(1101, 959)
-linear_damp = 6.0
-script = ExtResource("9_fa4ga")
-acid_surface = NodePath("../AcidPit/AcidSurface")
-stiffness = 120.0
-
-[node name="Sprite2D" type="Sprite2D" parent="FloatingPlatform" unique_id=637636405]
-scale = Vector2(1, 0.25)
-texture = ExtResource("8_tqexp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FloatingPlatform" unique_id=1974279517]
-shape = SubResource("RectangleShape2D_bgewv")
-
-[node name="BrainBoss" parent="." unique_id=1698662619 instance=ExtResource("12_qavg7")]
-position = Vector2(1118, 578)
-
-[node name="EndingTrigger" type="Area2D" parent="." unique_id=1000559646]
-position = Vector2(1101, 931)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("10_uf0fo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndingTrigger" unique_id=1317730497]
-position = Vector2(0.5, -14.5)
-shape = SubResource("RectangleShape2D_o7jyp")
-
-[node name="EndingAnimation" type="AnimationPlayer" parent="EndingTrigger" unique_id=513905450]
-libraries/ = SubResource("AnimationLibrary_p5xto")
-
-[node name="CinematicPlayer" type="AnimatedSprite2D" parent="." unique_id=58707786]
-visible = false
-position = Vector2(1102, 895)
-sprite_frames = SubResource("SpriteFrames_kw6nx")
-animation = &"BossBite"
-frame = 1
-
-[connection signal="body_entered" from="EndingTrigger" to="EndingTrigger" method="_on_body_entered"]
-
-[editable path="transition_maze"]
-[editable path="BrainBoss"]
+[editable path="transition_traversal"]
+[editable path="transition_boss"]
