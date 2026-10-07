@@ -211,6 +211,43 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(22.263165, 58)
 
+[sub_resource type="Animation" id="Animation_g7cil"]
+resource_name = "Player_TakeDamage"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnim:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+
+[sub_resource type="Animation" id="Animation_aydsc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnim:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_urycm"]
+_data = {
+&"Player_TakeDamage": SubResource("Animation_g7cil"),
+&"RESET": SubResource("Animation_aydsc")
+}
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
@@ -218,6 +255,7 @@ script = ExtResource("1_q2jwi")
 speed = 200.0
 acceleration = 1000.0
 breath_decay = 5.0
+submerged_cap = 250.0
 jump_time_down = 0.3
 attack_offset = 25.0
 throw_speed = 500.0
@@ -230,8 +268,9 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Attack"
+animation = &"Walk"
 autoplay = "Idle"
+frame_progress = 0.4125182
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
 position = Vector2(0, 35)
@@ -248,6 +287,9 @@ disabled = true
 
 [node name="HoldPosition" type="Node2D" parent="." unique_id=2105991285]
 position = Vector2(0, -20)
+
+[node name="PlayerAnimations" type="AnimationPlayer" parent="." unique_id=165675230]
+libraries/ = SubResource("AnimationLibrary_urycm")
 
 [connection signal="animation_finished" from="PlayerAnim" to="." method="_on_player_anim_animation_finished"]
 [connection signal="area_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_area_entered"]

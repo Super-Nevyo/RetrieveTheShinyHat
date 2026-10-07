@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bisdihm2cu5se"]
 
+[ext_resource type="Script" uid="uid://drueonr3kwoju" path="res://01_Scripts/_Manager/audio_manager.gd" id="1_82ie3"]
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="1_kmjnh"]
 [ext_resource type="Script" uid="uid://c65san5kq2b3e" path="res://01_Scripts/_Manager/RoomManager.gd" id="2_8w24r"]
 [ext_resource type="PackedScene" uid="uid://d16myrmq1kru" path="res://05_Scenes/_DemoScenes/00_CarapaceRoom.tscn" id="5_6ij2g"]
@@ -13,7 +14,21 @@
 [ext_resource type="Script" uid="uid://dvmlf5pudw6e2" path="res://01_Scripts/WorldInteractions/RoomPersistances.gd" id="9_e2ro4"]
 [ext_resource type="PackedScene" uid="uid://cn2rn15pdxosc" path="res://02_Prefabs/UIPrefabs/GameHud.tscn" id="9_e8wdy"]
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_82ie3"]
+clip_count = 1
+clip_0/name = &""
+clip_0/auto_advance = 0
+
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
+
+[node name="AudioManager" type="Node" parent="." unique_id=1648110041]
+script = ExtResource("1_82ie3")
+
+[node name="BgMusicPlayer" type="AudioStreamPlayer" parent="AudioManager" unique_id=1141927300]
+stream = SubResource("AudioStreamInteractive_82ie3")
+volume_db = -20.0
+autoplay = true
+bus = &"music"
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("1_kmjnh")]
 z_index = 15

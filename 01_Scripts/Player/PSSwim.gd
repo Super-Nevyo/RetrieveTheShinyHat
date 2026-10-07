@@ -7,6 +7,7 @@ func _init(player:PlayerController):
 	Player = player
 
 func Enter():
+	Player.velo.y = minf(Player.velo.y, Player.submerged_cap)
 	Player.player_anim.play("Swimming")
 
 func Exit():
@@ -28,7 +29,7 @@ func Update(delta:float):
 	if Player.direction_y:
 		Player.velo.y = move_toward(Player.velo.y, Player.direction_y * Player.swim_speed, Player.swim_acceleration * delta)
 	else:
-		Player.velo.y = move_toward(Player.velo.y, 0, Player.swim_friction * delta)
+		Player.velo.y = move_toward(Player.velo.y, 0, Player.submerged_cap * delta) #Player.swim_friction * delta
 
 func Attack():
 	pass

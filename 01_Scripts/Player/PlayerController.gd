@@ -29,6 +29,7 @@ var max_breath : float = 100 #this is 100 because the bar has a max of 100
 @export var breath_decay : float = 1
 @export var drown_dmg : float = 10
 @export var drown_relief : float = 2
+@export var submerged_cap : float = 40
 
 var velo: Vector2 = Vector2.ZERO
 
@@ -110,8 +111,11 @@ func _on_player_anim_animation_finished() -> void:
 		player_anim.offset.x = 0
 		finish_attack()
 
-func take_damage(type: int,amount:float):
+func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 	# maybe i should make a static function to handle this globally and better?
+	if isdead:
+		return
+		
 	var was_hit = false
 	if type % 2 == 1 && DmgLayer % 2 == 1:
 		currentHP -= amount
@@ -124,6 +128,9 @@ func take_damage(type: int,amount:float):
 		was_hit = true
 	if was_hit:
 		# trigger vfx related to dmg
+		if currentHP > 0 and not ignore_invincible:
+			$PlayerAnimations.play("Player_TakeDamage")
+		
 		HealthChanged.emit(currentHP,MaxHP)
 		if currentHP <= 0:
 			die()
@@ -132,6 +139,7 @@ func take_damage(type: int,amount:float):
 
 func die():
 	isdead = true
+	set_physics_process(false)
 	get_tree().change_scene_to_file("res://05_Scenes/_DemoScenes/LoseScene.tscn")
 
 func change_water(entering:bool):
