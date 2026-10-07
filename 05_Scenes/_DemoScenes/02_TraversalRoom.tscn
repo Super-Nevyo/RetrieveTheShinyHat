@@ -9,7 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="6_gxwij"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="7_8l2gj"]
 [ext_resource type="PackedScene" uid="uid://bke6vx1amkca1" path="res://02_Prefabs/WorldPrefabs/floating_platform.tscn" id="10_a5n13"]
-[ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/RisingAcid.tscn" id="10_bno8p"]
+[ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="10_bno8p"]
+[ext_resource type="PackedScene" uid="uid://b5kgqbsnaxirq" path="res://02_Prefabs/PuzzlePrefabs/Box.tscn" id="11_k27db"]
+[ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/Activators/PressurePlate.tscn" id="12_6udno"]
+[ext_resource type="PackedScene" uid="uid://n42r34pmo1fh" path="res://02_Prefabs/PuzzlePrefabs/Activated/Light.tscn" id="13_6udno"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epmgc"]
 resource_name = "TempEnvNew"
@@ -132,6 +135,18 @@ debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
 [node name="FloatingPlatform" parent="." unique_id=1566761638 node_paths=PackedStringArray("acid_surface") instance=ExtResource("10_a5n13")]
 position = Vector2(766, 855)
 acid_surface = NodePath("../AcidPit/AcidSurface")
+
+[node name="Box" parent="." unique_id=1254739137 instance=ExtResource("11_k27db")]
+position = Vector2(986, 780)
+
+[node name="Light" parent="." unique_id=2073561881 instance=ExtResource("13_6udno")]
+position = Vector2(1312, 726)
+signal_id = 100
+
+[node name="PressurePlate" parent="." unique_id=1796088267 instance=ExtResource("12_6udno")]
+position = Vector2(1313, 792)
+attached_ids = Array[int]([100])
+activation_amount = Array[float]([1.0])
 
 [editable path="SecretArea"]
 [editable path="transition_puzzle1"]

@@ -8,7 +8,7 @@ size = Vector2(38, 99)
 
 [node name="Door" type="Node2D" unique_id=425038002 node_paths=PackedStringArray("Door")]
 script = ExtResource("1_q8kmd")
-move_speed = 0.01
+move_speed = 2.0
 Door = NodePath("StaticBody2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1632167975]

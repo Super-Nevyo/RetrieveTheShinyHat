@@ -10,22 +10,22 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2tw8"]
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=1254739137]
+[node name="Box" type="RigidBody2D" unique_id=1254739137]
 collision_layer = 64
 physics_material_override = SubResource("PhysicsMaterial_qsmb2")
 script = ExtResource("1_o0tdg")
 float_speed = 40.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91981022]
+[node name="BoxRBCollider" type="CollisionShape2D" parent="." unique_id=91981022]
 shape = SubResource("RectangleShape2D_4aysw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1438745487]
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("1_5a2w0")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1176936152]
+[node name="AttackCollider" type="Area2D" parent="." unique_id=1176936152]
 collision_layer = 8
 script = ExtResource("2_v735s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2027208278]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackCollider" unique_id=2027208278]
 shape = SubResource("RectangleShape2D_p2tw8")

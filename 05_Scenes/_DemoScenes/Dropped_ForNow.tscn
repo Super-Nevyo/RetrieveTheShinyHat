@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bhc6vbhh2bcx0" path="res://01_Scripts/WorldInteractions/MapMetadata.gd" id="1_u5ale"]
 [ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="4_t4dfj"]
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="5_aam35"]
-[ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="10_in4qf"]
-[ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="11_lnsoe"]
+[ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="10_in4qf"]
+[ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="11_lnsoe"]
 
 [sub_resource type="TileSet" id="TileSet_kw6nx"]
 tile_size = Vector2i(32, 32)

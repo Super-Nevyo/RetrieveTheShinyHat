@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bvbn1qi0u34uo"]
+
+[ext_resource type="PackedScene" uid="uid://n42r34pmo1fh" path="res://02_Prefabs/PuzzlePrefabs/Activated/Light.tscn" id="1_5uweg"]
+[ext_resource type="Shader" uid="uid://cub6disctfoaq" path="res://PaletteSwap.tres" id="2_hfpjb"]
+[ext_resource type="Texture2D" uid="uid://coudayyvfsttn" path="res://06_Extras/PalletSwaps/BluePalletOn.png" id="3_uabhu"]
+[ext_resource type="Texture2D" uid="uid://docn0xg4wss2r" path="res://06_Extras/PalletSwaps/DefaultPallet.png" id="4_lhhiq"]
+[ext_resource type="Texture2D" uid="uid://biowk03c2mfwa" path="res://06_Extras/PalletSwaps/BluePalletOff.png" id="5_n3fb3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grvbq"]
+shader = ExtResource("2_hfpjb")
+shader_parameter/original_palette = ExtResource("4_lhhiq")
+shader_parameter/new_palette = ExtResource("3_uabhu")
+shader_parameter/colours_count = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l723s"]
+shader = ExtResource("2_hfpjb")
+shader_parameter/original_palette = ExtResource("4_lhhiq")
+shader_parameter/new_palette = ExtResource("5_n3fb3")
+shader_parameter/colours_count = 5
+
+[node name="blueTriangleLight" unique_id=2073561881 instance=ExtResource("1_5uweg")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=87334520]
+material = SubResource("ShaderMaterial_grvbq")
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Sprite2D2" parent="." index="1" unique_id=401355035]
+material = SubResource("ShaderMaterial_l723s")
+region_rect = Rect2(32, 0, 16, 16)

@@ -35,7 +35,7 @@ func Update(delta:float):
 
 func Attack():
 	if held_box != null:
-		held_box.throw(Vector2(-1 if Player.player_anim.flip_h else 1,-1).normalized(), Player.throw_speed)
+		held_box.throw(Vector2(-2 if Player.player_anim.flip_h else 2,-1).normalized(), Player.throw_speed)
 		held_box = null
 	else:
 		start_attack()

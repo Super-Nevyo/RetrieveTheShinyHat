@@ -8,17 +8,17 @@
 [ext_resource type="Script" uid="uid://b1m8fdhupmphl" path="res://05_Scenes/Acid.gd" id="5_grwq3"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="6_0wd3o"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="6_m1v14"]
-[ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Switch.tscn" id="8_4bc4g"]
+[ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="8_4bc4g"]
 [ext_resource type="PackedScene" uid="uid://bke6vx1amkca1" path="res://02_Prefabs/WorldPrefabs/floating_platform.tscn" id="9_1gdf8"]
-[ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="9_6avm4"]
-[ext_resource type="PackedScene" uid="uid://n42r34pmo1fh" path="res://02_Prefabs/PuzzlePrefabs/Light.tscn" id="12_udues"]
+[ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="9_6avm4"]
+[ext_resource type="PackedScene" uid="uid://n42r34pmo1fh" path="res://02_Prefabs/PuzzlePrefabs/Activated/Light.tscn" id="12_udues"]
 [ext_resource type="Shader" uid="uid://cub6disctfoaq" path="res://PaletteSwap.tres" id="13_y3j3e"]
 [ext_resource type="Texture2D" uid="uid://coudayyvfsttn" path="res://06_Extras/PalletSwaps/BluePalletOn.png" id="14_bnkqy"]
 [ext_resource type="Texture2D" uid="uid://lqx8b31wm4mv" path="res://06_Extras/PalletSwaps/GreenPalletOn.png" id="14_j4sty"]
 [ext_resource type="Texture2D" uid="uid://docn0xg4wss2r" path="res://06_Extras/PalletSwaps/DefaultPallet.png" id="15_bnkqy"]
 [ext_resource type="Texture2D" uid="uid://ds8wv51qapj7k" path="res://06_Extras/PalletSwaps/GreenPalletOff.png" id="16_1gdf8"]
 [ext_resource type="Texture2D" uid="uid://biowk03c2mfwa" path="res://06_Extras/PalletSwaps/BluePalletOff.png" id="16_3xloq"]
-[ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/RisingAcid.tscn" id="19_1gdf8"]
+[ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="19_1gdf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epmgc"]
 resource_name = "TempEnvNew"
@@ -131,6 +131,7 @@ tile_set = SubResource("TileSet_kw6nx")
 collision_enabled = false
 
 [node name="Acid" type="TileMapLayer" parent="." unique_id=625080141]
+modulate = Color(1, 1, 1, 0.6156863)
 z_index = 10
 tile_map_data = PackedByteArray("AAAVABEAAgAAAAEAAAAVABIAAgAAAAEAAAAVABMAAgAAAAEAAAAVABQAAgAAAAEAAAAVABUAAgAAAAEAAAAWABEAAgAAAAEAAAAWABIAAgAAAAEAAAAWABMAAgAAAAEAAAAWABQAAgAAAAEAAAAWABUAAgAAAAEAAAAXABEAAgAAAAEAAAAXABIAAgAAAAEAAAAXABMAAgAAAAEAAAAXABQAAgAAAAEAAAAXABUAAgAAAAEAAAAYABEAAgAAAAEAAAAYABIAAgAAAAEAAAAYABMAAgAAAAEAAAAYABQAAgAAAAEAAAAYABUAAgAAAAEAAAAZABEAAgAAAAEAAAAZABIAAgAAAAEAAAAZABMAAgAAAAEAAAAZABQAAgAAAAEAAAAZABUAAgAAAAEAAAAaABEAAgAAAAEAAAAaABIAAgAAAAEAAAAaABMAAgAAAAEAAAAaABQAAgAAAAEAAAAaABUAAgAAAAEAAAAbABEAAgAAAAEAAAAbABIAAgAAAAEAAAAbABMAAgAAAAEAAAAbABQAAgAAAAEAAAAbABUAAgAAAAEAAAAcABEAAgAAAAEAAAAcABIAAgAAAAEAAAAcABMAAgAAAAEAAAAcABQAAgAAAAEAAAAcABUAAgAAAAEAAAAdABEAAgAAAAEAAAAdABIAAgAAAAEAAAAdABMAAgAAAAEAAAAdABQAAgAAAAEAAAAdABUAAgAAAAEAAAAeABEAAgAAAAEAAAAeABIAAgAAAAEAAAAeABMAAgAAAAEAAAAeABQAAgAAAAEAAAAeABUAAgAAAAEAAAAfABEAAgAAAAEAAAAfABIAAgAAAAEAAAAfABMAAgAAAAEAAAAfABQAAgAAAAEAAAAfABUAAgAAAAEAAAAVABYAAgAAAAEAAAAWABYAAgAAAAEAAAAXABYAAgAAAAEAAAAYABYAAgAAAAEAAAAZABYAAgAAAAEAAAAaABYAAgAAAAEAAAAbABYAAgAAAAEAAAAcABYAAgAAAAEAAAAdABYAAgAAAAEAAAAeABYAAgAAAAEAAAAfABYAAgAAAAEAAAA=")
 tile_set = SubResource("TileSet_kw6nx")
@@ -193,7 +194,6 @@ z_index = 15
 position = Vector2(903, 503)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, 420)
-move_speed = 2.0
 signal_id = 3
 
 [node name="PuzzlePlatform2" parent="." unique_id=425038002 instance=ExtResource("9_6avm4")]
@@ -201,7 +201,6 @@ z_index = 15
 position = Vector2(1000, 503)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, 420)
-move_speed = 2.0
 signal_id = 3
 
 [node name="A1_Switch" parent="." unique_id=150077233 instance=ExtResource("8_4bc4g")]
@@ -228,13 +227,12 @@ position = Vector2(1395, 1059)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 DoorMovePosition = Vector2(-140, 0)
-move_speed = 2.0
 signal_id = 2
 
 [node name="ExitA_Door" parent="." unique_id=690248518 instance=ExtResource("9_6avm4")]
 position = Vector2(1811, 718)
 DoorMovePosition = Vector2(0, 110)
-move_speed = 2.0
+ActivationAmount = 1.0
 signal_id = 1
 
 [node name="Lights" type="Node" parent="." unique_id=2084832459]
