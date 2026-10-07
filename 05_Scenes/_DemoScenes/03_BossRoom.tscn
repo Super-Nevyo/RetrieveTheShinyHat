@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://b1m8fdhupmphl" path="res://05_Scenes/Acid.gd" id="6_ecbmx"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="7_vq8gf"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="8_tqexp"]
-[ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="9_fa4ga"]
 [ext_resource type="Script" uid="uid://ixs13tk61ybs" path="res://01_Scripts/EndGameTrigger.gd" id="10_uf0fo"]
 [ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="11_p5xto"]
+[ext_resource type="PackedScene" uid="uid://bke6vx1amkca1" path="res://02_Prefabs/WorldPrefabs/floating_platform.tscn" id="12_5o0x7"]
 [ext_resource type="PackedScene" uid="uid://7cbkrkj2573a" path="res://02_Prefabs/BrainBoss.tscn" id="12_qavg7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3llcm"]
@@ -64,9 +64,6 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(230, 125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgewv"]
-size = Vector2(125, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7jyp"]
 size = Vector2(173, 51)
@@ -227,7 +224,6 @@ transition_data = SubResource("Resource_sh0j4")
 position = Vector2(99, 17)
 
 [node name="AcidPit" type="Area2D" parent="." unique_id=1497553372]
-visible = false
 position = Vector2(1104, 1074)
 scale = Vector2(2.3599977, 2.2000012)
 script = ExtResource("6_ecbmx")
@@ -237,7 +233,7 @@ position = Vector2(0, 10)
 scale = Vector2(9.135591, 6)
 
 [node name="AcidSurface" type="Marker2D" parent="AcidPit" unique_id=196727150]
-position = Vector2(0, -51.5624)
+position = Vector2(0, -50.45453)
 
 [node name="AcidSprite" type="Sprite2D" parent="AcidPit" unique_id=1002496213]
 visible = false
@@ -249,20 +245,6 @@ texture = ExtResource("8_tqexp")
 position = Vector2(0, 12.272721)
 shape = SubResource("RectangleShape2D_kw6nx")
 debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
-
-[node name="FloatingPlatform" type="RigidBody2D" parent="." unique_id=1549459913 node_paths=PackedStringArray("acid_surface")]
-position = Vector2(1101, 959)
-linear_damp = 6.0
-script = ExtResource("9_fa4ga")
-acid_surface = NodePath("../AcidPit/AcidSurface")
-stiffness = 120.0
-
-[node name="Sprite2D" type="Sprite2D" parent="FloatingPlatform" unique_id=637636405]
-scale = Vector2(1, 0.25)
-texture = ExtResource("8_tqexp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FloatingPlatform" unique_id=1974279517]
-shape = SubResource("RectangleShape2D_bgewv")
 
 [node name="BrainBoss" parent="." unique_id=1698662619 instance=ExtResource("12_qavg7")]
 position = Vector2(1118, 578)
@@ -286,6 +268,10 @@ position = Vector2(1102, 895)
 sprite_frames = SubResource("SpriteFrames_kw6nx")
 animation = &"BossBite"
 frame = 1
+
+[node name="FloatingPlatform_Boss" parent="." unique_id=1566761638 node_paths=PackedStringArray("acid_surface") instance=ExtResource("12_5o0x7")]
+position = Vector2(1102, 958)
+acid_surface = NodePath("../AcidPit/AcidSurface")
 
 [connection signal="body_entered" from="EndingTrigger" to="EndingTrigger" method="_on_body_entered"]
 

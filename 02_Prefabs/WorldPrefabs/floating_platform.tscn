@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bke6vx1amkca1"]
+
+[ext_resource type="Script" uid="uid://b3kwtp37j25w6" path="res://05_Scenes/FloatingPlatform.gd" id="1_1r0j4"]
+[ext_resource type="Texture2D" uid="uid://lqpmx6yaix31" path="res://03_Art/Environment/newenv.png" id="2_1r0j4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgewv"]
+size = Vector2(96, 36)
+
+[node name="FloatingPlatform" type="RigidBody2D" unique_id=1566761638]
+z_index = 10
+linear_damp = 6.0
+script = ExtResource("1_1r0j4")
+stiffness = 120.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=438947925]
+rotation = 1.5707964
+texture = ExtResource("2_1r0j4")
+region_enabled = true
+region_rect = Rect2(40, 456, 48, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=289972093]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_bgewv")
