@@ -3,6 +3,8 @@ class_name RoomPersistances
 
 #dictionary of active puzzles in a room, needs to know what room is it, what is the puzzle and wether is on or off
 var activepuzzles = {}
+enum meta_puzzles {NULL, RISING_ACID}
+var meta_puzzle_values : Dictionary[meta_puzzles,int] = {meta_puzzles.NULL : 0, meta_puzzles.RISING_ACID : 0}
 var revealedsecrets = {} #dictionary of secret rooms
 
 #records the puzzle that was activated
@@ -29,3 +31,6 @@ func is_revealed(room_id: String, reveal_id: String) -> bool:
 		return false
 	
 	return revealedsecrets[room_id][reveal_id]
+
+func change_meta(id: meta_puzzles, amount: int):
+	meta_puzzle_values[id] += amount
