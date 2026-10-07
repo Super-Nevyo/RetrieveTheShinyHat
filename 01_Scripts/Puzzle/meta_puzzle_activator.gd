@@ -11,4 +11,7 @@ func ActivatePuzzle() -> void:
 
 func ChangeMeta() -> void:
 	ActivatePuzzle()
-	PuzzleSignalTransmiter.activate_meta.emit(puzzle_type,activation_amount * (-1 if switch_flipped else 1))
+	PuzzleSignalTransmiter.activate_meta.emit(puzzle_type,activation_amount * (1 if switch_flipped else -1))
+
+func UseSwitch():
+	ChangeMeta()

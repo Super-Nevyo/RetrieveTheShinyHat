@@ -52,7 +52,7 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 					if child.switch_flipped != remembered_state:
 						child.ActivatePuzzle()
 			if child is MetaActivated:
-				child.set_puzzle(activated_puzzles.meta_puzzles[child.puzzle_type])
+				child.set_puzzle(activated_puzzles.meta_puzzle_values[child.puzzle_type])
 
 
 func _on_transition_started(transition_id: String) -> void: #Signals the world map to find the connection to an exit

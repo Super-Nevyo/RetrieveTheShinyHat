@@ -34,3 +34,9 @@ func is_revealed(room_id: String, reveal_id: String) -> bool:
 
 func change_meta(id: meta_puzzles, amount: int):
 	meta_puzzle_values[id] += amount
+
+func _enter_tree() -> void:
+	PuzzleSignalTransmiter.activate_meta.connect(change_meta)
+	
+func _exit_tree() -> void:
+	PuzzleSignalTransmiter.activate_meta.disconnect(change_meta)
