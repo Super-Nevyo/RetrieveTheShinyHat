@@ -186,7 +186,7 @@ signal_id = 41
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("12_rg0cf")]
 position = Vector2(599, 505)
 attached_ids = Array[int]([47])
-activation_amount = Array[float]([-1.0])
+activation_amount = Array[float]([-2.0])
 puzzle_id = "hidden_switch"
 
 [node name="Switch2" parent="." unique_id=699773672 instance=ExtResource("12_rg0cf")]
