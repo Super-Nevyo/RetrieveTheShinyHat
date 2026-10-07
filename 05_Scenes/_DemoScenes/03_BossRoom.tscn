@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://ixs13tk61ybs" path="res://01_Scripts/EndGameTrigger.gd" id="10_uf0fo"]
 [ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="11_p5xto"]
 [ext_resource type="PackedScene" uid="uid://bke6vx1amkca1" path="res://02_Prefabs/WorldPrefabs/floating_platform.tscn" id="12_5o0x7"]
+[ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="12_8orwl"]
 [ext_resource type="PackedScene" uid="uid://7cbkrkj2573a" path="res://02_Prefabs/BrainBoss.tscn" id="12_qavg7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3llcm"]
@@ -272,6 +273,9 @@ frame = 1
 [node name="FloatingPlatform_Boss" parent="." unique_id=1566761638 node_paths=PackedStringArray("acid_surface") instance=ExtResource("12_5o0x7")]
 position = Vector2(1102, 958)
 acid_surface = NodePath("../AcidPit/AcidSurface")
+
+[node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("12_8orwl")]
+room_level = 2
 
 [connection signal="body_entered" from="EndingTrigger" to="EndingTrigger" method="_on_body_entered"]
 

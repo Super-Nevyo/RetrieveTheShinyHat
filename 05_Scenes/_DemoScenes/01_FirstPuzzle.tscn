@@ -232,7 +232,6 @@ signal_id = 2
 [node name="ExitA_Door" parent="." unique_id=690248518 instance=ExtResource("9_6avm4")]
 position = Vector2(1811, 718)
 DoorMovePosition = Vector2(0, 110)
-ActivationAmount = 1.0
 signal_id = 1
 
 [node name="Lights" type="Node" parent="." unique_id=2084832459]

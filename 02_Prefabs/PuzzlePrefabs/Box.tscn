@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://b5kgqbsnaxirq"]
 
-[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="1_5a2w0"]
 [ext_resource type="Script" uid="uid://bshdgv6fifpv6" path="res://01_Scripts/Puzzle/box.gd" id="1_o0tdg"]
+[ext_resource type="Texture2D" uid="uid://lqpmx6yaix31" path="res://03_Art/Environment/newenv.png" id="2_5iw5u"]
 [ext_resource type="Script" uid="uid://bjh1ho7ltd810" path="res://01_Scripts/Puzzle/BoxReveiver.gd" id="2_v735s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qsmb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4aysw"]
+size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2tw8"]
+size = Vector2(40, 40)
 
 [node name="Box" type="RigidBody2D" unique_id=1254739137]
 collision_layer = 64
@@ -20,8 +22,9 @@ float_speed = 40.0
 shape = SubResource("RectangleShape2D_4aysw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1438745487]
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("1_5a2w0")
+texture = ExtResource("2_5iw5u")
+region_enabled = true
+region_rect = Rect2(85, 401, 48, 48)
 
 [node name="AttackCollider" type="Area2D" parent="." unique_id=1176936152]
 collision_layer = 8
