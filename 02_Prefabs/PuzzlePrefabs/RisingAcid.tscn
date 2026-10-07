@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bbwf1ljnfi7lu" path="res://01_Scripts/Puzzle/rising_acid.gd" id="1_pcag1"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="2_toi5b"]
+[ext_resource type="Texture2D" uid="uid://bome11uw75l7m" path="res://03_Art/TempAssets/EnvSizes.png" id="3_hwxd5"]
 
 [node name="RisingAcid" type="Node2D" unique_id=364923058]
 script = ExtResource("1_pcag1")
+puzzle_type = 1
 
 [node name="LiquidTransform" type="Node2D" parent="." unique_id=259595902]
 position = Vector2(960, 1080)
@@ -12,3 +14,9 @@ position = Vector2(960, 1080)
 [node name="Liquid" parent="LiquidTransform" unique_id=1959433390 instance=ExtResource("2_toi5b")]
 position = Vector2(0, 540)
 scale = Vector2(96, 54)
+
+[node name="Sprite2D" type="Sprite2D" parent="LiquidTransform/Liquid" unique_id=1286319095]
+scale = Vector2(0.415, 0.415)
+texture = ExtResource("3_hwxd5")
+region_enabled = true
+region_rect = Rect2(0, 48, 48, 48)

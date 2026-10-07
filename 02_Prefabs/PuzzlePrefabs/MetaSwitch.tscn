@@ -2,13 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="1_3h7lk"]
 [ext_resource type="Script" uid="uid://d3pljbm41hish" path="res://01_Scripts/Puzzle/meta_puzzle_activator.gd" id="1_v66fc"]
+[ext_resource type="Script" uid="uid://bw2iqqm4bgev5" path="res://01_Scripts/WorldInteractions/SwitchAttackReceiver.gd" id="2_nbbr2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 
 [node name="MetaSwitch" type="Node2D" unique_id=54792963]
 script = ExtResource("1_v66fc")
+puzzle_id = "acid_switch_1"
+puzzle_type = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=806894423]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("2_nbbr2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1420565738]
 shape = SubResource("RectangleShape2D_qsmb2")

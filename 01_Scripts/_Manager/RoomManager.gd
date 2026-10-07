@@ -27,7 +27,7 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 	if is_instance_valid(current_room):
 		
 		for child in current_room.get_children(): 
-			if child is PuzzleActivator:
+			if child is PuzzleActivator or child is MetaActivator:
 				if child.puzzle_id != null:
 					activated_puzzles.remember_active(child.puzzle_id, current_room_id, child.switch_flipped) #calls dictionary
 		
@@ -45,12 +45,14 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 	
 	if activated_puzzles.activepuzzles.has(current_room_id):
 		for child in current_room.get_children():
-			if child is PuzzleActivator:
+			if child is PuzzleActivator or child is MetaActivator:
 				if child.puzzle_id != null:
 					var remembered_state: bool = activated_puzzles.puzzle_state(child.puzzle_id, current_room_id)
 					
 					if child.switch_flipped != remembered_state:
 						child.ActivatePuzzle()
+			if child is MetaActivated:
+				child.set_puzzle(activated_puzzles.meta_puzzle_values[child.puzzle_type])
 
 
 func _on_transition_started(transition_id: String) -> void: #Signals the world map to find the connection to an exit
