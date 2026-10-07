@@ -184,15 +184,15 @@ DoorMovePosition = Vector2(0, -98)
 signal_id = 41
 
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("12_rg0cf")]
-position = Vector2(599, 504)
+position = Vector2(599, 505)
 attached_ids = Array[int]([47])
 activation_amount = Array[float]([-1.0])
 puzzle_id = "hidden_switch"
 
 [node name="Switch2" parent="." unique_id=699773672 instance=ExtResource("12_rg0cf")]
-position = Vector2(449, 407)
-attached_ids = Array[int]([40, 47])
-activation_amount = Array[float]([0.5, 1.0])
+position = Vector2(449, 409)
+attached_ids = Array[int]([40, 47, -41])
+activation_amount = Array[float]([0.5, 1.0, 1.0])
 puzzle_id = "shown_switch"
 
 [node name="PressurePlate2" parent="." unique_id=1585478758 instance=ExtResource("10_h4bfu")]
@@ -202,8 +202,8 @@ activation_amount = Array[float]([1.0])
 
 [node name="PressurePlate3" parent="." unique_id=1704538108 instance=ExtResource("10_h4bfu")]
 position = Vector2(1448, 869)
-attached_ids = Array[int]([45, 40])
-activation_amount = Array[float]([-1.0, 0.5])
+attached_ids = Array[int]([45, 40, -42])
+activation_amount = Array[float]([-1.0, 0.5, 1.0])
 
 [node name="Box" parent="." unique_id=1182345792 instance=ExtResource("9_pm20r")]
 position = Vector2(1242, 264)
@@ -217,6 +217,23 @@ signal_id = 42
 [node name="Light" parent="." unique_id=2073561881 instance=ExtResource("11_6n4an")]
 position = Vector2(1752, 653)
 signal_id = 47
+
+[node name="Light2" parent="." unique_id=2123307677 instance=ExtResource("11_6n4an")]
+position = Vector2(452, 457)
+signal_id = -41
+
+[node name="Light3" parent="." unique_id=869082341 instance=ExtResource("11_6n4an")]
+position = Vector2(1421, 942)
+signal_id = -42
+
+[node name="Light4" parent="." unique_id=1368378285 instance=ExtResource("11_6n4an")]
+position = Vector2(748, 552)
+signal_id = 40
+
+[node name="Light5" parent="." unique_id=391370781 instance=ExtResource("11_6n4an")]
+position = Vector2(703, 555)
+ActivationAmount = 0.5
+signal_id = 40
 
 [editable path="transition_traversal"]
 [editable path="transition_boss"]
