@@ -203,36 +203,44 @@ shape = SubResource("RectangleShape2D_bgewv")
 
 [node name="PuzzlePlatform" parent="." unique_id=114348022 instance=ExtResource("9_6avm4")]
 z_index = 15
-position = Vector2(950, 503)
+position = Vector2(903, 503)
 rotation = 1.5707964
-scale = Vector2(2, 2)
-DoorMovePosition = Vector2(0, 200)
+DoorMovePosition = Vector2(0, 420)
+move_speed = 2.0
+signal_id = 3
+
+[node name="PuzzlePlatform2" parent="." unique_id=425038002 instance=ExtResource("9_6avm4")]
+z_index = 15
+position = Vector2(1000, 503)
+rotation = 1.5707964
+DoorMovePosition = Vector2(0, 420)
 move_speed = 2.0
 signal_id = 3
 
 [node name="A1_Switch" parent="." unique_id=150077233 instance=ExtResource("8_4bc4g")]
-position = Vector2(967, 630)
+position = Vector2(967, 649)
 attached_ids = Array[int]([1, 2, 3, 10])
 activation_amount = Array[float]([0.34, 1.0, -1.0, 1.0])
 puzzle_id = "platform_and_door"
 
 [node name="A2_Switch" parent="." unique_id=2142488282 instance=ExtResource("8_4bc4g")]
-position = Vector2(1204, 332)
+position = Vector2(1204, 361)
 attached_ids = Array[int]([1, 3, 11])
 activation_amount = Array[float]([0.34, 0.5, 1.0])
 puzzle_id = "door"
 
 [node name="A3_Switch" parent="." unique_id=443261928 instance=ExtResource("8_4bc4g")]
-position = Vector2(1628, 727)
+position = Vector2(1628, 744)
 attached_ids = Array[int]([1, 2, 3, 12])
 activation_amount = Array[float]([0.34, -1.0, 0.5, 1.0])
 puzzle_id = "door_unplatform"
 
-[node name="A1_AcidPlatform" parent="." unique_id=425038002 instance=ExtResource("9_6avm4")]
+[node name="A1_AcidPlatform" parent="." unique_id=904545460 instance=ExtResource("9_6avm4")]
 z_index = 5
 position = Vector2(1395, 1059)
-scale = Vector2(8, 0.25)
-DoorMovePosition = Vector2(0, -1300)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+DoorMovePosition = Vector2(-140, 0)
 move_speed = 2.0
 signal_id = 2
 
