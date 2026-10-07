@@ -186,7 +186,7 @@ shape = SubResource("RectangleShape2D_kw6nx")
 debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
 
 [node name="FloatingPlatform" parent="." unique_id=1566761638 node_paths=PackedStringArray("acid_surface") instance=ExtResource("9_1gdf8")]
-position = Vector2(1115, 803)
+position = Vector2(1071, 803)
 acid_surface = NodePath("../AcidPit/AcidSurface")
 
 [node name="PuzzlePlatform" parent="." unique_id=114348022 instance=ExtResource("9_6avm4")]
@@ -223,7 +223,7 @@ puzzle_id = "door_unplatform"
 
 [node name="A1_AcidPlatform" parent="." unique_id=904545460 instance=ExtResource("9_6avm4")]
 z_index = 5
-position = Vector2(1395, 1059)
+position = Vector2(1380, 1059)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 DoorMovePosition = Vector2(-140, 0)

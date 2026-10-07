@@ -211,9 +211,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(22.263165, 58)
 
-[sub_resource type="Animation" id="Animation_g7cil"]
-resource_name = "Player_TakeDamage"
-loop_mode = 2
+[sub_resource type="Animation" id="Animation_urycm"]
+resource_name = "Player_DmgThreshold"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -221,10 +221,42 @@ tracks/0/path = NodePath("PlayerAnim:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+"values": [Color(1, 1, 1, 1), Color(0.3647059, 0.3647059, 0.3647059, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qslpj"]
+resource_name = "Player_HealThreshold"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnim:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.3647059, 0.3647059, 0.3647059, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g7cil"]
+resource_name = "Player_TakeDamage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnim:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.21568628, 0.827451, 0.2509804, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_aydsc"]
@@ -244,6 +276,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_urycm"]
 _data = {
+&"Player_DmgThreshold": SubResource("Animation_urycm"),
+&"Player_HealThreshold": SubResource("Animation_qslpj"),
 &"Player_TakeDamage": SubResource("Animation_g7cil"),
 &"RESET": SubResource("Animation_aydsc")
 }
@@ -261,6 +295,7 @@ attack_offset = 25.0
 throw_speed = 500.0
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
+visible = false
 z_index = 1
 position = Vector2(-9.536743e-07, 17)
 scale = Vector2(1.5, 1.5600002)
@@ -270,9 +305,10 @@ shape = SubResource("RectangleShape2D_e8wdy")
 sprite_frames = SubResource("SpriteFrames_bgewv")
 animation = &"Walk"
 autoplay = "Idle"
-frame_progress = 0.4125182
+frame_progress = 0.5433718
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
+visible = false
 position = Vector2(0, 35)
 scale = Vector2(2.2799988, 1)
 collision_layer = 4

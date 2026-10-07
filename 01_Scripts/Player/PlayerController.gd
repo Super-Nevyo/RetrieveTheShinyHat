@@ -112,7 +112,7 @@ func _on_player_anim_animation_finished() -> void:
 		finish_attack()
 
 func take_damage(type: int,amount:float, ignore_invincible: bool = false):
-	# maybe i should make a static function to handle this globally and better?
+	# maybe i should make a static function to handle this globally and better? # if enemies take damage, yes - tbd
 	if isdead:
 		return
 		
@@ -132,6 +132,9 @@ func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 			$PlayerAnimations.play("Player_TakeDamage")
 		
 		HealthChanged.emit(currentHP,MaxHP)
+		if currentHP > 0 and currentHP <= MaxHP * 0.33:
+			$PlayerAnimations.play("Player_DmgThreshold")
+		
 		if currentHP <= 0:
 			die()
 	
