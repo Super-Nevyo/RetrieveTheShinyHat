@@ -6,6 +6,7 @@
 
 [node name="RisingAcid" type="Node2D" unique_id=364923058]
 script = ExtResource("1_pcag1")
+partly_filled_liquid_level = 300.0
 puzzle_type = 1
 
 [node name="LiquidTransform" type="Node2D" parent="." unique_id=259595902]
