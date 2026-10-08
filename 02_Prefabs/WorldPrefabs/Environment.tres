@@ -2,17 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bome11uw75l7m" path="res://03_Art/TempAssets/EnvSizes.png" id="1_woauh"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_woauh"]
-resource_name = "SecretAreas"
-texture = ExtResource("1_woauh")
-texture_region_size = Vector2i(48, 48)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epmgc"]
 resource_name = "TempEnvNew"
 texture = ExtResource("1_woauh")
@@ -21,6 +10,7 @@ texture_region_size = Vector2i(48, 48)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 2:1/0 = 0
 0:1/0 = 0
+0:1/0/modulate = Color(1, 1, 1, 0.78431374)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 2:0/0 = 0
@@ -31,4 +21,3 @@ texture_region_size = Vector2i(48, 48)
 tile_size = Vector2i(48, 48)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_epmgc")
-sources/100 = SubResource("TileSetAtlasSource_woauh")
