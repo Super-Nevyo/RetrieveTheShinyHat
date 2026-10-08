@@ -8,6 +8,8 @@ extends puzzle_activated
 var has_reached_position: bool = false 
 var step : float = 0
 
+@export var disappear_active = false
+
 func activate_puzzle(id: int, Amount: float):
 	if id == signal_id:
 		ActivationAmount += Amount
@@ -15,6 +17,12 @@ func activate_puzzle(id: int, Amount: float):
 
 
 func _physics_process(delta: float) -> void:
+	if disappear_active:
+		var is_active: bool = ActivationAmount >= 1
+		Door.visible = not is_active
+		Door.get_node("CollisionShape2D").set_deferred("disabled", is_active)
+		return
+		
 	if !has_reached_position:
 		if ActivationAmount >= 1:
 			step = clamp(step + move_speed * delta,0,1)

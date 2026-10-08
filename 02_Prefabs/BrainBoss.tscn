@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7cbkrkj2573a"]
 
 [ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="1_dnopr"]
-[ext_resource type="Script" uid="uid://bmedv46rwg8dq" path="res://02_Prefabs/BrainBoss.gd" id="1_tgd2t"]
+[ext_resource type="Script" uid="uid://bmedv46rwg8dq" path="res://01_Scripts/BrainBoss.gd" id="1_tgd2t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgd2t"]
 atlas = ExtResource("1_dnopr")
@@ -45,10 +45,10 @@ animations = [{
 script = ExtResource("1_tgd2t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1075912230]
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_kw6nx")
 animation = &"Idle"
 frame_progress = 0.8094266
 
 [node name="BitePoint" type="Marker2D" parent="." unique_id=1193860379]
-position = Vector2(-35, 109)
+position = Vector2(-26, 90)

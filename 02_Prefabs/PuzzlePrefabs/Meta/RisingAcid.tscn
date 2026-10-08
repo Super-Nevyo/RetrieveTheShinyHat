@@ -17,6 +17,8 @@ position = Vector2(0, 540)
 scale = Vector2(96, 54)
 
 [node name="Sprite2D" type="Sprite2D" parent="LiquidTransform/Liquid" unique_id=1286319095]
+modulate = Color(1, 1, 1, 0.5882353)
+z_index = 19
 scale = Vector2(0.415, 0.415)
 texture = ExtResource("3_hwxd5")
 region_enabled = true
