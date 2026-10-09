@@ -16,6 +16,7 @@ var current_room_id: String
 @export var activated_puzzles: RoomPersistances
 
 func _ready() -> void:
+	GlobalAudio.current_area = starting_room.music_area
 	load_room(starting_room.room_scene, starting_room.room_id)
 
 func load_room(room_scene: PackedScene, room_id: String) -> void:
@@ -77,6 +78,7 @@ func _on_transition_started(transition_id: String) -> void: #Signals the world m
 		_new_destination = connection.room_a
 		_destination_exit_id = connection.exit_a_id
 	
+	GlobalAudio.current_area = _new_destination.music_area
 	await load_room(_new_destination.room_scene, _new_destination.room_id)
 
 	var room_metadata = current_room.get_node("MapMetadata") as MapMetadata

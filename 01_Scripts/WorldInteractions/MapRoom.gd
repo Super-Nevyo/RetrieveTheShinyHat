@@ -5,7 +5,7 @@ class_name MapRoom
 
 @export var room_id: String
 @export var room_scene: PackedScene
-
+@export var music_area: GlobalAudio.BodyAreaMusic
 
 func _ready() -> void:
 	print(room_id, " exit count: ", get_all_exits().size())

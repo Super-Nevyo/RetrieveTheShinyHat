@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://drueonr3kwoju" path="res://01_Scripts/_Manager/audio_manager.gd" id="1_82ie3"]
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="1_kmjnh"]
 [ext_resource type="Script" uid="uid://c65san5kq2b3e" path="res://01_Scripts/_Manager/RoomManager.gd" id="2_8w24r"]
+[ext_resource type="AudioStream" uid="uid://ck5ycb5wlfyi2" path="res://04_Audio/BGMusic/liquidy_bg.mp3" id="2_pkwqo"]
+[ext_resource type="AudioStream" uid="uid://bw7vusbjacame" path="res://04_Audio/BGMusic/bg_music.mp3" id="3_3xmti"]
 [ext_resource type="PackedScene" uid="uid://d16myrmq1kru" path="res://05_Scenes/_DemoScenes/00_CarapaceRoom.tscn" id="5_6ij2g"]
 [ext_resource type="PackedScene" uid="uid://ceo7k687ylrlw" path="res://05_Scenes/_DemoScenes/01_FirstPuzzle.tscn" id="5_e2ro4"]
 [ext_resource type="Script" uid="uid://bvyll42gdi632" path="res://01_Scripts/WorldInteractions/MapRoom.gd" id="5_khsvw"]
@@ -14,15 +16,44 @@
 [ext_resource type="Script" uid="uid://dvmlf5pudw6e2" path="res://01_Scripts/WorldInteractions/RoomPersistances.gd" id="9_e2ro4"]
 [ext_resource type="PackedScene" uid="uid://cn2rn15pdxosc" path="res://02_Prefabs/UIPrefabs/GameHud.tscn" id="9_e8wdy"]
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_76a1v"]
+stream_count = 1
+stream_0 = ExtResource("2_pkwqo")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_oox6v"]
+stream_count = 1
+stream_0 = ExtResource("3_3xmti")
+
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_82ie3"]
-clip_count = 1
-clip_0/name = &""
+clip_count = 2
+clip_0/name = &"stomach_music"
+clip_0/stream = SubResource("AudioStreamPlaylist_76a1v")
 clip_0/auto_advance = 0
+clip_1/name = &"boss_music"
+clip_1/stream = SubResource("AudioStreamPlaylist_oox6v")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(0, 0): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"hold_previous": true,
+"to_time": 1
+},
+Vector2i(1, 0): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"hold_previous": true,
+"to_time": 1
+}
+}
 
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
 
-[node name="AudioManager" type="Node" parent="." unique_id=1648110041]
+[node name="AudioManager" type="Node" parent="." unique_id=1648110041 node_paths=PackedStringArray("bg_music_player")]
 script = ExtResource("1_82ie3")
+bg_music_player = NodePath("BgMusicPlayer")
 
 [node name="BgMusicPlayer" type="AudioStreamPlayer" parent="AudioManager" unique_id=1141927300]
 stream = SubResource("AudioStreamInteractive_82ie3")
@@ -74,6 +105,7 @@ position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "stomach_boss"
 room_scene = ExtResource("8_qfl1h")
+music_area = 1
 
 [node name="Connections" type="Node2D" parent="WorldMap" unique_id=1648242519]
 

@@ -18,6 +18,7 @@ config/icon="res://Sprites/icon.svg"
 [autoload]
 
 PuzzleSignalTransmiter="*uid://py1bpiorntwn"
+GlobalAudio="*uid://brbx83pw6xvi1"
 
 [display]
 
