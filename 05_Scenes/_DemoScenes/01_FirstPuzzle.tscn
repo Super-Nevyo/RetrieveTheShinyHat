@@ -67,7 +67,7 @@ shader_parameter/new_palette = ExtResource("16_1gdf8")
 shader_parameter/colours_count = 5
 
 [node name="Puzzle1" type="Node2D" unique_id=1910544872]
-metadata/_edit_horizontal_guides_ = [449.0]
+metadata/_edit_horizontal_guides_ = [449.0, 201.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 visible = false
@@ -317,6 +317,8 @@ material = SubResource("ShaderMaterial_jh3jw")
 region_rect = Rect2(16, 0, 16, 16)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("19_1gdf8")]
+partly_filled_liquid_level = 200.0
+move_speed = 120.0
 
 [editable path="SecretAreaCarapaceDown"]
 [editable path="SecretAreaCarapaceUp"]

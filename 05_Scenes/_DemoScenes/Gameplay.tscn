@@ -116,6 +116,7 @@ exit_b_id = "boss_exit_w"
 script = ExtResource("9_e2ro4")
 
 [node name="GameHud" parent="." unique_id=1741115912 instance=ExtResource("9_e8wdy")]
+z_index = 100
 anchors_preset = -1
 offset_top = 46.0
 offset_bottom = 46.0

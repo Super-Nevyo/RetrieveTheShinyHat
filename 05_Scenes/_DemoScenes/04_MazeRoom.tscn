@@ -26,7 +26,7 @@ transition_id = "maze_exit_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [node name="MazeRoom" type="Node2D" unique_id=1910544872]
-metadata/_edit_horizontal_guides_ = [449.0]
+metadata/_edit_horizontal_guides_ = [449.0, 300.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 visible = false
