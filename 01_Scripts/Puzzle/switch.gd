@@ -8,3 +8,4 @@ func UseSwitch():
 	else:
 		anim.play_backwards("lever")
 	ActivatePuzzle()
+	$PlayerSfx.play()

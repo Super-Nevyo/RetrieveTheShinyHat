@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="3_aydsc"]
 [ext_resource type="Script" uid="uid://c8jhfob34xjcm" path="res://01_Scripts/WorldInteractions/AttackHitbox.gd" id="3_md7ae"]
 [ext_resource type="Texture2D" uid="uid://holao8ilrmtn" path="res://03_Art/_Player/car96.png" id="4_g7cil"]
+[ext_resource type="AudioStream" uid="uid://clhcrsb6lx5wb" path="res://04_Audio/SFX/swimming1.mp3" id="6_qslpj"]
+[ext_resource type="AudioStream" uid="uid://inb6ui6pwu3e" path="res://04_Audio/SFX/swimming2.mp3" id="7_0eu4l"]
+[ext_resource type="AudioStream" uid="uid://cu6qdj0nspq01" path="res://04_Audio/SFX/swimming3.mp3" id="8_kb8hf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wdy"]
 size = Vector2(60, 37.179485)
@@ -282,6 +285,19 @@ _data = {
 &"RESET": SubResource("Animation_aydsc")
 }
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_o7jyp"]
+shuffle = true
+stream_count = 3
+stream_0 = ExtResource("6_qslpj")
+stream_1 = ExtResource("7_0eu4l")
+stream_2 = ExtResource("8_kb8hf")
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_bgewv"]
+clip_count = 1
+clip_0/name = &"player_swim"
+clip_0/stream = SubResource("AudioStreamPlaylist_o7jyp")
+clip_0/auto_advance = 0
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
@@ -326,6 +342,14 @@ position = Vector2(0, -20)
 
 [node name="PlayerAnimations" type="AnimationPlayer" parent="." unique_id=165675230]
 libraries/ = SubResource("AnimationLibrary_urycm")
+
+[node name="PlayerAudio" type="Node" parent="." unique_id=1784116415]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="PlayerAudio" unique_id=528468759]
+scale = Vector2(0.8, 0.8)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerAudio" unique_id=2073053707]
+stream = SubResource("AudioStreamInteractive_bgewv")
 
 [connection signal="animation_finished" from="PlayerAnim" to="." method="_on_player_anim_animation_finished"]
 [connection signal="area_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_area_entered"]

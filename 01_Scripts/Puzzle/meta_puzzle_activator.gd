@@ -15,3 +15,4 @@ func ChangeMeta() -> void:
 
 func UseSwitch():
 	ChangeMeta()
+	$PlayerSfx.play()

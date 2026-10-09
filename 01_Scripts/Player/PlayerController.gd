@@ -71,6 +71,7 @@ var isdead : bool = false
 @onready var MyInventory : InventoryInfo = InventoryInfo.new(self)
 
 func _ready() -> void:
+	$PlayerAudio/AudioListener2D.make_current()
 	MyStateMachine.Initialize(MyStateMachine.Move)
 
 func _physics_process(delta: float) -> void:
