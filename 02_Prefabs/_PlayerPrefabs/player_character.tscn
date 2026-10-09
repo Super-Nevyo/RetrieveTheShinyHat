@@ -343,7 +343,7 @@ position = Vector2(0, -20)
 [node name="PlayerAnimations" type="AnimationPlayer" parent="." unique_id=165675230]
 libraries/ = SubResource("AnimationLibrary_urycm")
 
-[node name="PlayerAudio" type="Node" parent="." unique_id=1784116415]
+[node name="PlayerAudio" type="Node2D" parent="." unique_id=873921505]
 
 [node name="AudioListener2D" type="AudioListener2D" parent="PlayerAudio" unique_id=528468759]
 scale = Vector2(0.8, 0.8)

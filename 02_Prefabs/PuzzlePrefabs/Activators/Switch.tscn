@@ -46,7 +46,7 @@ _data = {
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1ykdu"]
-random_pitch = 1.0905077
+random_pitch = 1.0717734
 streams_count = 1
 stream_0/stream = ExtResource("4_dlyqn")
 
