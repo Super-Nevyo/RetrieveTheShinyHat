@@ -32,6 +32,14 @@ region = Rect2(432, 198, 144, 96)
 atlas = ExtResource("2_g7cil")
 region = Rect2(576, 198, 144, 96)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lr4t"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(297, 198, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewfnj"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(396, 198, 96, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_hng6t"]
 atlas = ExtResource("3_aydsc")
 region = Rect2(0, 196, 98, 98)
@@ -124,6 +132,17 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lr4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewfnj")
+}],
+"loop": 1,
+"name": &"Ball",
 "speed": 5.0
 }, {
 "frames": [{
@@ -319,9 +338,8 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Walk"
+animation = &"Ball"
 autoplay = "Idle"
-frame_progress = 0.5433718
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
 visible = false

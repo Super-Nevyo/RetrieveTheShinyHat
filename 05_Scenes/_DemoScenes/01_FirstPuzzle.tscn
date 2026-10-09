@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://ds8wv51qapj7k" path="res://06_Extras/PalletSwaps/GreenPalletOff.png" id="16_1gdf8"]
 [ext_resource type="Texture2D" uid="uid://biowk03c2mfwa" path="res://06_Extras/PalletSwaps/BluePalletOff.png" id="16_3xloq"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="19_1gdf8"]
+[ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="21_re327"]
+[ext_resource type="Script" uid="uid://sbokqad6h65g" path="res://01_Scripts/Inventory/BallItem.gd" id="22_f1gxo"]
+[ext_resource type="Texture2D" uid="uid://d0kaqmiym3ns8" path="res://03_Art/Items/Empty.png" id="23_kre3p"]
 
 [sub_resource type="Resource" id="Resource_sh0j4"]
 script = ExtResource("4_xpqxw")
@@ -65,6 +68,11 @@ shader = ExtResource("13_y3j3e")
 shader_parameter/original_palette = ExtResource("15_bnkqy")
 shader_parameter/new_palette = ExtResource("16_1gdf8")
 shader_parameter/colours_count = 5
+
+[sub_resource type="Resource" id="Resource_5jciy"]
+script = ExtResource("22_f1gxo")
+tex = ExtResource("23_kre3p")
+metadata/_custom_type_script = "uid://sbokqad6h65g"
 
 [node name="Puzzle1" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0, 201.0]
@@ -320,6 +328,13 @@ region_rect = Rect2(16, 0, 16, 16)
 partly_filled_liquid_level = 200.0
 move_speed = 120.0
 
+[node name="Pickup" parent="RisingAcid" unique_id=483234207 instance=ExtResource("21_re327")]
+position = Vector2(741, 723)
+itemInfo = SubResource("Resource_5jciy")
+
+[node name="Sprite2D" parent="RisingAcid/Pickup" index="1" unique_id=1451214542]
+texture = ExtResource("23_kre3p")
+
 [editable path="SecretAreaCarapaceDown"]
 [editable path="SecretAreaCarapaceUp"]
 [editable path="transition_puzzle2"]
@@ -332,3 +347,4 @@ move_speed = 120.0
 [editable path="Lights/GreenLight"]
 [editable path="Lights/green_door"]
 [editable path="Lights/GreenLight3"]
+[editable path="RisingAcid/Pickup"]

@@ -21,7 +21,7 @@ var direction_y : float
 var current_speed : float
 
 # Submerged
-@export var swim_speed: float = 300
+@export var swim_speed: float = 200
 @export var swim_acceleration: float = 800
 @export var swim_friction: float = 100
 var max_breath : float = 100 #this is 100 because the bar has a max of 100
@@ -30,6 +30,16 @@ var max_breath : float = 100 #this is 100 because the bar has a max of 100
 @export var drown_dmg : float = 10
 @export var drown_relief : float = 2
 @export var submerged_cap : float = 40
+
+# BallMode
+var has_ball: bool = false
+@export var ball_speed: float = 350
+@export var ball_acceleration: float = 1800
+@export var ball_friction: float = 200
+@export var ball_small_jump: float = 200
+@export var ball_fast_jump: float = 400
+@export var ball_jump_speed: float = 200
+
 
 var velo: Vector2 = Vector2.ZERO
 
@@ -62,7 +72,7 @@ var isdead : bool = false
 @export var throw_speed : float = 100
 
 #===ANIMATION
-@onready var player_anim: AnimatedSprite2D = $PlayerAnim #the $ is godots shortway of references. Also drag from scene tab into script
+@onready var player_anim: AnimatedSprite2D = $PlayerAnim 
 
 #===STATE MACHINE
 @onready var MyStateMachine = PlayerStateMachine.new(self)

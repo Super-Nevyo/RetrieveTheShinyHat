@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="11_p5xto"]
 [ext_resource type="PackedScene" uid="uid://bke6vx1amkca1" path="res://02_Prefabs/WorldPrefabs/floating_platform.tscn" id="12_5o0x7"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="12_8orwl"]
-[ext_resource type="PackedScene" uid="uid://7cbkrkj2573a" path="res://02_Prefabs/BrainBoss.tscn" id="12_qavg7"]
+[ext_resource type="PackedScene" uid="uid://7cbkrkj2573a" path="res://02_Prefabs/WorldPrefabs/BrainBoss.tscn" id="12_qavg7"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="15_blv6u"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="16_hgay3"]
 
