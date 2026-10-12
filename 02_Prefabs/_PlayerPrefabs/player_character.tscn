@@ -323,6 +323,7 @@ collision_layer = 2
 script = ExtResource("1_q2jwi")
 speed = 200.0
 acceleration = 1000.0
+swim_speed = 320.0
 breath_decay = 5.0
 submerged_cap = 250.0
 jump_time_down = 0.3

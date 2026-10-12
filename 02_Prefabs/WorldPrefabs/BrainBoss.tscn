@@ -48,7 +48,7 @@ script = ExtResource("1_tgd2t")
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_kw6nx")
 animation = &"Idle"
-frame_progress = 0.8094266
+frame_progress = 0.15963715
 
 [node name="BitePoint" type="Marker2D" parent="." unique_id=1193860379]
 position = Vector2(-26, 90)
