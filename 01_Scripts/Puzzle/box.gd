@@ -45,3 +45,6 @@ func respawn():
 		PhysicsServer2D.BODY_STATE_TRANSFORM,
 		Transform2D.IDENTITY.translated(respawn_location)
 	)
+
+
+#if object is on layer 1 > take the velocity of the object that is on layer 1, apply to box 

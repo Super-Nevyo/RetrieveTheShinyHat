@@ -10,11 +10,15 @@ var step : float = 0
 
 @export var disappear_active = false
 
+# == Test - platform velocity
+@onready var carrier_area: Area2D = $CarryArea
+var last_position: Vector2 = Vector2.ZERO
+var platform_velocity: Vector2 = Vector2.ZERO
+
 func activate_puzzle(id: int, Amount: float):
 	if id == signal_id:
 		ActivationAmount += Amount
 		has_reached_position = false
-
 
 func _physics_process(delta: float) -> void:
 	if disappear_active:
@@ -22,7 +26,14 @@ func _physics_process(delta: float) -> void:
 		Door.visible = not is_active
 		Door.get_node("CollisionShape2D").set_deferred("disabled", is_active)
 		return
-		
+	
+	if delta > 0:
+		platform_velocity = (global_position - last_position) / delta
+		last_position = global_position
+	
+	if carrier_area:
+		carrier_area.constant_linear_velocity = platform_velocity
+	
 	if !has_reached_position:
 		if ActivationAmount >= 1:
 			step = clamp(step + move_speed * delta,0,1)
