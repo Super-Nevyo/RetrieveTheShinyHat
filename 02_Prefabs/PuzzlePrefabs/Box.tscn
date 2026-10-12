@@ -12,9 +12,6 @@ size = Vector2(40, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2tw8"]
 size = Vector2(40, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v735s"]
-size = Vector2(40, 12)
-
 [node name="Box" type="RigidBody2D" unique_id=1254739137]
 collision_layer = 64
 physics_material_override = SubResource("PhysicsMaterial_qsmb2")
@@ -35,11 +32,3 @@ script = ExtResource("2_v735s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackCollider" unique_id=2027208278]
 shape = SubResource("RectangleShape2D_p2tw8")
-
-[node name="CarryArea" type="Area2D" parent="." unique_id=1701705335]
-position = Vector2(0, -25)
-collision_layer = 9
-script = ExtResource("2_v735s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CarryArea" unique_id=1250827231]
-shape = SubResource("RectangleShape2D_v735s")

@@ -6,20 +6,29 @@ class_name Box
 @export var liquid_speed_reduce : float = 3
 var bodies_of_water : int = 0
 var floating = false
+var held_by_player = false
 
 #Respawn
 @export var does_respawn : bool = false
 @onready var respawn_location : Vector2 = Vector2(global_position)
 
+var platform_ignore_time: float = 0.0
+
 func _physics_process(delta: float) -> void:
+	platform_ignore_time = maxf(platform_ignore_time - delta, 0.0)
+	
 	if floating:
 		linear_velocity += delta * float_speed * Vector2.UP
 
 func accl_toward(point : Vector2) -> void:
+	held_by_player = true
 	gravity_scale = 0
 	linear_velocity = speed * (point - position)
 
 func throw(direction : Vector2, strength : float) -> void:
+	held_by_player = false
+	platform_ignore_time = 0.25
+
 	if !floating:
 		gravity_scale = 1
 	linear_velocity = strength * direction
@@ -47,4 +56,10 @@ func respawn():
 	)
 
 
-#if object is on layer 1 > take the velocity of the object that is on layer 1, apply to box 
+func carry_on_platform(platform_velocity: Vector2) -> void:
+	if held_by_player or floating or platform_ignore_time > 0.0:
+		return
+	if linear_velocity.y < -1.0:
+		return
+	sleeping = false
+	linear_velocity.x = platform_velocity.x

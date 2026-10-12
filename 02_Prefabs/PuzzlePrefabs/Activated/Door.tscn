@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dj381g2apxkgs" path="res://01_Scripts/Puzzle/door.gd" id="1_q8kmd"]
 [ext_resource type="Texture2D" uid="uid://lqpmx6yaix31" path="res://03_Art/Environment/newenv.png" id="2_qd1ed"]
+[ext_resource type="Script" uid="uid://bjh1ho7ltd810" path="res://01_Scripts/Puzzle/BoxReveiver.gd" id="3_6brht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(38, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv4gt"]
+size = Vector2(40, 12)
 
 [node name="Door" type="Node2D" unique_id=425038002 node_paths=PackedStringArray("Door")]
 script = ExtResource("1_q8kmd")
@@ -20,3 +24,12 @@ shape = SubResource("RectangleShape2D_qsmb2")
 texture = ExtResource("2_qd1ed")
 region_enabled = true
 region_rect = Rect2(39, 456, 48, 96)
+
+[node name="CarryArea" type="Area2D" parent="." unique_id=562174676]
+position = Vector2(0, -50)
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("3_6brht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarryArea" unique_id=274558619]
+shape = SubResource("RectangleShape2D_hv4gt")

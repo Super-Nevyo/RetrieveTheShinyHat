@@ -12,8 +12,6 @@ var step : float = 0
 
 # == Test - platform velocity
 @onready var carrier_area: Area2D = $CarryArea
-var last_position: Vector2 = Vector2.ZERO
-var platform_velocity: Vector2 = Vector2.ZERO
 
 func activate_puzzle(id: int, Amount: float):
 	if id == signal_id:
@@ -27,12 +25,8 @@ func _physics_process(delta: float) -> void:
 		Door.get_node("CollisionShape2D").set_deferred("disabled", is_active)
 		return
 	
-	if delta > 0:
-		platform_velocity = (global_position - last_position) / delta
-		last_position = global_position
-	
-	if carrier_area:
-		carrier_area.constant_linear_velocity = platform_velocity
+	var previous_position: Vector2 = Door.global_position
+
 	
 	if !has_reached_position:
 		if ActivationAmount >= 1:
@@ -47,3 +41,11 @@ func _physics_process(delta: float) -> void:
 			Door.position = lerp(DoorStartPosition, DoorMovePosition, step)
 			if abs((DoorStartPosition - Door.position).length())<0.1:
 				has_reached_position = true
+		
+	if delta <= 0.0:
+		return
+
+	var platform_velocity: Vector2 = ((Door.global_position - previous_position) / delta)
+	for body in carrier_area.get_overlapping_bodies():
+		if body is Box:
+			body.carry_on_platform(platform_velocity)
