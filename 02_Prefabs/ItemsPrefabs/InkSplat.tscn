@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8u8cydojbmx5"]
+
+[ext_resource type="Script" uid="uid://bmdu1rmbwsw7x" path="res://01_Scripts/Inventory/ink_splat.gd" id="1_0mkgu"]
+[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="1_n7yfm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
+size = Vector2(98, 48)
+
+[node name="InkSplat" type="Area2D" unique_id=1492847955]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("1_0mkgu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=75497602]
+scale = Vector2(0.76, 0.36)
+texture = ExtResource("1_n7yfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852757556]
+shape = SubResource("RectangleShape2D_kw6nx")
+
+[node name="Timer" type="Timer" parent="." unique_id=717474809]
+wait_time = 10.0
+one_shot = true

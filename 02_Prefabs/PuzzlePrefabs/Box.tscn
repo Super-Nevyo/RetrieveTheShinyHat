@@ -15,6 +15,7 @@ size = Vector2(40, 40)
 [node name="Box" type="RigidBody2D" unique_id=1254739137]
 collision_layer = 64
 physics_material_override = SubResource("PhysicsMaterial_qsmb2")
+can_sleep = false
 script = ExtResource("1_o0tdg")
 float_speed = 40.0
 
