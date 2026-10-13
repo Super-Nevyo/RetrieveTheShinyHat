@@ -8,7 +8,17 @@ func _init(player: PlayerController) -> void:
 	Player = player
 
 func AddItem(item: Item, slot: int) -> void:
+	var dupe = 0
 	if Items[slot] != null:
-		Items[slot].Exit(Player)
+		for i in Items:
+			if i == Items[slot]:
+				dupe += 1
+		if dupe == 1:
+			Items[slot].Exit(Player)
 	Items[slot] = item
-	Items[slot].Enter(Player)
+	dupe = 0
+	for i in Items:
+		if i == Items[slot]:
+			dupe += 1
+	if dupe == 1:
+		Items[slot].Enter(Player)
