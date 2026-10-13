@@ -71,7 +71,7 @@ func accl_toward(point : Vector2) -> void:
 		_detach_ink()
 	
 	gravity_scale = 0
-	linear_velocity = speed * (point - position)
+	linear_velocity = speed * (point - global_position)
 
 func throw(direction : Vector2, strength : float) -> void:
 	held_by_player = false

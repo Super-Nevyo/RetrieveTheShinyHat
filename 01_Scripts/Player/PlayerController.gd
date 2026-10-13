@@ -10,6 +10,10 @@ signal HealthChanged(new: float, maxHp: float)
 signal ItemCollected(index: int, item: Item)
 signal BreathChanged(breath:float)
 
+#===GOD MODE
+var god_mode: bool = false
+@export var god_speed: float = 1000
+
 #===MOVEMENT
 # Ground
 @export var speed: float = 300
@@ -87,7 +91,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if isdead:
 		return
+	
 	get_input()
+	
+	#god mode stuff
+	if Input.is_action_just_pressed("god_mode"):
+		print("Is over 9thousandddd!")
+		activate_god_mode(not god_mode)
+	
 	MyStateMachine.Update(delta)
 	velocity = velo
 	move_and_slide() #this is what is actually performing the movement
@@ -124,7 +135,8 @@ func _on_player_anim_animation_finished() -> void:
 
 func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 	# maybe i should make a static function to handle this globally and better? # if enemies take damage, yes - tbd
-	if isdead:
+
+	if isdead or god_mode:
 		return
 		
 	var was_hit = false
@@ -152,6 +164,7 @@ func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 	pass
 
 func die():
+	#reminder to add dead animation
 	isdead = true
 	set_physics_process(false)
 	get_tree().change_scene_to_file("res://05_Scenes/_DemoScenes/LoseScene.tscn")
@@ -171,3 +184,13 @@ func add_item(item:Item, index: int):
 	ItemCollected.emit(index,item)
 	#inventoryUI.ChangeInventoryUI(index, item.tex)
 	pass
+
+func activate_god_mode (enabled:bool) -> void:
+	god_mode = enabled
+	if god_mode:
+		MyStateMachine.ChangeState(MyStateMachine.God)
+	else:
+		remove_god()
+
+func remove_god() -> void:
+	MyStateMachine.ChangeState(MyStateMachine.Fall)

@@ -163,11 +163,12 @@ activation_amount = Array[float]([-1.0, 0.5, 1.0])
 
 [node name="Box" parent="." unique_id=1182345792 instance=ExtResource("9_pm20r")]
 position = Vector2(1242, 264)
+physics_material_override = null
 
 [node name="Door4" parent="." unique_id=1336551941 instance=ExtResource("13_rg0cf")]
 position = Vector2(1396, 244)
 DoorMovePosition = Vector2(-350, 0)
-move_speed = 1.0
+move_speed = 0.5
 signal_id = 42
 
 [node name="Light" parent="." unique_id=2073561881 instance=ExtResource("11_6n4an")]
@@ -183,11 +184,11 @@ position = Vector2(1421, 942)
 signal_id = -42
 
 [node name="Light4" parent="." unique_id=1368378285 instance=ExtResource("11_6n4an")]
-position = Vector2(748, 552)
+position = Vector2(748, 553)
 signal_id = 40
 
 [node name="Light5" parent="." unique_id=391370781 instance=ExtResource("11_6n4an")]
-position = Vector2(703, 555)
+position = Vector2(703, 553)
 ActivationAmount = 0.5
 signal_id = 40
 

@@ -293,11 +293,12 @@ move_speed = 150.0
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("15_blv6u")]
 position = Vector2(1704, 362)
 attached_ids = Array[int]([31])
-activation_amount = Array[float]([-1.0])
+activation_amount = Array[float]([1.0])
 puzzle_id = "final_boss_door"
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("16_hgay3")]
 position = Vector2(1804, 286)
+DoorMovePosition = Vector2(0, 100)
 signal_id = 31
 
 [connection signal="body_entered" from="EndingTrigger" to="EndingTrigger" method="_on_body_entered"]
