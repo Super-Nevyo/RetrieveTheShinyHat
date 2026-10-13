@@ -14,4 +14,4 @@ func HoverInventoryUI(index: int) -> void:
 		selector.visible = false
 	else:
 		selector.visible = true
-		selector.position = item_icon[index].global_position + Vector2(item_icon[index].custom_minimum_size.x, 0)
+		selector.position = item_icon[index].position + Vector2(item_icon[index].custom_minimum_size.x, 0)

@@ -8,9 +8,8 @@
 script = ExtResource("1_i5qnj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2022403285]
-collision_mask = 2
+collision_layer = 256
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=500654289]
 shape = SubResource("RectangleShape2D_qsmb2")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

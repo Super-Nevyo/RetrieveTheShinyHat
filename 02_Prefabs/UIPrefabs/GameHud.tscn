@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cn2rn15pdxosc"]
 
 [ext_resource type="Script" uid="uid://b717txvf74q2t" path="res://01_Scripts/Inventory/game_hud.gd" id="1_awiqt"]
-[ext_resource type="PackedScene" uid="uid://gu6uawxsrxl8" path="res://02_Prefabs/UIPrefabs/Healthbar.tscn" id="1_ppufa"]
+[ext_resource type="PackedScene" uid="uid://5mdfk0y7f3wi" path="res://02_Prefabs/UIPrefabs/Healthbar.tscn" id="1_ppufa"]
 [ext_resource type="PackedScene" uid="uid://cv2gct0dh0q70" path="res://02_Prefabs/UIPrefabs/InventoryUI.tscn" id="2_awiqt"]
 [ext_resource type="PackedScene" uid="uid://dxfwg2fx08ek" path="res://02_Prefabs/UIPrefabs/BreathBar.tscn" id="4_vk3oh"]
 
