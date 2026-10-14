@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="5_bxbb6"]
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="6_tv0c3"]
 [ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="7_lflvr"]
-[ext_resource type="Resource" uid="uid://yc6fyaxbjhq5" path="res://Sprites/Acidproof.tres" id="8_bxbb6"]
-[ext_resource type="Texture2D" uid="uid://d1u4gfybi1o3l" path="res://03_Art/Items/AcidProofCarapace.png" id="9_tv0c3"]
+[ext_resource type="Script" uid="uid://cv4ucm2x24qr8" path="res://01_Scripts/Inventory/AcidProofCaripace.gd" id="8_tv0c3"]
+[ext_resource type="Texture2D" uid="uid://d1u4gfybi1o3l" path="res://03_Art/Items/AcidProofCarapace.png" id="9_lgv6y"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="10_bxbb6"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="11_tv0c3"]
 
@@ -23,6 +23,11 @@ script = ExtResource("6_tv0c3")
 display_name = "To_Puzzle1"
 transition_id = "carapace_exit_esecret"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_od2g3"]
+script = ExtResource("8_tv0c3")
+tex = ExtResource("9_lgv6y")
+metadata/_custom_type_script = "uid://cv4ucm2x24qr8"
 
 [node name="CarapaceRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
@@ -88,10 +93,10 @@ position = Vector2(-62, 18)
 
 [node name="Pickup" parent="." unique_id=483234207 instance=ExtResource("7_lflvr")]
 position = Vector2(604, 730)
-itemInfo = ExtResource("8_bxbb6")
+itemInfo = SubResource("Resource_od2g3")
 
-[node name="Sprite2D" parent="Pickup" index="1" unique_id=1451214542]
-texture = ExtResource("9_tv0c3")
+[node name="Sprite2D" parent="Pickup" index="1" unique_id=1059875453]
+texture = ExtResource("9_lgv6y")
 
 [node name="Liquid" parent="." unique_id=1959433390 instance=ExtResource("10_bxbb6")]
 position = Vector2(1122, 956)

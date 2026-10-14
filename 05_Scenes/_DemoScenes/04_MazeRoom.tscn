@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://n42r34pmo1fh" path="res://02_Prefabs/PuzzlePrefabs/Activated/Light.tscn" id="11_6n4an"]
 [ext_resource type="PackedScene" uid="uid://nv8l1gfvbm8" path="res://02_Prefabs/PuzzlePrefabs/Meta/MetaSwitch.tscn" id="11_h4bfu"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="12_rg0cf"]
+[ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="13_f40ku"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="13_rg0cf"]
 
 [sub_resource type="Resource" id="Resource_sh0j4"]
@@ -59,6 +60,7 @@ metadata/_edit_lock_ = true
 
 [node name="Acid" type="TileMapLayer" parent="." unique_id=625080141]
 z_index = -5
+tile_map_data = PackedByteArray("AAAbAAkAAgAAAAEAAAAcAAkAAgAAAAEAAAAcAAgAAgAAAAEAAAAbAAgAAgAAAAEAAAA=")
 tile_set = ExtResource("3_f40ku")
 
 [node name="transition_traversal" parent="." unique_id=306758002 instance=ExtResource("3_rg0cf")]
@@ -168,7 +170,7 @@ physics_material_override = null
 [node name="Door4" parent="." unique_id=1336551941 instance=ExtResource("13_rg0cf")]
 position = Vector2(1396, 244)
 DoorMovePosition = Vector2(-350, 0)
-move_speed = 0.5
+move_speed = 0.4
 signal_id = 42
 
 [node name="Light" parent="." unique_id=2073561881 instance=ExtResource("11_6n4an")]
@@ -192,5 +194,10 @@ position = Vector2(703, 553)
 ActivationAmount = 0.5
 signal_id = 40
 
+[node name="Liquid" parent="." unique_id=1959433390 instance=ExtResource("13_f40ku")]
+position = Vector2(1343, 431.99997)
+scale = Vector2(4.821511, 4.7409596)
+
 [editable path="transition_traversal"]
 [editable path="transition_boss"]
+[editable path="Liquid"]
