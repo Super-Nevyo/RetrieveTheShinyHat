@@ -40,8 +40,9 @@ func Update(delta:float):
 		recent_direction = Player.direction_x
 	else:
 		if Player.has_ball:
+			Player.velo.x = move_toward(Player.velo.x, 0, Player.ball_friction * delta)
+		else:
 			Player.velo.x = move_toward(Player.velo.x, 0, Player.friction * delta)
-		Player.velo.x = move_toward(Player.velo.x, 0, Player.friction * delta)
 		
 
 func Attack():
@@ -53,15 +54,11 @@ func Attack():
 
 func Jump():
 	if Player.has_ball:
-		if Player.is_attacking:
-			return
-			
-		if Player.velocity.x >= Player.ball_jump_speed or Player.velocity.x <= -Player.ball_jump_speed:
-			Player.velo.y = Player.ball_fast_jump
+		if abs(Player.velocity.x) >= Player.ball_jump_speed or Player.velocity.x <= -Player.ball_jump_speed:
+			Player.velo.y = -Player.ball_fast_jump
 		else:
-			Player.velo.y = Player.ball_small_jump
+			Player.velo.y = -Player.ball_small_jump
 		
-		Player.MyStateMachine.ChangeState(Player.MyStateMachine.Fall)
 	else:
 		Player.velo.y += Player.jump_velocity
 

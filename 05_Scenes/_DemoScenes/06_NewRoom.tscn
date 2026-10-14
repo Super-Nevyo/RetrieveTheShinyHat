@@ -139,15 +139,15 @@ puzzle_id = "acid_boxes"
 
 [node name="DoorTogether_2" parent="." unique_id=111296453 instance=ExtResource("9_4urj5")]
 position = Vector2(1043, 146)
-DoorMovePosition = Vector2(-600, 0)
-move_speed = 0.4
+DoorMovePosition = Vector2(-580, 0)
+move_speed = 0.35
 signal_id = 61
 
 [node name="DoorTogether_1" parent="." unique_id=565042902 instance=ExtResource("9_4urj5")]
 position = Vector2(1083, 146)
 rotation = 3.1415927
-DoorMovePosition = Vector2(600, 0)
-move_speed = 0.4
+DoorMovePosition = Vector2(580, 0)
+move_speed = 0.35
 signal_id = 61
 
 [node name="DoorTogether_3" parent="." unique_id=395612768 instance=ExtResource("9_4urj5")]
@@ -171,7 +171,6 @@ signal_id = 63
 
 [node name="InkSplat" parent="DoorTogether_5/StaticBody2D" parent_id_path=PackedInt32Array(596361714, 2113387722) index="0" unique_id=1492847955 instance=ExtResource("15_4ryoi")]
 position = Vector2(20, -43)
-splat_duration = 30.0
 
 [node name="DoorTogether_6" parent="." unique_id=2120370086 instance=ExtResource("9_4urj5")]
 position = Vector2(1033, 526)
@@ -184,5 +183,6 @@ signal_id = 63
 [editable path="transition_place"]
 [editable path="transition_secret"]
 [editable path="Liquid"]
+[editable path="Box"]
 [editable path="DoorTogether_5"]
 [editable path="DoorTogether_6"]

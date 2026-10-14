@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="5_2cif6"]
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="6_jrjgk"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="7_cpw24"]
-[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="8_acv66"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="9_ahbg7"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="10_54uff"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="11_2rkns"]
@@ -105,9 +104,6 @@ position = Vector2(-62, 56)
 [node name="Liquid" parent="." unique_id=1959433390 instance=ExtResource("7_cpw24")]
 position = Vector2(1122, 1254)
 scale = Vector2(32.39999, 14.12)
-
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("8_acv66")]
-position = Vector2(416.00012, 948)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("9_ahbg7")]
 partly_filled_liquid_level = 260.0

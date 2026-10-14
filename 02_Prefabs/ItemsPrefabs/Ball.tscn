@@ -1,24 +1,27 @@
 [gd_scene format=3 uid="uid://kvjvphxsnm6o"]
 
 [ext_resource type="Script" uid="uid://b4x025f135lyu" path="res://01_Scripts/Inventory/pickup.gd" id="1_6c723"]
-[ext_resource type="Script" uid="uid://cup0vgcvxdn24" path="res://01_Scripts/Inventory/Items.gd" id="2_yx4er"]
-[ext_resource type="Texture2D" uid="uid://brxf5idiokidd" path="res://03_Art/Items/PlayerVisible/Snorkel.png" id="3_hckwn"]
+[ext_resource type="Script" uid="uid://sbokqad6h65g" path="res://01_Scripts/Inventory/BallItem.gd" id="2_hckwn"]
+[ext_resource type="Texture2D" uid="uid://d0kaqmiym3ns8" path="res://03_Art/Items/Empty.png" id="4_63ewi"]
 
-[sub_resource type="Resource" id="Resource_hnhmj"]
-script = ExtResource("2_yx4er")
-tex = ExtResource("3_hckwn")
-metadata/_custom_type_script = "uid://cup0vgcvxdn24"
+[sub_resource type="Resource" id="Resource_3xmti"]
+script = ExtResource("2_hckwn")
+metadata/_custom_type_script = "uid://sbokqad6h65g"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 
 [node name="Pickup" type="Node2D" unique_id=483234207]
 script = ExtResource("1_6c723")
-itemInfo = SubResource("Resource_hnhmj")
+itemInfo = SubResource("Resource_3xmti")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2022403285]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=500654289]
 shape = SubResource("RectangleShape2D_qsmb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586042361]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_63ewi")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
