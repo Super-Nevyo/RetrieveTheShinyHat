@@ -99,6 +99,7 @@ transition_data = SubResource("Resource_m1v14")
 position = Vector2(-82, 21)
 
 [node name="transition_leverpuzzle" parent="." unique_id=1883036955 instance=ExtResource("3_6udno")]
+visible = false
 position = Vector2(539, 67)
 rotation = 1.5707964
 transition_data = SubResource("Resource_khd4a")
