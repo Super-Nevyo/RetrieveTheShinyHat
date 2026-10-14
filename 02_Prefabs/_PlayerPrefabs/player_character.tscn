@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://clhcrsb6lx5wb" path="res://04_Audio/SFX/swimming1.mp3" id="6_qslpj"]
 [ext_resource type="AudioStream" uid="uid://inb6ui6pwu3e" path="res://04_Audio/SFX/swimming2.mp3" id="7_0eu4l"]
 [ext_resource type="AudioStream" uid="uid://cu6qdj0nspq01" path="res://04_Audio/SFX/swimming3.mp3" id="8_kb8hf"]
+[ext_resource type="Script" uid="uid://nehtne8q7s46" path="res://01_Scripts/Inventory/item_interactor.gd" id="9_0eu4l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wdy"]
 size = Vector2(60, 37.179485)
@@ -317,6 +318,8 @@ clip_0/name = &"player_swim"
 clip_0/stream = SubResource("AudioStreamPlaylist_o7jyp")
 clip_0/auto_advance = 0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsmb2"]
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
@@ -375,6 +378,16 @@ scale = Vector2(0.8, 0.8)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerAudio" unique_id=2073053707]
 stream = SubResource("AudioStreamInteractive_bgewv")
 
+[node name="ItemInteractor" type="Area2D" parent="." unique_id=346615785]
+collision_layer = 0
+collision_mask = 256
+script = ExtResource("9_0eu4l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemInteractor" unique_id=985604552]
+shape = SubResource("CircleShape2D_qsmb2")
+
 [connection signal="animation_finished" from="PlayerAnim" to="." method="_on_player_anim_animation_finished"]
 [connection signal="area_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_area_entered"]
 [connection signal="area_entered" from="AttackHitBox" to="AttackHitBox" method="_on_area_entered"]
+[connection signal="area_entered" from="ItemInteractor" to="ItemInteractor" method="_on_area_entered"]
+[connection signal="area_exited" from="ItemInteractor" to="ItemInteractor" method="_on_area_exited"]

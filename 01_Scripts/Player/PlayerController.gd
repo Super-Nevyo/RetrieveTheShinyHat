@@ -8,6 +8,7 @@ extends CharacterBody2D
 #===SIGNALS
 signal HealthChanged(new: float, maxHp: float)
 signal ItemCollected(index: int, item: Item)
+signal ItemHovered(index: int)
 signal BreathChanged(breath:float)
 
 #===GOD MODE

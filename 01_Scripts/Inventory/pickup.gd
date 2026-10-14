@@ -1,7 +1,7 @@
 extends Node2D
+class_name PickupItem
 
 @export var itemInfo : Item
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is PlayerController:
-		body.add_item(itemInfo,1)
+func get_item_info() -> Item:
+	return itemInfo
