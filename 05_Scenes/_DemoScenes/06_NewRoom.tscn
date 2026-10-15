@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/Activators/PressurePlate.tscn" id="13_0ji6x"]
 [ext_resource type="PackedScene" uid="uid://nv8l1gfvbm8" path="res://02_Prefabs/PuzzlePrefabs/Meta/MetaSwitch.tscn" id="14_hpm1i"]
 [ext_resource type="PackedScene" uid="uid://8u8cydojbmx5" path="res://02_Prefabs/ItemsPrefabs/InkSplat.tscn" id="15_4ryoi"]
+[ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="16_wnals"]
+[ext_resource type="Script" uid="uid://cv4ucm2x24qr8" path="res://01_Scripts/Inventory/AcidProofCaripace.gd" id="17_0yoqx"]
+[ext_resource type="Texture2D" uid="uid://d1u4gfybi1o3l" path="res://03_Art/Items/AcidProofCarapace.png" id="18_pjrqr"]
 
 [sub_resource type="Resource" id="Resource_ar7t2"]
 script = ExtResource("6_0ji6x")
@@ -27,6 +30,11 @@ script = ExtResource("6_0ji6x")
 display_name = "To_PlaceName"
 transition_id = "place_exit_secret_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_ujnxt"]
+script = ExtResource("17_0yoqx")
+tex = ExtResource("18_pjrqr")
+metadata/_custom_type_script = "uid://cv4ucm2x24qr8"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0, 201.0]
@@ -179,6 +187,13 @@ DoorMovePosition = Vector2(580, 0)
 move_speed = 0.4
 signal_id = 63
 
+[node name="Pickup" parent="." unique_id=483234207 instance=ExtResource("16_wnals")]
+position = Vector2(1703, 959)
+itemInfo = SubResource("Resource_ujnxt")
+
+[node name="Sprite2D" parent="Pickup" index="1" unique_id=1059875453]
+texture = ExtResource("18_pjrqr")
+
 [editable path="SecretArea"]
 [editable path="transition_place"]
 [editable path="transition_secret"]
@@ -186,3 +201,4 @@ signal_id = 63
 [editable path="Box"]
 [editable path="DoorTogether_5"]
 [editable path="DoorTogether_6"]
+[editable path="Pickup"]

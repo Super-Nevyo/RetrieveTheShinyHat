@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://inb6ui6pwu3e" path="res://04_Audio/SFX/swimming2.mp3" id="7_0eu4l"]
 [ext_resource type="AudioStream" uid="uid://cu6qdj0nspq01" path="res://04_Audio/SFX/swimming3.mp3" id="8_kb8hf"]
 [ext_resource type="Script" uid="uid://nehtne8q7s46" path="res://01_Scripts/Inventory/item_interactor.gd" id="9_0eu4l"]
+[ext_resource type="Texture2D" uid="uid://ch874kyhwaxoq" path="res://03_Art/Items/PlayerVisible/HeadUmbrella.png" id="10_kb8hf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wdy"]
 size = Vector2(60, 37.179485)
@@ -234,6 +235,141 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(22.263165, 58)
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_o7jyp"]
+shuffle = true
+stream_count = 3
+stream_0 = ExtResource("6_qslpj")
+stream_1 = ExtResource("7_0eu4l")
+stream_2 = ExtResource("8_kb8hf")
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_bgewv"]
+clip_count = 1
+clip_0/name = &"player_swim"
+clip_0/stream = SubResource("AudioStreamPlaylist_o7jyp")
+clip_0/auto_advance = 0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsmb2"]
+
+[sub_resource type="Animation" id="Animation_xc1es"]
+resource_name = "Idle_Umbrella"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.008726646259971648, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1.2499998), Vector2(0, -0.5), Vector2(0, -1.2499998)]
+}
+
+[sub_resource type="Animation" id="Animation_0gpal"]
+resource_name = "Jump_Umbrella"
+length = 0.5599999999999999
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Umbrella:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666669, 0.28036314, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 4.9999995), Vector2(0, -7.25), Vector2(0, -28), Vector2(0, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Umbrella:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666669, 0.28036314, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.12217305, -0.1308996938995747]
+}
+
+[sub_resource type="Animation" id="Animation_kb8hf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Umbrella:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 2.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Umbrella:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sudbt"]
+resource_name = "Swim_Umbrella"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Umbrella:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(16.250002, -31.250002), Vector2(16.25, -31.5), Vector2(16.250002, -31.25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Umbrella:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.29670596, 0.31066860685499087, 0.29670596]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sudbt"]
+_data = {
+&"Idle_Umbrella": SubResource("Animation_xc1es"),
+&"Jump_Umbrella": SubResource("Animation_0gpal"),
+&"RESET": SubResource("Animation_kb8hf"),
+&"Swim_Umbrella": SubResource("Animation_sudbt")
+}
+
 [sub_resource type="Animation" id="Animation_urycm"]
 resource_name = "Player_DmgThreshold"
 length = 0.5
@@ -296,6 +432,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeadAnchor:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HeadAnchor:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1.2499998)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_urycm"]
 _data = {
@@ -304,21 +464,6 @@ _data = {
 &"Player_TakeDamage": SubResource("Animation_g7cil"),
 &"RESET": SubResource("Animation_aydsc")
 }
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_o7jyp"]
-shuffle = true
-stream_count = 3
-stream_0 = ExtResource("6_qslpj")
-stream_1 = ExtResource("7_0eu4l")
-stream_2 = ExtResource("8_kb8hf")
-
-[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_bgewv"]
-clip_count = 1
-clip_0/name = &"player_swim"
-clip_0/stream = SubResource("AudioStreamPlaylist_o7jyp")
-clip_0/auto_advance = 0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qsmb2"]
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
 scale = Vector2(0.8, 0.8)
@@ -347,7 +492,7 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Ball"
+animation = &"Walk"
 autoplay = "Idle"
 
 [node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
@@ -364,12 +509,6 @@ scale = Vector2(0.9999999, 0.99999994)
 shape = SubResource("RectangleShape2D_kw6nx")
 disabled = true
 
-[node name="HoldPosition" type="Node2D" parent="." unique_id=2105991285]
-position = Vector2(0, -20)
-
-[node name="PlayerAnimations" type="AnimationPlayer" parent="." unique_id=165675230]
-libraries/ = SubResource("AnimationLibrary_urycm")
-
 [node name="PlayerAudio" type="Node2D" parent="." unique_id=873921505]
 
 [node name="AudioListener2D" type="AudioListener2D" parent="PlayerAudio" unique_id=528468759]
@@ -385,6 +524,27 @@ script = ExtResource("9_0eu4l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemInteractor" unique_id=985604552]
 shape = SubResource("CircleShape2D_qsmb2")
+
+[node name="HoldPosition" type="Node2D" parent="." unique_id=2105991285]
+position = Vector2(0, -19.999998)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="HeadAnchor" type="Marker2D" parent="." unique_id=1086711356]
+position = Vector2(0, -1.2499998)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Umbrella" type="Sprite2D" parent="HeadAnchor" unique_id=470998530]
+z_index = 1
+position = Vector2(0, 2.5)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_kb8hf")
+
+[node name="ItemsAnimations" type="AnimationPlayer" parent="." unique_id=533776581]
+root_node = NodePath("../HeadAnchor")
+libraries/ = SubResource("AnimationLibrary_sudbt")
+
+[node name="PlayerAnimations" type="AnimationPlayer" parent="." unique_id=165675230]
+libraries/ = SubResource("AnimationLibrary_urycm")
 
 [connection signal="animation_finished" from="PlayerAnim" to="." method="_on_player_anim_animation_finished"]
 [connection signal="area_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_area_entered"]

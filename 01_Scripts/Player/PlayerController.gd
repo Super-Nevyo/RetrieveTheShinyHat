@@ -77,7 +77,11 @@ var isdead : bool = false
 @export var throw_speed : float = 100
 
 #===ANIMATION
-@onready var player_anim: AnimatedSprite2D = $PlayerAnim 
+@onready var player_anim: AnimatedSprite2D = $PlayerAnim
+@onready var item_anim: AnimationPlayer = $ItemsAnimations
+
+#===ANIMATIONPOINTS
+@onready var umbrella: Sprite2D = $HeadAnchor/Umbrella
 
 #===STATE MACHINE
 @onready var MyStateMachine = PlayerStateMachine.new(self)
@@ -88,6 +92,7 @@ var isdead : bool = false
 func _ready() -> void:
 	$PlayerAudio/AudioListener2D.make_current()
 	MyStateMachine.Initialize(MyStateMachine.Move)
+	item_anim.play("Idle_Umbrella")
 
 func _physics_process(delta: float) -> void:
 	if isdead:
@@ -101,6 +106,7 @@ func _physics_process(delta: float) -> void:
 		activate_god_mode(not god_mode)
 	
 	MyStateMachine.Update(delta)
+	item_animation()
 	velocity = velo
 	move_and_slide() #this is what is actually performing the movement
 	
@@ -185,6 +191,15 @@ func add_item(item:Item, index: int):
 	ItemCollected.emit(index,item)
 	#inventoryUI.ChangeInventoryUI(index, item.tex)
 	pass
+
+func item_animation() -> void:
+	umbrella.flip_h = player_anim.flip_h
+	var animation_name = StringName(str(player_anim.animation) + "_Umbrella")
+	if not item_anim.has_animation(animation_name):
+		animation_name = &"Idle_Umbrella"
+	
+	if item_anim.assigned_animation != animation_name:
+		item_anim.play(animation_name)
 
 func activate_god_mode (enabled:bool) -> void:
 	god_mode = enabled
