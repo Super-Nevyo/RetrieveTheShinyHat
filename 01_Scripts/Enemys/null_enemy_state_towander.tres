@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="NullState" format=3 uid="uid://gsny02j51o2r"]
+
+[ext_resource type="Script" uid="uid://cf6fa6iwmmiyj" path="res://01_Scripts/Enemys/enemy_null_swap_state.gd" id="1_yyj3g"]
+
+[resource]
+script = ExtResource("1_yyj3g")
+metadata/_custom_type_script = "uid://cf6fa6iwmmiyj"

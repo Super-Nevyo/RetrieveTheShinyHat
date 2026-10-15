@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://vcn01q1ejf05" path="res://02_Prefabs/Liquid.tscn" id="5_wexxd"]
 [ext_resource type="PackedScene" uid="uid://b5kgqbsnaxirq" path="res://02_Prefabs/PuzzlePrefabs/Box.tscn" id="7_828q7"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="8_0imss"]
+[ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="9_ulwqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(1144, 20)
@@ -19,7 +20,6 @@ size = Vector2(1144, 20)
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("1_ppkka")]
 position = Vector2(860, 536)
 DoorMovePosition = Vector2(100, 100)
-move_speed = 2.0
 signal_id = 1
 
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("2_3c2uc")]
@@ -57,3 +57,6 @@ freeze_mode = 1
 does_respawn = true
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("8_0imss")]
+
+[node name="BaseEnemy" parent="." unique_id=1227542854 instance=ExtResource("9_ulwqt")]
+position = Vector2(697, 500)
