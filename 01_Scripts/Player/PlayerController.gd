@@ -193,7 +193,8 @@ func add_item(item:Item, index: int):
 	pass
 
 func item_animation() -> void:
-	umbrella.flip_h = player_anim.flip_h
+	umbrella.flip_h = false
+	$HeadAnchor.scale.x = -1 if player_anim.flip_h else 1
 	var animation_name = StringName(str(player_anim.animation) + "_Umbrella")
 	if not item_anim.has_animation(animation_name):
 		animation_name = &"Idle_Umbrella"

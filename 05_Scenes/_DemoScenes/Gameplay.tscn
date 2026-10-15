@@ -55,6 +55,7 @@ Vector2i(1, 0): {
 }
 
 [node name="Gameplay" type="Node2D" unique_id=1255228697]
+metadata/_edit_horizontal_guides_ = [1040.0]
 
 [node name="AudioManager" type="Node" parent="." unique_id=1648110041 node_paths=PackedStringArray("bg_music_player")]
 script = ExtResource("1_82ie3")
@@ -245,6 +246,6 @@ script = ExtResource("9_e2ro4")
 
 [node name="GameHud" parent="." unique_id=1741115912 instance=ExtResource("9_e8wdy")]
 z_index = 100
-anchors_preset = -1
-offset_top = 46.0
-offset_bottom = 46.0
+
+[editable path="GameHud"]
+[editable path="GameHud/InventoryUi"]

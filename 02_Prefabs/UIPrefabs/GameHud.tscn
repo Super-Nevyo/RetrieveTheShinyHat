@@ -4,6 +4,30 @@
 [ext_resource type="PackedScene" uid="uid://5mdfk0y7f3wi" path="res://02_Prefabs/UIPrefabs/Healthbar.tscn" id="1_ppufa"]
 [ext_resource type="PackedScene" uid="uid://cv2gct0dh0q70" path="res://02_Prefabs/UIPrefabs/InventoryUI.tscn" id="2_awiqt"]
 [ext_resource type="PackedScene" uid="uid://dxfwg2fx08ek" path="res://02_Prefabs/UIPrefabs/BreathBar.tscn" id="4_vk3oh"]
+[ext_resource type="Texture2D" uid="uid://bsqp6rw0cuys" path="res://03_Art/UI/Base.png" id="5_sc7ta"]
+[ext_resource type="Texture2D" uid="uid://dd4xhgjlbhlae" path="res://03_Art/UI/Background.png" id="6_tyo16"]
+[ext_resource type="Texture2D" uid="uid://ctkajt86y2q0h" path="res://03_Art/UI/Healthui.png" id="7_tyo16"]
+[ext_resource type="Texture2D" uid="uid://b4ipqu56c6jg6" path="res://03_Art/UI/Oxygenui.png" id="8_mlbno"]
+[ext_resource type="Texture2D" uid="uid://bea1en4e77hbn" path="res://03_Art/UI/Healthuiborder.png" id="8_rgfcl"]
+[ext_resource type="Texture2D" uid="uid://cikq4igroccsu" path="res://03_Art/UI/Oxygenuiborder.png" id="9_rgfcl"]
+[ext_resource type="Texture2D" uid="uid://d0ftrj62bjhl" path="res://03_Art/UI/Tenticlesui.png" id="11_30sro"]
+[ext_resource type="Texture2D" uid="uid://73pghl0asf6m" path="res://03_Art/UI/map.png" id="12_fd2vb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgfcl"]
+atlas = ExtResource("7_tyo16")
+region = Rect2(890, 730, 268, 1178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgewv"]
+atlas = ExtResource("8_rgfcl")
+region = Rect2(864, 576, 320, 1344)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
+atlas = ExtResource("8_mlbno")
+region = Rect2(790, 193, 466, 379)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mv5i"]
+atlas = ExtResource("9_rgfcl")
+region = Rect2(768, 96, 512, 480)
 
 [node name="GameHud" type="Control" unique_id=1741115912]
 layout_mode = 3
@@ -13,23 +37,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_awiqt")
+metadata/_edit_horizontal_guides_ = [966.0]
 
-[node name="Healthbar" parent="." unique_id=919437759 instance=ExtResource("1_ppufa")]
+[node name="Healthbar" parent="." unique_id=919437759 node_paths=PackedStringArray("bar") instance=ExtResource("1_ppufa")]
+visible = false
 layout_mode = 1
 offset_left = 100.0
 offset_top = 541.0
 offset_right = 100.0
 offset_bottom = 541.0
 rotation = 1.5707964
+bar = NodePath("../UiArt/HealthFill")
 
 [node name="InventoryUi" parent="." unique_id=1475960093 instance=ExtResource("2_awiqt")]
 layout_mode = 1
-offset_left = 135.0
-offset_top = 541.0
-offset_right = 135.0
-offset_bottom = 541.0
+offset_left = 57.0
+offset_top = 523.0
+offset_right = 57.0
+offset_bottom = 523.0
 
-[node name="BreathBar" parent="." unique_id=646066472 instance=ExtResource("4_vk3oh")]
+[node name="BreathBar" parent="." unique_id=646066472 node_paths=PackedStringArray("bar") instance=ExtResource("4_vk3oh")]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
@@ -40,3 +68,107 @@ offset_right = 25.0
 offset_bottom = 440.0
 grow_horizontal = 1
 grow_vertical = 1
+bar = NodePath("../UiArt/OxygenFill")
+
+[node name="UiArt" type="Control" parent="." unique_id=1704298394]
+anchors_preset = 0
+offset_left = -189.0
+offset_top = 452.0
+offset_right = -189.0
+offset_bottom = 452.0
+scale = Vector2(1.15, 1.15)
+mouse_filter = 2
+
+[node name="Base" type="TextureRect" parent="UiArt" unique_id=1971245785]
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 2048.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_sc7ta")
+expand_mode = 1
+
+[node name="Background" type="TextureRect" parent="UiArt" unique_id=2076261803]
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 2048.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_tyo16")
+expand_mode = 1
+
+[node name="HealthFill" type="TextureProgressBar" parent="UiArt" unique_id=353055580]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 223.0
+offset_top = 182.0
+offset_right = 491.0
+offset_bottom = 1360.0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+value = 100.0
+fill_mode = 3
+texture_progress = SubResource("AtlasTexture_rgfcl")
+
+[node name="HealthBorder" type="TextureRect" parent="UiArt" unique_id=1469617151]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 214.0
+offset_top = 144.0
+offset_right = 550.0
+offset_bottom = 1488.0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_bgewv")
+
+[node name="OxygenFill" type="TextureProgressBar" parent="UiArt" unique_id=311539033]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 197.0
+offset_top = 48.0
+offset_right = 663.0
+offset_bottom = 1226.0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+value = 100.0
+fill_mode = 3
+texture_progress = SubResource("AtlasTexture_kw6nx")
+
+[node name="OxygenBorder" type="TextureRect" parent="UiArt" unique_id=524757265]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 24.0
+offset_right = 703.0
+offset_bottom = 504.0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_7mv5i")
+
+[node name="Tentacles" type="TextureRect" parent="UiArt" unique_id=1972135606]
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 2048.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_30sro")
+expand_mode = 1
+
+[node name="MapArt" type="Control" parent="." unique_id=171772538]
+z_index = 100
+layout_mode = 1
+anchors_preset = 0
+offset_left = 35.0
+offset_top = 66.0
+offset_right = 335.0
+offset_bottom = 366.0
+
+[node name="MapTest" type="TextureRect" parent="MapArt" unique_id=1543411943]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(0.27, 0.27)
+mouse_filter = 2
+texture = ExtResource("12_fd2vb")
+expand_mode = 1
+stretch_mode = 5
+
+[editable path="InventoryUi"]
