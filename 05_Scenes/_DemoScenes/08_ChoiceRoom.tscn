@@ -146,7 +146,7 @@ shape = SubResource("RectangleShape2D_kw6nx")
 debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("14_h2pff")]
-partly_filled_liquid_level = 200.0
+partly_filled_liquid_level = 180.0
 move_speed = 150.0
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("16_yyys7")]
