@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dcjpr5k3vilxf"]
 
 [ext_resource type="Script" uid="uid://cfm1wialohuy6" path="res://01_Scripts/Puzzle/pressure_plate.gd" id="1_pg43b"]
-[ext_resource type="Texture2D" uid="uid://lqpmx6yaix31" path="res://03_Art/Environment/newenv.png" id="2_ubt78"]
+[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="2_5f16h"]
 [ext_resource type="AudioStream" uid="uid://duvn2x7fbcc7t" path="res://04_Audio/SFX/press_plate.mp3" id="3_5f16h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
-size = Vector2(40, 15)
+size = Vector2(70, 28)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujkr7"]
 random_pitch = 1.096825
@@ -13,7 +13,6 @@ streams_count = 1
 stream_0/stream = ExtResource("3_5f16h")
 
 [node name="PressurePlate" type="Node2D" unique_id=1796088267]
-scale = Vector2(2, 2)
 script = ExtResource("1_pg43b")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1179431329]
@@ -21,13 +20,13 @@ collision_layer = 0
 collision_mask = 66
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1259215631]
-position = Vector2(-0.5, 15.5)
+position = Vector2(0, 21)
 shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2030635098]
-texture = ExtResource("2_ubt78")
+texture = ExtResource("2_5f16h")
 region_enabled = true
-region_rect = Rect2(36, 402, 48, 48)
+region_rect = Rect2(0, 480, 96, 96)
 
 [node name="PlayerSfx" type="AudioStreamPlayer2D" parent="." unique_id=1246516296]
 stream = SubResource("AudioStreamRandomizer_ujkr7")
