@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="8_0imss"]
 [ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="9_ulwqt"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ulwqt"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(1144, 20)
 
@@ -18,7 +20,7 @@ size = Vector2(1144, 20)
 [node name="GameHud" parent="." unique_id=1741115912 instance=ExtResource("1_1lcwi")]
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("1_ppkka")]
-position = Vector2(860, 536)
+position = Vector2(862, 666)
 DoorMovePosition = Vector2(100, 100)
 signal_id = 1
 
@@ -29,9 +31,14 @@ activation_amount = Array[float]([2.0])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1382155975]
 position = Vector2(451, 546)
+physics_material_override = SubResource("PhysicsMaterial_ulwqt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=411846921]
 position = Vector2(126, 0)
+shape = SubResource("RectangleShape2D_qsmb2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1606687556]
+position = Vector2(207, 19)
 shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="PressurePlate" parent="." unique_id=1796088267 instance=ExtResource("3_3c2uc")]
@@ -44,7 +51,7 @@ position = Vector2(229, 467)
 breath_decay = 10.0
 
 [node name="Liquid" parent="." unique_id=1959433390 instance=ExtResource("5_wexxd")]
-position = Vector2(1073, 415)
+position = Vector2(1056.0001, 175.00002)
 scale = Vector2(20, 20)
 
 [node name="Liquid2" parent="." unique_id=593745260 instance=ExtResource("5_wexxd")]
@@ -59,4 +66,4 @@ does_respawn = true
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("8_0imss")]
 
 [node name="BaseEnemy" parent="." unique_id=1227542854 instance=ExtResource("9_ulwqt")]
-position = Vector2(697, 500)
+position = Vector2(1198, 540)

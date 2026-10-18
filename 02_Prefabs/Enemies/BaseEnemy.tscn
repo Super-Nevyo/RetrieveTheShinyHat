@@ -7,6 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 
 [node name="BaseEnemy" type="RigidBody2D" unique_id=1227542854]
+angular_damp = 100.0
 script = ExtResource("1_fbr3f")
 MyStateMachine = ExtResource("2_6p5mt")
 

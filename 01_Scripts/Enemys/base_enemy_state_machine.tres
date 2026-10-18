@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bxw21dkarelou" path="res://01_Scripts/Enemys/enemy_state.gd" id="1_tr486"]
 [ext_resource type="Script" uid="uid://cf6fa6iwmmiyj" path="res://01_Scripts/Enemys/enemy_null_swap_state.gd" id="2_2ljfx"]
 [ext_resource type="Script" uid="uid://clvqpadtk1jh8" path="res://01_Scripts/Enemys/enemy_movement_stats.gd" id="3_snkjw"]
+[ext_resource type="Resource" uid="uid://c2nwxt3t6riyv" path="res://01_Scripts/Enemys/enemy_forward_ground_check.tres" id="4_1b6rt"]
 [ext_resource type="Script" uid="uid://dcr2bvq3s174g" path="res://01_Scripts/Enemys/constant_wander.gd" id="4_sb72r"]
+[ext_resource type="Resource" uid="uid://dtfdx73o56for" path="res://01_Scripts/Enemys/enemy_wall_check.tres" id="6_sgrf1"]
 
 [sub_resource type="Resource" id="Resource_rr66w"]
 script = ExtResource("2_2ljfx")
@@ -13,12 +15,14 @@ metadata/_custom_type_script = "uid://cf6fa6iwmmiyj"
 
 [sub_resource type="Resource" id="Resource_hva22"]
 script = ExtResource("3_snkjw")
-move_speed = 120.0
+move_speed = 150.0
 metadata/_custom_type_script = "uid://clvqpadtk1jh8"
 
 [sub_resource type="Resource" id="Resource_7m3nm"]
 script = ExtResource("4_sb72r")
 enemy_movement_stats = SubResource("Resource_hva22")
+wall_check = ExtResource("6_sgrf1")
+ground_check = ExtResource("4_1b6rt")
 metadata/_custom_type_script = "uid://dcr2bvq3s174g"
 
 [resource]
