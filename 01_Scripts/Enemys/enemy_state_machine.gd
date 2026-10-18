@@ -11,6 +11,8 @@ func update(enemy : Enemy, info : Dictionary):
 	States[info[current_state_ID]].Update(enemy,info)
 	if temp_state == info[current_state_ID]:
 		return
+	if !States.has(info[current_state_ID]):
+		info[current_state_ID] = enums.enemy_states.NULL
 	States[temp_state].Exit(enemy,info)
 	States[info[current_state_ID]].Start(enemy,info)
 	return
