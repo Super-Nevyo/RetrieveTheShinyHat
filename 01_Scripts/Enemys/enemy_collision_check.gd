@@ -19,8 +19,9 @@ func check_collision(enemy : Enemy, info : Dictionary) -> bool:
 		temp_raycast.position = raycast_start
 		temp_raycast.target_position = raycast_end
 		
-	info[raycast_ID].force_raycast_update()
+	
 	info[raycast_ID].position.x = raycast_start.x * (1 if info[is_facing_right_ID] else -1)
 	info[raycast_ID].target_position.x = raycast_end.x * (1 if info[is_facing_right_ID] else -1)
+	info[raycast_ID].force_raycast_update()
 	return info[raycast_ID].is_colliding()
 	

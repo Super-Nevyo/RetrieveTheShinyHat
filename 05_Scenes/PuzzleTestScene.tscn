@@ -38,7 +38,7 @@ position = Vector2(126, 0)
 shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1606687556]
-position = Vector2(207, 19)
+position = Vector2(178, 22)
 shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="PressurePlate" parent="." unique_id=1796088267 instance=ExtResource("3_3c2uc")]
@@ -66,4 +66,13 @@ does_respawn = true
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("8_0imss")]
 
 [node name="BaseEnemy" parent="." unique_id=1227542854 instance=ExtResource("9_ulwqt")]
-position = Vector2(1198, 540)
+position = Vector2(989, 436)
+
+[node name="BaseEnemy3" parent="." unique_id=542256485 instance=ExtResource("9_ulwqt")]
+position = Vector2(1051, 465)
+
+[node name="BaseEnemy4" parent="." unique_id=1779683724 instance=ExtResource("9_ulwqt")]
+position = Vector2(870, 513)
+
+[node name="BaseEnemy2" parent="." unique_id=2039302970 instance=ExtResource("9_ulwqt")]
+position = Vector2(1174, 542)

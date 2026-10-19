@@ -1,11 +1,11 @@
 extends Resource
 class_name EnemyState
 
-func Update(enemy : Enemy, info : Dictionary):
+func update(enemy : Enemy, info : Dictionary):
 	print("updated")
 
-func Start(enemy : Enemy, info : Dictionary):
+func start(enemy : Enemy, info : Dictionary):
 	return 
 
-func Exit(enemy : Enemy, info : Dictionary):
+func exit(enemy : Enemy, info : Dictionary):
 	return 
