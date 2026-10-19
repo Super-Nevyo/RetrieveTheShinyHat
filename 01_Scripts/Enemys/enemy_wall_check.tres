@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyCollisionRaycast" format=3 uid="uid://dtfdx73o56for"]
+
+[ext_resource type="Script" uid="uid://bkdrjr6x8vg76" path="res://01_Scripts/Enemys/enemy_collision_check.gd" id="1_tkykq"]
+
+[resource]
+script = ExtResource("1_tkykq")
+raycast_ID = "wallraycast"
+raycast_start = Vector2(10, 0)
+raycast_end = Vector2(15, 0)
+metadata/_custom_type_script = "uid://bkdrjr6x8vg76"
