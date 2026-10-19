@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://chwm57nxsyons"]
+
+[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="1_bvgdv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oqe2"]
+radius = 12.872457
+height = 72.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
+atlas = ExtResource("1_bvgdv")
+region = Rect2(480, 432, 96, 96)
+
+[node name="Spikes" type="Area2D" unique_id=1094872775]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1560489136]
+position = Vector2(-9, -17)
+rotation = -0.35953784
+scale = Vector2(1, 1.1171081)
+shape = SubResource("CapsuleShape2D_3oqe2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1440228771]
+texture = SubResource("AtlasTexture_kw6nx")

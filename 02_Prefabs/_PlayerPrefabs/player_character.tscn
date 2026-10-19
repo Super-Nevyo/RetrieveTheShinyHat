@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cgubd8cqbbchk"]
 
 [ext_resource type="Script" uid="uid://x4v15ufut2cx" path="res://01_Scripts/Player/PlayerController.gd" id="1_q2jwi"]
-[ext_resource type="Texture2D" uid="uid://dwsdetorxv71" path="res://03_Art/_Player/charattack.png" id="2_g7cil"]
 [ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="3_aydsc"]
 [ext_resource type="Script" uid="uid://c8jhfob34xjcm" path="res://01_Scripts/WorldInteractions/AttackHitbox.gd" id="3_md7ae"]
 [ext_resource type="Texture2D" uid="uid://holao8ilrmtn" path="res://03_Art/_Player/car96.png" id="4_g7cil"]
@@ -14,25 +13,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wdy"]
 size = Vector2(60, 37.179485)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aydsc"]
-atlas = ExtResource("2_g7cil")
-region = Rect2(0, 198, 144, 96)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmcxg"]
-atlas = ExtResource("2_g7cil")
-region = Rect2(144, 198, 144, 96)
+atlas = ExtResource("3_aydsc")
+region = Rect2(96, 288, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpf37"]
-atlas = ExtResource("2_g7cil")
-region = Rect2(288, 198, 144, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5qys1"]
-atlas = ExtResource("2_g7cil")
-region = Rect2(432, 198, 144, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jelw"]
-atlas = ExtResource("2_g7cil")
-region = Rect2(576, 198, 144, 96)
+atlas = ExtResource("3_aydsc")
+region = Rect2(192, 288, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5lr4t"]
 atlas = ExtResource("3_aydsc")
@@ -62,6 +49,14 @@ region = Rect2(294, 196, 98, 98)
 atlas = ExtResource("3_aydsc")
 region = Rect2(392, 196, 98, 98)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qys1"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(288, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jelw"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(384, 288, 96, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4msjd"]
 atlas = ExtResource("3_aydsc")
 region = Rect2(196, 98, 98, 98)
@@ -69,6 +64,34 @@ region = Rect2(196, 98, 98, 98)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5lnuv"]
 atlas = ExtResource("3_aydsc")
 region = Rect2(294, 98, 98, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5tbo"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(480, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huvl2"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(576, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8svg"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(672, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa4ci"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(768, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc6rs"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(864, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skhnc"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(480, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kfab"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(576, 288, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igetw"]
 atlas = ExtResource("4_g7cil")
@@ -117,20 +140,11 @@ region = Rect2(99, 0, 96, 96)
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgewv"]
 animations = [{
 "frames": [{
-"duration": 0.45,
-"texture": SubResource("AtlasTexture_aydsc")
-}, {
-"duration": 0.45,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dmcxg")
 }, {
-"duration": 0.45,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_gpf37")
-}, {
-"duration": 0.45,
-"texture": SubResource("AtlasTexture_5qys1")
-}, {
-"duration": 0.45,
-"texture": SubResource("AtlasTexture_2jelw")
 }],
 "loop": 0,
 "name": &"Attack",
@@ -169,6 +183,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.5,
+"texture": SubResource("AtlasTexture_5qys1")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_2jelw")
+}],
+"loop": 1,
+"name": &"Carry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_4msjd")
 }, {
 "duration": 1.5,
@@ -176,6 +201,40 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5tbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huvl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8svg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa4ci")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_mc6rs")
+}],
+"loop": 0,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skhnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kfab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skhnc")
+}],
+"loop": 0,
+"name": &"HitDamage",
 "speed": 5.0
 }, {
 "frames": [{
@@ -232,9 +291,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
-size = Vector2(22.263165, 58)
-
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_o7jyp"]
 shuffle = true
 stream_count = 3
@@ -250,6 +306,13 @@ clip_0/auto_advance = 0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qsmb2"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
+size = Vector2(24.859228, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnals"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(0, 288, 96, 96)
+
 [sub_resource type="Animation" id="Animation_xc1es"]
 resource_name = "Idle_Umbrella"
 length = 0.8
@@ -264,7 +327,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.36666667, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.008726646259971648, 0.0]
+"values": [0.0, 0.00872664625997164, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -448,7 +511,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.36666667, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.008726646259971648, 0.0]
+"values": [0.0, 0.00872664625997164, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -567,6 +630,91 @@ _data = {
 &"RESET": SubResource("Animation_aydsc")
 }
 
+[sub_resource type="Animation" id="Animation_0eu4l"]
+resource_name = "Ground_Attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArmAnchor/WhackPivotPoint:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.7853981633974483, 1.0471976]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArmAnchor/WhackPivotPoint/WhackTentacle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArmAnchor/WhackPivotPoint/AttackHitBox/HitBox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.24999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_2ol6n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArmAnchor/WhackPivotPoint:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArmAnchor/WhackPivotPoint/WhackTentacle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArmAnchor/WhackPivotPoint/AttackHitBox/HitBox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dmcxg"]
+_data = {
+&"Attack": SubResource("Animation_0eu4l"),
+&"RESET": SubResource("Animation_2ol6n")
+}
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797284452 groups=["player"]]
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
@@ -582,7 +730,6 @@ ball_speed = 400.0
 ball_acceleration = 2000.0
 ball_fast_jump = 600.0
 jump_time_down = 0.3
-attack_offset = 25.0
 throw_speed = 500.0
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
@@ -594,22 +741,8 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Walk"
+animation = &"Carry"
 autoplay = "Idle"
-
-[node name="AttackHitBox" type="Area2D" parent="." unique_id=2007043904]
-visible = false
-position = Vector2(0, 35)
-scale = Vector2(2.2799988, 1)
-collision_layer = 4
-collision_mask = 8
-script = ExtResource("3_md7ae")
-
-[node name="HitBox" type="CollisionShape2D" parent="AttackHitBox" unique_id=34871703]
-position = Vector2(0, -18)
-scale = Vector2(0.9999999, 0.99999994)
-shape = SubResource("RectangleShape2D_kw6nx")
-disabled = true
 
 [node name="PlayerAudio" type="Node2D" parent="." unique_id=873921505]
 
@@ -642,6 +775,31 @@ position = Vector2(0, 2.5)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_kb8hf")
 
+[node name="ArmAnchor" type="Marker2D" parent="." unique_id=1960853897]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WhackPivotPoint" type="Node2D" parent="ArmAnchor" unique_id=1017551683]
+position = Vector2(0, 33)
+
+[node name="AttackHitBox" type="Area2D" parent="ArmAnchor/WhackPivotPoint" unique_id=2007043904]
+position = Vector2(11.25, -16.749998)
+scale = Vector2(2.8799999, 1.150001)
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("3_md7ae")
+
+[node name="HitBox" type="CollisionShape2D" parent="ArmAnchor/WhackPivotPoint/AttackHitBox" unique_id=34871703]
+position = Vector2(0.41555405, -18.094318)
+scale = Vector2(0.9999999, 0.99999994)
+shape = SubResource("RectangleShape2D_kw6nx")
+
+[node name="WhackTentacle" type="Sprite2D" parent="ArmAnchor/WhackPivotPoint" unique_id=1668329682]
+z_index = 1
+position = Vector2(0, -31.250006)
+texture = SubResource("AtlasTexture_wnals")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
 [node name="ItemsAnimations" type="AnimationPlayer" parent="." unique_id=533776581]
 root_node = NodePath("../HeadAnchor")
 libraries/ = SubResource("AnimationLibrary_sudbt")
@@ -649,8 +807,11 @@ libraries/ = SubResource("AnimationLibrary_sudbt")
 [node name="PlayerAnimations" type="AnimationPlayer" parent="." unique_id=165675230]
 libraries/ = SubResource("AnimationLibrary_urycm")
 
-[connection signal="animation_finished" from="PlayerAnim" to="." method="_on_player_anim_animation_finished"]
-[connection signal="area_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_area_entered"]
-[connection signal="area_entered" from="AttackHitBox" to="AttackHitBox" method="_on_area_entered"]
+[node name="PlayerAttackAnimations" type="AnimationPlayer" parent="." unique_id=2019255926]
+callback_mode_process = 0
+libraries/ = SubResource("AnimationLibrary_dmcxg")
+
 [connection signal="area_entered" from="ItemInteractor" to="ItemInteractor" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemInteractor" to="ItemInteractor" method="_on_area_exited"]
+[connection signal="area_entered" from="ArmAnchor/WhackPivotPoint/AttackHitBox" to="." method="_on_attack_hit_box_area_entered"]
+[connection signal="area_entered" from="ArmAnchor/WhackPivotPoint/AttackHitBox" to="ArmAnchor/WhackPivotPoint/AttackHitBox" method="_on_area_entered"]

@@ -15,14 +15,15 @@ func Update(delta:float):
 		Player.MyStateMachine.ChangeState(Player.MyStateMachine.Move)
 		return
 	Player.velo.y += get_custom_gravity() * delta
-	Player.player_anim.play("Jump")
+	if not Player.ishurt and not Player.isdead:
+		Player.player_anim.play("Jump")
 	if Player.direction_x:
 		Player.velo.x = move_toward(Player.velo.x, Player.direction_x * Player.speed, Player.acceleration * delta)
 	else:
 		Player.velo.x = move_toward(Player.velo.x, 0, Player.friction * delta)
 
 func Attack():
-	pass
+	Player.start_attack()
 
 func Jump():
 	pass

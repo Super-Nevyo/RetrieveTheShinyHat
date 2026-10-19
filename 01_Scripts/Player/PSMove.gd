@@ -13,7 +13,7 @@ func Enter():
 	Player.attack_collision.attack_successful.connect(successful_attack)
 
 func Exit():
-	Player.finish_attack()
+	#Player.finish_attack()
 	Player.attack_collision.attack_successful.disconnect(successful_attack)
 	if held_box != null:
 		held_box.throw(Vector2.ZERO, 0)
@@ -50,7 +50,7 @@ func Attack():
 		held_box.throw(Vector2(-2 if Player.player_anim.flip_h else 2,-1).normalized(), Player.throw_speed)
 		held_box = null
 	else:
-		start_attack()
+		Player.start_attack()
 
 func Jump():
 	if Player.has_ball:
@@ -64,12 +64,16 @@ func Jump():
 
 
 func update_animation(direction: float) -> void:
-	if Player.is_attacking:
-		return
+	#if Player.is_attacking:
+		#return
 	if direction != 0:
 		Player.player_anim.flip_h = direction < 0
-		Player.attack_collision.position.x = direction * Player.attack_offset
-	if Player.has_ball:
+		#Player.attack_collision.position.x = direction * Player.attack_offset
+	if held_box != null:
+		Player.player_anim.play("Carry")
+	elif Player.is_attacking:
+		Player.player_anim.play("Attack")
+	elif Player.has_ball:
 		Player.player_anim.play("Ball")
 	elif direction != 0:
 		Player.player_anim.play("Walk")
@@ -77,13 +81,13 @@ func update_animation(direction: float) -> void:
 		Player.player_anim.play("Idle")
 
 
-func start_attack():
-	if Player.has_ball:
-		Player.velo.x = 0
-	Player.player_anim.offset.x = 24 * (-1 if Player.player_anim.flip_h else 1)
-	Player.is_attacking = true
-	Player.player_anim.play("Attack")
-	Player.attack_hit_box.set_deferred("disabled", false)
+#func start_attack():
+	#if Player.has_ball:
+		#Player.velo.x = 0
+	#Player.player_anim.offset.x = 24 * (-1 if Player.player_anim.flip_h else 1)
+	#Player.is_attacking = true
+	#Player.player_anim.play("Attack")
+	#Player.attack_hit_box.set_deferred("disabled", false)
 
 func successful_attack(other: AttackReceiver) -> void:
 	if other.get_parent() is Box:

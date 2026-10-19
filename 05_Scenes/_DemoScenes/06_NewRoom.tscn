@@ -37,7 +37,7 @@ tex = ExtResource("18_pjrqr")
 metadata/_custom_type_script = "uid://cv4ucm2x24qr8"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
-metadata/_edit_horizontal_guides_ = [449.0, 201.0]
+metadata/_edit_horizontal_guides_ = [449.0, 200.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_p3b6j")
@@ -109,8 +109,8 @@ position = Vector2(1122, 1254)
 scale = Vector2(32.39999, 14.12)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("8_4ryoi")]
-partly_filled_liquid_level = 260.0
-move_speed = 200.0
+partly_filled_liquid_level = 200.0
+move_speed = 250.0
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("11_o8o1c")]
 position = Vector2(1088, 951.99994)

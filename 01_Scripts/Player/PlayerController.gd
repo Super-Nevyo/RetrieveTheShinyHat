@@ -61,16 +61,22 @@ var velo: Vector2 = Vector2.ZERO
 var bodies_of_water:int = 0
 
 #===ATTACK
-@onready var attack_hit_box: CollisionShape2D = $AttackHitBox/HitBox
-@onready var attack_collision: Area2D = $AttackHitBox
-@export var attack_offset: float = 16
+@onready var attack_hit_box: CollisionShape2D = $ArmAnchor/WhackPivotPoint/AttackHitBox/HitBox
+@onready var attack_collision: Area2D = $ArmAnchor/WhackPivotPoint/AttackHitBox
+@onready var attack_tentacle: Sprite2D = $ArmAnchor/WhackPivotPoint/WhackTentacle
+@onready var attack_anim: AnimationPlayer = $PlayerAttackAnimations
+@onready var arm_anchor: Node2D = $ArmAnchor
+
 var is_attacking: bool = false
+#@export var attack_offset: float = 16
 
 #===GETHIT
 @export var MaxHP : float = 100
 @onready var currentHP : float = MaxHP
 @export var DmgLayer : int = 15
+@export var dead_delay: float = 0.3
 var isdead : bool = false
+var ishurt: bool = false
 
 #===CARRYING
 @onready var hold_position : Node2D = $HoldPosition
@@ -93,6 +99,8 @@ func _ready() -> void:
 	$PlayerAudio/AudioListener2D.make_current()
 	MyStateMachine.Initialize(MyStateMachine.Move)
 	item_anim.play("Idle_Umbrella")
+	attack_anim.animation_finished.connect(_on_attack_animation_finished)
+	finish_attack()
 
 func _physics_process(delta: float) -> void:
 	if isdead:
@@ -102,13 +110,16 @@ func _physics_process(delta: float) -> void:
 	
 	#god mode stuff
 	if Input.is_action_just_pressed("god_mode"):
-		print("Is over 9thousandddd!")
 		activate_god_mode(not god_mode)
 	
 	MyStateMachine.Update(delta)
+	if isdead:
+		return
+	
+	update_side()
 	item_animation()
 	velocity = velo
-	move_and_slide() #this is what is actually performing the movement
+	move_and_slide()
 	
 func get_input():
 	direction_x = Input.get_axis("move_left", "move_right")
@@ -122,23 +133,53 @@ func get_input():
 	if Input.is_action_just_pressed("attack") and !is_attacking:
 		MyStateMachine.Attack()
 
-
 func get_custom_gravity():
 	if velocity.y < 0.0:
 		return jump_gravity
 	else:
 		return fall_gravity
 
+func start_attack() -> void:
+	if is_attacking:
+		return
+	
+	update_side()
+	is_attacking = true
+	attack_anim.play("Attack")
+	attack_anim.advance(0)
+
 func finish_attack():
 	is_attacking = false
-	player_anim.offset.x = 0
+	#player_anim.offset.x = 0
+	attack_anim.stop()
+	attack_tentacle.hide()
 	attack_hit_box.set_deferred("disabled", true)
-	
 
-func _on_player_anim_animation_finished() -> void:
-	if player_anim.animation == "Attack":
-		player_anim.offset.x = 0
+func _on_attack_animation_finished(animation_name: StringName) -> void:
+	if animation_name == &"Attack":
 		finish_attack()
+
+func update_side()-> void:
+	if direction_x !=0:
+		player_anim.flip_h = direction_x < 0
+	
+	arm_anchor.scale = Vector2(-1 if player_anim.flip_h else 1, 1)
+
+func play_hit_animation() -> void:
+	if ishurt or isdead:
+		return
+	
+	ishurt = true
+	player_anim.play("HitDamage")
+	await player_anim.animation_finished
+	ishurt = false
+	
+	if MyStateMachine.CurrentState == MyStateMachine.Swim:
+		player_anim.play("Swimming")
+#func _on_player_anim_animation_finished() -> void:
+	#if player_anim.animation == "Attack":
+		#player_anim.offset.x = 0
+		#finish_attack()
 
 func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 	# maybe i should make a static function to handle this globally and better? # if enemies take damage, yes - tbd
@@ -167,13 +208,20 @@ func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 		
 		if currentHP <= 0:
 			die()
+		else:
+			play_hit_animation()
 	
 	pass
 
 func die():
-	#reminder to add dead animation
+	
 	isdead = true
 	set_physics_process(false)
+	
+	finish_attack()
+	player_anim.play("Death")
+	await player_anim.animation_finished
+	
 	get_tree().change_scene_to_file("res://05_Scenes/_DemoScenes/LoseScene.tscn")
 
 func change_water(entering:bool):

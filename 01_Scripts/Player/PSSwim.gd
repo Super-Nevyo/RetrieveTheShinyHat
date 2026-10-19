@@ -32,7 +32,7 @@ func Update(delta:float):
 		Player.velo.y = move_toward(Player.velo.y, 0, Player.submerged_cap * delta) #Player.swim_friction * delta
 
 func Attack():
-	pass
+	Player.start_attack()
 
 func Jump():
 	pass
