@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://d2i8vbrj3i1ef" path="res://05_Scenes/_DemoScenes/08_ChoiceRoom.tscn" id="14_oox6v"]
 [ext_resource type="PackedScene" uid="uid://6jj1jnesar2e" path="res://05_Scenes/_DemoScenes/09_PreBossRoom.tscn" id="15_j5g1l"]
 [ext_resource type="PackedScene" uid="uid://crgcipow1e6ju" path="res://05_Scenes/_DemoScenes/10_DoubleRoom.tscn" id="16_d06w4"]
-[ext_resource type="PackedScene" uid="uid://creq7byn8vlll" path="res://05_Scenes/_DemoScenes/11_Puzzle3Room.tscn" id="17_83f4y"]
+[ext_resource type="PackedScene" uid="uid://creq7byn8vlll" path="res://05_Scenes/_DemoScenes/11_PatrolRoom.tscn" id="17_83f4y"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_76a1v"]
 stream_count = 1
@@ -219,6 +219,13 @@ room_a = NodePath("../../11_Puzzle3Room")
 exit_a_id = "puzzle3_exit_sw"
 room_b = NodePath("../../10_DoubleRoom")
 exit_b_id = "double_exit_se"
+
+[node name="Connection_Puzzle3_Snorkel" type="Node2D" parent="WorldMap/Connections" unique_id=6773979 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../11_Puzzle3Room")
+exit_a_id = "puzzle3_exit_ne"
+room_b = NodePath("../../07_LeversRoom")
+exit_b_id = "levers_exit_nw"
 
 [node name="Connection_DoubleDown" type="Node2D" parent="WorldMap/Connections" unique_id=548170750 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")

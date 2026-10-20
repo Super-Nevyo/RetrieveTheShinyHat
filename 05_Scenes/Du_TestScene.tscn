@@ -9,9 +9,7 @@
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="6_3kb4c"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="7_0ir8v"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="8_47bus"]
-[ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="10_u86nu"]
-[ext_resource type="Script" uid="uid://sbokqad6h65g" path="res://01_Scripts/Inventory/BallItem.gd" id="11_tp6li"]
-[ext_resource type="Texture2D" uid="uid://d0kaqmiym3ns8" path="res://03_Art/Items/Empty.png" id="12_u86nu"]
+[ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="10_r7xue"]
 
 [sub_resource type="Resource" id="Resource_ar7t2"]
 script = ExtResource("6_3kb4c")
@@ -24,11 +22,6 @@ script = ExtResource("6_3kb4c")
 display_name = "To_PlaceName"
 transition_id = "place_exit_secret_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
-
-[sub_resource type="Resource" id="Resource_r7xue"]
-script = ExtResource("11_tp6li")
-tex = ExtResource("12_u86nu")
-metadata/_custom_type_script = "uid://sbokqad6h65g"
 
 [node name="DuTestScene" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
@@ -101,16 +94,11 @@ visible = false
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("5_u86nu")]
 position = Vector2(538, 677)
 
-[node name="Pickup" parent="." unique_id=483234207 instance=ExtResource("10_u86nu")]
-position = Vector2(716, 676)
-itemInfo = SubResource("Resource_r7xue")
-
-[node name="Sprite2D" parent="Pickup" index="1" unique_id=1451214542]
-texture = ExtResource("12_u86nu")
+[node name="BaseEnemy" parent="." unique_id=1227542854 instance=ExtResource("10_r7xue")]
+position = Vector2(1016, 652)
 
 [editable path="SecretArea"]
 [editable path="transition_place"]
 [editable path="transition_secret"]
 [editable path="Liquid"]
 [editable path="PlayerCharacter"]
-[editable path="Pickup"]

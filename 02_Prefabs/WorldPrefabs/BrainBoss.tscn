@@ -3,38 +3,29 @@
 [ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="1_dnopr"]
 [ext_resource type="Script" uid="uid://bmedv46rwg8dq" path="res://01_Scripts/BrainBoss.gd" id="1_tgd2t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tgd2t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_axj5o"]
 atlas = ExtResource("1_dnopr")
-region = Rect2(640, 0, 128, 128)
+region = Rect2(576, 0, 144, 144)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h17ca"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7578"]
 atlas = ExtResource("1_dnopr")
-region = Rect2(512, 0, 128, 128)
+region = Rect2(720, 0, 144, 144)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vexkq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_updo1"]
 atlas = ExtResource("1_dnopr")
-region = Rect2(768, 0, 128, 128)
+region = Rect2(864, 0, 144, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kw6nx"]
 animations = [{
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_tgd2t")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axj5o")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_h17ca")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7578")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_vexkq")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_tgd2t")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_h17ca")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_vexkq")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_updo1")
 }],
 "loop": 1,
 "name": &"Idle",
@@ -45,10 +36,9 @@ animations = [{
 script = ExtResource("1_tgd2t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1075912230]
-scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_kw6nx")
 animation = &"Idle"
-frame_progress = 0.45469028
+frame_progress = 0.35933292
 
 [node name="BitePoint" type="Marker2D" parent="." unique_id=1193860379]
 position = Vector2(-26, 90)

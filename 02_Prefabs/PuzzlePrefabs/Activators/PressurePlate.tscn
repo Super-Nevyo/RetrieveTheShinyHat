@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://duvn2x7fbcc7t" path="res://04_Audio/SFX/press_plate.mp3" id="3_5f16h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
-size = Vector2(70, 28)
+size = Vector2(96, 28)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujkr7"]
 random_pitch = 1.096825
@@ -17,7 +17,7 @@ script = ExtResource("1_pg43b")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1179431329]
 collision_layer = 0
-collision_mask = 66
+collision_mask = 82
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1259215631]
 position = Vector2(0, 21)
