@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5kgqbsnaxirq" path="res://02_Prefabs/PuzzlePrefabs/Box.tscn" id="7_828q7"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="8_0imss"]
 [ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="9_ulwqt"]
+[ext_resource type="Script" uid="uid://bulo4nbrm4uwr" path="res://01_Scripts/camera.gd" id="10_shrrd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ulwqt"]
 
@@ -16,8 +17,6 @@
 size = Vector2(1144, 20)
 
 [node name="PuzzleTestScene" type="Node2D" unique_id=1037801544]
-
-[node name="GameHud" parent="." unique_id=1741115912 instance=ExtResource("1_1lcwi")]
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("1_ppkka")]
 position = Vector2(862, 666)
@@ -42,7 +41,7 @@ position = Vector2(178, 22)
 shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="PressurePlate" parent="." unique_id=1796088267 instance=ExtResource("3_3c2uc")]
-position = Vector2(642, 535)
+position = Vector2(684, 500)
 attached_ids = Array[int]([1])
 activation_amount = Array[float]([1.0])
 
@@ -76,3 +75,13 @@ position = Vector2(870, 513)
 
 [node name="BaseEnemy2" parent="." unique_id=2039302970 instance=ExtResource("9_ulwqt")]
 position = Vector2(1174, 542)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1005307290]
+position = Vector2(957, 543)
+script = ExtResource("10_shrrd")
+
+[node name="GameHud" parent="Camera2D" unique_id=1741115912 instance=ExtResource("1_1lcwi")]
+offset_left = -957.0
+offset_top = -543.0
+offset_right = -957.0
+offset_bottom = -543.0

@@ -7,9 +7,15 @@ extends MetaActivated
 var move_to : float = 0
 @export var move_speed : float = 100
 @export var jump_distance : float = 5
+# SCREEN SHAKE
+@export var shake_start_strength : float = 5
+@export var shake_start_time : float = 1
+@export var shake_continue_strength : float = 2
+@export var shake_continue_time : float = 2
 
 func _physics_process(delta: float) -> void:
 	if !concluded:
+		PuzzleSignalTransmiter.shake_screen.emit(shake_continue_strength,shake_continue_time)
 		liquid_transform.position.y += delta * move_speed * (1 if liquid_transform.position.y < move_to else -1)
 		if abs(liquid_transform.position.y - move_to) < jump_distance:
 			concluded = true
@@ -17,6 +23,7 @@ func _physics_process(delta: float) -> void:
 func activate_puzzle(id: RoomPersistances.meta_puzzles, new:int) -> void:
 	super.activate_puzzle(id, new)
 	move_to = where_to_move()
+	PuzzleSignalTransmiter.shake_screen.emit(shake_start_strength,shake_start_time)
 
 func set_puzzle(new:int) -> void:
 	super.set_puzzle(new)

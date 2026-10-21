@@ -63,6 +63,7 @@ position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="Base" type="Sprite2D" parent="Area2D" unique_id=1092581678]
+texture_filter = 1
 texture = ExtResource("4_1ykdu")
 region_enabled = true
 region_rect = Rect2(48, 432, 48, 48)
