@@ -4,7 +4,7 @@ class_name GameHud
 @onready var hp_bar: Healthbar = $Healthbar
 @onready var inv_ui: InventoryUI = $InventoryUi
 @onready var breath_bar: BreathBar = $BreathBar
-@onready var Player: PlayerController = $"../PlayerCharacter"
+@onready var Player: PlayerController = $"../../PlayerCharacter"
 
 func _ready() -> void:
 	if Player != null:
