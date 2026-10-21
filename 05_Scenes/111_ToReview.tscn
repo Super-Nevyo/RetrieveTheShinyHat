@@ -18,26 +18,26 @@
 
 [sub_resource type="Resource" id="Resource_xgytq"]
 script = ExtResource("6_ox0tq")
-display_name = "To_Levers"
-transition_id = "puzzle3_exit_ne"
+display_name = "To_Rooms"
+transition_id = "puzzle_exit_ne"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_o1sxu"]
 script = ExtResource("6_ox0tq")
-display_name = "To_DoubleRoom"
-transition_id = "puzzle3_exit_nw"
+display_name = "To_Room"
+transition_id = "puzzle_exit_nw"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_ubi2r"]
 script = ExtResource("6_ox0tq")
-display_name = "To_DoubleRoom"
-transition_id = "puzzle3_exit_sw"
+display_name = "To_SomeRoom"
+transition_id = "puzzle_exit_sw"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_qka4h"]
 script = ExtResource("6_ox0tq")
-display_name = "To_Connection"
-transition_id = "puzzle3_exit_s"
+display_name = "To_OtherRoom"
+transition_id = "puzzle_exit_s"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
