@@ -249,3 +249,4 @@ z_index = 100
 
 [editable path="GameHud"]
 [editable path="GameHud/InventoryUi"]
+[editable path="GameHud/PlayerUIArt"]
