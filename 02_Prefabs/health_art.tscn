@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://d0gvqo2qadp7c"]
 
 [ext_resource type="Texture2D" uid="uid://bsqp6rw0cuys" path="res://03_Art/UI/Base.png" id="1_my3f5"]
-[ext_resource type="Texture2D" uid="uid://dd4xhgjlbhlae" path="res://03_Art/UI/Background.png" id="2_scdmh"]
+[ext_resource type="Texture2D" uid="uid://bnfvqmm4q8wmh" path="res://03_Art/UI/Background.png" id="2_scdmh"]
 [ext_resource type="Texture2D" uid="uid://ctkajt86y2q0h" path="res://03_Art/UI/Healthui.png" id="3_hr4r0"]
+[ext_resource type="Shader" uid="uid://c8rgqh6wo0nnv" path="res://06_Extras/Shaders/health_liquid.tres" id="3_scdmh"]
 [ext_resource type="Texture2D" uid="uid://bea1en4e77hbn" path="res://03_Art/UI/Healthuiborder.png" id="4_vwdgd"]
 [ext_resource type="Texture2D" uid="uid://b4ipqu56c6jg6" path="res://03_Art/UI/Oxygenui.png" id="5_hvyrn"]
+[ext_resource type="Shader" uid="uid://dawy32a0waj83" path="res://06_Extras/Shaders/oxygen_fill.tres" id="6_hr4r0"]
 [ext_resource type="Texture2D" uid="uid://cikq4igroccsu" path="res://03_Art/UI/Oxygenuiborder.png" id="6_y805f"]
 [ext_resource type="Texture2D" uid="uid://gygak8j3mtrs" path="res://03_Art/UI/Tenticlesui1.png" id="8_scdmh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sc7ta"]
+shader = ExtResource("3_scdmh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkx8f"]
+shader = ExtResource("6_hr4r0")
 
 [node name="UiArt" type="Control" unique_id=1852749859]
 layout_mode = 3
@@ -16,30 +24,28 @@ mouse_filter = 2
 [node name="Base" type="TextureRect" parent="." unique_id=34008409]
 texture_filter = 1
 layout_mode = 0
-offset_right = 2048.0
+offset_right = 639.0
 offset_bottom = 2048.0
 texture = ExtResource("1_my3f5")
-stretch_mode = 5
 
 [node name="Background" type="TextureRect" parent="." unique_id=1799753939]
 texture_filter = 1
 layout_mode = 0
-offset_right = 2048.0
+offset_right = 639.0
 offset_bottom = 2048.0
 texture = ExtResource("2_scdmh")
 stretch_mode = 5
 
 [node name="HealthFill" type="TextureProgressBar" parent="." unique_id=445859201]
 texture_filter = 1
-texture_repeat = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_sc7ta")
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 0
-offset_left = 222.6087
-offset_top = 154.78261
-offset_right = 490.6087
-offset_bottom = 1486.7826
+offset_right = 639.0
+offset_bottom = 2048.0
 mouse_filter = 2
-value = 100.0
+value = 70.0
 fill_mode = 3
 nine_patch_stretch = true
 texture_progress = ExtResource("3_hr4r0")
@@ -48,35 +54,30 @@ texture_progress = ExtResource("3_hr4r0")
 texture_filter = 1
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 0
-offset_left = 214.0
-offset_top = 144.0
-offset_right = 550.0
-offset_bottom = 1488.0
+offset_right = 639.0
+offset_bottom = 2048.0
 mouse_filter = 2
 texture = ExtResource("4_vwdgd")
-stretch_mode = 5
 
 [node name="OxygenFill" type="TextureProgressBar" parent="." unique_id=428337763]
 texture_filter = 1
+material = SubResource("ShaderMaterial_kkx8f")
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 0
-offset_left = 197.0
-offset_top = 48.0
-offset_right = 663.0
-offset_bottom = 1226.0
+offset_right = 639.0
+offset_bottom = 2048.0
 mouse_filter = 2
 value = 100.0
 fill_mode = 3
+nine_patch_stretch = true
 texture_progress = ExtResource("5_hvyrn")
 
 [node name="OxygenBorder" type="TextureRect" parent="." unique_id=1451021827]
 texture_filter = 1
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 0
-offset_left = 191.0
-offset_top = 24.0
-offset_right = 703.0
-offset_bottom = 504.0
+offset_right = 639.0
+offset_bottom = 2048.0
 mouse_filter = 2
 texture = ExtResource("6_y805f")
 stretch_mode = 5
@@ -84,8 +85,6 @@ stretch_mode = 5
 [node name="Tentacles" type="TextureRect" parent="." unique_id=1173510926]
 texture_filter = 1
 layout_mode = 0
-offset_right = 2048.0
+offset_right = 639.0
 offset_bottom = 2048.0
 texture = ExtResource("8_scdmh")
-expand_mode = 1
-stretch_mode = 5

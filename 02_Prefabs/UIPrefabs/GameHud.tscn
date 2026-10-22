@@ -17,7 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_awiqt")
 metadata/_edit_horizontal_guides_ = [966.0]
 
-[node name="Healthbar" parent="." unique_id=919437759 instance=ExtResource("1_ppufa")]
+[node name="Healthbar" parent="." unique_id=919437759 node_paths=PackedStringArray("bar") instance=ExtResource("1_ppufa")]
 visible = false
 layout_mode = 1
 offset_left = 100.0
@@ -25,16 +25,16 @@ offset_top = 541.0
 offset_right = 100.0
 offset_bottom = 541.0
 rotation = 1.5707964
+bar = NodePath("../PlayerUIArt/HealthFill")
 
 [node name="InventoryUi" parent="." unique_id=1475960093 instance=ExtResource("2_awiqt")]
 layout_mode = 1
-offset_left = 57.0
-offset_top = 523.0
-offset_right = 57.0
-offset_bottom = 523.0
+offset_left = 70.0
+offset_top = 522.0
+offset_right = 70.0
+offset_bottom = 522.0
 
-[node name="BreathBar" parent="." unique_id=646066472 instance=ExtResource("4_vk3oh")]
-visible = false
+[node name="BreathBar" parent="." unique_id=646066472 node_paths=PackedStringArray("bar") instance=ExtResource("4_vk3oh")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
@@ -45,13 +45,15 @@ offset_right = 25.0
 offset_bottom = 440.0
 grow_horizontal = 1
 grow_vertical = 1
+bar = NodePath("../PlayerUIArt/OxygenFill")
 
-[node name="UiArt" parent="." unique_id=1852749859 instance=ExtResource("5_sc7ta")]
+[node name="PlayerUIArt" parent="." unique_id=1852749859 instance=ExtResource("5_sc7ta")]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = -2.0
+offset_top = 428.0
+offset_right = -2.0
+offset_bottom = 428.0
+scale = Vector2(0.3, 0.3)
 
 [node name="MapArt" type="Control" parent="." unique_id=171772538]
 z_index = 100
@@ -74,3 +76,4 @@ expand_mode = 1
 stretch_mode = 5
 
 [editable path="InventoryUi"]
+[editable path="PlayerUIArt"]
