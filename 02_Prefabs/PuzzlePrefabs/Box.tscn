@@ -23,6 +23,7 @@ float_speed = 40.0
 shape = SubResource("RectangleShape2D_4aysw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1438745487]
+texture_filter = 1
 texture = ExtResource("2_5iw5u")
 region_enabled = true
 region_rect = Rect2(96, 432, 48, 48)

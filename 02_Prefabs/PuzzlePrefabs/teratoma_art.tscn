@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bip22ol3ulpbg"]
+
+[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="1_5ndpm"]
+
+[node name="TeratomaArt" type="Node2D" unique_id=1604281277]
+
+[node name="TeratomaBlood" type="Sprite2D" parent="." unique_id=1854804091]
+texture_filter = 1
+texture = ExtResource("1_5ndpm")
+region_enabled = true
+region_rect = Rect2(144, 624, 96, 96)
+
+[node name="TeratomaEye" type="Sprite2D" parent="." unique_id=1323776104]
+texture_filter = 1
+position = Vector2(-12, 12)
+texture = ExtResource("1_5ndpm")
+region_enabled = true
+region_rect = Rect2(384, 672, 48, 48)
+
+[node name="TeratomaVeins" type="Sprite2D" parent="." unique_id=614360517]
+texture_filter = 1
+position = Vector2(0, 24)
+texture = ExtResource("1_5ndpm")
+region_enabled = true
+region_rect = Rect2(48, 720, 144, 144)
+
+[node name="TeratomaBase" type="Sprite2D" parent="." unique_id=1223749220]
+texture_filter = 1
+texture = ExtResource("1_5ndpm")
+region_enabled = true
+region_rect = Rect2(48, 624, 96, 96)

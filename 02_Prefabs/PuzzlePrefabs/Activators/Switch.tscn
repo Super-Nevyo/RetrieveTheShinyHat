@@ -63,6 +63,7 @@ position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="Base" type="Sprite2D" parent="Area2D" unique_id=1092581678]
+texture_filter = 1
 texture = ExtResource("4_1ykdu")
 region_enabled = true
 region_rect = Rect2(48, 432, 48, 48)
@@ -71,6 +72,7 @@ region_rect = Rect2(48, 432, 48, 48)
 position = Vector2(0, 7)
 
 [node name="Lever" type="Sprite2D" parent="PivotPoint" unique_id=1612846749]
+texture_filter = 1
 position = Vector2(-9, -7)
 rotation = -0.7853982
 texture = ExtResource("4_1ykdu")
