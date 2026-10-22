@@ -58,6 +58,8 @@ collision_enabled = false
 
 [node name="SecretArea" parent="." unique_id=716718294 instance=ExtResource("4_x0lmg")]
 visible = false
+room_id = "starting"
+reveal_id = "umbrella_secret"
 
 [node name="Cover" parent="SecretArea" index="0" unique_id=1548122823]
 z_index = 30

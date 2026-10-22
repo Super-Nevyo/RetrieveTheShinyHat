@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://div2gouu7r72q"]
+
+[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="1_s7jnp"]
+
+[node name="DoorArt" type="Node2D" unique_id=585850566]
+
+[node name="Door1" type="Node2D" parent="." unique_id=1514681165]
+visible = false
+
+[node name="DoorBase" type="Sprite2D" parent="Door1" unique_id=2019307022]
+texture = ExtResource("1_s7jnp")
+region_enabled = true
+region_rect = Rect2(432, 624, 192, 192)
+
+[node name="DoorEyes" type="Sprite2D" parent="Door1" unique_id=304487741]
+position = Vector2(0, -56)
+texture = ExtResource("1_s7jnp")
+region_enabled = true
+region_rect = Rect2(384, 624, 48, 48)
+
+[node name="DoorCrown" type="Sprite2D" parent="Door1" unique_id=1992302680]
+position = Vector2(10, -69)
+texture = ExtResource("1_s7jnp")
+region_enabled = true
+region_rect = Rect2(624, 528, 96, 96)
+
+[node name="Door2" type="Node2D" parent="." unique_id=1886856057]
+
+[node name="DoorBase" type="Sprite2D" parent="Door2" unique_id=1174373034]
+texture = ExtResource("1_s7jnp")
+region_enabled = true
+region_rect = Rect2(624, 624, 192, 192)
+
+[node name="DoorEyes" type="Sprite2D" parent="Door2" unique_id=1154951638]
+position = Vector2(0, -58)
+texture = ExtResource("1_s7jnp")
+region_enabled = true
+region_rect = Rect2(336, 672, 48, 48)
+
+[node name="DoorCrown" type="Sprite2D" parent="Door2" unique_id=1044095383]
+position = Vector2(9, -68)
+texture = ExtResource("1_s7jnp")
+region_enabled = true
+region_rect = Rect2(528, 528, 96, 96)
+
+[node name="Door3" type="Node2D" parent="." unique_id=870504884]
+visible = false
+
+[node name="DoorBase" type="Sprite2D" parent="Door3" unique_id=998541857]
+texture = ExtResource("1_s7jnp")
+region_enabled = true
+region_rect = Rect2(816, 624, 192, 192)
+
+[node name="DoorEyes" type="Sprite2D" parent="Door3" unique_id=1138456493]
+position = Vector2(0, -54)
+texture = ExtResource("1_s7jnp")
+region_enabled = true
+region_rect = Rect2(336, 624, 48, 48)
+
+[node name="DoorCrown" type="Sprite2D" parent="Door3" unique_id=247351898]
+position = Vector2(9, -68)
+texture = ExtResource("1_s7jnp")
+region_enabled = true
+region_rect = Rect2(528, 528, 96, 96)
