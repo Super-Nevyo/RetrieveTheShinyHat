@@ -105,7 +105,7 @@ position = Vector2(538, 677)
 position = Vector2(716, 676)
 itemInfo = SubResource("Resource_r7xue")
 
-[node name="Sprite2D" parent="Pickup" index="1" unique_id=1451214542]
+[node name="Sprite2D" parent="Pickup" index="1" unique_id=1059875453]
 texture = ExtResource("12_u86nu")
 
 [editable path="SecretArea"]
