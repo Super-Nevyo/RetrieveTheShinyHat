@@ -274,33 +274,36 @@ exit_b_id = "meta3_exit_n"
 [node name="RoomPersistances" type="Node2D" parent="." unique_id=944023517 groups=["room_persistance"]]
 script = ExtResource("9_e2ro4")
 
-[node name="GameHud" parent="." unique_id=1741115912 instance=ExtResource("9_e8wdy")]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1558198681]
+position = Vector2(960, 540)
+
+[node name="GameHud" parent="Camera2D" unique_id=1741115912 instance=ExtResource("9_e8wdy")]
 z_index = 100
-offset_left = -4.0
-offset_top = 24.0
-offset_right = -4.0
-offset_bottom = 24.0
+offset_left = -964.0
+offset_top = -516.0
+offset_right = -964.0
+offset_bottom = -516.0
 scale = Vector2(0.9600004, 0.9600004)
 
-[node name="InventoryUi" parent="GameHud" index="1" unique_id=1475960093]
+[node name="InventoryUi" parent="Camera2D/GameHud" index="1" unique_id=1475960093]
 offset_left = 73.08341
 offset_top = 536.6248
 offset_right = 73.08341
 offset_bottom = 536.6248
 scale = Vector2(0.9637684, 0.9637684)
 
-[node name="UiArt" parent="GameHud" index="3" unique_id=1704298394]
+[node name="UiArt" parent="Camera2D/GameHud" index="3" unique_id=1704298394]
 offset_left = -172.9166
 offset_top = 465.62482
 offset_right = -172.9166
 offset_bottom = 465.62482
 scale = Vector2(1.1083336, 1.1083336)
 
-[node name="MapArt" parent="GameHud" index="4" unique_id=171772538]
+[node name="MapArt" parent="Camera2D/GameHud" index="4" unique_id=171772538]
 offset_left = 45.833317
 offset_top = 71.87497
 offset_right = 345.8333
 offset_bottom = 371.87497
 
-[editable path="GameHud"]
-[editable path="GameHud/InventoryUi"]
+[editable path="Camera2D/GameHud"]
+[editable path="Camera2D/GameHud/InventoryUi"]
