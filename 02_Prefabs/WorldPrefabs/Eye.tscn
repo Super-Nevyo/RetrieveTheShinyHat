@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bj3rchurbe3gq"]
+
+[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="1_56psm"]
+[ext_resource type="Script" uid="uid://chvlkfkjfijn3" path="res://01_Scripts/EnvironmentObjects/Eye/eye.gd" id="1_jem08"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsmb2"]
+radius = 300.0
+
+[node name="Eye" type="Node2D" unique_id=577233228]
+script = ExtResource("1_jem08")
+
+[node name="Iris" type="Sprite2D" parent="." unique_id=968054081]
+texture = ExtResource("1_56psm")
+region_enabled = true
+region_rect = Rect2(30, 52, 25, 25)
+
+[node name="PlayerDetection" type="Area2D" parent="." unique_id=1817281512]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=1201622506]
+shape = SubResource("CircleShape2D_qsmb2")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

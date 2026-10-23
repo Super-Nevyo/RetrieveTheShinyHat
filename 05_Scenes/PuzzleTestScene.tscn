@@ -9,11 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://b5kgqbsnaxirq" path="res://02_Prefabs/PuzzlePrefabs/Box.tscn" id="7_828q7"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="8_0imss"]
 [ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="9_ulwqt"]
+[ext_resource type="PackedScene" uid="uid://b1wr5mv21g2q1" path="res://02_Prefabs/PuzzlePrefabs/DoorConnection.tscn" id="10_shrrd"]
+[ext_resource type="PackedScene" uid="uid://bj3rchurbe3gq" path="res://02_Prefabs/WorldPrefabs/Eye.tscn" id="11_4fcjd"]
+[ext_resource type="Script" uid="uid://s84gxr7ffprs" path="res://01_Scripts/EnvironmentObjects/Eye/move_eye.gd" id="12_i6lf4"]
+[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="13_osutn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ulwqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(1144, 20)
+
+[sub_resource type="Resource" id="Resource_2agyp"]
+script = ExtResource("12_i6lf4")
+fix_distance = false
+metadata/_custom_type_script = "uid://s84gxr7ffprs"
 
 [node name="PuzzleTestScene" type="Node2D" unique_id=1037801544]
 
@@ -66,13 +75,26 @@ does_respawn = true
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("8_0imss")]
 
 [node name="BaseEnemy" parent="." unique_id=1227542854 instance=ExtResource("9_ulwqt")]
-position = Vector2(989, 436)
+position = Vector2(1030, 613)
 
 [node name="BaseEnemy3" parent="." unique_id=542256485 instance=ExtResource("9_ulwqt")]
-position = Vector2(1051, 465)
+position = Vector2(1141, 675)
 
 [node name="BaseEnemy4" parent="." unique_id=1779683724 instance=ExtResource("9_ulwqt")]
-position = Vector2(870, 513)
+position = Vector2(863, 601)
 
 [node name="BaseEnemy2" parent="." unique_id=2039302970 instance=ExtResource("9_ulwqt")]
 position = Vector2(1174, 542)
+
+[node name="DoorConnection" parent="." unique_id=2049490626 instance=ExtResource("10_shrrd")]
+position = Vector2(658, 475)
+
+[node name="Eye" parent="." unique_id=577233228 instance=ExtResource("11_4fcjd")]
+position = Vector2(388, 443)
+movement_pattern = SubResource("Resource_2agyp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=813930900]
+visible = false
+z_index = -1
+position = Vector2(397, 486)
+texture = ExtResource("13_osutn")

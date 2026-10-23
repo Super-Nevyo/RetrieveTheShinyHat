@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b1wr5mv21g2q1"]
+
+[ext_resource type="Script" uid="uid://cfgwts485pd4p" path="res://02_Prefabs/PuzzlePrefabs/door_connection.gd" id="1_n5er0"]
+[ext_resource type="PackedScene" uid="uid://bxehpoyyvwj1y" path="res://02_Prefabs/PuzzlePrefabs/Door.tscn" id="2_a4v0g"]
+
+[node name="DoorConnection" type="Node2D" unique_id=2049490626 node_paths=PackedStringArray("door1", "door2")]
+z_index = -1
+script = ExtResource("1_n5er0")
+door1 = NodePath("Door1")
+door2 = NodePath("Door2")
+
+[node name="Door1" parent="." unique_id=1888311854 instance=ExtResource("2_a4v0g")]
+
+[node name="Door2" parent="." unique_id=1750304808 instance=ExtResource("2_a4v0g")]
+position = Vector2(230, 0)
+
+[connection signal="door_entered" from="Door1" to="." method="_on_door1_entered"]
+[connection signal="door_entered" from="Door2" to="." method="_on_door2_entered"]
