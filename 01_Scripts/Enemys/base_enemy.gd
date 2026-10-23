@@ -6,4 +6,3 @@ var MyInfo : Dictionary
 
 func _physics_process(delta: float) -> void:
 	MyStateMachine.update(self,MyInfo)
-	

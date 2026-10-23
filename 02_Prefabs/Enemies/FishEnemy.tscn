@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://86kpg44xv85a" path="res://01_Scripts/Enemys/enemy_swimmer.gd" id="5_fnsof"]
 [ext_resource type="Script" uid="uid://bkdrjr6x8vg76" path="res://01_Scripts/Enemys/enemy_collision_check.gd" id="6_obi83"]
 [ext_resource type="Script" uid="uid://c0l6fudinubhu" path="res://01_Scripts/Enemys/enemy_dasher.gd" id="7_obi83"]
+[ext_resource type="Script" uid="uid://drou8iwjjbcsj" path="res://01_Scripts/Enemys/enemy_drowned.gd" id="9_cxftj"]
+[ext_resource type="Script" uid="uid://cekns0gxrmdab" path="res://02_Prefabs/Enemies/liquid_signal.gd" id="12_dndbi"]
 
 [sub_resource type="Resource" id="Resource_obi83"]
 script = ExtResource("3_gnwes")
@@ -80,13 +82,18 @@ script = ExtResource("3_obi83")
 recovery_time = 0.5
 metadata/_custom_type_script = "uid://caspebr44pwla"
 
+[sub_resource type="Resource" id="Resource_n6qmo"]
+script = ExtResource("9_cxftj")
+metadata/_custom_type_script = "uid://drou8iwjjbcsj"
+
 [sub_resource type="Resource" id="Resource_gcirp"]
 script = ExtResource("3_d7yf5")
 States = Dictionary[int, ExtResource("2_r6kvm")]({
 0: SubResource("Resource_obi83"),
 1: SubResource("Resource_qon30"),
 3: SubResource("Resource_0ddcl"),
-4: SubResource("Resource_pl4na")
+4: SubResource("Resource_pl4na"),
+5: SubResource("Resource_n6qmo")
 })
 metadata/_custom_type_script = "uid://cms4ksi8ats4m"
 
@@ -98,7 +105,6 @@ size = Vector2(41, 19)
 [node name="BaseEnemy" type="RigidBody2D" unique_id=1227542854]
 z_index = 10
 collision_layer = 17
-gravity_scale = 0.0
 lock_rotation = true
 angular_damp = 100.0
 script = ExtResource("1_svg75")
@@ -120,6 +126,10 @@ script = ExtResource("5_d7yf5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LiquidDetector" unique_id=222317854]
 shape = SubResource("RectangleShape2D_kw6nx")
+
+[node name="LiquidSignal" type="Node2D" parent="." unique_id=879548525 node_paths=PackedStringArray("detector")]
+script = ExtResource("12_dndbi")
+detector = NodePath("../LiquidDetector")
 
 [connection signal="area_entered" from="LiquidDetector" to="LiquidDetector" method="_on_area_entered"]
 [connection signal="area_exited" from="LiquidDetector" to="LiquidDetector" method="_on_area_exited"]

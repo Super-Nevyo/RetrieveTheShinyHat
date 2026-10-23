@@ -29,6 +29,7 @@ func update(enemy : Enemy, info : Dictionary):
 		enemy.linear_velocity.y = -wave_strength
 
 func start(enemy : Enemy, info : Dictionary):
+	enemy.gravity_scale = 0
 	if !info.has(is_facing_right_ID):
 		info[is_facing_right_ID] = false
 	info ["swim_time"] = 0

@@ -27,6 +27,7 @@ func update(enemy : Enemy, info : Dictionary):
 		dash_speed * (1 if info[is_facing_right_ID] else -1),0)
 
 func start(enemy : Enemy, info : Dictionary):
+	enemy.gravity_scale = 0
 	info["dash"] = enemy.global_position
 	enemy.linear_velocity = Vector2.ZERO
 
