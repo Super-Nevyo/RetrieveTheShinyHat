@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bxehpoyyvwj1y"]
+
+[ext_resource type="Script" uid="uid://dpprp5iacy3db" path="res://02_Prefabs/PuzzlePrefabs/door.gd" id="1_7v0e4"]
+[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="2_qd1ed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2tw8"]
+size = Vector2(64, 128)
+
+[node name="Door" type="Node2D" unique_id=1888311854]
+script = ExtResource("1_7v0e4")
+
+[node name="Area" type="Area2D" parent="." unique_id=1329850220]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=502456275]
+shape = SubResource("RectangleShape2D_p2tw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=414890041]
+texture = ExtResource("2_qd1ed")
+
+[node name="TouchIndicator" type="Sprite2D" parent="." unique_id=1182750810]
+visible = false
+position = Vector2(0, -75)
+texture = ExtResource("2_qd1ed")
+region_enabled = true
+region_rect = Rect2(48, 48, 32, 32)
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]
