@@ -7,12 +7,14 @@ class_name EnemyCollisionRaycast
 @export var raycast_end : Vector2 = Vector2(0,0)
 @export var mask : int = 1
 
+@export var collide_with_areas : bool = true
+
 func check_collision(enemy : Enemy, info : Dictionary) -> bool:
 	if !info.has(raycast_ID):
 		var temp_raycast = RayCast2D.new()
 		temp_raycast.exclude_parent = true
 		temp_raycast.hit_from_inside = true
-		temp_raycast.collide_with_areas = true
+		temp_raycast.collide_with_areas = collide_with_areas
 		temp_raycast.collision_mask = mask
 		info[raycast_ID] = temp_raycast
 		enemy.add_child(info[raycast_ID], false)

@@ -6,12 +6,16 @@
 
 [node name="Liquid" type="Node2D" unique_id=1959433390]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1010538046]
+[node name="Area2D" type="Area2D" parent="." unique_id=1010538046 node_paths=PackedStringArray("surface")]
 collision_mask = 79
 script = ExtResource("1_sh2u0")
+surface = NodePath("../Surface")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2003433593]
 shape = SubResource("RectangleShape2D_qsmb2")
+
+[node name="Surface" type="Marker2D" parent="." unique_id=368556039]
+position = Vector2(0, -10)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

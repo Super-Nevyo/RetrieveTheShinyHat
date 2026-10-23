@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bcxyu5xmrt51t"]
+
+[ext_resource type="Script" uid="uid://d3ebyys3svqk8" path="res://01_Scripts/Enemys/base_enemy.gd" id="1_svg75"]
+[ext_resource type="Script" uid="uid://bxw21dkarelou" path="res://01_Scripts/Enemys/enemy_state.gd" id="2_r6kvm"]
+[ext_resource type="Script" uid="uid://cms4ksi8ats4m" path="res://01_Scripts/Enemys/enemy_state_machine.gd" id="3_d7yf5"]
+[ext_resource type="Script" uid="uid://cf6fa6iwmmiyj" path="res://01_Scripts/Enemys/enemy_null_swap_state.gd" id="3_gnwes"]
+[ext_resource type="Script" uid="uid://caspebr44pwla" path="res://01_Scripts/Enemys/enemy_dasher_recovery.gd" id="3_obi83"]
+[ext_resource type="Texture2D" uid="uid://bjaf2kcu0vfgq" path="res://03_Art/TempAssets/Fishtemp.png" id="3_svg75"]
+[ext_resource type="Script" uid="uid://clvqpadtk1jh8" path="res://01_Scripts/Enemys/enemy_movement_stats.gd" id="4_qon30"]
+[ext_resource type="Script" uid="uid://86kpg44xv85a" path="res://01_Scripts/Enemys/enemy_swimmer.gd" id="5_fnsof"]
+[ext_resource type="Script" uid="uid://bkdrjr6x8vg76" path="res://01_Scripts/Enemys/enemy_collision_check.gd" id="6_obi83"]
+[ext_resource type="Script" uid="uid://c0l6fudinubhu" path="res://01_Scripts/Enemys/enemy_dasher.gd" id="7_obi83"]
+[ext_resource type="Script" uid="uid://drou8iwjjbcsj" path="res://01_Scripts/Enemys/enemy_drowned.gd" id="9_cxftj"]
+[ext_resource type="PackedScene" uid="uid://i26khqhnbjke" path="res://02_Prefabs/liquid_detector.tscn" id="12_cxftj"]
+[ext_resource type="Script" uid="uid://cekns0gxrmdab" path="res://02_Prefabs/Enemies/liquid_signal.gd" id="12_dndbi"]
+
+[sub_resource type="Resource" id="Resource_obi83"]
+script = ExtResource("3_gnwes")
+swap_to = 1
+metadata/_custom_type_script = "uid://cf6fa6iwmmiyj"
+
+[sub_resource type="Resource" id="Resource_dndbi"]
+script = ExtResource("4_qon30")
+move_speed = 45.0
+metadata/_custom_type_script = "uid://clvqpadtk1jh8"
+
+[sub_resource type="Resource" id="Resource_mloxw"]
+script = ExtResource("6_obi83")
+raycast_ID = "fishground"
+raycast_end = Vector2(0, 48)
+collide_with_areas = false
+metadata/_custom_type_script = "uid://bkdrjr6x8vg76"
+
+[sub_resource type="Resource" id="Resource_ti8lt"]
+script = ExtResource("6_obi83")
+raycast_ID = "fishplayer"
+raycast_end = Vector2(250, 0)
+mask = 2
+collide_with_areas = false
+metadata/_custom_type_script = "uid://bkdrjr6x8vg76"
+
+[sub_resource type="Resource" id="Resource_cxftj"]
+script = ExtResource("6_obi83")
+raycast_ID = "fishwall"
+raycast_end = Vector2(48, 0)
+collide_with_areas = false
+metadata/_custom_type_script = "uid://bkdrjr6x8vg76"
+
+[sub_resource type="Resource" id="Resource_qon30"]
+script = ExtResource("5_fnsof")
+enemy_movement_stats = SubResource("Resource_dndbi")
+wall_check = SubResource("Resource_cxftj")
+ground_check = SubResource("Resource_mloxw")
+player_check = SubResource("Resource_ti8lt")
+wave_speed = 1.0
+wave_strength = 35.0
+metadata/_custom_type_script = "uid://86kpg44xv85a"
+
+[sub_resource type="Resource" id="Resource_q4mmt"]
+script = ExtResource("6_obi83")
+raycast_ID = "switchcheck"
+raycast_end = Vector2(48, 0)
+mask = 8
+metadata/_custom_type_script = "uid://bkdrjr6x8vg76"
+
+[sub_resource type="Resource" id="Resource_qhyto"]
+script = ExtResource("6_obi83")
+raycast_ID = "dashwallcheck"
+raycast_end = Vector2(48, 0)
+collide_with_areas = false
+metadata/_custom_type_script = "uid://bkdrjr6x8vg76"
+
+[sub_resource type="Resource" id="Resource_0ddcl"]
+script = ExtResource("7_obi83")
+wall_check = SubResource("Resource_qhyto")
+switch_check = SubResource("Resource_q4mmt")
+dash_distance = 450.0
+metadata/_custom_type_script = "uid://c0l6fudinubhu"
+
+[sub_resource type="Resource" id="Resource_pl4na"]
+script = ExtResource("3_obi83")
+recovery_time = 0.5
+metadata/_custom_type_script = "uid://caspebr44pwla"
+
+[sub_resource type="Resource" id="Resource_n6qmo"]
+script = ExtResource("9_cxftj")
+metadata/_custom_type_script = "uid://drou8iwjjbcsj"
+
+[sub_resource type="Resource" id="Resource_gcirp"]
+script = ExtResource("3_d7yf5")
+States = Dictionary[int, ExtResource("2_r6kvm")]({
+0: SubResource("Resource_obi83"),
+1: SubResource("Resource_qon30"),
+3: SubResource("Resource_0ddcl"),
+4: SubResource("Resource_pl4na"),
+5: SubResource("Resource_n6qmo")
+})
+metadata/_custom_type_script = "uid://cms4ksi8ats4m"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
+size = Vector2(41, 19)
+
+[node name="BaseEnemy" type="RigidBody2D" unique_id=1227542854]
+z_index = 10
+collision_layer = 17
+lock_rotation = true
+angular_damp = 100.0
+script = ExtResource("1_svg75")
+MyStateMachine = SubResource("Resource_gcirp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1235798221]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_qsmb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1267512931]
+texture_filter = 1
+texture = ExtResource("3_svg75")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 48)
+
+[node name="LiquidDetector" parent="." unique_id=555614275 instance=ExtResource("12_cxftj")]
+
+[node name="LiquidSignal" type="Node2D" parent="." unique_id=879548525 node_paths=PackedStringArray("detector")]
+script = ExtResource("12_dndbi")
+detector = NodePath("../LiquidDetector")

@@ -8,13 +8,14 @@
 script = ExtResource("1_pcag1")
 partly_filled_liquid_level = 300.0
 puzzle_type = 1
+metadata/_edit_vertical_guides_ = [1872.0, 336.0]
 
 [node name="LiquidTransform" type="Node2D" parent="." unique_id=259595902]
 position = Vector2(960, 1080)
 
 [node name="Liquid" parent="LiquidTransform" unique_id=1959433390 instance=ExtResource("2_toi5b")]
-position = Vector2(0, 540)
-scale = Vector2(96, 54)
+position = Vector2(144, 540)
+scale = Vector2(77, 54)
 
 [node name="Sprite2D" type="Sprite2D" parent="LiquidTransform/Liquid" unique_id=1286319095]
 modulate = Color(1, 1, 1, 0.5882353)
@@ -23,3 +24,5 @@ scale = Vector2(0.415, 0.415)
 texture = ExtResource("3_hwxd5")
 region_enabled = true
 region_rect = Rect2(0, 48, 48, 48)
+
+[editable path="LiquidTransform/Liquid"]
