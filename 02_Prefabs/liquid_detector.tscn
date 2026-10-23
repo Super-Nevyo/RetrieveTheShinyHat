@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://i26khqhnbjke"]
+
+[ext_resource type="Script" uid="uid://yp82cjhelpxm" path="res://01_Scripts/liquid_detector.gd" id="1_vi0ag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
+
+[node name="LiquidDetector" type="Area2D" unique_id=555614275]
+collision_layer = 0
+script = ExtResource("1_vi0ag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2035345546]
+shape = SubResource("RectangleShape2D_kw6nx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

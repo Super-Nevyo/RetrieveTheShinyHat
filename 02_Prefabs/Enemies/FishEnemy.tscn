@@ -7,11 +7,11 @@
 [ext_resource type="Script" uid="uid://caspebr44pwla" path="res://01_Scripts/Enemys/enemy_dasher_recovery.gd" id="3_obi83"]
 [ext_resource type="Texture2D" uid="uid://bjaf2kcu0vfgq" path="res://03_Art/TempAssets/Fishtemp.png" id="3_svg75"]
 [ext_resource type="Script" uid="uid://clvqpadtk1jh8" path="res://01_Scripts/Enemys/enemy_movement_stats.gd" id="4_qon30"]
-[ext_resource type="Script" uid="uid://yp82cjhelpxm" path="res://01_Scripts/liquid_detector.gd" id="5_d7yf5"]
 [ext_resource type="Script" uid="uid://86kpg44xv85a" path="res://01_Scripts/Enemys/enemy_swimmer.gd" id="5_fnsof"]
 [ext_resource type="Script" uid="uid://bkdrjr6x8vg76" path="res://01_Scripts/Enemys/enemy_collision_check.gd" id="6_obi83"]
 [ext_resource type="Script" uid="uid://c0l6fudinubhu" path="res://01_Scripts/Enemys/enemy_dasher.gd" id="7_obi83"]
 [ext_resource type="Script" uid="uid://drou8iwjjbcsj" path="res://01_Scripts/Enemys/enemy_drowned.gd" id="9_cxftj"]
+[ext_resource type="PackedScene" uid="uid://i26khqhnbjke" path="res://02_Prefabs/liquid_detector.tscn" id="12_cxftj"]
 [ext_resource type="Script" uid="uid://cekns0gxrmdab" path="res://02_Prefabs/Enemies/liquid_signal.gd" id="12_dndbi"]
 
 [sub_resource type="Resource" id="Resource_obi83"]
@@ -100,8 +100,6 @@ metadata/_custom_type_script = "uid://cms4ksi8ats4m"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(41, 19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
-
 [node name="BaseEnemy" type="RigidBody2D" unique_id=1227542854]
 z_index = 10
 collision_layer = 17
@@ -120,16 +118,8 @@ texture = ExtResource("3_svg75")
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 48)
 
-[node name="LiquidDetector" type="Area2D" parent="." unique_id=1421063419]
-collision_layer = 0
-script = ExtResource("5_d7yf5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LiquidDetector" unique_id=222317854]
-shape = SubResource("RectangleShape2D_kw6nx")
+[node name="LiquidDetector" parent="." unique_id=555614275 instance=ExtResource("12_cxftj")]
 
 [node name="LiquidSignal" type="Node2D" parent="." unique_id=879548525 node_paths=PackedStringArray("detector")]
 script = ExtResource("12_dndbi")
 detector = NodePath("../LiquidDetector")
-
-[connection signal="area_entered" from="LiquidDetector" to="LiquidDetector" method="_on_area_entered"]
-[connection signal="area_exited" from="LiquidDetector" to="LiquidDetector" method="_on_area_exited"]

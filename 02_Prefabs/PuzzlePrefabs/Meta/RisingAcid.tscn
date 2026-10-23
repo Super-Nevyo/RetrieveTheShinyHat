@@ -24,3 +24,5 @@ scale = Vector2(0.415, 0.415)
 texture = ExtResource("3_hwxd5")
 region_enabled = true
 region_rect = Rect2(0, 48, 48, 48)
+
+[editable path="LiquidTransform/Liquid"]
