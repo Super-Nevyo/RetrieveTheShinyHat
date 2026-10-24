@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://crgcipow1e6ju" path="res://05_Scenes/_DemoScenes/06_DoubleRoom.tscn" id="16_d06w4"]
 [ext_resource type="PackedScene" uid="uid://dtgjc7knqfqjo" path="res://05_Scenes/_DemoScenes/10_BossMeta.tscn" id="18_xfc6e"]
 [ext_resource type="PackedScene" uid="uid://bj7ujjc4t7fue" path="res://05_Scenes/_DemoScenes/20_Mouth.tscn" id="20_pi4ka"]
+[ext_resource type="Script" uid="uid://bulo4nbrm4uwr" path="res://01_Scripts/camera.gd" id="23_o7nea"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_76a1v"]
 stream_count = 1
@@ -276,6 +277,7 @@ script = ExtResource("9_e2ro4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1558198681]
 position = Vector2(960, 540)
+script = ExtResource("23_o7nea")
 
 [node name="GameHud" parent="Camera2D" unique_id=1741115912 instance=ExtResource("9_e8wdy")]
 z_index = 100
