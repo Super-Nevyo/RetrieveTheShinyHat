@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="5_gbrht"]
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="6_ssbjt"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="7_4vy2k"]
-[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="8_hp2vk"]
 
 [sub_resource type="Resource" id="Resource_upoxi"]
 script = ExtResource("6_ssbjt")
@@ -89,9 +88,6 @@ position = Vector2(-70, 0)
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("7_4vy2k")]
 partly_filled_liquid_level = 200.0
 move_speed = 150.0
-
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("8_hp2vk")]
-position = Vector2(1296, 144)
 
 [editable path="SecretAreaLeft"]
 [editable path="SecretAreaRight"]

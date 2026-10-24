@@ -292,13 +292,6 @@ offset_right = 73.08341
 offset_bottom = 536.6248
 scale = Vector2(0.9637684, 0.9637684)
 
-[node name="UiArt" parent="Camera2D/GameHud" index="3" unique_id=1704298394]
-offset_left = -172.9166
-offset_top = 465.62482
-offset_right = -172.9166
-offset_bottom = 465.62482
-scale = Vector2(1.1083336, 1.1083336)
-
 [node name="MapArt" parent="Camera2D/GameHud" index="4" unique_id=171772538]
 offset_left = 45.833317
 offset_top = 71.87497
@@ -307,3 +300,4 @@ offset_bottom = 371.87497
 
 [editable path="Camera2D/GameHud"]
 [editable path="Camera2D/GameHud/InventoryUi"]
+[editable path="Camera2D/GameHud/PlayerUIArt"]
