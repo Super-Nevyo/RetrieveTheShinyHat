@@ -291,6 +291,7 @@ frame = 1
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("12_8orwl")]
 partly_filled_liquid_level = 200.0
+room_level = 3
 move_speed = 150.0
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("16_hgay3")]

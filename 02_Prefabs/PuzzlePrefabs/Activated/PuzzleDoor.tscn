@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dtffnjl0bbpf4"]
+
+[ext_resource type="Script" uid="uid://dj381g2apxkgs" path="res://01_Scripts/Puzzle/door.gd" id="1_pcham"]
+[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="2_hlmrh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w2kht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
+size = Vector2(38, 99)
+
+[node name="Door" type="Node2D" unique_id=425038002 node_paths=PackedStringArray("Door")]
+script = ExtResource("1_pcham")
+move_speed = 2.0
+Door = NodePath("StaticBody2D")
+
+[node name="StaticBody2D" type="AnimatableBody2D" parent="." unique_id=2113387722]
+physics_material_override = SubResource("PhysicsMaterial_w2kht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2049032428]
+shape = SubResource("RectangleShape2D_qsmb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=178328515]
+texture_filter = 1
+texture = ExtResource("2_hlmrh")
+region_enabled = true
+region_rect = Rect2(336, 432, 48, 96)

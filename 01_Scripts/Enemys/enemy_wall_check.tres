@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_tkykq")
 raycast_ID = "dashwall"
-raycast_start = Vector2(10, 0)
+raycast_start = Vector2(15, 0)
 raycast_end = Vector2(15, 0)
 metadata/_custom_type_script = "uid://bkdrjr6x8vg76"
