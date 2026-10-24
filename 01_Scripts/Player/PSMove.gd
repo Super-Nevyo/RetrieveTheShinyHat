@@ -64,8 +64,8 @@ func Jump():
 
 
 func update_animation(direction: float) -> void:
-	#if Player.is_attacking:
-		#return
+	if Player.ishurt:
+		return
 	if direction != 0:
 		Player.player_anim.flip_h = direction < 0
 		#Player.attack_collision.position.x = direction * Player.attack_offset
