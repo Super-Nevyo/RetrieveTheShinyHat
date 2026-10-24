@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://d0gvqo2qadp7c"]
+
+[ext_resource type="Texture2D" uid="uid://bsqp6rw0cuys" path="res://03_Art/UI/Base.png" id="1_my3f5"]
+[ext_resource type="Texture2D" uid="uid://bnfvqmm4q8wmh" path="res://03_Art/UI/Background.png" id="2_scdmh"]
+[ext_resource type="Texture2D" uid="uid://ctkajt86y2q0h" path="res://03_Art/UI/Healthui.png" id="3_hr4r0"]
+[ext_resource type="Shader" uid="uid://c8rgqh6wo0nnv" path="res://06_Extras/Shaders/health_liquid.tres" id="3_scdmh"]
+[ext_resource type="Texture2D" uid="uid://bea1en4e77hbn" path="res://03_Art/UI/Healthuiborder.png" id="4_vwdgd"]
+[ext_resource type="Texture2D" uid="uid://b4ipqu56c6jg6" path="res://03_Art/UI/Oxygenui.png" id="5_hvyrn"]
+[ext_resource type="Shader" uid="uid://dawy32a0waj83" path="res://06_Extras/Shaders/oxygen_fill.tres" id="6_hr4r0"]
+[ext_resource type="Texture2D" uid="uid://cikq4igroccsu" path="res://03_Art/UI/Oxygenuiborder.png" id="6_y805f"]
+[ext_resource type="Texture2D" uid="uid://gygak8j3mtrs" path="res://03_Art/UI/Tenticlesui1.png" id="8_scdmh"]
+[ext_resource type="Script" uid="uid://76wkrtk337b6" path="res://02_Prefabs/health_wave.gd" id="9_raiy6"]
+[ext_resource type="Texture2D" uid="uid://dn4enao22f0ul" path="res://03_Art/UI/Healthwave1.png" id="10_o0lvw"]
+[ext_resource type="Texture2D" uid="uid://culmtj04kpil4" path="res://03_Art/UI/Healthwave2.png" id="11_raiy6"]
+[ext_resource type="Texture2D" uid="uid://66o5csrvmfd8" path="res://03_Art/UI/Healthwave3.png" id="12_xun57"]
+[ext_resource type="Texture2D" uid="uid://cdqrvei3b0h4x" path="res://03_Art/UI/Healthwave4.png" id="13_6dp18"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sc7ta"]
+shader = ExtResource("3_scdmh")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hr4r0"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("10_o0lvw")
+}, {
+"duration": 4.0,
+"texture": ExtResource("11_raiy6")
+}, {
+"duration": 4.0,
+"texture": ExtResource("12_xun57")
+}, {
+"duration": 4.0,
+"texture": ExtResource("13_6dp18")
+}],
+"loop": 1,
+"name": &"HealthBar",
+"speed": 8.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkx8f"]
+shader = ExtResource("6_hr4r0")
+
+[node name="UiArt" type="Control" unique_id=1852749859]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="Base" type="TextureRect" parent="." unique_id=34008409]
+texture_filter = 1
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 1001.0
+texture = ExtResource("1_my3f5")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1799753939]
+texture_filter = 1
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 280.0
+offset_bottom = 966.0
+texture = ExtResource("2_scdmh")
+stretch_mode = 5
+
+[node name="HealthMask" type="TextureRect" parent="." unique_id=1256941061]
+clip_children = 1
+layout_mode = 0
+offset_left = 87.0
+offset_top = 307.0
+offset_right = 234.0
+offset_bottom = 959.0
+mouse_filter = 2
+texture = ExtResource("3_hr4r0")
+expand_mode = 1
+
+[node name="HealthFill" type="TextureProgressBar" parent="HealthMask" unique_id=445859201]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_sc7ta")
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_right = 147.0
+offset_bottom = 652.0
+mouse_filter = 2
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("3_hr4r0")
+
+[node name="HealthWave" type="AnimatedSprite2D" parent="HealthMask" unique_id=1068473348 node_paths=PackedStringArray("bar")]
+position = Vector2(-1.5, 256)
+sprite_frames = SubResource("SpriteFrames_hr4r0")
+animation = &"HealthBar"
+autoplay = "HealthBar"
+frame_progress = 0.39193836
+centered = false
+script = ExtResource("9_raiy6")
+bar = NodePath("../HealthFill")
+
+[node name="HealthBorder" type="TextureRect" parent="." unique_id=1547747393]
+texture_filter = 1
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 84.0
+offset_top = 294.0
+offset_right = 235.0
+offset_bottom = 970.0
+mouse_filter = 2
+texture = ExtResource("4_vwdgd")
+
+[node name="OxygenFill" type="TextureProgressBar" parent="." unique_id=428337763]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kkx8f")
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 283.0
+offset_bottom = 276.0
+mouse_filter = 2
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("5_hvyrn")
+
+[node name="Tentacles" type="TextureRect" parent="." unique_id=1173510926]
+texture_filter = 1
+layout_mode = 0
+offset_left = -14.0
+offset_top = 290.0
+offset_right = 307.0
+offset_bottom = 1001.0
+texture = ExtResource("8_scdmh")
+
+[node name="OxygenBorder" type="TextureRect" parent="." unique_id=1451021827]
+texture_filter = 1
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 284.0
+offset_bottom = 276.0
+mouse_filter = 2
+texture = ExtResource("6_y805f")
+stretch_mode = 5
