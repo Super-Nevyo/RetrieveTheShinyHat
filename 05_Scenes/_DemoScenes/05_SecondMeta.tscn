@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://n42r34pmo1fh" path="res://02_Prefabs/PuzzlePrefabs/Activated/Light.tscn" id="11_6n4an"]
 [ext_resource type="PackedScene" uid="uid://nv8l1gfvbm8" path="res://02_Prefabs/PuzzlePrefabs/Meta/MetaSwitch.tscn" id="11_h4bfu"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="12_rg0cf"]
-[ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="13_f40ku"]
+[ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Hazards/Acid.tscn" id="13_f40ku"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="13_rg0cf"]
 
 [sub_resource type="Resource" id="Resource_sh0j4"]

@@ -74,9 +74,12 @@ var is_attacking: bool = false
 @export var MaxHP : float = 100
 @onready var currentHP : float = MaxHP
 @export var DmgLayer : int = 15
+@export var invincibilityframes : int = 500
 @export var dead_delay: float = 0.3
 var isdead : bool = false
 var ishurt: bool = false
+@onready var hitframe : int = -invincibilityframes
+func isinvincible() -> bool: return (Time.get_ticks_msec() - hitframe < invincibilityframes)
 
 #===CARRYING
 @onready var hold_position : Node2D = $HoldPosition
@@ -183,15 +186,17 @@ func play_hit_animation() -> void:
 
 func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 	# maybe i should make a static function to handle this globally and better? # if enemies take damage, yes - tbd
-
+	print(isinvincible())
+	print(hitframe)
+	print(Time.get_ticks_msec())
 	if isdead or god_mode:
 		return
 		
 	var was_hit = false
-	if type % 2 == 1 && DmgLayer % 2 == 1:
+	if type % 2 == 1 && DmgLayer % 2 == 1 && !isinvincible():
 		currentHP -= amount
 		was_hit = true
-	elif type % 4 == 2 && (DmgLayer - DmgLayer % 2) % 4 == 2:
+	elif type % 4 == 2 && (DmgLayer - DmgLayer % 2) % 4 == 2 && !isinvincible():
 		currentHP -= 2 * amount
 		was_hit = true
 	elif type % 8 == 4 && (DmgLayer - DmgLayer % 4) % 8 == 4:
@@ -200,6 +205,7 @@ func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 	if was_hit:
 		# trigger vfx related to dmg
 		if currentHP > 0 and not ignore_invincible:
+			hitframe = Time.get_ticks_msec()
 			$PlayerAnimations.play("Player_TakeDamage")
 		
 		HealthChanged.emit(currentHP,MaxHP)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vcn01q1ejf05"]
 
-[ext_resource type="Script" uid="uid://bnje7iyop20vr" path="res://01_Scripts/Liquid.gd" id="1_sh2u0"]
+[ext_resource type="Script" uid="uid://bnje7iyop20vr" path="res://01_Scripts/Hazards/Liquid.gd" id="1_sh2u0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 

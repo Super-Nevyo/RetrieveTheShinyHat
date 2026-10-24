@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://da85jdonec7tu"]
+
+[ext_resource type="PackedScene" uid="uid://vcn01q1ejf05" path="res://02_Prefabs/Hazards/Liquid.tscn" id="1_cx15i"]
+[ext_resource type="Script" uid="uid://dkwp36q5o6wvu" path="res://01_Scripts/Hazards/Acid.gd" id="2_hmn6h"]
+
+[node name="Liquid" unique_id=1959433390 instance=ExtResource("1_cx15i")]
+
+[node name="Area2D" parent="." index="0" unique_id=1010538046]
+script = ExtResource("2_hmn6h")

@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://chwm57nxsyons"]
 
-[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="1_bvgdv"]
+[ext_resource type="Script" uid="uid://cqul4etn4bj1" path="res://01_Scripts/Hazards/hitbox.gd" id="1_0dun5"]
+[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="2_grxu8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oqe2"]
 radius = 12.872457
 height = 72.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
-atlas = ExtResource("1_bvgdv")
+atlas = ExtResource("2_grxu8")
 region = Rect2(480, 432, 96, 96)
 
 [node name="Spikes" type="Area2D" unique_id=1094872775]
+collision_layer = 0
+collision_mask = 18
+script = ExtResource("1_0dun5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1560489136]
 position = Vector2(-9, -17)
