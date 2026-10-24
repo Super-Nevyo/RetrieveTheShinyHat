@@ -7,3 +7,4 @@
 
 [node name="Area2D" parent="." index="0" unique_id=1010538046]
 script = ExtResource("2_c7ygb")
+acid_tick_dmg = 0.05
