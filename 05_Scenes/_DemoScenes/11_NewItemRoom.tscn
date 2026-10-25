@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="7_lflvr"]
 [ext_resource type="Script" uid="uid://cv4ucm2x24qr8" path="res://01_Scripts/Inventory/AcidProofCaripace.gd" id="8_tv0c3"]
 [ext_resource type="Texture2D" uid="uid://d1u4gfybi1o3l" path="res://03_Art/Items/AcidProofCarapace.png" id="9_lgv6y"]
-[ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Acid.tscn" id="10_bxbb6"]
+[ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Hazards/Acid.tscn" id="10_bxbb6"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="11_tv0c3"]
 
 [sub_resource type="Resource" id="Resource_ar7t2"]

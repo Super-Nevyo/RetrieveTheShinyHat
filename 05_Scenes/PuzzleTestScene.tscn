@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="2_3c2uc"]
 [ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/Activators/PressurePlate.tscn" id="3_3c2uc"]
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="4_415yb"]
-[ext_resource type="PackedScene" uid="uid://vcn01q1ejf05" path="res://02_Prefabs/Liquid.tscn" id="5_wexxd"]
+[ext_resource type="PackedScene" uid="uid://vcn01q1ejf05" path="res://02_Prefabs/Hazards/Liquid.tscn" id="5_wexxd"]
 [ext_resource type="PackedScene" uid="uid://b5kgqbsnaxirq" path="res://02_Prefabs/PuzzlePrefabs/Box.tscn" id="7_828q7"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="8_0imss"]
 [ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="9_ulwqt"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bj3rchurbe3gq" path="res://02_Prefabs/WorldPrefabs/Eye.tscn" id="11_4fcjd"]
 [ext_resource type="Script" uid="uid://s84gxr7ffprs" path="res://01_Scripts/EnvironmentObjects/Eye/move_eye.gd" id="12_i6lf4"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="13_osutn"]
+[ext_resource type="PackedScene" uid="uid://chwm57nxsyons" path="res://02_Prefabs/Hazards/single_spike.tscn" id="14_2agyp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ulwqt"]
 
@@ -25,8 +26,6 @@ fix_distance = false
 metadata/_custom_type_script = "uid://s84gxr7ffprs"
 
 [node name="PuzzleTestScene" type="Node2D" unique_id=1037801544]
-
-[node name="GameHud" parent="." unique_id=1741115912 instance=ExtResource("1_1lcwi")]
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("1_ppkka")]
 position = Vector2(862, 666)
@@ -98,3 +97,15 @@ visible = false
 z_index = -1
 position = Vector2(397, 486)
 texture = ExtResource("13_osutn")
+
+[node name="Spikes" parent="." unique_id=1094872775 instance=ExtResource("14_2agyp")]
+position = Vector2(775, 505)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=917881485]
+position = Vector2(960, 540)
+
+[node name="GameHud" parent="Camera2D" unique_id=1741115912 instance=ExtResource("1_1lcwi")]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = -540.0
