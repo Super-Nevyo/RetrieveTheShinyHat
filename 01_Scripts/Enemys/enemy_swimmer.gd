@@ -10,7 +10,6 @@ class_name Swimmer
 @export var wave_speed : float = 2
 @export var wave_strength: float = 20
 
-
 func update(enemy : Enemy, info : Dictionary):
 	if wall_check.check_collision(enemy,info):
 		info[is_facing_right_ID] = !info[is_facing_right_ID]

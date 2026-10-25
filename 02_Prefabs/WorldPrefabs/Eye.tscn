@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bj3rchurbe3gq"]
 
-[ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="1_56psm"]
 [ext_resource type="Script" uid="uid://chvlkfkjfijn3" path="res://01_Scripts/EnvironmentObjects/Eye/eye.gd" id="1_jem08"]
+[ext_resource type="Texture2D" uid="uid://bdxsp8c55yq1q" path="res://03_Art/Environment/eyes1.png" id="2_jem08"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qsmb2"]
 radius = 300.0
@@ -10,9 +10,9 @@ radius = 300.0
 script = ExtResource("1_jem08")
 
 [node name="Iris" type="Sprite2D" parent="." unique_id=968054081]
-texture = ExtResource("1_56psm")
+texture = ExtResource("2_jem08")
 region_enabled = true
-region_rect = Rect2(30, 52, 25, 25)
+region_rect = Rect2(32, 32, 32, 32)
 
 [node name="PlayerDetection" type="Area2D" parent="." unique_id=1817281512]
 collision_layer = 0

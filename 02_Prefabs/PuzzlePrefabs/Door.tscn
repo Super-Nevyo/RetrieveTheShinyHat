@@ -1,10 +1,27 @@
 [gd_scene format=3 uid="uid://bxehpoyyvwj1y"]
 
 [ext_resource type="Script" uid="uid://dpprp5iacy3db" path="res://02_Prefabs/PuzzlePrefabs/door.gd" id="1_7v0e4"]
+[ext_resource type="Texture2D" uid="uid://cu34m48slx3he" path="res://03_Art/Environment/unique.png" id="2_5wh0b"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="2_qd1ed"]
+[ext_resource type="PackedScene" uid="uid://bj3rchurbe3gq" path="res://02_Prefabs/WorldPrefabs/Eye.tscn" id="3_q1nyi"]
+[ext_resource type="Script" uid="uid://s84gxr7ffprs" path="res://01_Scripts/EnvironmentObjects/Eye/move_eye.gd" id="4_egs4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2tw8"]
 size = Vector2(64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k3kt"]
+atlas = ExtResource("2_5wh0b")
+region = Rect2(432, 624, 192, 192)
+
+[sub_resource type="Resource" id="Resource_egs4r"]
+script = ExtResource("4_egs4r")
+move_speed = 1.0
+max_distance = 5.0
+metadata/_custom_type_script = "uid://s84gxr7ffprs"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wh0b"]
+atlas = ExtResource("2_5wh0b")
+region = Rect2(624, 528, 96, 96)
 
 [node name="Door" type="Node2D" unique_id=1888311854]
 script = ExtResource("1_7v0e4")
@@ -16,8 +33,18 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=502456275]
 shape = SubResource("RectangleShape2D_p2tw8")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=414890041]
-texture = ExtResource("2_qd1ed")
+[node name="DoorArt" type="Node2D" parent="." unique_id=1412273608]
+
+[node name="DoorBody" type="Sprite2D" parent="DoorArt" unique_id=414890041]
+texture = SubResource("AtlasTexture_0k3kt")
+
+[node name="Eye" parent="DoorArt" unique_id=577233228 instance=ExtResource("3_q1nyi")]
+position = Vector2(0, -54)
+movement_pattern = SubResource("Resource_egs4r")
+
+[node name="DoorCrown" type="Sprite2D" parent="DoorArt" unique_id=1026395963]
+position = Vector2(9, -68)
+texture = SubResource("AtlasTexture_5wh0b")
 
 [node name="TouchIndicator" type="Sprite2D" parent="." unique_id=1182750810]
 visible = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwsdetorxv71"
-path="res://.godot/imported/charattack.png-42dd36e830dcfd9babf74a237d306cfc.ctex"
+uid="uid://une0a87nym8x"
+path="res://.godot/imported/eyes2.png-8965a5a3f06e4eac06994eee8262d819.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://03_Art/_Player/charattack.png"
-dest_files=["res://.godot/imported/charattack.png-42dd36e830dcfd9babf74a237d306cfc.ctex"]
+source_file="res://03_Art/Environment/eyes2.png"
+dest_files=["res://.godot/imported/eyes2.png-8965a5a3f06e4eac06994eee8262d819.ctex"]
 
 [params]
 

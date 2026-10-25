@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/Activators/PressurePlate.tscn" id="13_tablv"]
 [ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="13_xgytq"]
 [ext_resource type="PackedScene" uid="uid://b5kgqbsnaxirq" path="res://02_Prefabs/PuzzlePrefabs/Box.tscn" id="14_58eum"]
+[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="16_wked6"]
 
 [sub_resource type="Resource" id="Resource_xgytq"]
 script = ExtResource("6_ox0tq")
@@ -284,6 +285,9 @@ puzzle_id = "plate_c"
 
 [node name="Box" parent="." unique_id=1254739137 instance=ExtResource("14_58eum")]
 position = Vector2(1776, 912)
+
+[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("16_wked6")]
+position = Vector2(1548, 918)
 
 [editable path="SecretAreaLeft"]
 [editable path="transition_upperne"]
