@@ -63,7 +63,7 @@ tex = ExtResource("11_cktp8")
 metadata/_custom_type_script = "uid://cv4ucm2x24qr8"
 
 [node name="StartingRoom" type="Node2D" unique_id=1910544872]
-metadata/_edit_horizontal_guides_ = [449.0, 200.0]
+metadata/_edit_horizontal_guides_ = [449.0, 200.0, 0.0]
 metadata/_edit_vertical_guides_ = [336.0, 1872.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
@@ -180,7 +180,7 @@ shape = SubResource("RectangleShape2D_ohgqg")
 position = Vector2(0, -6.232298)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("8_4ryoi")]
-partly_filled_liquid_level = 200.0
+room_level = 2
 move_speed = 250.0
 
 [node name="Pickup" parent="." unique_id=483234207 instance=ExtResource("9_ohgqg")]

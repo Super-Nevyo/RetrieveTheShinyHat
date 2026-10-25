@@ -127,8 +127,8 @@ transition_data = SubResource("Resource_237ml")
 position = Vector2(-70, 0)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("14_8jla5")]
-partly_filled_liquid_level = 200.0
-room_level = 2
+partly_filled_liquid_level = 50.0
+room_level = 3
 move_speed = 150.0
 
 [editable path="SecretAreaLeft"]

@@ -139,6 +139,7 @@ position = Vector2(-70, 0)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("14_h2pff")]
 partly_filled_liquid_level = 180.0
+room_level = 2
 move_speed = 150.0
 
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("10_tka46")]
