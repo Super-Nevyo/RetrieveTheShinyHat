@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ch874kyhwaxoq" path="res://03_Art/Items/PlayerVisible/HeadUmbrella.png" id="10_kb8hf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wdy"]
-size = Vector2(60, 37.179485)
+size = Vector2(57, 37.179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmcxg"]
 atlas = ExtResource("3_aydsc")
@@ -733,7 +733,6 @@ jump_time_down = 0.3
 throw_speed = 500.0
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
-visible = false
 z_index = 1
 position = Vector2(-9.536743e-07, 17)
 scale = Vector2(1.5, 1.5600002)

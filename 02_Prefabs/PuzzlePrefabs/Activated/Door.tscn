@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=178328515]
 texture_filter = 1
+position = Vector2(-2, 0)
 texture = ExtResource("2_w2kht")
 region_enabled = true
 region_rect = Rect2(336, 432, 48, 96)
