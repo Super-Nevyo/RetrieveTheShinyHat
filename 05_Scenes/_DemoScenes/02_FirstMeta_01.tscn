@@ -90,7 +90,6 @@ position = Vector2(661, 867)
 [node name="Trigger" parent="SecretArea/RevealSecret" index="0" unique_id=1857902071]
 position = Vector2(0, 0)
 scale = Vector2(1, 1.56)
-disabled = true
 
 [node name="SecretArea2" parent="." unique_id=403713954 instance=ExtResource("3_k27db")]
 room_id = "meta01"
@@ -107,7 +106,6 @@ scale = Vector2(1.0134708, 0.43497887)
 [node name="Trigger" parent="SecretArea2/RevealSecret" index="0" unique_id=1857902071]
 position = Vector2(0, 0)
 scale = Vector2(1, 1.56)
-disabled = true
 
 [node name="AcidPit" type="Area2D" parent="." unique_id=1497553372]
 position = Vector2(1493, 877)
