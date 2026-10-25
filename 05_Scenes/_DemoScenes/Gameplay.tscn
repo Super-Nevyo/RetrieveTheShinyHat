@@ -216,12 +216,19 @@ exit_a_id = "puzzle1_exit_e"
 room_b = NodePath("../../02_Meta01")
 exit_b_id = "meta1_exit_w"
 
-[node name="Meta01_Meta011" type="Node2D" parent="WorldMap/Connections" unique_id=248581934 node_paths=PackedStringArray("room_a", "room_b")]
+[node name="Meta01_Meta011S" type="Node2D" parent="WorldMap/Connections" unique_id=248581934 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
 room_a = NodePath("../../02_Meta01")
 exit_a_id = "meta1_exit_e"
 room_b = NodePath("../../03_Meta011")
 exit_b_id = "meta11_exit_w"
+
+[node name="Meta01_Meta011N" type="Node2D" parent="WorldMap/Connections" unique_id=168570663 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../02_Meta01")
+exit_a_id = "meta1_exit_ne"
+room_b = NodePath("../../03_Meta011")
+exit_b_id = "meta11_exit_nw"
 
 [node name="Meta01_Umbrella" type="Node2D" parent="WorldMap/Connections" unique_id=80725252 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")

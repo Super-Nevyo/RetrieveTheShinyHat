@@ -24,6 +24,12 @@ display_name = "To_Meta1"
 transition_id = "meta11_exit_w"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
+[sub_resource type="Resource" id="Resource_2ua70"]
+script = ExtResource("6_5offt")
+display_name = "To_Meta1"
+transition_id = "meta11_exit_nw"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(230, 125)
 
@@ -32,7 +38,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_2y8vx")
-transitions = [NodePath("../transition_meta1")]
+transitions = [NodePath("../transition_meta1"), NodePath("../transition_meta2")]
 
 [node name="GameBorder" parent="." unique_id=1529811716 instance=ExtResource("2_262nj")]
 tile_map_data = PackedByteArray("AAAHAAEAAgACAAAAAAAHAAIAAgACAAAAAAAHAAMAAgACAAAAAAAHAAQAAgACAAAAAAAHAAUAAgACAAAAAAAHAAYAAgACAAAAAAAHAAkAAgACAAAAAAAHAAoAAgACAAAAAAAHAAsAAgACAAAAAAAHAAwAAgACAAAAAAAHAA0AAgACAAAAAAAHABAAAgACAAAAAAAHABEAAgACAAAAAAAHABIAAgACAAAAAAAHABMAAgACAAAAAAAHABQAAgACAAAAAAAHABUAAgACAAAAAAAIAAEAAgACAAAAAAAIABUAAgACAAAAAAAJAAEAAgACAAAAAAAJABUAAgACAAAAAAAKAAEAAgACAAAAAAAKABUAAgACAAAAAAALAAEAAgACAAAAAAALABUAAgACAAAAAAAMAAEAAgACAAAAAAAMABUAAgACAAAAAAANAAEAAgACAAAAAAANABUAAgACAAAAAAAOAAEAAgACAAAAAAAOABUAAgACAAAAAAAPAAEAAgACAAAAAAAPABUAAgACAAAAAAAQAAEAAgACAAAAAAAQABUAAgACAAAAAAARAAEAAgACAAAAAAASAAEAAgACAAAAAAATAAEAAgACAAAAAAAUAAEAAgACAAAAAAAVAAEAAgACAAAAAAAWAAEAAgACAAAAAAAXAAEAAgACAAAAAAAYAAEAAgACAAAAAAAZAAEAAgACAAAAAAAaAAEAAgACAAAAAAAbAAEAAgACAAAAAAAcAAEAAgACAAAAAAAdAAEAAgACAAAAAAAeAAEAAgACAAAAAAAeABUAAgACAAAAAAAfAAEAAgACAAAAAAAfABUAAgACAAAAAAAgAAEAAgACAAAAAAAgABUAAgACAAAAAAAhAAEAAgACAAAAAAAhABUAAgACAAAAAAAiAAEAAgACAAAAAAAiABUAAgACAAAAAAAjAAEAAgACAAAAAAAjABUAAgACAAAAAAAkAAEAAgACAAAAAAAkABUAAgACAAAAAAAlAAEAAgACAAAAAAAlABUAAgACAAAAAAAmAAEAAgACAAAAAAAmAAIAAgACAAAAAAAmAAMAAgACAAAAAAAmAAQAAgACAAAAAAAmAAoAAgACAAAAAAAmAAsAAgACAAAAAAAmAAwAAgACAAAAAAAmAA0AAgACAAAAAAAmAA4AAgACAAAAAAAmAA8AAgACAAAAAAAmABAAAgACAAAAAAAmABEAAgACAAAAAAAmABIAAgACAAAAAAAmABMAAgACAAAAAAAmABQAAgACAAAAAAAmABUAAgACAAAAAAAdABUAAgACAAAAAAARABUAAgACAAAAAAASABUAAgACAAAAAAATABUAAgACAAAAAAAUABUAAgACAAAAAAAVABUAAgACAAAAAAAWABUAAgACAAAAAAAXABUAAgACAAAAAAAYABUAAgACAAAAAAAZABUAAgACAAAAAAAaABUAAgACAAAAAAAbABUAAgACAAAAAAAcABUAAgACAAAAAAAmAAcAAgACAAAAAAAmAAYAAgACAAAAAAAmAAUAAgACAAAAAAAmAAkAAgACAAAAAAAmAAgAAgACAAAAAAA=")
@@ -50,7 +56,6 @@ reveal_id = "traversal_maze"
 position = Vector2(0, 0)
 
 [node name="Trigger" parent="SecretArea/RevealSecret" index="0" unique_id=1857902071]
-position = Vector2(0, 0)
 scale = Vector2(1, 1.56)
 
 [node name="FleshBg" type="TileMapLayer" parent="." unique_id=964696501]
@@ -76,6 +81,13 @@ position = Vector2(348, 720)
 transition_data = SubResource("Resource_sh0j4")
 
 [node name="ArrivalPoint" parent="transition_meta1" index="1" unique_id=1345594044]
+position = Vector2(99, 27)
+
+[node name="transition_meta2" parent="." unique_id=1891299011 instance=ExtResource("5_5kijt")]
+position = Vector2(348, 384)
+transition_data = SubResource("Resource_2ua70")
+
+[node name="ArrivalPoint" parent="transition_meta2" index="1" unique_id=1345594044]
 position = Vector2(99, 27)
 
 [node name="AcidPit" type="Area2D" parent="." unique_id=1497553372]
@@ -232,3 +244,4 @@ signal_id = 42
 
 [editable path="SecretArea"]
 [editable path="transition_meta1"]
+[editable path="transition_meta2"]

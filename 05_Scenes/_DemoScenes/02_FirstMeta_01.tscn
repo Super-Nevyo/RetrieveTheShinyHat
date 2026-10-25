@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="12_q6v13"]
 [ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="15_m51s7"]
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="15_plfiy"]
-[ext_resource type="PackedScene" uid="uid://chwm57nxsyons" path="res://02_Prefabs/WorldPrefabs/Spikes.tscn" id="16_plfiy"]
+[ext_resource type="PackedScene" uid="uid://chwm57nxsyons" path="res://02_Prefabs/Hazards/single_spike.tscn" id="16_plfiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(230, 125)
@@ -30,6 +30,12 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 script = ExtResource("4_khd4a")
 display_name = "To_Meta011"
 transition_id = "meta1_exit_e"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_plfiy"]
+script = ExtResource("4_khd4a")
+display_name = "To_Meta011"
+transition_id = "meta1_exit_ne"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_khd4a"]
@@ -75,7 +81,7 @@ metadata/_edit_lock_ = true
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_a5n13")
-transitions = [NodePath("../transition_puzzle1"), NodePath("../transition_metaroom"), NodePath("../transition_umbrella")]
+transitions = [NodePath("../transition_puzzle1"), NodePath("../transition_metaroom"), NodePath("../transition_metaroom2"), NodePath("../transition_umbrella")]
 
 [node name="SecretArea" parent="." unique_id=716718294 instance=ExtResource("3_k27db")]
 room_id = "meta01"
@@ -88,7 +94,6 @@ tile_map_data = PackedByteArray("AAAMABAAAAAAAAEAAAAMABEAAAAAAAIAAAAMABIAAAAAAAM
 position = Vector2(661, 867)
 
 [node name="Trigger" parent="SecretArea/RevealSecret" index="0" unique_id=1857902071]
-position = Vector2(0, 0)
 scale = Vector2(1, 1.56)
 
 [node name="SecretArea2" parent="." unique_id=403713954 instance=ExtResource("3_k27db")]
@@ -104,7 +109,6 @@ rotation = 1.5707964
 scale = Vector2(1.0134708, 0.43497887)
 
 [node name="Trigger" parent="SecretArea2/RevealSecret" index="0" unique_id=1857902071]
-position = Vector2(0, 0)
 scale = Vector2(1, 1.56)
 
 [node name="AcidPit" type="Area2D" parent="." unique_id=1497553372]
@@ -137,7 +141,6 @@ position = Vector2(1750, 886)
 [node name="transition_puzzle1" parent="." unique_id=306758002 instance=ExtResource("3_6udno")]
 position = Vector2(352, 720)
 transition_data = SubResource("Resource_sh0j4")
-metadata/_edit_lock_ = true
 
 [node name="ArrivalPoint" parent="transition_puzzle1" index="1" unique_id=1345594044]
 position = Vector2(99, 27)
@@ -145,16 +148,21 @@ position = Vector2(99, 27)
 [node name="transition_metaroom" parent="." unique_id=1724436172 instance=ExtResource("3_6udno")]
 position = Vector2(1852, 767)
 transition_data = SubResource("Resource_m1v14")
-metadata/_edit_lock_ = true
 
 [node name="ArrivalPoint" parent="transition_metaroom" index="1" unique_id=1345594044]
+position = Vector2(-82, 21)
+
+[node name="transition_metaroom2" parent="." unique_id=1452101869 instance=ExtResource("3_6udno")]
+position = Vector2(1852, 384)
+transition_data = SubResource("Resource_plfiy")
+
+[node name="ArrivalPoint" parent="transition_metaroom2" index="1" unique_id=1345594044]
 position = Vector2(-82, 21)
 
 [node name="transition_umbrella" parent="." unique_id=1883036955 instance=ExtResource("3_6udno")]
 position = Vector2(1104, 64)
 rotation = 1.5707964
 transition_data = SubResource("Resource_khd4a")
-metadata/_edit_lock_ = true
 
 [node name="Trigger" parent="transition_umbrella" index="0" unique_id=280245681]
 scale = Vector2(1, 0.56)
@@ -261,4 +269,5 @@ position = Vector2(528, 892)
 [editable path="SecretArea2"]
 [editable path="transition_puzzle1"]
 [editable path="transition_metaroom"]
+[editable path="transition_metaroom2"]
 [editable path="transition_umbrella"]

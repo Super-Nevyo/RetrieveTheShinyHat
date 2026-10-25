@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="6_m5y54"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="10_tka46"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="11_n2qqf"]
-[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="12_k3p3i"]
 [ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/Activators/PressurePlate.tscn" id="13_k3p3i"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="14_h2pff"]
 [ext_resource type="PackedScene" uid="uid://b5kgqbsnaxirq" path="res://02_Prefabs/PuzzlePrefabs/Box.tscn" id="14_rkxre"]
@@ -57,7 +56,7 @@ metadata/_edit_horizontal_guides_ = [449.0, 200.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_68c6y")
-transitions = [NodePath("../transition_umbrellasecret"), NodePath("../transition_double"), NodePath("../transition_downlevel"), NodePath("../transition_meta2")]
+transitions = [NodePath("../transition_umbrellasecret"), NodePath("../transition_double"), NodePath("../transition_downlevel"), NodePath("../transition_meta2"), NodePath("../transition_doorsecret")]
 metadata/_edit_lock_ = true
 
 [node name="GameBorder" parent="." unique_id=1529811716 instance=ExtResource("2_d57ul")]
@@ -180,9 +179,6 @@ rotation = 1.5707964
 DoorMovePosition = Vector2(0, 520)
 move_speed = 0.5
 signal_id = 43
-
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("12_k3p3i")]
-position = Vector2(1016, 974)
 
 [node name="Door2" parent="." unique_id=318665955 instance=ExtResource("11_n2qqf")]
 position = Vector2(1560, 144)
