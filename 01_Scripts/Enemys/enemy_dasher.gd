@@ -12,7 +12,9 @@ class_name Dasher
 func update(enemy : Enemy, info : Dictionary):
 	var distance = enemy.global_position.distance_to(info ["dash"])
 	
-	if wall_check.check_collision(enemy, info):
+	#if wall_check.check_collision(enemy, info):
+	var direction = 1 if info[is_facing_right_ID] else -1
+	if enemy.test_move(enemy.global_transform, Vector2(direction * 12, 0)):
 		info["dash_hit_wall"] = true
 		info ["currentstate"] = enums.enemy_states.RETURN
 		return

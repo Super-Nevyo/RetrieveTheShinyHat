@@ -5,5 +5,7 @@
 [resource]
 script = ExtResource("1_34r20")
 raycast_ID = "groundraycast"
+raycast_start = Vector2(18, 0)
 raycast_end = Vector2(0, 30)
+collide_with_areas = false
 metadata/_custom_type_script = "uid://bkdrjr6x8vg76"
