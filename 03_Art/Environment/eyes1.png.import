@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://holao8ilrmtn"
-path="res://.godot/imported/car96.png-1756506203341507ad4569aea0dbf4bb.ctex"
+uid="uid://bdxsp8c55yq1q"
+path="res://.godot/imported/eyes1.png-8dc2a1520683e0d791c06bbcaa0de9ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://03_Art/_Player/car96.png"
-dest_files=["res://.godot/imported/car96.png-1756506203341507ad4569aea0dbf4bb.ctex"]
+source_file="res://03_Art/Environment/eyes1.png"
+dest_files=["res://.godot/imported/eyes1.png-8dc2a1520683e0d791c06bbcaa0de9ba.ctex"]
 
 [params]
 

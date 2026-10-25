@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://drueonr3kwoju" path="res://01_Scripts/_Manager/audio_manager.gd" id="1_82ie3"]
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="1_kmjnh"]
 [ext_resource type="Script" uid="uid://c65san5kq2b3e" path="res://01_Scripts/_Manager/RoomManager.gd" id="2_8w24r"]
-[ext_resource type="AudioStream" uid="uid://ck5ycb5wlfyi2" path="res://04_Audio/BGMusic/liquidy_bg.mp3" id="2_pkwqo"]
+[ext_resource type="AudioStream" uid="uid://b6jcofyuw56vs" path="res://04_Audio/BGMusic/calm_bgmusic.mp3" id="2_o7nea"]
 [ext_resource type="AudioStream" uid="uid://bw7vusbjacame" path="res://04_Audio/BGMusic/bg_music.mp3" id="3_3xmti"]
 [ext_resource type="PackedScene" uid="uid://d16myrmq1kru" path="res://05_Scenes/_DemoScenes/11_NewItemRoom.tscn" id="5_6ij2g"]
 [ext_resource type="PackedScene" uid="uid://ceo7k687ylrlw" path="res://05_Scenes/_DemoScenes/01_FirstPuzzle.tscn" id="5_e2ro4"]
@@ -27,7 +27,7 @@
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_76a1v"]
 stream_count = 1
-stream_0 = ExtResource("2_pkwqo")
+stream_0 = ExtResource("2_o7nea")
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_oox6v"]
 stream_count = 1
@@ -73,7 +73,7 @@ bus = &"music"
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("1_kmjnh")]
 z_index = 15
-position = Vector2(440, 624)
+position = Vector2(450, 920)
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=1312875347]
 
@@ -187,6 +187,13 @@ room_a = NodePath("../../00_StartingRoom")
 exit_a_id = "starting_exit_e"
 room_b = NodePath("../../04_Umbrella")
 exit_b_id = "umbrella_exit_w"
+
+[node name="Starting_DoorSecret" type="Node2D" parent="WorldMap/Connections" unique_id=1878016424 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../00_StartingRoom")
+exit_a_id = "starting_exit_ne"
+room_b = NodePath("../../04_Umbrella")
+exit_b_id = "umbrella_exit_nw"
 
 [node name="Puzzle1_Item" type="Node2D" parent="WorldMap/Connections" unique_id=1776887137 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
