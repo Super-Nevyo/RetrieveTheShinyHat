@@ -80,7 +80,6 @@ transitions = [NodePath("../transition_puzzle1"), NodePath("../transition_metaro
 [node name="SecretArea" parent="." unique_id=716718294 instance=ExtResource("3_k27db")]
 room_id = "meta01"
 reveal_id = "spike_secret"
-metadata/_edit_lock_ = true
 
 [node name="Cover" parent="SecretArea" index="0" unique_id=1548122823]
 tile_map_data = PackedByteArray("AAAMABAAAAAAAAEAAAAMABEAAAAAAAIAAAAMABIAAAAAAAMAAAANABAAAAABAAEAAAANABEAAAABAAIAAAANABIAAAABAAMAAAA=")
@@ -93,13 +92,9 @@ position = Vector2(0, 0)
 scale = Vector2(1, 1.56)
 disabled = true
 
-[node name="BaseEnemy" parent="SecretArea" unique_id=1227542854 instance=ExtResource("15_m51s7")]
-position = Vector2(528, 892)
-
 [node name="SecretArea2" parent="." unique_id=403713954 instance=ExtResource("3_k27db")]
 room_id = "meta01"
-reveal_id = "spike_secret"
-metadata/_edit_lock_ = true
+reveal_id = "spike_secret2"
 
 [node name="Cover" parent="SecretArea2" index="0" unique_id=1548122823]
 tile_map_data = PackedByteArray("AAAMABMAAAAGAAUAAAAMABQAAAAGAAYAAAANABMAAAAHAAUAAAANABQAAAAHAAYAAAA=")
@@ -107,7 +102,7 @@ tile_map_data = PackedByteArray("AAAMABMAAAAGAAUAAAAMABQAAAAGAAYAAAANABMAAAAHAAU
 [node name="RevealSecret" parent="SecretArea2" index="1" unique_id=1866784657]
 position = Vector2(624, 912)
 rotation = 1.5707964
-scale = Vector2(1.0134708, 0.7149813)
+scale = Vector2(1.0134708, 0.43497887)
 
 [node name="Trigger" parent="SecretArea2/RevealSecret" index="0" unique_id=1857902071]
 position = Vector2(0, 0)
@@ -260,6 +255,9 @@ rotation = 1.5707964
 z_index = 21
 position = Vector2(418, 242)
 rotation = 1.5707964
+
+[node name="BaseEnemy2" parent="." unique_id=1227542854 instance=ExtResource("15_m51s7")]
+position = Vector2(528, 892)
 
 [editable path="SecretArea"]
 [editable path="SecretArea2"]
