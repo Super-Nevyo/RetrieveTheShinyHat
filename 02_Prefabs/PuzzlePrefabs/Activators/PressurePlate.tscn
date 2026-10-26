@@ -8,7 +8,7 @@
 size = Vector2(96, 28)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujkr7"]
-random_pitch = 1.096825
+random_pitch = 1.0842268
 streams_count = 1
 stream_0/stream = ExtResource("3_5f16h")
 
@@ -31,7 +31,7 @@ region_rect = Rect2(0, 480, 96, 96)
 
 [node name="PlayerSfx" type="AudioStreamPlayer2D" parent="." unique_id=1246516296]
 stream = SubResource("AudioStreamRandomizer_ujkr7")
-volume_db = -5.0
+volume_db = -8.0
 max_distance = 1000.0
 bus = &"sfx"
 

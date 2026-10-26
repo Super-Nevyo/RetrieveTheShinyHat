@@ -84,7 +84,7 @@ libraries/ = SubResource("AnimationLibrary_ayifw")
 
 [node name="PlayerSfx" type="AudioStreamPlayer2D" parent="." unique_id=345832496]
 stream = SubResource("AudioStreamRandomizer_1ykdu")
-volume_db = 5.0
+volume_db = 8.0
 pitch_scale = 1.2
 max_distance = 1000.0
 bus = &"sfx"

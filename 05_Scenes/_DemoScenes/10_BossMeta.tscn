@@ -297,6 +297,7 @@ puzzle_id = "fish_1"
 [node name="MetaSwitch" parent="." unique_id=54792963 instance=ExtResource("11_gbrht")]
 position = Vector2(612, 960)
 activation_amount = 3
+puzzle_id = "acid_switch_3"
 
 [node name="Enemies" type="Node2D" parent="." unique_id=270169343]
 position = Vector2(1152, 576)

@@ -180,6 +180,7 @@ shape = SubResource("RectangleShape2D_ohgqg")
 position = Vector2(0, -6.232298)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("8_4ryoi")]
+partly_filled_liquid_level = 200.0
 room_level = 2
 move_speed = 250.0
 

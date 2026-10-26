@@ -61,7 +61,7 @@ transition_id = "umbrella_exit_ne"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [node name="UmbrellaRoom" type="Node2D" unique_id=1910544872]
-metadata/_edit_horizontal_guides_ = [449.0, 200.0]
+metadata/_edit_horizontal_guides_ = [449.0, 200.0, 8.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_68c6y")
@@ -157,7 +157,7 @@ transition_data = SubResource("Resource_k3p3i")
 position = Vector2(-70, 0)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("14_h2pff")]
-partly_filled_liquid_level = 180.0
+partly_filled_liquid_level = 200.0
 room_level = 2
 move_speed = 150.0
 

@@ -210,7 +210,8 @@ func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 		currentHP -= MaxHP * amount
 		was_hit = true
 	if was_hit:
-		$PlayerAudio/Hit.play()
+		if not $PlayerAudio/Hit.playing:
+			$PlayerAudio/Hit.play()
 		# trigger vfx related to dmg
 		if currentHP > 0 and not ignore_invincible:
 			hitframe = Time.get_ticks_msec()

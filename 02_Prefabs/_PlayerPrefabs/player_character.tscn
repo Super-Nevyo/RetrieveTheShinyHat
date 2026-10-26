@@ -313,17 +313,20 @@ stream_1/stream = ExtResource("7_0eu4l")
 stream_2/stream = ExtResource("8_kb8hf")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2ol6n"]
+random_pitch = 1.0656005
 streams_count = 2
 stream_0/stream = ExtResource("6_0gpal")
 stream_1/stream = ExtResource("7_nt5uo")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nt5uo"]
+random_pitch = 1.0656005
 streams_count = 3
 stream_0/stream = ExtResource("6_xc1es")
 stream_1/stream = ExtResource("7_sudbt")
 stream_2/stream = ExtResource("8_0gpal")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2jelw"]
+random_pitch = 1.0656005
 streams_count = 3
 stream_0/stream = ExtResource("11_dmcxg")
 stream_1/stream = ExtResource("12_gpf37")
@@ -779,14 +782,17 @@ bus = &"sfx"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="PlayerAudio" unique_id=94710159]
 stream = SubResource("AudioStreamRandomizer_2ol6n")
+volume_db = -10.0
 bus = &"sfx"
 
 [node name="JumpVoice" type="AudioStreamPlayer2D" parent="PlayerAudio" unique_id=1942217042]
 stream = SubResource("AudioStreamRandomizer_nt5uo")
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="Hit" type="AudioStreamPlayer2D" parent="PlayerAudio" unique_id=1007436008]
 stream = SubResource("AudioStreamRandomizer_2jelw")
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="ItemInteractor" type="Area2D" parent="." unique_id=346615785]
