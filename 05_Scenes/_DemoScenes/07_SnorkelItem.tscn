@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="11_emhhp"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="12_3py1q"]
 [ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="13_bwpyo"]
-[ext_resource type="Script" uid="uid://cup0vgcvxdn24" path="res://01_Scripts/Inventory/Items.gd" id="14_no3f4"]
+[ext_resource type="Script" uid="uid://dd810oe6klldp" path="res://01_Scripts/Inventory/Snorkle.gd" id="15_hsw8g"]
 [ext_resource type="Texture2D" uid="uid://brxf5idiokidd" path="res://03_Art/Items/PlayerVisible/Snorkel.png" id="15_oo3mi"]
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="17_oo3mi"]
 
@@ -42,10 +42,10 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 size = Vector2(230, 125)
 
-[sub_resource type="Resource" id="Resource_3py1q"]
-script = ExtResource("14_no3f4")
+[sub_resource type="Resource" id="Resource_5t1r3"]
+script = ExtResource("15_hsw8g")
 tex = ExtResource("15_oo3mi")
-metadata/_custom_type_script = "uid://cup0vgcvxdn24"
+metadata/_custom_type_script = "uid://dd810oe6klldp"
 
 [node name="SnorkelItem" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0, 200.0, 300.0]
@@ -187,7 +187,7 @@ puzzle_id = "snorkelroom"
 
 [node name="Pickup" parent="." unique_id=483234207 instance=ExtResource("13_bwpyo")]
 position = Vector2(1776, 408)
-itemInfo = SubResource("Resource_3py1q")
+itemInfo = SubResource("Resource_5t1r3")
 
 [node name="Sprite2D" parent="Pickup" index="1" unique_id=1059875453]
 scale = Vector2(0.6, 0.6)
