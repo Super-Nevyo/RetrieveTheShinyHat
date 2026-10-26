@@ -244,6 +244,13 @@ exit_a_id = "umbrella_exit_e"
 room_b = NodePath("../../05_Meta02")
 exit_b_id = "meta2_exit_w"
 
+[node name="Umbrella_Meta02_DoorSecret" type="Node2D" parent="WorldMap/Connections" unique_id=264205918 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../04_Umbrella")
+exit_a_id = "umbrella_exit_ne"
+room_b = NodePath("../../05_Meta02")
+exit_b_id = "meta2_exit_nw"
+
 [node name="Umbrella_Double" type="Node2D" parent="WorldMap/Connections" unique_id=1949735964 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
 room_a = NodePath("../../04_Umbrella")
@@ -257,6 +264,13 @@ room_a = NodePath("../../06_Double")
 exit_a_id = "double_exit_e"
 room_b = NodePath("../../07_SnorkelItem")
 exit_b_id = "snorkel_exit_w"
+
+[node name="Double_SnorkelReturn" type="Node2D" parent="WorldMap/Connections" unique_id=1512923615 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../06_Double")
+exit_a_id = "double_exit_se"
+room_b = NodePath("../../07_SnorkelItem")
+exit_b_id = "snorkel_exit_sw"
 
 [node name="Double_Traquea" type="Node2D" parent="WorldMap/Connections" unique_id=823228760 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
