@@ -228,7 +228,7 @@ debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("10_tvwt6")]
 partly_filled_liquid_level = 200.0
-room_level = 4
+room_level = 3
 move_speed = 150.0
 
 [node name="PressurePlate" parent="." unique_id=1796088267 instance=ExtResource("12_vqwmo")]
