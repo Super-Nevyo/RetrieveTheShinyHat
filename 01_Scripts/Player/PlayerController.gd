@@ -56,6 +56,7 @@ var velo: Vector2 = Vector2.ZERO
 @onready var jump_velocity: float = -(2.0 * jump_height) / jump_time_full_up
 @onready var jump_gravity: float = (2.0 * jump_height) / (jump_time_full_up * jump_time_full_up)
 @onready var fall_gravity: float = (2.0 * jump_height) / (jump_time_full_up * jump_time_down)
+@onready var swim_audio: AudioStreamPlayer2D = $PlayerAudio/Swim
 
 #===SWIM
 var bodies_of_water:int = 0
@@ -108,6 +109,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if isdead:
 		return
+	
+	if bodies_of_water > 0:
+		if not swim_audio.playing:
+			swim_audio.play()
+	else:
+		swim_audio.stop()
 	
 	get_input()
 	
@@ -203,6 +210,7 @@ func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 		currentHP -= MaxHP * amount
 		was_hit = true
 	if was_hit:
+		$PlayerAudio/Hit.play()
 		# trigger vfx related to dmg
 		if currentHP > 0 and not ignore_invincible:
 			hitframe = Time.get_ticks_msec()
@@ -222,6 +230,7 @@ func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 func die():
 	
 	isdead = true
+	swim_audio.stop()
 	set_physics_process(false)
 	
 	finish_attack()

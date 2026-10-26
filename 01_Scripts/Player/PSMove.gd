@@ -53,6 +53,11 @@ func Attack():
 		Player.start_attack()
 
 func Jump():
+	Player.get_node("PlayerAudio/Jump").play()
+	if randf() < 0.35:
+		Player.get_node("PlayerAudio/JumpVoice").play()
+
+	# Your existing jump code continues below.
 	if Player.has_ball:
 		if abs(Player.velocity.x) >= Player.ball_jump_speed or Player.velocity.x <= -Player.ball_jump_speed:
 			Player.velo.y = -Player.ball_fast_jump
