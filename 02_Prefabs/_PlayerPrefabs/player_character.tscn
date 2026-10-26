@@ -84,6 +84,10 @@ region = Rect2(768, 288, 96, 96)
 atlas = ExtResource("3_aydsc")
 region = Rect2(864, 288, 96, 96)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d0rd"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(864, 192, 96, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_skhnc"]
 atlas = ExtResource("3_aydsc")
 region = Rect2(480, 288, 96, 96)
@@ -209,24 +213,27 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_huvl2")
 }, {
-"duration": 1.0,
+"duration": 1.25,
 "texture": SubResource("AtlasTexture_t8svg")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_oa4ci")
 }, {
-"duration": 5.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_mc6rs")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_1d0rd")
 }],
 "loop": 0,
 "name": &"Death",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.4,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_skhnc")
 }, {
-"duration": 1.4,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6kfab")
 }, {
 "duration": 1.0,
@@ -739,7 +746,7 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Jump"
+animation = &"Death"
 autoplay = "Idle"
 
 [node name="PlayerAudio" type="Node2D" parent="." unique_id=873921505]
