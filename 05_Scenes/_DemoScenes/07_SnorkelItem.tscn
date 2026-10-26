@@ -162,7 +162,7 @@ debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
 position = Vector2(259.5, -161)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("10_ke5b3")]
-room_level = 4
+room_level = 3
 move_speed = 150.0
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("11_emhhp")]
