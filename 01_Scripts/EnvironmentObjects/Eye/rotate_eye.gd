@@ -18,5 +18,4 @@ func idle(start : Vector2, iris : Sprite2D, delta : float, target_position : Vec
 			target_position.y -= delta
 	else:
 		iris.rotate((target_position.x - iris.rotation) * rotation_speed)
-	print(target_position)
 	return target_position
