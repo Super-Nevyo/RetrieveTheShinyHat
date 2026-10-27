@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4x025f135lyu" path="res://01_Scripts/Inventory/pickup.gd" id="1_i5qnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
+size = Vector2(50, 50)
 
 [node name="Pickup" type="Node2D" unique_id=483234207]
 script = ExtResource("1_i5qnj")
