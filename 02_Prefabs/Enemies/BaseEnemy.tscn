@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://d3ebyys3svqk8" path="res://01_Scripts/Enemys/base_enemy.gd" id="1_fbr3f"]
 [ext_resource type="Resource" uid="uid://drnwxs1paxt4a" path="res://01_Scripts/Enemys/base_enemy_state_machine.tres" id="2_6p5mt"]
 [ext_resource type="Texture2D" uid="uid://dwa2xm2fk72b5" path="res://03_Art/Environment/Lights/Lights.png" id="3_lrstv"]
+[ext_resource type="Script" uid="uid://cqul4etn4bj1" path="res://01_Scripts/Hazards/hitbox.gd" id="4_on237"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsmb2"]
+radius = 13.0
 
 [node name="BaseEnemy" type="RigidBody2D" unique_id=1227542854]
 z_index = 10
@@ -21,3 +25,11 @@ texture_filter = 1
 texture = ExtResource("3_lrstv")
 region_enabled = true
 region_rect = Rect2(0, 16, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1624833587]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_on237")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1753779923]
+shape = SubResource("CircleShape2D_qsmb2")

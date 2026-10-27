@@ -8,7 +8,7 @@ var target_position : Vector2 = Vector2(0,0)
 
 func _physics_process(delta: float) -> void:
 	if player != null:
-		movement_pattern.target_player(player.position, position, iris, delta) #run the stratagy pattern
+		movement_pattern.target_player(player.position, global_position, iris, delta) #run the stratagy pattern
 	elif does_idle:
 		target_position = movement_pattern.idle(position, iris, delta, target_position)
 
