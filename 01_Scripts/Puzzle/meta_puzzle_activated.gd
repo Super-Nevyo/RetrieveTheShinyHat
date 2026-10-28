@@ -7,7 +7,7 @@ var concluded : bool = true
 
 func activate_puzzle(id: RoomPersistances.meta_puzzles, new:int) -> void:
 	if puzzle_type == id:
-		activation_amount = new
+		activation_amount += new
 		concluded = false
 
 func set_puzzle(new:int) -> void:
