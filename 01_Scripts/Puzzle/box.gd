@@ -104,3 +104,7 @@ func respawn():
 		PhysicsServer2D.BODY_STATE_TRANSFORM,
 		Transform2D.IDENTITY.translated(respawn_location)
 	)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	respawn()
