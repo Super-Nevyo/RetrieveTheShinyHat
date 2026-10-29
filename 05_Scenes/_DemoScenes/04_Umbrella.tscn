@@ -219,7 +219,7 @@ activation_amount = Array[float]([1.0])
 puzzle_id = "door_open_ne"
 
 [node name="Box" parent="." unique_id=1254739137 instance=ExtResource("14_rkxre")]
-position = Vector2(1760, 987)
+position = Vector2(1680, 987)
 
 [node name="SecretArea2" parent="." unique_id=716718294 instance=ExtResource("4_uhwco")]
 room_id = "umbrella"

@@ -206,7 +206,7 @@ tile_map_data = PackedByteArray("AAAHAAEAAgACAAAAAAAHAAIAAgACAAAAAAAHAAMAAgACAAA
 metadata/_edit_lock_ = true
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1118345256]
-tile_map_data = PackedByteArray("AAAkAAQAAAABAAAAAAAlAAQAAAACAAAAAAAYAA8AAAADAAEAAAAOAAoAAAADAAEAAAAPAAoAAAADAAEAAAAQABEAAAAAAAEAADAQAAkAAAAAAAAAADAQAAsAAAAAAAIAADAQAAwAAAAAAAEAADAQAAoAAAAAAAMAADAaAA8AAAABAAAAAAAaABIAAAADAAMAAAAkABAAAAABAAAAADAlABAAAAAAAAAAADAbAA0AAAACAAAAADAgAA0AAAACAAMAAAAhAA0AAAADAAMAAAAiAA0AAAAEAAMAAAAjAA0AAAACAAMAAAAiABAAAAACAAAAADAjABAAAAABAAAAADAbABIAAAADAAMAAAAcABIAAAADAAMAAAAdABIAAAADAAMAAAAeABIAAAAAAAAAAGAiABEAAAACAAEAAAAYABAAAAADAAIAAAAYABEAAAADAAIAAAAYABIAAAACAAIAAAAZABIAAAADAAMAAAAZAA8AAAAAAAAAAAAMABAAAAADAAIAAAANABAAAAADAAIAAAAOABAAAAADAAIAAAAPABAAAAADAAIAAAAQABAAAAAAAAIAADAQAA8AAAAAAAMAADAIABEAAAACAAIAAAAKABEAAAAEAAIAAAALABAAAAADAAIAAAAkAA0AAAADAAMAAAAlAA0AAAAEAAMAAAAfAAQAAAABAAAAAAAgAAQAAAABAAAAAAAhAAQAAAABAAAAAAAiAAQAAAABAAAAAAAjAAQAAAABAAAAAAAIAAMAAAADAAIAAAAJAAMAAAAEAAIAAAAQABIAAAAAAAMAADAgAAoAAAACAAEAAAAhAAoAAAADAAEAAAAiAAoAAAADAAEAAAAjAAoAAAACAAEAAAAbAA4AAAADAAMAAAAWAAQAAAAAAAAAAAAWAAIAAAAAAAEAAAAWAAMAAAAAAAIAAAAcAAIAAAACAAEAAAAcAAMAAAACAAIAAAAcAAQAAAAAAAAAAAAdAAQAAAABAAAAAAAeAAQAAAABAAAAAAAPAAkAAAACAAAAADANAAoAAAADAAEAAAALAAoAAAAAAAEAAAAMAAoAAAADAAEAAAAbAA8AAAACAAAAAAAkAAoAAAADAAEAAAAlAAoAAAADAAEAAAAXAAQAAAABAAAAAAAYAAQAAAACAAAAAAAZAAQAAAAAAAAAAAAWABAAAAAEAAAAAAAXABAAAAAFAAAAAAAWABIAAAAEAAAAAAAXABIAAAAFAAAAAAATAAkAAAAEAAAAAAAUAAkAAAAFAAAAAAAaAAYAAAAEAAAAAAAbAAYAAAAFAAAAAAAgAAgAAAADAAAAAAAhAAgAAAAEAAAAAAAiAAgAAAAFAAAAAAAjAAgAAAADAAAAAAAkAAgAAAAEAAAAAAAlAAgAAAAFAAAAAAAZAAgAAAAFAAAAAAAaAAgAAAADAAAAAAAbAAgAAAAEAAAAAAAcAAgAAAAFAAAAAAAdAAgAAAADAAAAAAAXAAgAAAADAAAAAAAYAAgAAAAEAAAAAAAIAA0AAAADAAAAAAAdAAsAAAAFAAAAAAAeAAsAAAAEAAAAAAAfAAsAAAAFAAAAAAALAA0AAAAAAAEAAAALAAsAAAAAAAIAAAALAAwAAAAAAAMAAAAKAAsAAAADAAAAAAALAA4AAAAAAAIAAAALAA8AAAAAAAMAAAAKAA4AAAAEAAAAAAAJABEAAAADAAIAAAAIAA8AAAAFAAAAADAJAA8AAAAEAAAAADAIABAAAAACAAIAAAAJABAAAAADAAIAAAAKABAAAAADAAIAAAAKAA8AAAADAAAAADAIAAcAAAAFAAAAADAJAAcAAAAEAAAAADAKAAcAAAADAAAAADALAAcAAAAFAAAAADAOAAcAAAAFAAAAADA=")
+tile_map_data = PackedByteArray("AAAkAAQAAAABAAAAAAAlAAQAAAACAAAAAAAYAA8AAAADAAEAAAAOAAoAAAADAAEAAAAPAAoAAAADAAEAAAAQABEAAAAAAAEAADAQAAkAAAAAAAAAADAQAAsAAAAAAAIAADAQAAwAAAAAAAEAADAQAAoAAAAAAAMAADAaAA8AAAABAAAAAAAaABIAAAADAAMAAAAkABAAAAABAAAAADAlABAAAAAAAAAAADAbAA0AAAACAAAAADAgAA0AAAACAAMAAAAhAA0AAAADAAMAAAAiAA0AAAAEAAMAAAAjAA0AAAACAAMAAAAiABAAAAACAAAAADAjABAAAAABAAAAADAbABIAAAADAAMAAAAcABIAAAADAAMAAAAdABIAAAADAAMAAAAeABIAAAAAAAAAAGAiABEAAAACAAEAAAAYABAAAAADAAIAAAAYABEAAAADAAIAAAAYABIAAAACAAIAAAAZABIAAAADAAMAAAAZAA8AAAAAAAAAAAAMABAAAAADAAIAAAANABAAAAADAAIAAAAOABAAAAADAAIAAAAPABAAAAADAAIAAAAQABAAAAAAAAIAADAQAA8AAAAAAAMAADAIABEAAAACAAIAAAAKABEAAAAEAAIAAAALABAAAAADAAIAAAAkAA0AAAADAAMAAAAlAA0AAAAEAAMAAAAfAAQAAAABAAAAAAAgAAQAAAABAAAAAAAhAAQAAAABAAAAAAAiAAQAAAABAAAAAAAjAAQAAAABAAAAAAAIAAMAAAADAAIAAAAJAAMAAAAEAAIAAAAQABIAAAAAAAMAADAgAAoAAAACAAEAAAAhAAoAAAADAAEAAAAiAAoAAAADAAEAAAAjAAoAAAACAAEAAAAbAA4AAAADAAMAAAAWAAQAAAAAAAAAAAAWAAIAAAAAAAEAAAAWAAMAAAAAAAIAAAAcAAIAAAACAAEAAAAcAAMAAAACAAIAAAAcAAQAAAAAAAAAAAAdAAQAAAABAAAAAAAeAAQAAAABAAAAAAAPAAkAAAACAAAAADANAAoAAAADAAEAAAALAAoAAAAAAAEAAAAMAAoAAAADAAEAAAAbAA8AAAACAAAAAAAkAAoAAAADAAEAAAAlAAoAAAADAAEAAAAXAAQAAAABAAAAAAAYAAQAAAACAAAAAAAZAAQAAAAAAAAAAAAWABAAAAAEAAAAADAXABAAAAADAAAAADAWABIAAAAEAAAAADAXABIAAAADAAAAADATAAkAAAAEAAAAAAAUAAkAAAAFAAAAAAAaAAYAAAAEAAAAAAAbAAYAAAAFAAAAAAAgAAgAAAADAAAAAAAhAAgAAAAEAAAAAAAiAAgAAAAFAAAAAAAjAAgAAAADAAAAAAAkAAgAAAAEAAAAAAAlAAgAAAAFAAAAAAAZAAgAAAAFAAAAAAAaAAgAAAADAAAAAAAbAAgAAAAEAAAAAAAcAAgAAAAFAAAAAAAdAAgAAAADAAAAAAAXAAgAAAADAAAAAAAYAAgAAAAEAAAAAAAIAA0AAAADAAAAAAAdAAsAAAAFAAAAAAAeAAsAAAAEAAAAAAAfAAsAAAAFAAAAAAALAA0AAAAAAAEAAAALAAsAAAAAAAIAAAALAAwAAAAAAAMAAAAKAAsAAAADAAAAAAALAA4AAAAAAAIAAAALAA8AAAAAAAMAAAAKAA4AAAAEAAAAAAAJABEAAAADAAIAAAAIAA8AAAAFAAAAADAJAA8AAAAEAAAAADAIABAAAAACAAIAAAAJABAAAAADAAIAAAAKABAAAAADAAIAAAAKAA8AAAADAAAAADAIAAcAAAAFAAAAADAJAAcAAAAEAAAAADAKAAcAAAADAAAAADALAAcAAAAFAAAAADAOAAcAAAAFAAAAADA=")
 tile_set = ExtResource("3_bajsc")
 metadata/_edit_lock_ = true
 
@@ -290,8 +290,8 @@ puzzle_id = "fish_1"
 [node name="Switch4" parent="." unique_id=331175917 instance=ExtResource("10_5013i")]
 position = Vector2(518, 312)
 cooldown = 3.0
-attached_ids = Array[int]([105])
-activation_amount = Array[float]([1.0])
+attached_ids = Array[int]([105, 103])
+activation_amount = Array[float]([1.0, -1.0])
 puzzle_id = "fish_1"
 
 [node name="MetaSwitch" parent="." unique_id=54792963 instance=ExtResource("11_gbrht")]
@@ -302,11 +302,11 @@ puzzle_id = "acid_switch_3"
 position = Vector2(1152, 576)
 
 [node name="FishEnemy" parent="Enemies" unique_id=1227542854 instance=ExtResource("8_bajsc")]
-position = Vector2(324, 0)
+position = Vector2(324, 8)
 MyStateMachine = SubResource("Resource_876ls")
 
 [node name="FishEnemy3" parent="Enemies" unique_id=1328219815 instance=ExtResource("8_bajsc")]
-position = Vector2(576, 372)
+position = Vector2(152, 384)
 MyStateMachine = SubResource("Resource_876ls")
 
 [node name="FishEnemy4" parent="Enemies" unique_id=1146920322 instance=ExtResource("8_bajsc")]
@@ -318,7 +318,11 @@ position = Vector2(-636, -312)
 MyStateMachine = SubResource("Resource_8cwvy")
 
 [node name="FishEnemy6" parent="Enemies" unique_id=737143314 instance=ExtResource("8_bajsc")]
-position = Vector2(240, -240)
+position = Vector2(-24, -240)
+MyStateMachine = SubResource("Resource_8cwvy")
+
+[node name="FishEnemy7" parent="Enemies" unique_id=545227561 instance=ExtResource("8_bajsc")]
+position = Vector2(568, -312)
 MyStateMachine = SubResource("Resource_8cwvy")
 
 [node name="FishEnemy5" parent="Enemies" unique_id=1937859925 instance=ExtResource("8_bajsc")]
@@ -326,14 +330,12 @@ position = Vector2(-540, 84)
 MyStateMachine = SubResource("Resource_sgbwv")
 
 [node name="PressurePlate2" parent="." unique_id=1201491175 instance=ExtResource("12_4vy2k")]
-position = Vector2(1452, 162)
-scale = Vector2(0.6, 0.6)
-attached_ids = Array[int]([105])
-activation_amount = Array[float]([-1.0])
+position = Vector2(1452, 146)
+attached_ids = Array[int]([105, 106])
+activation_amount = Array[float]([-1.0, 1.0])
 
 [node name="PressurePlate4" parent="." unique_id=1796088267 instance=ExtResource("12_4vy2k")]
-position = Vector2(1608.0001, 162)
-scale = Vector2(0.6, 0.6)
+position = Vector2(1608, 146)
 attached_ids = Array[int]([106])
 activation_amount = Array[float]([1.0])
 
@@ -344,13 +346,13 @@ attached_ids = Array[int]([107])
 activation_amount = Array[float]([1.0])
 
 [node name="Door2" parent="." unique_id=568497496 instance=ExtResource("14_10xjy")]
-position = Vector2(1680, 143)
+position = Vector2(1688, 143)
 DoorMovePosition = Vector2(0, -142)
 move_speed = 1.0
 signal_id = 101
 
 [node name="Door3" parent="." unique_id=425038002 instance=ExtResource("14_10xjy")]
-position = Vector2(1524, 143)
+position = Vector2(1528, 143)
 DoorMovePosition = Vector2(0, -142)
 move_speed = 1.0
 signal_id = 103
@@ -360,12 +362,14 @@ position = Vector2(1392, 653)
 rotation = -1.5707964
 DoorMovePosition = Vector2(0, 200)
 move_speed = 1.0
+signal_id = 110
 
 [node name="Door11" parent="." unique_id=894283099 instance=ExtResource("14_10xjy")]
 position = Vector2(1488, 653)
 rotation = -1.5707964
 DoorMovePosition = Vector2(0, 200)
 move_speed = 1.0
+signal_id = 110
 
 [node name="Door10" parent="." unique_id=327741875 instance=ExtResource("14_10xjy")]
 position = Vector2(1704, 576)
@@ -397,7 +401,7 @@ signal_id = 106
 [node name="Door8" parent="." unique_id=1286327598 instance=ExtResource("14_10xjy")]
 position = Vector2(624, 372)
 rotation = 1.5707964
-DoorMovePosition = Vector2(-150, 0)
+DoorMovePosition = Vector2(-165, 0)
 move_speed = 1.0
 signal_id = 105
 
@@ -426,38 +430,110 @@ position = Vector2(1008, 288)
 [node name="Light" parent="." unique_id=2073561881 instance=ExtResource("28_slavy")]
 z_index = 100
 position = Vector2(792, 892.00006)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 signal_id = 1014
+
+[node name="Sprite2D" parent="Light" index="0" unique_id=87334520]
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Light" index="1" unique_id=401355035]
+region_rect = Rect2(48, 0, 16, 16)
 
 [node name="Light4" parent="." unique_id=2144303393 instance=ExtResource("28_slavy")]
 z_index = 100
 position = Vector2(432.0001, 168.00012)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 signal_id = 1014
+
+[node name="Sprite2D" parent="Light4" index="0" unique_id=87334520]
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Light4" index="1" unique_id=401355035]
+region_rect = Rect2(48, 0, 16, 16)
 
 [node name="Light2" parent="." unique_id=532109772 instance=ExtResource("28_slavy")]
 z_index = 100
 position = Vector2(792, 867.99994)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 signal_id = 1015
+
+[node name="Sprite2D" parent="Light2" index="0" unique_id=87334520]
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Light2" index="1" unique_id=401355035]
+region_rect = Rect2(48, 0, 16, 16)
 
 [node name="Light6" parent="." unique_id=624247299 instance=ExtResource("28_slavy")]
 z_index = 100
-position = Vector2(672.00006, 696.00006)
-scale = Vector2(2.5, 2.5)
+position = Vector2(672.00006, 688.00006)
+scale = Vector2(1.5, 1.5)
 signal_id = 1015
+
+[node name="Sprite2D" parent="Light6" index="0" unique_id=87334520]
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Light6" index="1" unique_id=401355035]
+region_rect = Rect2(48, 0, 16, 16)
 
 [node name="Light3" parent="." unique_id=1343638962 instance=ExtResource("28_slavy")]
 z_index = 100
 position = Vector2(792, 844)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 signal_id = 1016
+
+[node name="Sprite2D" parent="Light3" index="0" unique_id=87334520]
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Light3" index="1" unique_id=401355035]
+region_rect = Rect2(48, 0, 16, 16)
 
 [node name="Light5" parent="." unique_id=1573033201 instance=ExtResource("28_slavy")]
 z_index = 100
-position = Vector2(1800, 738)
-scale = Vector2(2.5, 2.5)
+position = Vector2(1788, 738)
+scale = Vector2(1.5, 1.5)
 signal_id = 1016
+
+[node name="Sprite2D" parent="Light5" index="0" unique_id=87334520]
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D2" parent="Light5" index="1" unique_id=401355035]
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Light7" parent="." unique_id=125333356 instance=ExtResource("28_slavy")]
+z_index = 100
+position = Vector2(520, 352.00003)
+scale = Vector2(2.5, 2.5)
+signal_id = 105
+
+[node name="Light9" parent="." unique_id=474566930 instance=ExtResource("28_slavy")]
+z_index = 100
+position = Vector2(1560, 352)
+scale = Vector2(2.5, 2.5)
+signal_id = 102
+
+[node name="Light10" parent="." unique_id=1590504410 instance=ExtResource("28_slavy")]
+z_index = 100
+position = Vector2(1704.0001, 648)
+scale = Vector2(2.5, 2.5)
+signal_id = 102
+
+[node name="Light11" parent="." unique_id=1091616757 instance=ExtResource("28_slavy")]
+z_index = 100
+position = Vector2(1620.0001, 616)
+scale = Vector2(2.5, 2.5)
+signal_id = 102
+
+[node name="Light12" parent="." unique_id=78494752 instance=ExtResource("28_slavy")]
+z_index = 100
+position = Vector2(1176, 892)
+scale = Vector2(2.5, 2.5)
+signal_id = 104
+
+[node name="Light8" parent="." unique_id=1605029939 instance=ExtResource("28_slavy")]
+z_index = 100
+position = Vector2(624, 408)
+scale = Vector2(2.5, 2.5)
+signal_id = 105
 
 [editable path="SecretAreaLeft"]
 [editable path="FleshBg"]
@@ -468,3 +544,9 @@ signal_id = 1016
 [editable path="Light6"]
 [editable path="Light3"]
 [editable path="Light5"]
+[editable path="Light7"]
+[editable path="Light9"]
+[editable path="Light10"]
+[editable path="Light11"]
+[editable path="Light12"]
+[editable path="Light8"]
