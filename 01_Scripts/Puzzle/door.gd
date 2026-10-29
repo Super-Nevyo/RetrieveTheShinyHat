@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		var is_active: bool = ActivationAmount >= 1
 		Door.visible = not is_active
 		Door.get_node("CollisionShape2D").set_deferred("disabled", is_active)
-		return
+		
 
 	if !has_reached_position:
 		if ActivationAmount >= 1:

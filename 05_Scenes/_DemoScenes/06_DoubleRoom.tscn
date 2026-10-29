@@ -267,6 +267,7 @@ signal_id = 65
 [node name="Door4" parent="." unique_id=292903841 instance=ExtResource("13_baoby")]
 position = Vector2(816, 528)
 rotation = 1.5707964
+DoorMovePosition = Vector2(0, 0)
 disappear_active = true
 ActivationAmount = 1.0
 signal_id = 62
@@ -274,6 +275,7 @@ signal_id = 62
 [node name="Door8" parent="." unique_id=1775278669 instance=ExtResource("13_baoby")]
 position = Vector2(528, 504)
 rotation = 1.5707964
+DoorMovePosition = Vector2(0, 0)
 disappear_active = true
 ActivationAmount = 1.0
 signal_id = 68
@@ -323,6 +325,7 @@ signal_id = 60
 [node name="Door5" parent="." unique_id=370139565 instance=ExtResource("13_baoby")]
 position = Vector2(960, 564)
 rotation = 1.5707964
+DoorMovePosition = Vector2(0, 0)
 disappear_active = true
 signal_id = 61
 
