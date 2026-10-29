@@ -295,7 +295,7 @@ activation_amount = Array[float]([1.0, -1.0])
 puzzle_id = "fish_1"
 
 [node name="MetaSwitch" parent="." unique_id=54792963 instance=ExtResource("11_gbrht")]
-position = Vector2(612, 960)
+position = Vector2(612, 970)
 puzzle_id = "acid_switch_3"
 
 [node name="Enemies" type="Node2D" parent="." unique_id=270169343]

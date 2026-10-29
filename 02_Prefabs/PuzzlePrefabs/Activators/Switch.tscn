@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://debl1e3orr6jt" path="res://01_Scripts/Puzzle/switch.gd" id="1_wj5h5"]
 [ext_resource type="Script" uid="uid://bw2iqqm4bgev5" path="res://01_Scripts/WorldInteractions/SwitchAttackReceiver.gd" id="2_mavhr"]
-[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="4_1ykdu"]
+[ext_resource type="Texture2D" uid="uid://cu34m48slx3he" path="res://03_Art/Environment/unique.png" id="3_dlyqn"]
 [ext_resource type="AudioStream" uid="uid://cu3mry2xdqysd" path="res://04_Audio/SFX/switch_single.mp3" id="4_dlyqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
-size = Vector2(45, 35)
+size = Vector2(46, 43)
 
 [sub_resource type="Animation" id="Animation_ayifw"]
 length = 0.43333334
@@ -52,6 +52,7 @@ stream_0/stream = ExtResource("4_dlyqn")
 
 [node name="Switch" type="Node2D" unique_id=150077233]
 script = ExtResource("1_wj5h5")
+cooldown = 0.5
 metadata/test = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=424739996]
@@ -59,25 +60,26 @@ collision_layer = 8
 script = ExtResource("2_mavhr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1820221955]
-position = Vector2(0, 5.5)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="Base" type="Sprite2D" parent="Area2D" unique_id=1092581678]
 texture_filter = 1
-texture = ExtResource("4_1ykdu")
+position = Vector2(0, 8)
+texture = ExtResource("3_dlyqn")
 region_enabled = true
-region_rect = Rect2(48, 432, 48, 48)
+region_rect = Rect2(96, 352, 48, 32)
 
 [node name="PivotPoint" type="Node2D" parent="." unique_id=1690733563]
-position = Vector2(0, 7)
+position = Vector2(1, 8)
 
 [node name="Lever" type="Sprite2D" parent="PivotPoint" unique_id=1612846749]
 texture_filter = 1
-position = Vector2(-9, -7)
+position = Vector2(-9, -9)
 rotation = -0.7853982
-texture = ExtResource("4_1ykdu")
+texture = ExtResource("3_dlyqn")
 region_enabled = true
-region_rect = Rect2(0, 432, 48, 48)
+region_rect = Rect2(48, 336, 48, 48)
 
 [node name="LeverAnimation" type="AnimationPlayer" parent="." unique_id=221505178]
 libraries/ = SubResource("AnimationLibrary_ayifw")

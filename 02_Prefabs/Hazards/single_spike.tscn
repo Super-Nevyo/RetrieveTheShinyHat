@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://chwm57nxsyons"]
 
 [ext_resource type="Script" uid="uid://cqul4etn4bj1" path="res://01_Scripts/Hazards/hitbox.gd" id="1_0dun5"]
-[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="2_grxu8"]
+[ext_resource type="Texture2D" uid="uid://cu34m48slx3he" path="res://03_Art/Environment/unique.png" id="2_0dun5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oqe2"]
 radius = 12.872457
 height = 72.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
-atlas = ExtResource("2_grxu8")
-region = Rect2(480, 432, 96, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7pua"]
+atlas = ExtResource("2_0dun5")
+region = Rect2(528, 336, 96, 96)
 
 [node name="Spikes" type="Area2D" unique_id=1094872775]
 collision_layer = 0
@@ -23,4 +23,4 @@ scale = Vector2(1, 1.1171081)
 shape = SubResource("CapsuleShape2D_3oqe2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1440228771]
-texture = SubResource("AtlasTexture_kw6nx")
+texture = SubResource("AtlasTexture_d7pua")

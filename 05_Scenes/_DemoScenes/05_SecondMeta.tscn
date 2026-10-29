@@ -104,7 +104,7 @@ attached_ids = Array[int]([47])
 activation_amount = Array[float]([1.0])
 
 [node name="MetaSwitch" parent="." unique_id=54792963 instance=ExtResource("11_h4bfu")]
-position = Vector2(624, 239)
+position = Vector2(624, 252)
 puzzle_id = "acid_switch_2"
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("13_rg0cf")]
