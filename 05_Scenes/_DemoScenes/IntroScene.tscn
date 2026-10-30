@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://bkii2kx1tyy1d"]
 
 [ext_resource type="Script" uid="uid://c1jhuves3fb0a" path="res://01_Scripts/UIScreens.gd" id="1_0s72u"]
-[ext_resource type="Texture2D" uid="uid://baelaofle1664" path="res://03_Art/tempbg.jpg" id="1_opeup"]
 [ext_resource type="Texture2D" uid="uid://bkjr4b7le7nvc" path="res://03_Art/UI/_Branding/buttons.png" id="2_do8ps"]
+[ext_resource type="Texture2D" uid="uid://drylhe8xfyw8m" path="res://03_Art/UI/_Branding/bgwavy.png" id="2_kk5db"]
+[ext_resource type="FontFile" uid="uid://mnrlcjoprmnp" path="res://06_Extras/Fonts/MBJ Chunky.ttf" id="3_kk5db"]
 
-[sub_resource type="FontVariation" id="FontVariation_pjunl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk5db"]
+atlas = ExtResource("2_do8ps")
+region = Rect2(60, 1536, 1020, 624)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a4qn"]
+[sub_resource type="FontVariation" id="FontVariation_qarmu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7f87"]
 bg_color = Color(0.48235294, 0.6666667, 0.3254902, 1)
 corner_detail = 10
 expand_margin_left = 10.0
@@ -14,21 +19,29 @@ expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjunl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyv5r"]
 bg_color = Color(0.6364996, 0.6182256, 0.2456559, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_du66n"]
-bg_color = Color(0.6364996, 0.6182256, 0.2456559, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4xh6"]
+bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21unb"]
-bg_color = Color(0.6364996, 0.6182256, 0.2456559, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1l34r"]
+bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se11y"]
-bg_color = Color(0.6364996, 0.6182256, 0.2456559, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fcp3"]
+bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dllay"]
 atlas = ExtResource("2_do8ps")
-region = Rect2(0, 288, 816, 240)
+region = Rect2(1752, 324, 648, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do8ps"]
+atlas = ExtResource("2_do8ps")
+region = Rect2(1752, 804, 648, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y6ui"]
+atlas = ExtResource("2_do8ps")
+region = Rect2(1752, 564, 648, 180)
 
 [node name="TitleScreen" type="Control" unique_id=1583647816]
 layout_mode = 3
@@ -39,81 +52,128 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0s72u")
 
-[node name="Label" type="Label" parent="." unique_id=927328961]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -683.0
-offset_top = -258.0
-offset_right = 683.0
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.5338092, 0.8080186, 0.63835365, 1)
-theme_override_font_sizes/font_size = 100
-text = "GAME TITLE HERE
-TBD DON'T COME FOR US <3"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=494853138]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -352.5
-offset_top = 58.0
-offset_right = 352.5
-offset_bottom = 149.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 100
-
-[node name="StartButton" type="Button" parent="HBoxContainer" unique_id=2017723198]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-theme_override_fonts/font = SubResource("FontVariation_pjunl")
-theme_override_font_sizes/font_size = 61
-theme_override_styles/normal = SubResource("StyleBoxFlat_0a4qn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pjunl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_du66n")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_21unb")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_se11y")
-text = "START GAME"
-icon_alignment = 1
-expand_icon = true
-
-[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/StartButton" unique_id=1156975004]
-position = Vector2(0, 46)
-texture = SubResource("AtlasTexture_kw6nx")
-
-[node name="QuitButton" type="Button" parent="HBoxContainer" unique_id=687036814]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-theme_override_fonts/font = SubResource("FontVariation_pjunl")
-theme_override_font_sizes/font_size = 61
-theme_override_styles/normal = SubResource("StyleBoxFlat_0a4qn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pjunl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_du66n")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_21unb")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_se11y")
-text = "QUIT GAME"
-icon_alignment = 1
-expand_icon = true
-
 [node name="TextureRect" type="TextureRect" parent="." unique_id=613348897]
 z_index = -10
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2259.0
+offset_top = -1651.0
+offset_right = 5260.0
+offset_bottom = 2850.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 1.5707964
 mouse_filter = 2
-texture = ExtResource("1_opeup")
+texture = ExtResource("2_kk5db")
+
+[node name="GameV" type="Label" parent="." unique_id=938791623]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.0
+offset_top = 436.0
+offset_right = 470.0
+offset_bottom = 494.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_kk5db")
+theme_override_font_sizes/font_size = 30
+text = "V 2.0"
+vertical_alignment = 1
+paragraph_separator = "1"
+max_lines_visible = 2
+text_direction = 1
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1143892955]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -456.0
+offset_top = -436.0
+offset_right = 564.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_kk5db")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VContainer" type="VBoxContainer" parent="." unique_id=35096422]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = 156.0
+offset_right = 994.0
+offset_bottom = 716.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VContainer" unique_id=26145699]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = SubResource("FontVariation_qarmu")
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxFlat_w7f87")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cyv5r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q4xh6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_1l34r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1fcp3")
+icon = SubResource("AtlasTexture_dllay")
+flat = true
+icon_alignment = 1
+
+[node name="Quit" type="Button" parent="VContainer" unique_id=383077435]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = SubResource("FontVariation_qarmu")
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxFlat_w7f87")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cyv5r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q4xh6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_1l34r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1fcp3")
+icon = SubResource("AtlasTexture_do8ps")
+flat = true
+icon_alignment = 1
+
+[node name="Credits" type="Button" parent="VContainer" unique_id=1894591118]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = SubResource("FontVariation_qarmu")
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxFlat_w7f87")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cyv5r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q4xh6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_1l34r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1fcp3")
+icon = SubResource("AtlasTexture_0y6ui")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="VContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VContainer/Credits" to="." method="_on_credits_pressed"]

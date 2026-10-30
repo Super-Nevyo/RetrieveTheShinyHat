@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://e5yq0rwvlrnk"]
 
 [ext_resource type="Script" uid="uid://c1jhuves3fb0a" path="res://01_Scripts/UIScreens.gd" id="1_8glmk"]
-[ext_resource type="Texture2D" uid="uid://51vw71jg0rty" path="res://03_Art/UI/_Branding/seamlesswater.jpg" id="2_bja7m"]
+[ext_resource type="Texture2D" uid="uid://drylhe8xfyw8m" path="res://03_Art/UI/_Branding/bgwavy.png" id="2_p0pf2"]
 [ext_resource type="Texture2D" uid="uid://bkjr4b7le7nvc" path="res://03_Art/UI/_Branding/buttons.png" id="3_bja7m"]
+[ext_resource type="FontFile" uid="uid://mnrlcjoprmnp" path="res://06_Extras/Fonts/MBJ Chunky.ttf" id="3_nif83"]
 [ext_resource type="FontFile" uid="uid://btay63b8ca008" path="res://06_Extras/Fonts/BubbleStone-5yAXB.otf" id="3_p0pf2"]
 
 [sub_resource type="FontVariation" id="FontVariation_pjunl"]
@@ -29,11 +30,11 @@ bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bja7m"]
 atlas = ExtResource("3_bja7m")
-region = Rect2(0, 288, 816, 240)
+region = Rect2(1752, 324, 648, 180)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0pf2"]
 atlas = ExtResource("3_bja7m")
-region = Rect2(0, 768, 816, 240)
+region = Rect2(1752, 804, 648, 180)
 
 [node name="WinScreen" type="Control" unique_id=1583647816]
 layout_mode = 3
@@ -45,18 +46,25 @@ grow_vertical = 2
 script = ExtResource("1_8glmk")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=613348897]
-modulate = Color(0.1314736, 0.21302396, 0.2654492, 1)
+modulate = Color(0.20247117, 0.39732754, 0.46178275, 1)
 z_index = -10
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1500.5
+offset_top = -2250.5
+offset_right = 1500.5
+offset_bottom = 2250.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_bja7m")
+texture = ExtResource("2_p0pf2")
 
-[node name="Label" type="Label" parent="." unique_id=927328961]
+[node name="Note" type="Label" parent="." unique_id=927328961]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,20 +72,51 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -683.0
-offset_top = -308.0
+offset_top = 4.0
 offset_right = 683.0
-offset_bottom = -31.0
+offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.5556979, 0.7867614, 0.7684652, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_nif83")
+theme_override_font_sizes/font_size = 30
+text = "You might not wanna swim in acid without proper gear..."
+horizontal_alignment = 1
+vertical_alignment = 1
+paragraph_separator = "1"
+max_lines_visible = 2
+text_direction = 1
+
+[node name="Title" type="Label" parent="." unique_id=370946301]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -683.0
+offset_top = -244.0
+offset_right = 683.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.22668007, 0.6192819, 0.7355294, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.07699283, 0.152531, 0.18272382, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 45
+theme_override_constants/shadow_outline_size = 50
 theme_override_fonts/font = ExtResource("3_p0pf2")
-theme_override_font_sizes/font_size = 250
-text = "YOU DIED!"
+theme_override_font_sizes/font_size = 200
+text = "YOU DIED"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-visible_characters = 15
-visible_ratio = 1.6666666
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=494853138]
 texture_filter = 1
@@ -87,13 +126,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -776.0
-offset_top = -28.0
-offset_right = 856.0
-offset_bottom = 212.0
+offset_left = -384.0
+offset_top = 92.0
+offset_right = 922.0
+offset_bottom = 272.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = -25
+scale = Vector2(0.6, 0.6)
+theme_override_constants/separation = 10
+alignment = 1
 
 [node name="StartButton" type="Button" parent="HBoxContainer" unique_id=2017723198]
 layout_mode = 2
