@@ -10,9 +10,3 @@ func Exit():
 
 func Update(delta:float):
 	pass
-
-func Attack():
-	pass
-
-func Jump():
-	pass
