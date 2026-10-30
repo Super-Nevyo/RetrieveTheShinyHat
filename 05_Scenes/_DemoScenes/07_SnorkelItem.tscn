@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="13_bwpyo"]
 [ext_resource type="Script" uid="uid://dd810oe6klldp" path="res://01_Scripts/Inventory/Snorkle.gd" id="15_hsw8g"]
 [ext_resource type="Texture2D" uid="uid://brxf5idiokidd" path="res://03_Art/Items/PlayerVisible/Snorkel.png" id="15_oo3mi"]
+[ext_resource type="Texture2D" uid="uid://bwu5egusp3nvg" path="res://03_Art/Items/BreathingAparatus.png" id="17_hsw8g"]
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="17_oo3mi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_627na"]
@@ -191,7 +192,7 @@ itemInfo = SubResource("Resource_5t1r3")
 
 [node name="Sprite2D" parent="Pickup" index="1" unique_id=1059875453]
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("15_oo3mi")
+texture = ExtResource("17_hsw8g")
 
 [node name="Spikes" parent="." unique_id=1094872775 instance=ExtResource("17_oo3mi")]
 position = Vector2(1032, 768)
