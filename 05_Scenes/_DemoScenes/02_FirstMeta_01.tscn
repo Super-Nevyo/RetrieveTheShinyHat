@@ -170,14 +170,14 @@ scale = Vector2(1, 1.8000025)
 position = Vector2(37, -1.0000056)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("10_bno8p")]
-partly_filled_liquid_level = 500.0
+partly_filled_liquid_level = 485.0
 metadata/_edit_lock_ = true
 
 [node name="FloatingPlatform" parent="." unique_id=1566761638 instance=ExtResource("4_plfiy")]
 position = Vector2(1401, 810)
 
 [node name="FloatingPlatform2" parent="." unique_id=1583383135 instance=ExtResource("4_plfiy")]
-position = Vector2(749, 738)
+position = Vector2(736, 738)
 
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("12_q6v13")]
 position = Vector2(578, 601)
