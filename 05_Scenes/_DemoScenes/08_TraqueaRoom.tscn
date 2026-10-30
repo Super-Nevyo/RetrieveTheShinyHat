@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Hazards/Acid.tscn" id="9_odnnf"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="10_dy8cg"]
 [ext_resource type="PackedScene" uid="uid://dtffnjl0bbpf4" path="res://02_Prefabs/PuzzlePrefabs/Activated/PuzzleDoor.tscn" id="11_djwc6"]
-[ext_resource type="PackedScene" uid="uid://dcjpr5k3vilxf" path="res://02_Prefabs/PuzzlePrefabs/Activators/PressurePlate.tscn" id="12_bogbn"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="13_dy8cg"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="14_8jla5"]
+[ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="14_bogbn"]
 [ext_resource type="PackedScene" uid="uid://5rjx4pwy4x4a" path="res://02_Prefabs/SecretArea.tscn" id="14_djwc6"]
 
 [sub_resource type="Resource" id="Resource_alcqo"]
@@ -52,7 +52,7 @@ tile_map_data = PackedByteArray("AAAHAAEAAgACAAAAAAAHAAIAAgACAAAAAAAHAAMAAgACAAA
 metadata/_edit_lock_ = true
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1118345256]
-tile_map_data = PackedByteArray("AAAVAAIAAgACAAAAAAAVAAMAAgACAAAAAAAVAAQAAgACAAAAAAAVAAUAAgACAAAAAAAVAAYAAgACAAAAAAAVAAcAAgACAAAAAAAVAAgAAgACAAAAAAAVAAkAAgACAAAAAAAVAAoAAgACAAAAAAAVAAsAAgACAAAAAAAVAAwAAgACAAAAAAAVAA0AAgACAAAAAAAVAA4AAgACAAAAAAAVAA8AAgACAAAAAAAVABAAAgACAAAAAAAVABEAAgACAAAAAAAVABIAAgACAAAAAAAVABMAAgACAAAAAAAVABQAAgACAAAAAAAYAAIAAgACAAAAAAAYAAMAAgACAAAAAAAYAAQAAgACAAAAAAAYAAUAAgACAAAAAAAYAAYAAgACAAAAAAAYAAcAAgACAAAAAAAYAAgAAgACAAAAAAAYAAkAAgACAAAAAAAYAAoAAgACAAAAAAAYAAsAAgACAAAAAAAYAAwAAgACAAAAAAAYAA0AAgACAAAAAAAYAA4AAgACAAAAAAAYAA8AAgACAAAAAAAYABAAAgACAAAAAAAYABEAAgACAAAAAAAYABIAAgACAAAAAAAYABMAAgACAAAAAAAYABQAAgACAAAAAAAkAA0AAAACAAMAAAAlAA0AAAADAAMAAAAmAA0AAAAEAAMAAAAHABAAAAACAAMAAAAIABAAAAADAAMAAAAJABAAAAAEAAMAAAAMAA4AAAAFAAEAAAAMAA8AAAAFAAIAAAAMABAAAAAFAAMAAAALAAsAAAAAAAEAAAALAAwAAAAAAAIAAAALAA0AAAAAAAMAAAAMAAsAAAABAAEAAAAMAAwAAAABAAIAAAAMAA0AAAABAAMAAAAMABEAAAAIAAEAAAAMABIAAAAIAAIAAAALABMAAAAFAAAAAAAKABMAAAADAAAAAAAZAAUAAAACAAMAAAAaAAUAAAADAAMAAAAbAAUAAAAEAAMAAAAkAAUAAAACAAMAAAAlAAUAAAADAAMAAAAmAAUAAAAEAAMAAAAkAAkAAAACAAMAAAAlAAkAAAADAAMAAAAmAAkAAAAEAAMAAAAZAAkAAAACAAMAAAAaAAkAAAADAAMAAAAbAAkAAAAEAAMAAAAZAA4AAAACAAEAAAAZAA8AAAACAAIAAAAaAA4AAAADAAEAAAAaAA8AAAADAAIAAAAbAA4AAAAEAAEAAAAbAA8AAAAEAAIAAAAPAAkAAAACAAEAAAAPAAoAAAACAAIAAAAQAAkAAAADAAEAAAAQAAoAAAADAAIAAAARAAkAAAAEAAEAAAARAAoAAAAEAAIAAAASAAkAAAACAAMAAAATAAkAAAADAAMAAAAUAAkAAAAEAAMAAAA=")
+tile_map_data = PackedByteArray("AAAVAAIAAgACAAAAAAAVAAMAAgACAAAAAAAVAAQAAgACAAAAAAAVAAUAAgACAAAAAAAVAAYAAgACAAAAAAAVAAcAAgACAAAAAAAVAAgAAgACAAAAAAAVAAkAAgACAAAAAAAVAAoAAgACAAAAAAAVAAsAAgACAAAAAAAVAAwAAgACAAAAAAAVAA0AAgACAAAAAAAVAA4AAgACAAAAAAAVAA8AAgACAAAAAAAVABAAAgACAAAAAAAVABEAAgACAAAAAAAVABIAAgACAAAAAAAVABMAAgACAAAAAAAVABQAAgACAAAAAAAYAAIAAgACAAAAAAAYAAMAAgACAAAAAAAYAAQAAgACAAAAAAAYAAUAAgACAAAAAAAYAAYAAgACAAAAAAAYAAcAAgACAAAAAAAYAAgAAgACAAAAAAAYAAkAAgACAAAAAAAYAAoAAgACAAAAAAAYAAsAAgACAAAAAAAYAAwAAgACAAAAAAAYAA0AAgACAAAAAAAYAA4AAgACAAAAAAAYAA8AAgACAAAAAAAYABAAAgACAAAAAAAYABEAAgACAAAAAAAYABIAAgACAAAAAAAYABMAAgACAAAAAAAYABQAAgACAAAAAAAkAA0AAAACAAMAAAAlAA0AAAADAAMAAAAmAA0AAAAEAAMAAAAHABAAAAACAAMAAAAIABAAAAADAAMAAAAJABAAAAAEAAMAAAAMAA4AAAAFAAEAAAAMAA8AAAAFAAIAAAAMABAAAAAFAAMAAAALAAsAAAAAAAEAAAALAAwAAAAAAAIAAAALAA0AAAAAAAMAAAAMAAsAAAABAAEAAAAMAAwAAAABAAIAAAAMAA0AAAABAAMAAAAMABEAAAAIAAEAAAAMABIAAAAIAAIAAAALABMAAAAFAAAAAAAKABMAAAADAAAAAAAZAAUAAAACAAMAAAAaAAUAAAADAAMAAAAbAAUAAAAEAAMAAAAkAAUAAAACAAMAAAAlAAUAAAADAAMAAAAmAAUAAAAEAAMAAAAkAAkAAAACAAMAAAAlAAkAAAADAAMAAAAmAAkAAAAEAAMAAAAZAAkAAAACAAMAAAAaAAkAAAADAAMAAAAbAAkAAAAEAAMAAAAZAA4AAAACAAEAAAAZAA8AAAACAAIAAAAaAA4AAAADAAEAAAAaAA8AAAADAAIAAAAbAA4AAAAEAAEAAAAbAA8AAAAEAAIAAAAPAAkAAAACAAEAAAAPAAoAAAACAAIAAAAQAAkAAAADAAEAAAAQAAoAAAADAAIAAAARAAkAAAAEAAEAAAARAAoAAAAEAAIAAAASAAkAAAACAAMAAAATAAkAAAADAAMAAAAUAAkAAAAEAAMAAAAfABMAAAAEAAAAAAAgABMAAAAEAAAAAAAhABMAAAAFAAAAAAAeABMAAAADAAAAAAA=")
 tile_set = ExtResource("3_da4rc")
 metadata/_edit_lock_ = true
 
@@ -131,30 +131,27 @@ activation_amount = Array[float]([1.0])
 position = Vector2(477, 549)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, -196)
-move_speed = 0.1
+move_speed = 0.17
 signal_id = 85
 
 [node name="Door2" parent="." unique_id=853385085 instance=ExtResource("11_djwc6")]
-position = Vector2(1593, 985)
+position = Vector2(1593, 937)
 rotation = 1.5707964
 DoorMovePosition = Vector2(-536, 0)
+move_speed = 0.5
 signal_id = 80
 
-[node name="PressurePlate" parent="." unique_id=1796088267 instance=ExtResource("12_bogbn")]
-position = Vector2(405, 745)
-scale = Vector2(0.5, 0.5)
-
 [node name="Switch2" parent="." unique_id=1168856221 instance=ExtResource("10_dy8cg")]
-position = Vector2(1736, 983)
-scale = Vector2(0.98244244, 0.7136365)
+position = Vector2(1541, 888)
 attached_ids = Array[int]([80])
 activation_amount = Array[float]([1.0])
 puzzle_id = "Elevator switch"
 
 [node name="Switch3" parent="." unique_id=1471136548 instance=ExtResource("10_dy8cg")]
 position = Vector2(1266, 410)
-attached_ids = Array[int]([82])
-activation_amount = Array[float]([1.0])
+attached_ids = Array[int]([82, 87])
+activation_amount = Array[float]([1.0, -1.0])
+puzzle_id = "wide_side"
 
 [node name="Switch4" parent="." unique_id=933101375 instance=ExtResource("10_dy8cg")]
 position = Vector2(1264, 649)
@@ -166,22 +163,25 @@ puzzle_id = "hidden_switch"
 position = Vector2(1776, 217)
 attached_ids = Array[int]([83, 86])
 activation_amount = Array[float]([1.0, 1.0])
+puzzle_id = "wide_up"
 
 [node name="Switch6" parent="." unique_id=1972361538 instance=ExtResource("10_dy8cg")]
 position = Vector2(1773, 407)
-attached_ids = Array[int]([84])
-activation_amount = Array[float]([1.0])
+attached_ids = Array[int]([84, 88])
+activation_amount = Array[float]([1.0, -1.0])
+puzzle_id = "slim_side"
 
 [node name="Switch7" parent="." unique_id=540594811 instance=ExtResource("10_dy8cg")]
 position = Vector2(1268, 219)
 attached_ids = Array[int]([81])
 activation_amount = Array[float]([1.0])
+puzzle_id = "slim_up"
 
 [node name="Door3" parent="." unique_id=904313145 instance=ExtResource("11_djwc6")]
-position = Vector2(1487, 451)
+position = Vector2(1487, 403)
 rotation = 1.5707964
 DoorMovePosition = Vector2(536, 0)
-ActivationAmount = 1.0
+move_speed = 0.5
 signal_id = 80
 
 [node name="Door4" parent="." unique_id=1988681677 instance=ExtResource("13_dy8cg")]
@@ -207,10 +207,34 @@ position = Vector2(839, 579)
 DoorMovePosition = Vector2(0, 150)
 signal_id = 81
 
+[node name="Door13" parent="." unique_id=1443286466 instance=ExtResource("11_djwc6")]
+position = Vector2(882, 961)
+DoorMovePosition = Vector2(0, -100)
+signal_id = 81
+
 [node name="Door7" parent="." unique_id=1577883419 instance=ExtResource("11_djwc6")]
 position = Vector2(743, 859)
-DoorMovePosition = Vector2(50, 0)
+DoorMovePosition = Vector2(144, 0)
 signal_id = 82
+
+[node name="Door16" parent="." unique_id=1168622390 instance=ExtResource("11_djwc6")]
+position = Vector2(985, 738)
+DoorMovePosition = Vector2(-144, 0)
+signal_id = 82
+
+[node name="Door14" parent="." unique_id=389210171 instance=ExtResource("11_djwc6")]
+position = Vector2(1455, 334)
+DoorMovePosition = Vector2(0, 0)
+disappear_active = true
+ActivationAmount = 1.0
+signal_id = 87
+
+[node name="Door15" parent="." unique_id=2003412882 instance=ExtResource("11_djwc6")]
+position = Vector2(1613, 334)
+DoorMovePosition = Vector2(0, 0)
+disappear_active = true
+ActivationAmount = 1.0
+signal_id = 88
 
 [node name="Door8" parent="." unique_id=381364847 instance=ExtResource("11_djwc6")]
 position = Vector2(671, 650)
@@ -222,14 +246,32 @@ signal_id = 86
 position = Vector2(674, 790)
 rotation = 1.5707964
 DoorMovePosition = Vector2(-100, 0)
-signal_id = 86
+signal_id = 83
 
 [node name="Door9" parent="." unique_id=419554092 instance=ExtResource("11_djwc6")]
 position = Vector2(773, 650)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, -150)
-ActivationAmount = 1.0
 signal_id = 84
+
+[node name="Door11" parent="." unique_id=673737114 instance=ExtResource("11_djwc6")]
+position = Vector2(815, 905)
+rotation = 1.5707964
+DoorMovePosition = Vector2(0, -146)
+signal_id = 84
+
+[node name="Door12" parent="." unique_id=1771446166 instance=ExtResource("11_djwc6")]
+position = Vector2(956, 805)
+rotation = 1.5707964
+DoorMovePosition = Vector2(0, 146)
+signal_id = 84
+
+[node name="Spikes" parent="." unique_id=1094872775 instance=ExtResource("14_bogbn")]
+position = Vector2(810, 960)
+
+[node name="Spikes2" parent="." unique_id=636408522 instance=ExtResource("14_bogbn")]
+position = Vector2(960, 644)
+rotation = -1.5707964
 
 [editable path="transition_boss"]
 [editable path="transition_double"]

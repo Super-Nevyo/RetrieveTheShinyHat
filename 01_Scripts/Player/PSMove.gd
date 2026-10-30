@@ -71,6 +71,7 @@ func Jump():
 		
 	else:
 		Player.velo.y += Player.jump_velocity
+		Player.MyStateMachine.ChangeState(Player.MyStateMachine.Fall)
 
 
 func update_animation(direction: float) -> void:
