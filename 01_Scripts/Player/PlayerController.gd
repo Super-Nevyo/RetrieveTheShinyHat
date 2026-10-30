@@ -268,11 +268,12 @@ func item_animation() -> void:
 		item_anim.play(animation_name)
 
 func activate_god_mode (enabled:bool) -> void:
-	god_mode = enabled
-	if god_mode:
-		MyStateMachine.ChangeState(MyStateMachine.God)
-	else:
-		remove_god()
+	if OS.is_debug_build():
+		god_mode = enabled
+		if god_mode:
+			MyStateMachine.ChangeState(MyStateMachine.God)
+		else:
+			remove_god()
 
 func remove_god() -> void:
 	MyStateMachine.ChangeState(MyStateMachine.Fall)
