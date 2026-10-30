@@ -2,6 +2,10 @@
 
 [ext_resource type="TileSet" uid="uid://07dl5o3vc8p6" path="res://03_Art/Environment/Stomach/bgstomach.tres" id="1_mm1is"]
 [ext_resource type="Texture2D" uid="uid://cjyam0umv6ivy" path="res://03_Art/Environment/fullbgtest.png" id="2_l4rup"]
+[ext_resource type="Shader" uid="uid://bg7pgd1n7qb1p" path="res://06_Extras/Shaders/menu_bg.tres" id="2_mpn2t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7nea"]
+shader = ExtResource("2_mpn2t")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
 atlas = ExtResource("2_l4rup")
@@ -16,7 +20,15 @@ collision_visibility_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="BackgroundArea" type="Sprite2D" parent="." unique_id=1999783040]
-modulate = Color(0.68563724, 0.05288051, 0.14838281, 1)
+modulate = Color(0.5040213, 0.025347952, 0.09850479, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_o7nea")
+position = Vector2(1107, 553)
+texture = SubResource("AtlasTexture_kw6nx")
+
+[node name="Darker" type="Sprite2D" parent="." unique_id=722689931]
+modulate = Color(0.38039216, 0.015686275, 0.07450981, 0.5882353)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1107, 553)

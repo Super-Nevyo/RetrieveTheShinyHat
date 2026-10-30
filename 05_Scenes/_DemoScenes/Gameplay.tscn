@@ -323,11 +323,11 @@ script = ExtResource("23_o7nea")
 
 [node name="GameHud" parent="Camera2D" unique_id=1741115912 instance=ExtResource("9_e8wdy")]
 z_index = 100
-offset_left = -964.0
-offset_top = -516.0
-offset_right = -964.0
-offset_bottom = -516.0
-scale = Vector2(0.9600004, 0.9600004)
+offset_left = -941.0
+offset_top = -432.0
+offset_right = -941.0
+offset_bottom = -432.0
+scale = Vector2(0.9, 0.9)
 
 [node name="InventoryUi" parent="Camera2D/GameHud" index="1" unique_id=1475960093]
 offset_left = 73.08341
@@ -337,6 +337,7 @@ offset_bottom = 536.6248
 scale = Vector2(0.9637684, 0.9637684)
 
 [node name="MapArt" parent="Camera2D/GameHud" index="4" unique_id=171772538]
+visible = false
 offset_left = 45.833317
 offset_top = 71.87497
 offset_right = 345.8333

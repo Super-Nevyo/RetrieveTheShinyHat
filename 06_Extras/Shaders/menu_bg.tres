@@ -33,7 +33,7 @@ input_name = "time"
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_5dedj"]
 output_port_for_preview = 0
-default_input_values = [0, 0.0, 1, 0.01]
+default_input_values = [0, 0.0, 1, 0.005]
 operator = 2
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_341qa"]
@@ -47,7 +47,7 @@ default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
 op_type = 0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_86j3e"]
-noise_type = 3
+noise_type = 2
 seed = 8
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8ym7p"]
@@ -84,7 +84,7 @@ nodes/fragment/7/position = Vector2(-300, 80)
 nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_vtj7m")
 nodes/fragment/8/position = Vector2(220, 100)
 nodes/fragment/9/node = SubResource("VisualShaderNodeVectorOp_sn4ys")
-nodes/fragment/9/position = Vector2(460, 140)
+nodes/fragment/9/position = Vector2(420, 140)
 nodes/fragment/10/node = SubResource("VisualShaderNodeVectorOp_qvugd")
 nodes/fragment/10/position = Vector2(640, 0)
 nodes/fragment/11/node = SubResource("VisualShaderNodeReroute_sn4ys")

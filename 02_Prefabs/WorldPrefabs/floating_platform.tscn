@@ -11,6 +11,7 @@ z_index = 10
 linear_damp = 6.0
 script = ExtResource("1_1r0j4")
 stiffness = 120.0
+bouyancy_depth = 16.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=438947925]
 rotation = 1.5707964
