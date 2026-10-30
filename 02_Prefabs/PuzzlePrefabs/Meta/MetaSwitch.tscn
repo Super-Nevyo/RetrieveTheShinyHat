@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bw2iqqm4bgev5" path="res://01_Scripts/WorldInteractions/SwitchAttackReceiver.gd" id="2_nbbr2"]
 [ext_resource type="Texture2D" uid="uid://cu34m48slx3he" path="res://03_Art/Environment/unique.png" id="3_4jq6u"]
 [ext_resource type="AudioStream" uid="uid://cu3mry2xdqysd" path="res://04_Audio/SFX/switch_single.mp3" id="4_4jq6u"]
+[ext_resource type="AudioStream" uid="uid://3uc5f0obejv7" path="res://04_Audio/SFX/rumble.mp3" id="5_32bhn"]
+[ext_resource type="AudioStream" uid="uid://ch288uanxm1e1" path="res://04_Audio/SFX/stomach.mp3" id="6_emen5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(80, 80)
@@ -94,3 +96,13 @@ bus = &"sfx"
 
 [node name="MetaAnim" type="AnimationPlayer" parent="." unique_id=384457148]
 libraries/ = SubResource("AnimationLibrary_32bhn")
+
+[node name="RumbleAudio" type="AudioStreamPlayer2D" parent="." unique_id=2100220109]
+stream = ExtResource("5_32bhn")
+volume_db = 8.0
+bus = &"sfx"
+
+[node name="StomachAudio" type="AudioStreamPlayer2D" parent="." unique_id=1457277066]
+stream = ExtResource("6_emen5")
+volume_db = 3.0
+bus = &"sfx"
