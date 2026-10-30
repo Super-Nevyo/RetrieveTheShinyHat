@@ -157,3 +157,6 @@ stretch_mode = 5
 script = ExtResource("6_yqkip")
 hover_scale = 1.4
 duration = 0.1
+
+[connection signal="pressed" from="VContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VContainer/Quit" to="." method="_on_quit_button_pressed"]
