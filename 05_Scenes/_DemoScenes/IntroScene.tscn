@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1jhuves3fb0a" path="res://01_Scripts/UIScreens.gd" id="1_0s72u"]
 [ext_resource type="Texture2D" uid="uid://baelaofle1664" path="res://03_Art/tempbg.jpg" id="1_opeup"]
+[ext_resource type="Texture2D" uid="uid://bkjr4b7le7nvc" path="res://03_Art/UI/_Branding/buttons.png" id="2_do8ps"]
 
 [sub_resource type="FontVariation" id="FontVariation_pjunl"]
 
@@ -24,6 +25,10 @@ bg_color = Color(0.6364996, 0.6182256, 0.2456559, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se11y"]
 bg_color = Color(0.6364996, 0.6182256, 0.2456559, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
+atlas = ExtResource("2_do8ps")
+region = Rect2(0, 288, 816, 240)
 
 [node name="TitleScreen" type="Control" unique_id=1583647816]
 layout_mode = 3
@@ -83,6 +88,10 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_se11y")
 text = "START GAME"
 icon_alignment = 1
 expand_icon = true
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/StartButton" unique_id=1156975004]
+position = Vector2(0, 46)
+texture = SubResource("AtlasTexture_kw6nx")
 
 [node name="QuitButton" type="Button" parent="HBoxContainer" unique_id=687036814]
 layout_mode = 2
