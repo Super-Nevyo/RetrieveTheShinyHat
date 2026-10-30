@@ -9,10 +9,12 @@ func _init(player:PlayerController):
 func Enter():
 	Player.velo.y = minf(Player.velo.y, Player.submerged_cap)
 	Player.player_anim.play("Swimming")
+	Player.liquid_counter.water_exited.connect(become_dry)
 
 func Exit():
 	Player.current_breath = Player.max_breath
 	Player.BreathChanged.emit(Player.current_breath)
+	Player.liquid_counter.water_exited.disconnect(become_dry)
 
 func Update(delta:float):
 	Player.current_breath -= Player.breath_decay * delta
@@ -36,3 +38,6 @@ func Attack():
 
 func Jump():
 	pass
+
+func become_dry():
+	Player.MyStateMachine.ChangeState(Player.MyStateMachine.Fall)

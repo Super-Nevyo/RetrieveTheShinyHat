@@ -6,8 +6,10 @@ func _init(player:PlayerController):
 
 func Enter():
 	Player.player_anim.play("Jump")
+	Player.liquid_counter.water_entered.connect(become_wet)
 
 func Exit():
+	Player.liquid_counter.water_entered.disconnect(become_wet)
 	pass
 
 func Update(delta:float):
@@ -33,3 +35,6 @@ func get_custom_gravity():
 		return Player.jump_gravity
 	else:
 		return Player.fall_gravity
+
+func become_wet():
+	Player.MyStateMachine.ChangeState(Player.MyStateMachine.Swim)

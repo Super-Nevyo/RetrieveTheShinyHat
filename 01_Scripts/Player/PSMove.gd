@@ -11,6 +11,7 @@ func Enter():
 	Player.player_anim.play("Ball" if Player.has_ball else "Idle")
 	Player.velo.y = 0
 	Player.attack_collision.attack_successful.connect(successful_attack)
+	Player.liquid_counter.water_entered.connect(become_wet)
 
 func Exit():
 	#Player.finish_attack()
@@ -18,6 +19,7 @@ func Exit():
 	if held_box != null:
 		held_box.throw(Vector2.ZERO, 0)
 		held_box = null
+	Player.liquid_counter.water_entered.disconnect(become_wet)
 
 func Update(delta:float):
 	if not Player.is_on_floor():
@@ -85,6 +87,8 @@ func update_animation(direction: float) -> void:
 	else:
 		Player.player_anim.play("Idle")
 
+func become_wet():
+	Player.MyStateMachine.ChangeState(Player.MyStateMachine.Swim)
 
 #func start_attack():
 	#if Player.has_ball:

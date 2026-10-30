@@ -60,6 +60,7 @@ var velo: Vector2 = Vector2.ZERO
 
 #===SWIM
 var bodies_of_water:int = 0
+@onready var liquid_counter : LiquidCounter = LiquidCounter.new()
 
 #===ATTACK
 @onready var attack_hit_box: CollisionShape2D = $ArmAnchor/WhackPivotPoint/AttackHitBox/HitBox
@@ -193,9 +194,6 @@ func play_hit_animation() -> void:
 
 func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 	# maybe i should make a static function to handle this globally and better? # if enemies take damage, yes - tbd
-	print(isinvincible())
-	print(hitframe)
-	print(Time.get_ticks_msec())
 	if isdead or god_mode:
 		return
 		
@@ -241,14 +239,15 @@ func die():
 	get_tree().change_scene_to_file("res://05_Scenes/_DemoScenes/LoseScene.tscn")
 
 func change_water(entering:bool):
-	if entering:
-		bodies_of_water += 1
-		if bodies_of_water == 1:
-			MyStateMachine.ChangeState(MyStateMachine.Swim)
-	else:
-		bodies_of_water -= 1
-		if bodies_of_water == 0:
-			MyStateMachine.ChangeState(MyStateMachine.Fall)
+	liquid_counter.change_water(entering)
+	#if entering:
+		#bodies_of_water += 1
+		#if bodies_of_water == 1:
+			#MyStateMachine.ChangeState(MyStateMachine.Swim)
+	#else:
+		#bodies_of_water -= 1
+		#if bodies_of_water == 0:
+			#MyStateMachine.ChangeState(MyStateMachine.Fall)
 
 func add_item(item:Item, index: int):
 	MyInventory.AddItem(item,index)
