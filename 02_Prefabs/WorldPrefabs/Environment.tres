@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://85tocdmfpfp0" path="res://03_Art/Environment/Stomach/Stomach_environment_sprites.png" id="1_khsse"]
 [ext_resource type="Texture2D" uid="uid://bome11uw75l7m" path="res://03_Art/TempAssets/EnvSizes.png" id="1_woauh"]
+[ext_resource type="Texture2D" uid="uid://buwlq4tdntn3d" path="res://03_Art/acid.png" id="3_ce8bx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ce8bx"]
 texture = ExtResource("1_khsse")
@@ -145,8 +146,31 @@ texture_region_size = Vector2i(48, 48)
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 1:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7200m"]
+texture = ExtResource("3_ce8bx")
+texture_region_size = Vector2i(48, 48)
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+
 [resource]
 tile_size = Vector2i(48, 48)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_epmgc")
 sources/0 = SubResource("TileSetAtlasSource_ce8bx")
+sources/4 = SubResource("TileSetAtlasSource_7200m")

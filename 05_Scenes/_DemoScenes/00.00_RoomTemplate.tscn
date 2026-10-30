@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="4_untbu"]
 [ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="5_bvue6"]
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="6_3ae4o"]
-[ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Hazards/Acid.tscn" id="10_hoytu"]
+[ext_resource type="PackedScene" uid="uid://cgosqiacvcvty" path="res://02_Prefabs/WorldPrefabs/acid_tiles.tscn" id="6_untbu"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="11_4h6mo"]
 
 [sub_resource type="Resource" id="Resource_ar7t2"]
@@ -55,9 +55,8 @@ position = Vector2(0, 0)
 [node name="Trigger" parent="SecretArea/RevealSecret" index="0" unique_id=1857902071]
 scale = Vector2(1, 1.6800005)
 
-[node name="Acid" type="TileMapLayer" parent="." unique_id=625080141]
-z_index = -5
-tile_set = ExtResource("3_8icep")
+[node name="Acid" parent="." unique_id=1027848718 instance=ExtResource("6_untbu")]
+position = Vector2(606, 797)
 
 [node name="transition_place" parent="." unique_id=1724436172 instance=ExtResource("5_bvue6")]
 position = Vector2(1855, 432)
@@ -77,15 +76,9 @@ scale = Vector2(1, 1.6400049)
 [node name="ArrivalPoint" parent="transition_secret" index="1" unique_id=1345594044]
 position = Vector2(-62, 18)
 
-[node name="Liquid" parent="." unique_id=1959433390 instance=ExtResource("10_hoytu")]
-visible = false
-position = Vector2(1122, 956)
-scale = Vector2(32.39999, 14.12)
-
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("11_4h6mo")]
 visible = false
 
 [editable path="SecretArea"]
 [editable path="transition_place"]
 [editable path="transition_secret"]
-[editable path="Liquid"]

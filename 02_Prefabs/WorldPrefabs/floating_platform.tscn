@@ -11,7 +11,8 @@ z_index = 10
 linear_damp = 6.0
 script = ExtResource("1_1r0j4")
 stiffness = 120.0
-bouyancy_depth = 16.0
+bouyancy_depth = 15.0
+float_height = 6.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=438947925]
 rotation = 1.5707964
@@ -20,5 +21,5 @@ region_enabled = true
 region_rect = Rect2(432, 336, 48, 96)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=289972093]
-position = Vector2(0, 3)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_bgewv")
