@@ -125,6 +125,10 @@ script = ExtResource("7_aceux")
 position = Vector2(12, 48)
 scale = Vector2(6, 4.7011385)
 
+[node name="Liquid3" parent="AcidPit" unique_id=575968298 instance=ExtResource("8_q75hx")]
+position = Vector2(101.5, 81.5)
+scale = Vector2(2.5400045, 1.7411383)
+
 [node name="AcidSurface" type="Marker2D" parent="AcidPit" unique_id=196727150]
 position = Vector2(0, -60.5)
 
