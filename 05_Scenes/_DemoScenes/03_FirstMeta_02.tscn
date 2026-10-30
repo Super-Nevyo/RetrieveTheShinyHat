@@ -172,7 +172,7 @@ debug_color = Color(0.38431373, 0.6039216, 0.27450982, 0.54901963)
 partly_filled_liquid_level = 500.0
 
 [node name="MetaSwitch" parent="." unique_id=54792963 instance=ExtResource("11_brga6")]
-position = Vector2(722, 396)
+position = Vector2(742, 392)
 
 [node name="FloatingPlatform" parent="." unique_id=1566761638 instance=ExtResource("12_lhlfa")]
 position = Vector2(600, 768)
