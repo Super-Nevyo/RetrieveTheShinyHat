@@ -87,7 +87,7 @@ bus = &"sfx"
 
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("1_kmjnh")]
 z_index = 15
-position = Vector2(1345, 830)
+position = Vector2(1164, 840)
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=1312875347]
 
