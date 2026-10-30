@@ -17,7 +17,7 @@ bouyancy_depth = 16.0
 rotation = 1.5707964
 texture = ExtResource("2_1r0j4")
 region_enabled = true
-region_rect = Rect2(384, 336, 48, 96)
+region_rect = Rect2(432, 336, 48, 96)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=289972093]
 position = Vector2(0, 3)
