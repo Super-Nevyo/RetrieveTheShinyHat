@@ -1,16 +1,82 @@
 [gd_scene format=3 uid="uid://dcjpr5k3vilxf"]
 
 [ext_resource type="Script" uid="uid://cfm1wialohuy6" path="res://01_Scripts/Puzzle/pressure_plate.gd" id="1_pg43b"]
-[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="2_5f16h"]
+[ext_resource type="Texture2D" uid="uid://cu34m48slx3he" path="res://03_Art/Environment/unique.png" id="2_5f16h"]
 [ext_resource type="AudioStream" uid="uid://duvn2x7fbcc7t" path="res://04_Audio/SFX/press_plate.mp3" id="3_5f16h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(96, 28)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5f16h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rx5ke"]
+load_path = "res://.godot/imported/unique.png-644de764487425ddc4f027bd779c0bcd.ctex"
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujkr7"]
 random_pitch = 1.0842268
 streams_count = 1
 stream_0/stream = ExtResource("3_5f16h")
+
+[sub_resource type="Animation" id="Animation_5f16h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rx5ke"]
+resource_name = "pressure_plate"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -4), Vector2(0, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.5921569, 0.6431373, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkhdo"]
+_data = {
+&"RESET": SubResource("Animation_5f16h"),
+&"plate_press": SubResource("Animation_rx5ke")
+}
 
 [node name="PressurePlate" type="Node2D" unique_id=1796088267]
 script = ExtResource("1_pg43b")
@@ -23,17 +89,28 @@ collision_mask = 82
 position = Vector2(0, 21)
 shape = SubResource("RectangleShape2D_qsmb2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2030635098]
+[node name="Button" type="Sprite2D" parent="Area2D" unique_id=1013312756]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_5f16h")
+position = Vector2(0, -4)
+texture = SubResource("CompressedTexture2D_rx5ke")
+region_enabled = true
+region_rect = Rect2(48, 384, 96, 96)
+
+[node name="Base" type="Sprite2D" parent="Area2D" unique_id=2030635098]
 texture_filter = 1
 texture = ExtResource("2_5f16h")
 region_enabled = true
-region_rect = Rect2(0, 480, 96, 96)
+region_rect = Rect2(144, 384, 96, 96)
 
 [node name="PlayerSfx" type="AudioStreamPlayer2D" parent="." unique_id=1246516296]
 stream = SubResource("AudioStreamRandomizer_ujkr7")
 volume_db = -8.0
 max_distance = 1000.0
 bus = &"sfx"
+
+[node name="PlateAnimation" type="AnimationPlayer" parent="." unique_id=129134443]
+libraries/ = SubResource("AnimationLibrary_qkhdo")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

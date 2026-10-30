@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ct4ttmynks3os"]
 
 [ext_resource type="Script" uid="uid://dj381g2apxkgs" path="res://01_Scripts/Puzzle/door.gd" id="1_q8kmd"]
-[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="2_w2kht"]
+[ext_resource type="Texture2D" uid="uid://cu34m48slx3he" path="res://03_Art/Environment/unique.png" id="2_w2kht"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w2kht"]
 
@@ -24,4 +24,4 @@ texture_filter = 1
 position = Vector2(-2, 0)
 texture = ExtResource("2_w2kht")
 region_enabled = true
-region_rect = Rect2(336, 432, 48, 96)
+region_rect = Rect2(384, 336, 48, 96)

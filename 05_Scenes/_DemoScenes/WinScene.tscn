@@ -1,49 +1,50 @@
 [gd_scene format=3 uid="uid://cah1sohyo650l"]
 
-[ext_resource type="Texture2D" uid="uid://baelaofle1664" path="res://03_Art/tempbg.jpg" id="1_4s7ch"]
 [ext_resource type="Script" uid="uid://c1jhuves3fb0a" path="res://01_Scripts/UIScreens.gd" id="1_wi12k"]
+[ext_resource type="Shader" uid="uid://bg7pgd1n7qb1p" path="res://06_Extras/Shaders/menu_bg.tres" id="2_plv5g"]
+[ext_resource type="Texture2D" uid="uid://drylhe8xfyw8m" path="res://03_Art/UI/_Branding/bgwavy.png" id="3_3hdrx"]
+[ext_resource type="FontFile" uid="uid://btay63b8ca008" path="res://06_Extras/Fonts/BubbleStone-5yAXB.otf" id="4_mjlf4"]
+[ext_resource type="Texture2D" uid="uid://bkjr4b7le7nvc" path="res://03_Art/UI/_Branding/buttons.png" id="5_om0uv"]
+[ext_resource type="Script" uid="uid://cvucxfbhkiu28" path="res://01_Scripts/buttons.gd" id="6_yqkip"]
 
-[sub_resource type="FontVariation" id="FontVariation_pjunl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpr34"]
+shader = ExtResource("2_plv5g")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi12k"]
-bg_color = Color(0.48235294, 0.6666667, 0.3254902, 1)
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2px6"]
+atlas = ExtResource("5_om0uv")
+region = Rect2(1752, 324, 648, 180)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5dmt"]
-bg_color = Color(0.6364996, 0.6182256, 0.2456559, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrxs6"]
+atlas = ExtResource("5_om0uv")
+region = Rect2(12, 288, 792, 228)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0frhc"]
-bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvml6"]
+atlas = ExtResource("5_om0uv")
+region = Rect2(12, 288, 792, 228)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_535ua"]
-bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvfcl"]
+atlas = ExtResource("5_om0uv")
+region = Rect2(1752, 804, 648, 180)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plv5g"]
-bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_la3r7"]
+atlas = ExtResource("5_om0uv")
+region = Rect2(12, 768, 792, 216)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a4qn"]
-bg_color = Color(0.48235294, 0.6666667, 0.3254902, 1)
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_v13rd"]
+atlas = ExtResource("5_om0uv")
+region = Rect2(12, 768, 792, 216)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjunl"]
-bg_color = Color(0.6364996, 0.6182256, 0.2456559, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe8uf"]
+atlas = ExtResource("5_om0uv")
+region = Rect2(1752, 564, 648, 180)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_du66n"]
-bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7ayy"]
+atlas = ExtResource("5_om0uv")
+region = Rect2(12, 528, 792, 216)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21unb"]
-bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hdrx"]
-bg_color = Color(0.75686276, 0.56078434, 0.2784314, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_apnp7"]
+atlas = ExtResource("5_om0uv")
+region = Rect2(12, 528, 792, 216)
 
 [node name="WinScreen" type="Control" unique_id=1583647816]
 layout_mode = 3
@@ -54,18 +55,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wi12k")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=613348897]
+[node name="Bg" type="TextureRect" parent="." unique_id=1518977720]
 z_index = -10
+material = SubResource("ShaderMaterial_xpr34")
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1904.0
+offset_top = 1436.0
+offset_right = 1097.0
+offset_bottom = 5937.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -1.5707964
 mouse_filter = 2
-texture = ExtResource("1_4s7ch")
+texture = ExtResource("3_3hdrx")
 
-[node name="Label" type="Label" parent="." unique_id=927328961]
+[node name="Title" type="Label" parent="." unique_id=924016316]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -73,61 +83,77 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -683.0
-offset_top = -236.0
+offset_top = -284.0
 offset_right = 683.0
-offset_bottom = 41.0
+offset_bottom = 121.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.5338092, 0.8080186, 0.63835365, 1)
-theme_override_font_sizes/font_size = 90
-text = "THANKS FOR PLAYING
-OUR DEMO!"
+theme_override_colors/font_color = Color(0.22668007, 0.6192819, 0.7355294, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.07699283, 0.152531, 0.18272382, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 45
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("4_mjlf4")
+theme_override_font_sizes/font_size = 150
+text = "THANKS FOR
+PLAYING!"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=494853138]
+[node name="VContainer" type="HBoxContainer" parent="." unique_id=1666843687]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -441.5
-offset_top = 80.0
-offset_right = 441.5
-offset_bottom = 171.0
+offset_left = -480.0
+offset_top = 44.0
+offset_right = 1484.0
+offset_bottom = 604.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 10
+alignment = 1
 
-[node name="StartButton" type="Button" parent="HBoxContainer" unique_id=2017723198]
+[node name="StartButton" type="TextureButton" parent="VContainer" unique_id=8421633]
+z_index = 5
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = SubResource("FontVariation_pjunl")
-theme_override_font_sizes/font_size = 61
-theme_override_styles/normal = SubResource("StyleBoxFlat_wi12k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v5dmt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0frhc")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_535ua")
-theme_override_styles/focus = SubResource("StyleBoxFlat_plv5g")
-text = "RESTART GAME"
-icon_alignment = 1
-expand_icon = true
+texture_normal = SubResource("AtlasTexture_u2px6")
+texture_pressed = SubResource("AtlasTexture_hrxs6")
+texture_hover = SubResource("AtlasTexture_rvml6")
+stretch_mode = 5
+script = ExtResource("6_yqkip")
+hover_scale = 1.4
+duration = 0.1
 
-[node name="QuitButton" type="Button" parent="HBoxContainer" unique_id=687036814]
+[node name="Quit" type="TextureButton" parent="VContainer" unique_id=1275010445]
+z_index = 10
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = SubResource("FontVariation_pjunl")
-theme_override_font_sizes/font_size = 61
-theme_override_styles/normal = SubResource("StyleBoxFlat_0a4qn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pjunl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_du66n")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_21unb")
-theme_override_styles/focus = SubResource("StyleBoxFlat_3hdrx")
-text = "QUIT GAME"
-icon_alignment = 1
-expand_icon = true
+texture_normal = SubResource("AtlasTexture_nvfcl")
+texture_pressed = SubResource("AtlasTexture_la3r7")
+texture_hover = SubResource("AtlasTexture_v13rd")
+stretch_mode = 5
+script = ExtResource("6_yqkip")
+hover_scale = 1.4
+duration = 0.1
 
-[connection signal="pressed" from="HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Credits" type="TextureButton" parent="VContainer" unique_id=1189976958]
+visible = false
+z_index = 5
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_fe8uf")
+texture_pressed = SubResource("AtlasTexture_e7ayy")
+texture_hover = SubResource("AtlasTexture_apnp7")
+stretch_mode = 5
+script = ExtResource("6_yqkip")
+hover_scale = 1.4
+duration = 0.1

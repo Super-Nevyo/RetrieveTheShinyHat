@@ -7,7 +7,8 @@ class_name EndGameTrigger
 var has_started: bool = false
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
+	if not body_entered.is_connected(_on_body_entered):
+		body_entered.connect(_on_body_entered)
 
 func _on_body_entered (body: Node2D) -> void:
 	if has_started:

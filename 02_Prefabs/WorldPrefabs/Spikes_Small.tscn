@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bdwhlwfw8xqio"]
 
-[ext_resource type="PackedScene" uid="uid://chwm57nxsyons" path="res://02_Prefabs/WorldPrefabs/Spikes.tscn" id="1_u5n3p"]
-[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="2_j7mar"]
+[ext_resource type="PackedScene" uid="uid://chwm57nxsyons" path="res://02_Prefabs/Hazards/single_spike.tscn" id="1_u5n3p"]
+[ext_resource type="Texture2D" uid="uid://cu34m48slx3he" path="res://03_Art/Environment/unique.png" id="2_u5n3p"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7wlk"]
-atlas = ExtResource("2_j7mar")
-region = Rect2(432, 431, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_grxu8"]
+atlas = ExtResource("2_u5n3p")
+region = Rect2(480, 336, 48, 48)
 
 [node name="Spikes" unique_id=1094872775 instance=ExtResource("1_u5n3p")]
 
@@ -14,4 +14,4 @@ position = Vector2(-3.000001, -5.9999995)
 scale = Vector2(0.5, 0.559)
 
 [node name="Sprite2D" parent="." index="1" unique_id=1440228771]
-texture = SubResource("AtlasTexture_x7wlk")
+texture = SubResource("AtlasTexture_grxu8")

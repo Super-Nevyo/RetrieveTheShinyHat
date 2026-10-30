@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="PuzzleMetroid"
-run/main_scene="uid://bisdihm2cu5se"
+run/main_scene="uid://bkii2kx1tyy1d"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://c1wuixfuxyj2h"
 
 [autoload]
 

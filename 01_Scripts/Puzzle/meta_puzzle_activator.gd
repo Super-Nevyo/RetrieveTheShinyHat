@@ -16,3 +16,7 @@ func ChangeMeta() -> void:
 func UseSwitch():
 	ChangeMeta()
 	$PlayerSfx.play()
+	
+	if switch_flipped:
+		$StomachAudio.play()
+		$RumbleAudio.play()

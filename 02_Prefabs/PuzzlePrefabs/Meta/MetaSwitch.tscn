@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://d3pljbm41hish" path="res://01_Scripts/Puzzle/meta_puzzle_activator.gd" id="1_v66fc"]
 [ext_resource type="Script" uid="uid://bw2iqqm4bgev5" path="res://01_Scripts/WorldInteractions/SwitchAttackReceiver.gd" id="2_nbbr2"]
-[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="3_4jq6u"]
+[ext_resource type="Texture2D" uid="uid://cu34m48slx3he" path="res://03_Art/Environment/unique.png" id="3_4jq6u"]
 [ext_resource type="AudioStream" uid="uid://cu3mry2xdqysd" path="res://04_Audio/SFX/switch_single.mp3" id="4_4jq6u"]
+[ext_resource type="AudioStream" uid="uid://3uc5f0obejv7" path="res://04_Audio/SFX/rumble.mp3" id="5_32bhn"]
+[ext_resource type="AudioStream" uid="uid://ch288uanxm1e1" path="res://04_Audio/SFX/stomach.mp3" id="6_emen5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(80, 80)
@@ -12,6 +14,43 @@ size = Vector2(80, 80)
 random_pitch = 1.122462
 streams_count = 1
 stream_0/stream = ExtResource("4_4jq6u")
+
+[sub_resource type="Animation" id="Animation_32bhn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/CollisionShape2D/PivotPoint:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4jq6u"]
+resource_name = "meta_anim"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/CollisionShape2D/PivotPoint:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32bhn"]
+_data = {
+&"RESET": SubResource("Animation_32bhn"),
+&"meta_anim": SubResource("Animation_4jq6u")
+}
 
 [node name="MetaSwitch" type="Node2D" unique_id=54792963]
 script = ExtResource("1_v66fc")
@@ -26,22 +65,44 @@ script = ExtResource("2_nbbr2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1420565738]
 shape = SubResource("RectangleShape2D_qsmb2")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=1203515253]
-z_index = 1
-position = Vector2(0, -19)
-scale = Vector2(2, 2)
+[node name="Base" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=143023869]
+position = Vector2(0, 7.75)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_4jq6u")
 region_enabled = true
-region_rect = Rect2(0, 432, 48, 35.290985)
+region_rect = Rect2(48, 528, 96, 48)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=143023869]
-scale = Vector2(2, 2)
+[node name="PivotPoint" type="Marker2D" parent="Area2D/CollisionShape2D" unique_id=635898362]
+
+[node name="Lever" type="Sprite2D" parent="Area2D/CollisionShape2D/PivotPoint" unique_id=1203515253]
+z_index = 1
+position = Vector2(0, -43.25)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_4jq6u")
 region_enabled = true
-region_rect = Rect2(48, 432, 48, 48)
+region_rect = Rect2(160, 481, 64, 79)
+
+[node name="Hairs" type="Sprite2D" parent="Area2D/CollisionShape2D/PivotPoint/Lever" unique_id=29387717]
+position = Vector2(0, -7.333334)
+texture = ExtResource("3_4jq6u")
+region_enabled = true
+region_rect = Rect2(240, 481, 96, 65)
 
 [node name="PlayerSfx" type="AudioStreamPlayer2D" parent="." unique_id=401122349]
 stream = SubResource("AudioStreamRandomizer_32bhn")
 volume_db = -5.0
 max_distance = 1000.0
+bus = &"sfx"
+
+[node name="MetaAnim" type="AnimationPlayer" parent="." unique_id=384457148]
+libraries/ = SubResource("AnimationLibrary_32bhn")
+
+[node name="RumbleAudio" type="AudioStreamPlayer2D" parent="." unique_id=2100220109]
+stream = ExtResource("5_32bhn")
+volume_db = 8.0
+bus = &"sfx"
+
+[node name="StomachAudio" type="AudioStreamPlayer2D" parent="." unique_id=1457277066]
+stream = ExtResource("6_emen5")
+volume_db = 3.0
 bus = &"sfx"

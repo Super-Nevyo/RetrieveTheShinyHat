@@ -6,6 +6,7 @@ class_name FloatingPlatform
 
 @export var acid_surface: LiquidDetector
 @export var stiffness: float = 1
+@export var bouyancy_depth: float = 10
 var liquid: Liquid = null
 
 #Damp force = -linear velocity+damping strenght
@@ -19,7 +20,8 @@ func _physics_process(_delta: float) -> void:
 	var depth: float = global_position.y - liquid.surface.global_position.y
 	if depth >= 0: #if its at water level
 		#hookes law applied here
-		var bouyancy_force: float = stiffness * depth
+		var limited_depth: float = minf(depth, bouyancy_depth)
+		var bouyancy_force: float = stiffness * limited_depth
 		#var damp_force = -linear_velocity.y * damping
 		
 		constant_force = Vector2 (0, -bouyancy_force) #built positional force
