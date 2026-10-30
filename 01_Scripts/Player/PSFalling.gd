@@ -16,11 +16,12 @@ func Update(delta:float):
 	if Player.is_on_floor():
 		Player.MyStateMachine.ChangeState(Player.MyStateMachine.Move)
 		return
+	if Player.input_handler.attack_just_pressed: Attack()
 	Player.velo.y += get_custom_gravity() * delta
 	if not Player.ishurt and not Player.isdead:
 		Player.player_anim.play("Jump")
-	if Player.direction_x:
-		Player.velo.x = move_toward(Player.velo.x, Player.direction_x * Player.speed, Player.acceleration * delta)
+	if Player.input_handler.direction.x:
+		Player.velo.x = move_toward(Player.velo.x, Player.input_handler.direction.x * Player.speed, Player.acceleration * delta)
 	else:
 		Player.velo.x = move_toward(Player.velo.x, 0, Player.friction * delta)
 

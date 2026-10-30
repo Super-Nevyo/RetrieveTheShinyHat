@@ -17,7 +17,7 @@ func Exit():
 	Player.velo = Vector2.ZERO
 
 func Update(delta:float):
-	var direction = Vector2(Player.direction_x, Player.direction_y).normalized()
+	var direction = Vector2(Player.input_handler.direction.x, Player.input_handler.direction.y).normalized()
 	Player.velo = direction * Player.god_speed
 	
 

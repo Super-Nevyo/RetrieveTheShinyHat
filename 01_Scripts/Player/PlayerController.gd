@@ -11,6 +11,8 @@ signal ItemCollected(index: int, item: Item)
 signal ItemHovered(index: int)
 signal BreathChanged(breath:float)
 
+@onready var input_handler : PlayerInputHandler = PlayerInputHandler.new()
+
 #===GOD MODE
 var god_mode: bool = false
 @export var god_speed: float = 1000
@@ -21,8 +23,8 @@ var god_mode: bool = false
 @export var acceleration: float = 1800
 @export var friction: float = 500
 @export var sprint_mult: float = 1.5
-var direction_x : float
-var direction_y : float
+#var direction_x : float
+#var direction_y : float
 var current_speed : float
 
 # Submerged
@@ -117,7 +119,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		swim_audio.stop()
 	
-	get_input()
+	input_handler.get_input()
 	
 	#god mode stuff
 	if Input.is_action_just_pressed("god_mode"):
@@ -132,17 +134,17 @@ func _physics_process(delta: float) -> void:
 	velocity = velo
 	move_and_slide()
 	
-func get_input():
-	direction_x = Input.get_axis("move_left", "move_right")
-	direction_y = Input.get_axis("move_up", "move_down")
-	if Input.is_action_just_pressed("jump"):
-		MyStateMachine.Jump()
-	
-	if Input.is_action_pressed("sprint"):
-		current_speed = speed * sprint_mult
-	
-	if Input.is_action_just_pressed("attack") and !is_attacking:
-		MyStateMachine.Attack()
+#func get_input():
+	#direction_x = Input.get_axis("move_left", "move_right")
+	#direction_y = Input.get_axis("move_up", "move_down")
+	#if Input.is_action_just_pressed("jump"):
+		#MyStateMachine.Jump()
+	#
+	#if Input.is_action_pressed("sprint"):
+		#current_speed = speed * sprint_mult
+	#
+	#if Input.is_action_just_pressed("attack") and !is_attacking:
+		#MyStateMachine.Attack()
 
 func get_custom_gravity():
 	if velocity.y < 0.0:
@@ -171,8 +173,8 @@ func _on_attack_animation_finished(animation_name: StringName) -> void:
 		finish_attack()
 
 func update_side()-> void:
-	if direction_x !=0:
-		player_anim.flip_h = direction_x < 0
+	if input_handler.direction.x !=0:
+		player_anim.flip_h = input_handler.direction.x < 0
 	
 	arm_anchor.scale = Vector2(-1 if player_anim.flip_h else 1, 1)
 

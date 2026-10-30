@@ -25,21 +25,24 @@ func Update(delta:float):
 	if not Player.is_on_floor():
 		Player.MyStateMachine.ChangeState(Player.MyStateMachine.Fall)
 		return
-	update_animation(Player.direction_x)
+	update_animation(Player.input_handler.direction.x)
 	if held_box != null:
 		held_box.accl_toward(Player.hold_position.global_position)
+	
+	if Player.input_handler.attack_just_pressed: Attack()
+	if Player.input_handler.jump_pressed: Jump()
 	
 	if Player.has_ball and Player.is_attacking:
 		Player.velo.x = 0
 		return
 	
-	if Player.direction_x:
+	if Player.input_handler.direction.x:
 		if Player.has_ball:
-			Player.velo.x = move_toward(Player.velo.x, Player.direction_x * Player.ball_speed, Player.ball_acceleration * delta)
+			Player.velo.x = move_toward(Player.velo.x, Player.input_handler.direction.x * Player.ball_speed, Player.ball_acceleration * delta)
 		
 		else:
-			Player.velo.x = move_toward(Player.velo.x, Player.direction_x * Player.speed, Player.acceleration * delta)
-		recent_direction = Player.direction_x
+			Player.velo.x = move_toward(Player.velo.x, Player.input_handler.direction.x * Player.speed, Player.acceleration * delta)
+		recent_direction = Player.input_handler.direction.x
 	else:
 		if Player.has_ball:
 			Player.velo.x = move_toward(Player.velo.x, 0, Player.ball_friction * delta)
