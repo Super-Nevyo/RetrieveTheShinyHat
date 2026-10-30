@@ -57,6 +57,10 @@ region = Rect2(900, 672, 36, 60)
 atlas = ExtResource("6_pqrrg")
 region = Rect2(792, 684, 72, 60)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr14a"]
+atlas = ExtResource("6_pqrrg")
+region = Rect2(696, 396, 48, 72)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fbwsy"]
 atlas = ExtResource("6_pqrrg")
 region = Rect2(768, 480, 96, 96)
@@ -134,11 +138,11 @@ metadata/_edit_lock_ = true
 [node name="Node" type="Node" parent="Environment" unique_id=1344016270]
 
 [node name="MoveRules" type="Sprite2D" parent="Environment/Node" unique_id=138932093]
-position = Vector2(1296, 752)
+position = Vector2(1280, 776)
 texture = SubResource("AtlasTexture_r0so3")
 
 [node name="wasd" type="Sprite2D" parent="Environment/Node" unique_id=205382129]
-position = Vector2(1296, 696)
+position = Vector2(1280, 720)
 texture = SubResource("AtlasTexture_o2skc")
 
 [node name="jump" type="Sprite2D" parent="Environment/Node" unique_id=1215936178]
@@ -169,6 +173,10 @@ flip_v = true
 [node name="e_lever" type="Sprite2D" parent="Environment/Node" unique_id=2010075904]
 position = Vector2(600, 624)
 texture = SubResource("AtlasTexture_yl6ka")
+
+[node name="arrowlower" type="Sprite2D" parent="Environment/Node" unique_id=109743703]
+position = Vector2(528, 928)
+texture = SubResource("AtlasTexture_kr14a")
 
 [node name="deadarrow" type="Sprite2D" parent="Environment/Node" unique_id=1769818337]
 position = Vector2(688.00006, 656.00006)
