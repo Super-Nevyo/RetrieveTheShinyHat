@@ -10,5 +10,6 @@
 tile_set = ExtResource("2_hmn6h")
 
 [node name="Area2D" parent="." index="1" unique_id=1010538046]
+visible = false
 script = ExtResource("2_c7ygb")
 acid_tick_dmg = 0.05
