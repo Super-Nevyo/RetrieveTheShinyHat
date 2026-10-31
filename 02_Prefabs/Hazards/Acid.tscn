@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://da85jdonec7tu"]
 
-[ext_resource type="PackedScene" uid="uid://vcn01q1ejf05" path="res://02_Prefabs/Liquid.tscn" id="1_a1qg8"]
-[ext_resource type="Script" uid="uid://dkwp36q5o6wvu" path="res://01_Scripts/Acid.gd" id="2_c7ygb"]
+[ext_resource type="PackedScene" uid="uid://vcn01q1ejf05" path="res://02_Prefabs/Hazards/Liquid.tscn" id="1_a1qg8"]
+[ext_resource type="Script" uid="uid://dkwp36q5o6wvu" path="res://01_Scripts/Hazards/Acid.gd" id="2_c7ygb"]
+[ext_resource type="TileSet" uid="uid://b3pvmaekwuqir" path="res://02_Prefabs/WorldPrefabs/Environment.tres" id="2_hmn6h"]
 
-[node name="Liquid" unique_id=1959433390 instance=ExtResource("1_a1qg8")]
+[node name="AcidTiles" unique_id=1959433390 instance=ExtResource("1_a1qg8")]
 
-[node name="Area2D" parent="." index="0" unique_id=1010538046]
+[node name="AcidTiles" type="TileMapLayer" parent="." index="0" unique_id=298198251]
+tile_set = ExtResource("2_hmn6h")
+
+[node name="Area2D" parent="." index="1" unique_id=1010538046]
 script = ExtResource("2_c7ygb")
 acid_tick_dmg = 0.05

@@ -12,6 +12,7 @@ atlas = ExtResource("2_0dun5")
 region = Rect2(528, 336, 96, 96)
 
 [node name="Spikes" type="Area2D" unique_id=1094872775]
+z_index = 25
 collision_layer = 0
 collision_mask = 18
 script = ExtResource("1_0dun5")
