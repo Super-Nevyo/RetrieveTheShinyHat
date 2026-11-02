@@ -14,6 +14,7 @@ stiffness = 120.0
 bouyancy_depth = 16.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=438947925]
+position = Vector2(0, -4)
 rotation = 1.5707964
 texture = ExtResource("2_1r0j4")
 region_enabled = true
@@ -21,4 +22,5 @@ region_rect = Rect2(432, 336, 48, 96)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=289972093]
 position = Vector2(0, 3)
+scale = Vector2(0.9232562, 1.1999997)
 shape = SubResource("RectangleShape2D_bgewv")
