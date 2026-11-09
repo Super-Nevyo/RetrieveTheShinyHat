@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="4_untbu"]
 [ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="5_bvue6"]
 
-[node name="CarapaceRoom" type="Node2D" unique_id=1910544872]
+[node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_bxcrg")
-transitions = [NodePath(""), NodePath("")]
+transitions = [null, null]
 
 [node name="RoomTransition" parent="." unique_id=306758002 instance=ExtResource("5_bvue6")]
 

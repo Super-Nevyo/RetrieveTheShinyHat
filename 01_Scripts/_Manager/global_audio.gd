@@ -6,7 +6,11 @@ enum BodyAreaMusic
 	stomach_boss,
 	heart,
 	lungs,
-	background
+	background,
+	penis,
+	penis_boss,
+	tumor,
+	tumor_boss
 }
 
 var current_area: BodyAreaMusic = BodyAreaMusic.stomach #what area of the world the player is at

@@ -23,7 +23,17 @@
 [ext_resource type="PackedScene" uid="uid://crgcipow1e6ju" path="res://05_Scenes/_DemoScenes/06_DoubleRoom.tscn" id="16_d06w4"]
 [ext_resource type="PackedScene" uid="uid://dtgjc7knqfqjo" path="res://05_Scenes/_DemoScenes/10_BossMeta.tscn" id="18_xfc6e"]
 [ext_resource type="PackedScene" uid="uid://bj7ujjc4t7fue" path="res://05_Scenes/_DemoScenes/20_Mouth.tscn" id="20_pi4ka"]
+[ext_resource type="PackedScene" uid="uid://3o34fo4v4e6l" path="res://05_Scenes/_DemoScenes/49_Pen49.tscn" id="21_ttv8s"]
+[ext_resource type="PackedScene" uid="uid://d1h1gkjqfc1nq" path="res://05_Scenes/_DemoScenes/50_Pen50.tscn" id="22_3c0bm"]
+[ext_resource type="PackedScene" uid="uid://bydioyyxi3c5u" path="res://05_Scenes/_DemoScenes/57_Pen57.tscn" id="23_f82dh"]
 [ext_resource type="Script" uid="uid://bulo4nbrm4uwr" path="res://01_Scripts/camera.gd" id="23_o7nea"]
+[ext_resource type="PackedScene" uid="uid://daggmxaho8oh0" path="res://05_Scenes/_DemoScenes/58_Pen58.tscn" id="24_3n6cw"]
+[ext_resource type="PackedScene" uid="uid://4oung3fiinjv" path="res://05_Scenes/_DemoScenes/59_Pen59.tscn" id="25_tpl70"]
+[ext_resource type="PackedScene" uid="uid://b74qh4enip5q1" path="res://05_Scenes/_DemoScenes/60_Pen60.tscn" id="26_i1rhv"]
+[ext_resource type="PackedScene" uid="uid://vddte623mcca" path="res://05_Scenes/_DemoScenes/61_Pen61.tscn" id="27_srojb"]
+[ext_resource type="PackedScene" uid="uid://dpgux1jlbk2uh" path="res://05_Scenes/_DemoScenes/62_Pen62.tscn" id="28_04q2y"]
+[ext_resource type="PackedScene" uid="uid://byf1m56se8gkf" path="res://05_Scenes/_DemoScenes/63_Pen63.tscn" id="29_2pbjt"]
+[ext_resource type="PackedScene" uid="uid://bb78ne81qntis" path="res://05_Scenes/_DemoScenes/64_PenEnd.tscn" id="30_l0afi"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_76a1v"]
 stream_count = 1
@@ -178,6 +188,66 @@ position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "mouth"
 room_scene = ExtResource("20_pi4ka")
+
+[node name="49" type="Node2D" parent="WorldMap" unique_id=1399436137]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "49"
+room_scene = ExtResource("21_ttv8s")
+
+[node name="50" type="Node2D" parent="WorldMap" unique_id=168250500]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "50"
+room_scene = ExtResource("22_3c0bm")
+
+[node name="57" type="Node2D" parent="WorldMap" unique_id=1437626455]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "57"
+room_scene = ExtResource("23_f82dh")
+
+[node name="58" type="Node2D" parent="WorldMap" unique_id=2081228128]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "58"
+room_scene = ExtResource("24_3n6cw")
+
+[node name="59" type="Node2D" parent="WorldMap" unique_id=1784084216]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "59"
+room_scene = ExtResource("25_tpl70")
+
+[node name="60" type="Node2D" parent="WorldMap" unique_id=1015780961]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "60"
+room_scene = ExtResource("26_i1rhv")
+
+[node name="61" type="Node2D" parent="WorldMap" unique_id=1132205866]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "61"
+room_scene = ExtResource("27_srojb")
+
+[node name="62" type="Node2D" parent="WorldMap" unique_id=1136390630]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "62"
+room_scene = ExtResource("28_04q2y")
+
+[node name="63" type="Node2D" parent="WorldMap" unique_id=639253340]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "63"
+room_scene = ExtResource("29_2pbjt")
+
+[node name="64" type="Node2D" parent="WorldMap" unique_id=1481155996]
+position = Vector2(-4, 0)
+script = ExtResource("5_khsvw")
+room_id = "64"
+room_scene = ExtResource("30_l0afi")
 
 [node name="Connections" type="Node2D" parent="WorldMap" unique_id=1648242519]
 
@@ -337,7 +407,6 @@ offset_bottom = 536.6248
 scale = Vector2(0.9637684, 0.9637684)
 
 [node name="MapArt" parent="Camera2D/GameHud" index="4" unique_id=171772538]
-visible = false
 offset_left = 45.833317
 offset_top = 71.87497
 offset_right = 345.8333

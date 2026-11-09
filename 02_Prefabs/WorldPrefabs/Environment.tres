@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://85tocdmfpfp0" path="res://03_Art/Environment/Stomach/Stomach_environment_sprites.png" id="1_khsse"]
 [ext_resource type="Texture2D" uid="uid://bome11uw75l7m" path="res://03_Art/TempAssets/EnvSizes.png" id="1_woauh"]
 [ext_resource type="Texture2D" uid="uid://d0nu2jg0inhrx" path="res://03_Art/Environment/border.png" id="2_7200m"]
+[ext_resource type="Texture2D" uid="uid://h1plsqu266db" path="res://03_Art/Environment/EnvSizesPen.png" id="4_3iif7"]
 [ext_resource type="Texture2D" uid="uid://buwlq4tdntn3d" path="res://03_Art/Environment/acid.png" id="4_7200m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ce8bx"]
@@ -155,6 +156,16 @@ texture_region_size = Vector2i(48, 48)
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 1:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6uoic"]
+texture = ExtResource("4_3iif7")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7200m"]
 texture = ExtResource("4_7200m")
 texture_region_size = Vector2i(48, 48)
@@ -186,3 +197,4 @@ sources/2 = SubResource("TileSetAtlasSource_epmgc")
 sources/0 = SubResource("TileSetAtlasSource_ce8bx")
 sources/4 = SubResource("TileSetAtlasSource_7200m")
 sources/1 = SubResource("TileSetAtlasSource_3iif7")
+sources/3 = SubResource("TileSetAtlasSource_6uoic")
