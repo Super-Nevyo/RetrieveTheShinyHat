@@ -2,19 +2,44 @@
 
 [ext_resource type="Script" uid="uid://bhc6vbhh2bcx0" path="res://01_Scripts/WorldInteractions/MapMetadata.gd" id="1_j8msg"]
 [ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="2_0fsr7"]
+[ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="3_0fsr7"]
 [ext_resource type="PackedScene" uid="uid://bvj02sgdjet27" path="res://02_Prefabs/WorldPrefabs/game_border.tscn" id="3_eow62"]
 [ext_resource type="PackedScene" uid="uid://5rjx4pwy4x4a" path="res://02_Prefabs/SecretArea.tscn" id="4_6fuir"]
 [ext_resource type="TileSet" uid="uid://b3pvmaekwuqir" path="res://02_Prefabs/WorldPrefabs/Environment.tres" id="5_c3k3y"]
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="6_lm2vx"]
+
+[sub_resource type="Resource" id="Resource_j8msg"]
+script = ExtResource("3_0fsr7")
+display_name = "To_62"
+transition_id = "63_exit_w"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_eow62"]
+script = ExtResource("3_0fsr7")
+display_name = "To_64"
+transition_id = "63_exit_e"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_j8msg")
-transitions = [null, null]
+transitions = [NodePath("../RoomTransition_62"), NodePath("../RoomTransition_64")]
 
-[node name="RoomTransition" parent="." unique_id=306758002 instance=ExtResource("2_0fsr7")]
+[node name="RoomTransition_62" parent="." unique_id=306758002 instance=ExtResource("2_0fsr7")]
+position = Vector2(384, 720)
+transition_data = SubResource("Resource_j8msg")
+
+[node name="ArrivalPoint" parent="RoomTransition_62" index="1" unique_id=1345594044]
+position = Vector2(48, 30)
+
+[node name="RoomTransition_64" parent="." unique_id=1127344301 instance=ExtResource("2_0fsr7")]
+position = Vector2(1824, 720)
+transition_data = SubResource("Resource_eow62")
+
+[node name="ArrivalPoint" parent="RoomTransition_64" index="1" unique_id=1345594044]
+position = Vector2(-48, 30)
 
 [node name="EnvTiles" type="Node" parent="." unique_id=1578182652]
 
@@ -42,4 +67,6 @@ collision_enabled = false
 
 [node name="FleshBg" parent="EnvTiles" unique_id=1613371522 instance=ExtResource("6_lm2vx")]
 
+[editable path="RoomTransition_62"]
+[editable path="RoomTransition_64"]
 [editable path="EnvTiles/SecretArea"]
