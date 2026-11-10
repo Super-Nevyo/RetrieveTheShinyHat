@@ -63,10 +63,15 @@ func _on_transition_started(transition_id: String) -> void: #Signals the world m
 	if is_transitioning:
 		return
 	
-	is_transitioning = true
 	var connection = world_map.find_connection(transition_id)
+	if connection == null:
+		print_debug("Add connection here!" + transition_id)
+		return
+
 	var _new_destination: MapRoom
 	var _destination_exit_id: String
+	
+	is_transitioning = true
 	
 	#if the player uses a connection, the system knows what exit to spawn the player.
 	# End to end connection (what room and what exit in that room, not amount of exits)

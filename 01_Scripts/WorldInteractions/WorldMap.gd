@@ -7,9 +7,9 @@ class_name WorldMap
 #Check if the connection matches a specified id for a room and return the match
 
 func find_connection(exit_id: String) -> MapTransition:
-	for connection in $Connections.get_children():
-		if connection is MapTransition:
-			if connection.exit_a_id == exit_id or connection.exit_b_id == exit_id:
-				return connection
-				
+	for folder in get_children():
+		for connection in folder.get_children():
+			if connection is MapTransition:
+				if exit_id == connection.exit_a_id or exit_id == connection.exit_b_id:
+					return connection
 	return null

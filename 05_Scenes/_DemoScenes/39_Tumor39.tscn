@@ -41,7 +41,7 @@ transition_data = SubResource("Resource_p8ok4")
 position = Vector2(-48, 0)
 
 [node name="RoomTransition_38" parent="." unique_id=306758002 instance=ExtResource("2_p8ok4")]
-position = Vector2(384, 240)
+position = Vector2(384, 144)
 transition_data = SubResource("Resource_a1nu2")
 
 [node name="ArrivalPoint" parent="RoomTransition_38" index="1" unique_id=1345594044]

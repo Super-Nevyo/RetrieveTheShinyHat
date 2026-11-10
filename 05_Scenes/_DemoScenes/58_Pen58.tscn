@@ -8,10 +8,16 @@
 [ext_resource type="TileSet" uid="uid://b3pvmaekwuqir" path="res://02_Prefabs/WorldPrefabs/Environment.tres" id="5_hdjj0"]
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="6_bbpso"]
 
+[sub_resource type="Resource" id="Resource_8drde"]
+script = ExtResource("3_8drde")
+display_name = "To_50L"
+transition_id = "58_exit_nw"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
 [sub_resource type="Resource" id="Resource_41hig"]
 script = ExtResource("3_8drde")
-display_name = "To_50"
-transition_id = "58_exit_n"
+display_name = "To_50R"
+transition_id = "58_exit_ne"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_a1c5v"]
@@ -31,14 +37,22 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_iqjsl")
-transitions = [NodePath("../RoomTransition_50"), NodePath("../RoomTransition_57"), NodePath("../RoomTransition_59")]
+transitions = [NodePath("../RoomTransition_50R"), NodePath("../RoomTransition_57"), NodePath("../RoomTransition_59")]
 
-[node name="RoomTransition_50" parent="." unique_id=306758002 instance=ExtResource("2_8drde")]
-position = Vector2(1104, 96)
+[node name="RoomTransition_50R" parent="." unique_id=306758002 instance=ExtResource("2_8drde")]
+position = Vector2(768, 96)
+rotation = -1.5707964
+transition_data = SubResource("Resource_8drde")
+
+[node name="ArrivalPoint" parent="RoomTransition_50R" index="1" unique_id=1345594044]
+position = Vector2(-48, 0)
+
+[node name="RoomTransition_50L" parent="." unique_id=38398859 instance=ExtResource("2_8drde")]
+position = Vector2(1536, 96)
 rotation = -1.5707964
 transition_data = SubResource("Resource_41hig")
 
-[node name="ArrivalPoint" parent="RoomTransition_50" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_50L" index="1" unique_id=1345594044]
 position = Vector2(-48, 0)
 
 [node name="RoomTransition_57" parent="." unique_id=216032872 instance=ExtResource("2_8drde")]
@@ -78,6 +92,7 @@ collision_enabled = false
 
 [node name="FleshBg" parent="EnvTiles" unique_id=1613371522 instance=ExtResource("6_bbpso")]
 
-[editable path="RoomTransition_50"]
+[editable path="RoomTransition_50R"]
+[editable path="RoomTransition_50L"]
 [editable path="RoomTransition_59"]
 [editable path="EnvTiles/SecretArea"]

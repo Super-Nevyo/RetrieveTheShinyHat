@@ -20,30 +20,45 @@ display_name = "To_64"
 transition_id = "63_exit_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
+[sub_resource type="Resource" id="Resource_0fsr7"]
+script = ExtResource("3_0fsr7")
+display_name = "To_55"
+transition_id = "63_exit_n"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_j8msg")
-transitions = [NodePath("../RoomTransition_62"), NodePath("../RoomTransition_64")]
+transitions = [NodePath("../RoomTransition_62"), NodePath("../RoomTransition_64"), NodePath("../RoomTransition_63")]
 
 [node name="RoomTransition_62" parent="." unique_id=306758002 instance=ExtResource("2_0fsr7")]
-position = Vector2(384, 720)
+position = Vector2(360, 720)
 transition_data = SubResource("Resource_j8msg")
 
 [node name="ArrivalPoint" parent="RoomTransition_62" index="1" unique_id=1345594044]
 position = Vector2(48, 30)
 
 [node name="RoomTransition_64" parent="." unique_id=1127344301 instance=ExtResource("2_0fsr7")]
-position = Vector2(1824, 720)
+position = Vector2(1848, 720)
 transition_data = SubResource("Resource_eow62")
 
 [node name="ArrivalPoint" parent="RoomTransition_64" index="1" unique_id=1345594044]
 position = Vector2(-48, 30)
 
+[node name="RoomTransition_63" parent="." unique_id=1672684950 instance=ExtResource("2_0fsr7")]
+position = Vector2(1152, 72)
+rotation = 1.5707964
+transition_data = SubResource("Resource_0fsr7")
+
+[node name="ArrivalPoint" parent="RoomTransition_63" index="1" unique_id=1345594044]
+position = Vector2(48, -4.196293e-06)
+
 [node name="EnvTiles" type="Node" parent="." unique_id=1578182652]
 
 [node name="GameBorder" parent="EnvTiles" unique_id=1529811716 instance=ExtResource("3_eow62")]
+tile_map_data = PackedByteArray("AAAHAAEAAQABAAIAADAHAAIAAQAAAAIAADAHAAMAAQAAAAIAADAHAAQAAQAAAAIAADAHAAUAAQAAAAIAADAHAAYAAQAAAAIAADAHAAcAAQAAAAIAADAHAAgAAQAAAAIAADAHAAkAAQAAAAIAADAHAAoAAQAAAAIAADAHAAsAAQAAAAIAADAHAAwAAQAAAAIAADAHAA0AAQAAAAIAADAHABAAAQAAAAIAADAHABEAAQAAAAIAADAHABIAAQAAAAIAADAHABMAAQAAAAIAADAHABQAAQAAAAIAADAHABUAAQABAAIAAFAIAAEAAQAAAAIAAGAIABUAAQAAAAIAAFAJAAEAAQAAAAIAAGAJABUAAQAAAAIAAFAKAAEAAQAAAAIAAGAKABUAAQAAAAIAAFALAAEAAQAAAAIAAGALABUAAQAAAAIAAFAMAAEAAQAAAAIAAGAMABUAAQAAAAIAAFANAAEAAQAAAAIAAGANABUAAQAAAAIAAFAOAAEAAQAAAAIAAGAOABUAAQAAAAIAAFAPAAEAAQAAAAIAAGAPABUAAQAAAAIAAFAQAAEAAQAAAAIAAGAQABUAAQAAAAIAAFARAAEAAQAAAAIAAGASAAEAAQAAAAIAAGATAAEAAQAAAAIAAGAUAAEAAQAAAAIAAGAVAAEAAQAAAAIAAGAWAAEAAQAAAAIAAGAZAAEAAQAAAAIAAGAaAAEAAQAAAAIAAGAbAAEAAQAAAAIAAGAcAAEAAQAAAAIAAGAdAAEAAQAAAAIAAGAeAAEAAQAAAAIAAGAeABUAAQAAAAIAAFAfAAEAAQAAAAIAAGAfABUAAQAAAAIAAFAgAAEAAQAAAAIAAGAgABUAAQAAAAIAAFAhAAEAAQAAAAIAAGAhABUAAQAAAAIAAFAiAAEAAQAAAAIAAGAiABUAAQAAAAIAAFAjAAEAAQAAAAIAAGAjABUAAQAAAAIAAFAkAAEAAQAAAAIAAGAkABUAAQAAAAIAAFAlAAEAAQAAAAIAAGAlABUAAQAAAAIAAFAmAAEAAQABAAIAAGAmAAIAAQAAAAIAAAAmAAMAAQAAAAIAAAAmAAQAAQAAAAIAAAAmAAoAAQAAAAIAAAAmAAsAAQAAAAIAAAAmAAwAAQAAAAIAAAAmAA0AAQAAAAIAAAAmABAAAQAAAAIAAAAmABEAAQAAAAIAAAAmABIAAQAAAAIAAAAmABMAAQAAAAIAAAAmABQAAQAAAAIAAAAdABUAAQAAAAIAAFARABUAAQAAAAIAAFASABUAAQAAAAIAAFATABUAAQAAAAIAAFAUABUAAQAAAAIAAFAVABUAAQAAAAIAAFAWABUAAQAAAAIAAFAXABUAAQAAAAIAAFAYABUAAQAAAAIAAFAZABUAAQAAAAIAAFAaABUAAQAAAAIAAFAbABUAAQAAAAIAAFAcABUAAQAAAAIAAFAmAAcAAQAAAAIAAAAmAAYAAQAAAAIAAAAmAAUAAQAAAAIAAAAmAAgAAQAAAAIAAAAmAAkAAQAAAAIAAAAmABUAAQABAAIAAAA=")
 
 [node name="SecretArea" parent="EnvTiles" unique_id=716718294 instance=ExtResource("4_6fuir")]
 
@@ -69,4 +84,5 @@ collision_enabled = false
 
 [editable path="RoomTransition_62"]
 [editable path="RoomTransition_64"]
+[editable path="RoomTransition_63"]
 [editable path="EnvTiles/SecretArea"]

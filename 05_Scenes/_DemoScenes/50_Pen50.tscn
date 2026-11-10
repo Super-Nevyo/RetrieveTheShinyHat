@@ -17,13 +17,19 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 [sub_resource type="Resource" id="Resource_38l63"]
 script = ExtResource("3_38l63")
 display_name = "To_58"
-transition_id = "50_exit_sl"
+transition_id = "50_exit_sw"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_6e0fm"]
 script = ExtResource("3_38l63")
 display_name = "To_58"
-transition_id = "50_exit_sr"
+transition_id = "50_exit_se"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_47ys8"]
+script = ExtResource("3_38l63")
+display_name = "To_51"
+transition_id = "50_exit_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
@@ -31,7 +37,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_xo4jy")
-transitions = [NodePath("../RoomTransition_49"), NodePath("../RoomTransition_58_L")]
+transitions = [NodePath("../RoomTransition_49"), NodePath("../RoomTransition_58_L"), NodePath("../RoomTransition_58_R")]
 
 [node name="RoomTransition_49" parent="." unique_id=568191496 instance=ExtResource("2_38l63")]
 position = Vector2(384, 768)
@@ -54,6 +60,13 @@ rotation = 1.5707964
 transition_data = SubResource("Resource_6e0fm")
 
 [node name="ArrivalPoint" parent="RoomTransition_58_R" index="1" unique_id=1345594044]
+position = Vector2(-48, 0)
+
+[node name="RoomTransition_51" parent="." unique_id=1246452373 instance=ExtResource("2_38l63")]
+position = Vector2(1824, 768)
+transition_data = SubResource("Resource_47ys8")
+
+[node name="ArrivalPoint" parent="RoomTransition_51" index="1" unique_id=1345594044]
 position = Vector2(-48, 0)
 
 [node name="EnvTiles" type="Node" parent="." unique_id=1578182652]
@@ -85,4 +98,5 @@ collision_enabled = false
 [editable path="RoomTransition_49"]
 [editable path="RoomTransition_58_L"]
 [editable path="RoomTransition_58_R"]
+[editable path="RoomTransition_51"]
 [editable path="EnvTiles/SecretArea"]

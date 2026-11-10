@@ -36,8 +36,8 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_sh0j4"]
 script = ExtResource("6_tdpm8")
-display_name = "To_Lungs"
-transition_id = "snorkel_exit_e"
+display_name = "To_39"
+transition_id = "38_exit_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_5t1r3"]
@@ -50,7 +50,7 @@ metadata/_edit_horizontal_guides_ = [449.0, 200.0, 300.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_hwbdt")
-transitions = [NodePath("../transition_db"), NodePath("../transition_lungs"), NodePath("../transition_returndb")]
+transitions = [NodePath("../transition_db"), NodePath("../transition_39"), NodePath("../transition_returndb")]
 metadata/_edit_lock_ = true
 
 [node name="EnvTiles" type="Node" parent="." unique_id=1753557223]
@@ -141,11 +141,11 @@ transition_data = SubResource("Resource_627na")
 [node name="ArrivalPoint" parent="transition_returndb" index="1" unique_id=1345594044]
 position = Vector2(72, 0)
 
-[node name="transition_lungs" parent="." unique_id=712771333 instance=ExtResource("5_hh1gc")]
+[node name="transition_39" parent="." unique_id=712771333 instance=ExtResource("5_hh1gc")]
 position = Vector2(1856, 144)
 transition_data = SubResource("Resource_sh0j4")
 
-[node name="ArrivalPoint" parent="transition_lungs" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="transition_39" index="1" unique_id=1345594044]
 position = Vector2(-100, 0)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("10_ke5b3")]
@@ -213,5 +213,5 @@ rotation = 3.1415927
 [editable path="EnvTiles/SecretArea"]
 [editable path="transition_db"]
 [editable path="transition_returndb"]
-[editable path="transition_lungs"]
+[editable path="transition_39"]
 [editable path="Pickup"]
