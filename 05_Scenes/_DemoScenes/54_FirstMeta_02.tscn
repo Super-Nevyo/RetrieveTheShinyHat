@@ -54,7 +54,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_2y8vx")
-transitions = [NodePath("../RoomTransition_53_SW"), NodePath("../RoomTransition_53_NW"), NodePath("../RoomTransition_53_SE"), NodePath("../RoomTransition_53_SS")]
+transitions = [NodePath("../RoomTransition_53_SW"), NodePath("../RoomTransition_53_NW"), NodePath("../RoomTransition_55_SE"), NodePath("../RoomTransition_62_SS")]
 
 [node name="EnvTiles" type="Node" parent="." unique_id=1411880006]
 
@@ -143,19 +143,19 @@ transition_data = SubResource("Resource_2ua70")
 [node name="ArrivalPoint" parent="RoomTransition_53_NW" index="1" unique_id=1345594044]
 position = Vector2(99, 27)
 
-[node name="RoomTransition_53_SE" parent="." unique_id=634106556 instance=ExtResource("5_5kijt")]
+[node name="RoomTransition_55_SE" parent="." unique_id=634106556 instance=ExtResource("5_5kijt")]
 position = Vector2(1848, 576)
 transition_data = SubResource("Resource_iws76")
 
-[node name="ArrivalPoint" parent="RoomTransition_53_SE" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_55_SE" index="1" unique_id=1345594044]
 position = Vector2(-48, 12)
 
-[node name="RoomTransition_53_SS" parent="." unique_id=242986394 instance=ExtResource("5_5kijt")]
+[node name="RoomTransition_62_SS" parent="." unique_id=242986394 instance=ExtResource("5_5kijt")]
 position = Vector2(1776, 1032)
 rotation = -1.5707964
 transition_data = SubResource("Resource_2eogt")
 
-[node name="ArrivalPoint" parent="RoomTransition_53_SS" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_62_SS" index="1" unique_id=1345594044]
 position = Vector2(48.000004, -45)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("10_kdein")]
@@ -284,8 +284,8 @@ rotation = 1.5707964
 [editable path="EnvTiles/AcidTiles3"]
 [editable path="RoomTransition_53_SW"]
 [editable path="RoomTransition_53_NW"]
-[editable path="RoomTransition_53_SE"]
-[editable path="RoomTransition_53_SS"]
+[editable path="RoomTransition_55_SE"]
+[editable path="RoomTransition_62_SS"]
 [editable path="blueTriangleLight"]
 [editable path="blueTriangleLight2"]
 [editable path="blueTriangleLight3"]

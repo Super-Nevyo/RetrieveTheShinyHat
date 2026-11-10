@@ -342,19 +342,40 @@ exit_a_id = "puzzle1_exit_e"
 room_b = NodePath("../../53_Meta01")
 exit_b_id = "meta1_exit_w"
 
-[node name="Meta01_Meta011S" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=248581934 node_paths=PackedStringArray("room_a", "room_b")]
+[node name="52_60" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=519141799 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
-room_a = NodePath("../../53_Meta01")
-exit_a_id = "meta1_exit_e"
-room_b = NodePath("../../54_Meta011")
-exit_b_id = "meta11_exit_w"
+room_a = NodePath("../../52_Puzzle1")
+exit_a_id = "52_exit_s"
+room_b = NodePath("../../60")
+exit_b_id = "60_exit_n"
 
-[node name="Meta01_Meta011N" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=168570663 node_paths=PackedStringArray("room_a", "room_b")]
+[node name="53_54_S" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=248581934 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
 room_a = NodePath("../../53_Meta01")
-exit_a_id = "meta1_exit_ne"
+exit_a_id = "53_exit_e"
+room_b = NodePath("../../54_Meta011")
+exit_b_id = "54_exit_sw"
+
+[node name="53_54_N" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=168570663 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../53_Meta01")
+exit_a_id = "53_exit_ne"
 room_b = NodePath("../../54_Meta011")
 exit_b_id = "meta11_exit_nw"
+
+[node name="54_55" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=1914231668 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../54_Meta011")
+exit_a_id = "54_exit_se"
+room_b = NodePath("../../55")
+exit_b_id = "55_exit_w"
+
+[node name="54_62" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=1333928946 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../54_Meta011")
+exit_a_id = "54_exit_ss"
+room_b = NodePath("../../62")
+exit_b_id = "62_exit_ne"
 
 [node name="Meta01_Umbrella" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=80725252 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
@@ -426,6 +447,13 @@ exit_a_id = "boss_exit_s"
 room_b = NodePath("../../43_Meta03")
 exit_b_id = "meta3_exit_n"
 
+[node name="38_39" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=198575459 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../38_SnorkelItem")
+exit_a_id = "38_exit_e"
+room_b = NodePath("../../39")
+exit_b_id = "39_exit_w"
+
 [node name="Connections_Tumor" type="Node2D" parent="WorldMap" unique_id=2142901846]
 
 [node name="39_40" type="Node2D" parent="WorldMap/Connections_Tumor" unique_id=408921937 node_paths=PackedStringArray("room_a", "room_b")]
@@ -477,6 +505,20 @@ exit_a_id = "55_exit_e"
 room_b = NodePath("../../56")
 exit_b_id = "56_exit_w"
 
+[node name="55_63" type="Node2D" parent="WorldMap/Connections_Tumor" unique_id=670626776 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../55")
+exit_a_id = "55_exit_s"
+room_b = NodePath("../../63")
+exit_b_id = "63_exit_n"
+
+[node name="56_64" type="Node2D" parent="WorldMap/Connections_Tumor" unique_id=2063028151 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../56")
+exit_a_id = "56_exit_s"
+room_b = NodePath("../../64")
+exit_b_id = "64_exit_n"
+
 [node name="Connections_Penis" type="Node2D" parent="WorldMap" unique_id=305495626]
 
 [node name="49_50" type="Node2D" parent="WorldMap/Connections_Penis" unique_id=868200622 node_paths=PackedStringArray("room_a", "room_b")]
@@ -493,12 +535,19 @@ exit_a_id = "49_exit_s"
 room_b = NodePath("../../57")
 exit_b_id = "57_exit_n"
 
-[node name="50_58_E" type="Node2D" parent="WorldMap/Connections_Penis" unique_id=1083655864 node_paths=PackedStringArray("room_a", "room_b")]
+[node name="50_51" type="Node2D" parent="WorldMap/Connections_Penis" unique_id=1683799124 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
 room_a = NodePath("../../50")
 exit_a_id = "50_exit_e"
+room_b = NodePath("../../51_NewItem")
+exit_b_id = "51_exit_sw"
+
+[node name="50_58_E" type="Node2D" parent="WorldMap/Connections_Penis" unique_id=1083655864 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../50")
+exit_a_id = "50_exit_se"
 room_b = NodePath("../../58")
-exit_b_id = "58_exit_w"
+exit_b_id = "58_exit_ne"
 
 [node name="50_58_W" type="Node2D" parent="WorldMap/Connections_Penis" unique_id=645903337 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")

@@ -33,7 +33,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_x0lmg")
-transitions = [NodePath("../transition_52_w"), NodePath("../transition_secret_sw")]
+transitions = [NodePath("../RoomTransition_52_w"), NodePath("../RoomTransition_secret_sw"), NodePath("../RoomTransition_50")]
 
 [node name="EnvTiles" type="Node" parent="." unique_id=708777393]
 
@@ -80,29 +80,29 @@ gizmo_extents = 45.2
 
 [node name="FleshBg" parent="EnvTiles" unique_id=1613371522 instance=ExtResource("4_aij1i")]
 
-[node name="transition_52_w" parent="." unique_id=1724436172 instance=ExtResource("5_bxbb6")]
+[node name="RoomTransition_52_w" parent="." unique_id=1724436172 instance=ExtResource("5_bxbb6")]
 position = Vector2(1855, 432)
 transition_data = SubResource("Resource_ar7t2")
 
-[node name="ArrivalPoint" parent="transition_52_w" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_52_w" index="1" unique_id=1345594044]
 position = Vector2(-72, 18)
 
-[node name="transition_50" parent="." unique_id=306758002 instance=ExtResource("5_bxbb6")]
+[node name="RoomTransition_50" parent="." unique_id=306758002 instance=ExtResource("5_bxbb6")]
 position = Vector2(348, 720)
 transition_data = SubResource("Resource_682a8")
 
-[node name="ArrivalPoint" parent="transition_50" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_50" index="1" unique_id=1345594044]
 position = Vector2(48, 18)
 
-[node name="transition_secret_sw" parent="." unique_id=191181206 instance=ExtResource("5_bxbb6")]
+[node name="RoomTransition_secret_sw" parent="." unique_id=191181206 instance=ExtResource("5_bxbb6")]
 position = Vector2(1846, 958)
 transition_data = SubResource("Resource_m1v14")
 
-[node name="CollisionShape2D" parent="transition_secret_sw/Trigger" parent_id_path=PackedInt32Array(191181206, 280245681) index="0" unique_id=2142929976]
+[node name="CollisionShape2D" parent="RoomTransition_secret_sw/Trigger" parent_id_path=PackedInt32Array(191181206, 280245681) index="0" unique_id=2142929976]
 position = Vector2(0.99999994, -24)
 scale = Vector2(1, 1.6400049)
 
-[node name="ArrivalPoint" parent="transition_secret_sw" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_secret_sw" index="1" unique_id=1345594044]
 position = Vector2(-62, 18)
 
 [node name="Liquid" parent="." unique_id=1645172290 instance=ExtResource("10_bxbb6")]
@@ -148,6 +148,6 @@ rotation = -3.1415925
 
 [editable path="EnvTiles/AcidTiles"]
 [editable path="EnvTiles/AcidTiles2"]
-[editable path="transition_52_w"]
-[editable path="transition_50"]
-[editable path="transition_secret_sw"]
+[editable path="RoomTransition_52_w"]
+[editable path="RoomTransition_50"]
+[editable path="RoomTransition_secret_sw"]

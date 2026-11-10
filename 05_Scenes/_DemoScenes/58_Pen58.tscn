@@ -37,7 +37,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_iqjsl")
-transitions = [NodePath("../RoomTransition_50R"), NodePath("../RoomTransition_57"), NodePath("../RoomTransition_59")]
+transitions = [NodePath("../RoomTransition_50L"), NodePath("../RoomTransition_50R"), NodePath("../RoomTransition_57"), NodePath("../RoomTransition_59")]
 
 [node name="RoomTransition_50R" parent="." unique_id=306758002 instance=ExtResource("2_8drde")]
 position = Vector2(768, 96)

@@ -85,7 +85,7 @@ metadata/_edit_horizontal_guides_ = [449.0, 201.0]
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 visible = false
 script = ExtResource("1_a07wv")
-transitions = [NodePath("../RoomTransition_55"), NodePath("../RoomTransition_51_NW"), NodePath("../RoomTransition_51_SW"), NodePath("../RoomTransition_44")]
+transitions = [NodePath("../RoomTransition_55"), NodePath("../RoomTransition_51_NW"), NodePath("../RoomTransition_51_SW"), NodePath("../RoomTransition_44"), NodePath("../RoomTransition_60")]
 metadata/_edit_lock_ = true
 
 [node name="Environment" type="Node" parent="." unique_id=1943058849]
