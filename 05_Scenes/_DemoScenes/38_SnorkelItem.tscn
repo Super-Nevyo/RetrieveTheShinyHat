@@ -146,7 +146,7 @@ position = Vector2(1856, 144)
 transition_data = SubResource("Resource_sh0j4")
 
 [node name="ArrivalPoint" parent="transition_39" index="1" unique_id=1345594044]
-position = Vector2(-100, 0)
+position = Vector2(-68, 0)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("10_ke5b3")]
 room_level = 3

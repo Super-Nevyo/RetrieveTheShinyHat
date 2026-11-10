@@ -18,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://bft3p3gcsyc7d" path="res://04_Audio/SFX/PlayerSFX/alienouch.mp3" id="13_5qys1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wdy"]
-size = Vector2(57, 37.179)
+size = Vector2(56, 37.179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmcxg"]
 atlas = ExtResource("3_aydsc")
@@ -786,8 +786,8 @@ throw_speed = 500.0
 
 [node name="PlayerHitBox" type="CollisionShape2D" parent="." unique_id=1189309324]
 z_index = 1
-position = Vector2(-9.536743e-07, 17)
-scale = Vector2(1.5, 1.5600002)
+position = Vector2(0, 17)
+scale = Vector2(1.25, 1.25)
 shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]

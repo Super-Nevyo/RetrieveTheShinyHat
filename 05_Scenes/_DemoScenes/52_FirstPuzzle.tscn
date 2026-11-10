@@ -194,7 +194,7 @@ rotation = 1.5707964
 scale = Vector2(1, 1.959995)
 
 [node name="ArrivalPoint" parent="RoomTransition_60" index="1" unique_id=1345594044]
-position = Vector2(0, -48)
+position = Vector2(0, -60)
 
 [node name="FloatingPlatform" parent="." unique_id=1566761638 instance=ExtResource("9_1gdf8")]
 position = Vector2(1071, 803)

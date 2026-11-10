@@ -66,6 +66,7 @@ tile_map_data = PackedByteArray("AAAHABAAAAACAAEAAAAHABEAAAACAAIAAAAIABEAAAADAAI
 tile_set = ExtResource("3_8qoi4")
 
 [node name="SecretArea" parent="EnvTiles" unique_id=716718294 instance=ExtResource("4_v6jwf")]
+visible = false
 position = Vector2(1728, 960)
 room_id = "traversal_room"
 reveal_id = "traversal_maze"
@@ -156,7 +157,7 @@ rotation = -1.5707964
 transition_data = SubResource("Resource_2eogt")
 
 [node name="ArrivalPoint" parent="RoomTransition_62_SS" index="1" unique_id=1345594044]
-position = Vector2(48.000004, -45)
+position = Vector2(71, 3.0000005)
 
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("10_kdein")]
 partly_filled_liquid_level = 500.0

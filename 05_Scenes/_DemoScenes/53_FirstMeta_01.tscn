@@ -217,6 +217,7 @@ DoorMovePosition = Vector2(-100, 0)
 signal_id = 186
 
 [node name="Spikes" parent="." unique_id=1094872775 instance=ExtResource("15_plfiy")]
+z_index = 15
 position = Vector2(624, 913)
 
 [node name="Spikes2" parent="." unique_id=1830906262 instance=ExtResource("16_plfiy")]
