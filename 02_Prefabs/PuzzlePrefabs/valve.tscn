@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://4mbxxradlt0r"]
+
+[ext_resource type="Texture2D" uid="uid://h1plsqu266db" path="res://03_Art/Environment/EnvSizesPen.png" id="1_1m731"]
+[ext_resource type="Script" uid="uid://uewtvum7dn5n" path="res://01_Scripts/Puzzle/valve.gd" id="1_h20ob"]
+[ext_resource type="Script" uid="uid://bw2iqqm4bgev5" path="res://01_Scripts/WorldInteractions/SwitchAttackReceiver.gd" id="3_oeixu"]
+[ext_resource type="AudioStream" uid="uid://cu3mry2xdqysd" path="res://04_Audio/SFX/switch_single.mp3" id="4_lyqxo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57bfk"]
+atlas = ExtResource("1_1m731")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqxo"]
+size = Vector2(29, 36.5)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b127f"]
+random_pitch = 1.0717734
+streams_count = 1
+stream_0/stream = ExtResource("4_lyqxo")
+
+[node name="valve" type="Node2D" unique_id=583119961]
+script = ExtResource("1_h20ob")
+cooldown = 0.0
+
+[node name="valve_art" type="Sprite2D" parent="." unique_id=1424015601]
+texture = SubResource("AtlasTexture_57bfk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=530448483]
+collision_layer = 8
+script = ExtResource("3_oeixu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=815298568]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_lyqxo")
+
+[node name="LeverAnimation" type="AnimationPlayer" parent="." unique_id=2065992427]
+
+[node name="PlayerSfx" type="AudioStreamPlayer2D" parent="." unique_id=1094128906]
+stream = SubResource("AudioStreamRandomizer_b127f")
+volume_db = 8.0
+pitch_scale = 1.2
+max_distance = 1000.0
+bus = &"sfx"

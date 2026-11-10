@@ -9,7 +9,7 @@
 [ext_resource type="Shader" uid="uid://dawy32a0waj83" path="res://06_Extras/Shaders/oxygen_fill.tres" id="6_hr4r0"]
 [ext_resource type="Texture2D" uid="uid://cikq4igroccsu" path="res://03_Art/UI/Oxygenuiborder.png" id="6_y805f"]
 [ext_resource type="Texture2D" uid="uid://gygak8j3mtrs" path="res://03_Art/UI/Tenticlesui1.png" id="8_scdmh"]
-[ext_resource type="Script" uid="uid://76wkrtk337b6" path="res://02_Prefabs/health_wave.gd" id="9_raiy6"]
+[ext_resource type="Script" uid="uid://76wkrtk337b6" path="res://01_Scripts/health_wave.gd" id="9_raiy6"]
 [ext_resource type="Texture2D" uid="uid://dn4enao22f0ul" path="res://03_Art/UI/Healthwave1.png" id="10_o0lvw"]
 [ext_resource type="Texture2D" uid="uid://culmtj04kpil4" path="res://03_Art/UI/Healthwave2.png" id="11_raiy6"]
 [ext_resource type="Texture2D" uid="uid://66o5csrvmfd8" path="res://03_Art/UI/Healthwave3.png" id="12_xun57"]
