@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://i26khqhnbjke"]
 
-[ext_resource type="Script" uid="uid://yp82cjhelpxm" path="res://01_Scripts/liquid_detector.gd" id="1_vi0ag"]
+[ext_resource type="Script" uid="uid://yp82cjhelpxm" path="res://01_Scripts/EnvironmentObjects/liquid_detector.gd" id="1_vi0ag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
 

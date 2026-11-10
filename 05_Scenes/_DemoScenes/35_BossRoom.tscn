@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="4_kbshb"]
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="5_hgay3"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Hazards/Acid.tscn" id="7_vq8gf"]
-[ext_resource type="Script" uid="uid://ixs13tk61ybs" path="res://01_Scripts/EndGameTrigger.gd" id="10_uf0fo"]
+[ext_resource type="Script" uid="uid://ixs13tk61ybs" path="res://01_Scripts/SpecialThings/EndGameTrigger.gd" id="10_uf0fo"]
 [ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="11_p5xto"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="12_8orwl"]
 [ext_resource type="PackedScene" uid="uid://7cbkrkj2573a" path="res://02_Prefabs/WorldPrefabs/BrainBoss.tscn" id="12_qavg7"]

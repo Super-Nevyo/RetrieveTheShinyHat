@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cah1sohyo650l"]
 
-[ext_resource type="Script" uid="uid://c1jhuves3fb0a" path="res://01_Scripts/UIScreens.gd" id="1_wi12k"]
+[ext_resource type="Script" uid="uid://c1jhuves3fb0a" path="res://01_Scripts/SpecialThings/UIScreens.gd" id="1_wi12k"]
 [ext_resource type="Shader" uid="uid://bg7pgd1n7qb1p" path="res://06_Extras/Shaders/menu_bg.tres" id="2_plv5g"]
 [ext_resource type="Texture2D" uid="uid://drylhe8xfyw8m" path="res://03_Art/UI/_Branding/bgwavy.png" id="3_3hdrx"]
 [ext_resource type="FontFile" uid="uid://btay63b8ca008" path="res://06_Extras/Fonts/BubbleStone-5yAXB.otf" id="4_mjlf4"]
 [ext_resource type="Texture2D" uid="uid://bkjr4b7le7nvc" path="res://03_Art/UI/_Branding/buttons.png" id="5_om0uv"]
-[ext_resource type="Script" uid="uid://cvucxfbhkiu28" path="res://01_Scripts/buttons.gd" id="6_yqkip"]
+[ext_resource type="Script" uid="uid://cvucxfbhkiu28" path="res://01_Scripts/SpecialThings/buttons.gd" id="6_yqkip"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xpr34"]
 shader = ExtResource("2_plv5g")

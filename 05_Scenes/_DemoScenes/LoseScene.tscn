@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://e5yq0rwvlrnk"]
 
-[ext_resource type="Script" uid="uid://c1jhuves3fb0a" path="res://01_Scripts/UIScreens.gd" id="1_8glmk"]
+[ext_resource type="Script" uid="uid://c1jhuves3fb0a" path="res://01_Scripts/SpecialThings/UIScreens.gd" id="1_8glmk"]
 [ext_resource type="Texture2D" uid="uid://drylhe8xfyw8m" path="res://03_Art/UI/_Branding/bgwavy.png" id="2_p0pf2"]
 [ext_resource type="Shader" uid="uid://bg7pgd1n7qb1p" path="res://06_Extras/Shaders/menu_bg.tres" id="2_s5lql"]
 [ext_resource type="Texture2D" uid="uid://bkjr4b7le7nvc" path="res://03_Art/UI/_Branding/buttons.png" id="3_bja7m"]
 [ext_resource type="FontFile" uid="uid://mnrlcjoprmnp" path="res://06_Extras/Fonts/MBJ Chunky.ttf" id="3_nif83"]
 [ext_resource type="FontFile" uid="uid://btay63b8ca008" path="res://06_Extras/Fonts/BubbleStone-5yAXB.otf" id="3_p0pf2"]
-[ext_resource type="Script" uid="uid://cvucxfbhkiu28" path="res://01_Scripts/buttons.gd" id="7_qafwo"]
+[ext_resource type="Script" uid="uid://cvucxfbhkiu28" path="res://01_Scripts/SpecialThings/buttons.gd" id="7_qafwo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1jmy5"]
 shader = ExtResource("2_s5lql")

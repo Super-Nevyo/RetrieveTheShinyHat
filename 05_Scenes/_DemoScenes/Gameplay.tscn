@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://d05w15osu2d57" path="res://05_Scenes/_DemoScenes/40_Tumor40.tscn" id="22_f82dh"]
 [ext_resource type="PackedScene" uid="uid://cnfaudy2ae7ka" path="res://05_Scenes/_DemoScenes/47_Tumor47.tscn" id="23_3n6cw"]
 [ext_resource type="PackedScene" uid="uid://bydioyyxi3c5u" path="res://05_Scenes/_DemoScenes/57_Pen57.tscn" id="23_f82dh"]
-[ext_resource type="Script" uid="uid://bulo4nbrm4uwr" path="res://01_Scripts/camera.gd" id="23_o7nea"]
+[ext_resource type="Script" uid="uid://bulo4nbrm4uwr" path="res://01_Scripts/SpecialThings/camera.gd" id="23_o7nea"]
 [ext_resource type="PackedScene" uid="uid://daggmxaho8oh0" path="res://05_Scenes/_DemoScenes/58_Pen58.tscn" id="24_3n6cw"]
 [ext_resource type="PackedScene" uid="uid://hljdj25o0giq" path="res://05_Scenes/_DemoScenes/48_Tumor48.tscn" id="24_tpl70"]
 [ext_resource type="PackedScene" uid="uid://4oung3fiinjv" path="res://05_Scenes/_DemoScenes/59_Pen59.tscn" id="25_tpl70"]
