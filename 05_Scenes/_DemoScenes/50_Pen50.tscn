@@ -11,13 +11,19 @@
 [sub_resource type="Resource" id="Resource_1v5n1"]
 script = ExtResource("3_38l63")
 display_name = "To_49"
-transition_id = "49_exit_w"
+transition_id = "50_exit_w"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_38l63"]
+script = ExtResource("3_38l63")
+display_name = "To_58"
+transition_id = "50_exit_sl"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_6e0fm"]
 script = ExtResource("3_38l63")
 display_name = "To_58"
-transition_id = "50_exit_s"
+transition_id = "50_exit_sr"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
@@ -25,7 +31,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_xo4jy")
-transitions = [NodePath("../RoomTransition_49"), NodePath("../RoomTransition_58")]
+transitions = [NodePath("../RoomTransition_49"), NodePath("../RoomTransition_58_L")]
 
 [node name="RoomTransition_49" parent="." unique_id=568191496 instance=ExtResource("2_38l63")]
 position = Vector2(384, 768)
@@ -34,12 +40,20 @@ transition_data = SubResource("Resource_1v5n1")
 [node name="ArrivalPoint" parent="RoomTransition_49" index="1" unique_id=1345594044]
 position = Vector2(47.999996, 3.8146973e-06)
 
-[node name="RoomTransition_58" parent="." unique_id=1485730428 instance=ExtResource("2_38l63")]
-position = Vector2(1152, 1008)
+[node name="RoomTransition_58_L" parent="." unique_id=1485730428 instance=ExtResource("2_38l63")]
+position = Vector2(768, 1008)
+rotation = 1.5707964
+transition_data = SubResource("Resource_38l63")
+
+[node name="ArrivalPoint" parent="RoomTransition_58_L" index="1" unique_id=1345594044]
+position = Vector2(-48, 0)
+
+[node name="RoomTransition_58_R" parent="." unique_id=306758002 instance=ExtResource("2_38l63")]
+position = Vector2(1536, 1008)
 rotation = 1.5707964
 transition_data = SubResource("Resource_6e0fm")
 
-[node name="ArrivalPoint" parent="RoomTransition_58" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_58_R" index="1" unique_id=1345594044]
 position = Vector2(-48, 0)
 
 [node name="EnvTiles" type="Node" parent="." unique_id=1578182652]
@@ -69,5 +83,6 @@ collision_enabled = false
 [node name="FleshBg" parent="EnvTiles" unique_id=1613371522 instance=ExtResource("6_vft2p")]
 
 [editable path="RoomTransition_49"]
-[editable path="RoomTransition_58"]
+[editable path="RoomTransition_58_L"]
+[editable path="RoomTransition_58_R"]
 [editable path="EnvTiles/SecretArea"]

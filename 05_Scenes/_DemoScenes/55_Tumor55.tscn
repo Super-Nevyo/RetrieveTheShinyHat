@@ -11,7 +11,7 @@
 [sub_resource type="Resource" id="Resource_72a0m"]
 script = ExtResource("3_3a578")
 display_name = "To_56"
-transition_id = "55_exit_w"
+transition_id = "55_exit_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_3a578"]

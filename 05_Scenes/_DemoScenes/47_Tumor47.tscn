@@ -11,7 +11,7 @@
 [sub_resource type="Resource" id="Resource_gyaxj"]
 script = ExtResource("3_gy235")
 display_name = "To_48"
-transition_id = "47_exit_w"
+transition_id = "47_exit_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_8amc4"]
@@ -31,7 +31,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_xak58")
-transitions = [null, null]
+transitions = [NodePath("../RoomTransition_48"), NodePath("../RoomTransition_39"), NodePath("../RoomTransition_55")]
 
 [node name="RoomTransition_48" parent="." unique_id=306758002 instance=ExtResource("2_gy235")]
 position = Vector2(1824, 624)
