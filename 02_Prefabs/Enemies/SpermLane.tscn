@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://di2ow0eotx1by"]
+
+[ext_resource type="Script" uid="uid://cyw1gpfv0tvs6" path="res://01_Scripts/EnvironmentObjects/sperm_lane.gd" id="1_0ry7w"]
+[ext_resource type="Script" uid="uid://bwmrfl6xm6j47" path="res://01_Scripts/Enemys/lane_pattern.gd" id="2_k6y5o"]
+[ext_resource type="PackedScene" uid="uid://cbrxspf87ttj5" path="res://02_Prefabs/Enemies/SpermyEnemy.tscn" id="3_to5ed"]
+
+[sub_resource type="Resource" id="Resource_735ex"]
+script = ExtResource("2_k6y5o")
+slots = Array[bool]([true, false, false])
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="Resource" id="Resource_htmdm"]
+script = ExtResource("2_k6y5o")
+slots = Array[bool]([true, true, false, false, true, false])
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="Resource" id="Resource_57bfk"]
+script = ExtResource("2_k6y5o")
+enabled = false
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="Resource" id="Resource_4kyf8"]
+script = ExtResource("2_k6y5o")
+move_speed = 288.0
+slots = Array[bool]([false, false, true])
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6nx"]
+size = Vector2(1500, 384)
+
+[node name="sperm_lane" type="Node2D" unique_id=1586465063]
+script = ExtResource("1_0ry7w")
+rows = Array[ExtResource("2_k6y5o")]([SubResource("Resource_735ex"), SubResource("Resource_htmdm"), SubResource("Resource_57bfk"), SubResource("Resource_4kyf8")])
+enemy_scene = ExtResource("3_to5ed")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2093319916]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=930390904]
+shape = SubResource("RectangleShape2D_kw6nx")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1262205523]
