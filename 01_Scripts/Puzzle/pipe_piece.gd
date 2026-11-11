@@ -22,11 +22,18 @@ const DIRECTIONS = {
 				if not has_opening(DIRECTIONS[exit_side]):
 					exit_side = enums.pipe_side.NONE
 			update_art()
-@export var exit_side: enums.pipe_side
+@export var exit_side: enums.pipe_side:
+	set (value):
+		exit_side = value
+		if is_node_ready():
+			update_exit_area()
+
 @onready var pipe_art = get_node_or_null ("pipe_art") as Sprite2D
+@onready var exit_area: Area2D
 
 func _ready() -> void:
 	update_art()
+	update_exit_area()
 	
 func _enter_tree() -> void:
 	if not Engine.is_editor_hint():
@@ -78,7 +85,20 @@ func update_art() -> void:
 			pipe_art.region_rect = ELBOW
 		enums.pipe_shapes.T_SHAPE:
 			pipe_art.region_rect = T_SHAPE
-
+			
+func update_exit_area() -> void:
+	exit_area = get_node_or_null("exit_area") as Area2D
+	if exit_area == null:
+		return
+		
+	exit_area.monitoring = exit_side != enums.pipe_side.NONE
+	exit_area.visible = exit_area.monitoring
+	if exit_side == enums.pipe_side.NONE:
+		return
+	var direction: Vector2 = DIRECTIONS[exit_side]
+	exit_area.position = direction * 24
+	exit_area.rotation = direction.angle()
+	
 #validate property: Godot calls this when prepping the inspector for fields. 
 #Pipes have shapes and certain shapes have exits but others dont
 #Which dropdowns should be shown for mouth per pipe piece shape?

@@ -76,17 +76,19 @@ position = Vector2(1104, 828)
 [node name="pipe_piece" parent="." unique_id=1326704238 instance=ExtResource("11_57bfk")]
 position = Vector2(876, 524)
 rotation = 3.1415927
-shape = 1
+exit_side = 2
 signal_id = -100
 
 [node name="pipe_piece2" parent="." unique_id=811163736 instance=ExtResource("11_57bfk")]
 position = Vector2(876, 480)
 rotation = 1.5707964
+shape = 0
+exit_side = 0
 signal_id = -100
 
 [node name="pipe_piece3" parent="." unique_id=645284057 instance=ExtResource("11_57bfk")]
 position = Vector2(876, 432)
-shape = 1
+exit_side = 2
 signal_id = -100
 
 [node name="valve" parent="." unique_id=583119961 instance=ExtResource("13_drdyv")]
