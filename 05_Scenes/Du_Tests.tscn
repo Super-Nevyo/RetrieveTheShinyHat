@@ -74,7 +74,7 @@ metadata/_edit_lock_ = true
 position = Vector2(1104, 828)
 
 [node name="pipe_piece" parent="." unique_id=1326704238 instance=ExtResource("11_57bfk")]
-position = Vector2(876, 524)
+position = Vector2(876, 528)
 rotation = 3.1415927
 exit_side = 2
 signal_id = -100
@@ -84,17 +84,37 @@ position = Vector2(876, 480)
 rotation = 1.5707964
 shape = 0
 exit_side = 0
-signal_id = -100
+signal_id = -101
+
+[node name="pipe_piece4" parent="." unique_id=1313895157 instance=ExtResource("11_57bfk")]
+position = Vector2(876, 432)
+rotation = 1.5707964
+shape = 0
+exit_side = 0
+signal_id = -102
+
+[node name="pipe_piece5" parent="." unique_id=428009127 instance=ExtResource("11_57bfk")]
+position = Vector2(876, 384)
+shape = 0
+exit_side = 0
+signal_id = -103
+
+[node name="pipe_piece6" parent="." unique_id=780491678 instance=ExtResource("11_57bfk")]
+position = Vector2(876, 336)
+rotation = 1.5707964
+shape = 0
+exit_side = 0
+signal_id = -104
 
 [node name="pipe_piece3" parent="." unique_id=645284057 instance=ExtResource("11_57bfk")]
-position = Vector2(876, 432)
+position = Vector2(876, 288)
 exit_side = 2
-signal_id = -100
+signal_id = -105
 
 [node name="valve" parent="." unique_id=583119961 instance=ExtResource("13_drdyv")]
 position = Vector2(624, 541)
-attached_ids = Array[int]([-101])
-activation_amount = Array[float]([-1.0])
+attached_ids = Array[int]([-103])
+activation_amount = Array[float]([1.0])
 puzzle_id = "valve_test"
 
 [editable path="EnvTiles/WaterTiles"]

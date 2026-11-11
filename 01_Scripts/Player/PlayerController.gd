@@ -119,6 +119,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		swim_audio.stop()
 	
+	if MyStateMachine.CurrentState != MyStateMachine.InPipe:
+		if Input.is_action_pressed("enter_pipe"):
+			enter_pipe()
+	if MyStateMachine.CurrentState == MyStateMachine.InPipe:
+		MyStateMachine.Update(delta)
+		return
+	
 	input_handler.get_input()
 	
 	#god mode stuff
@@ -227,6 +234,13 @@ func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 			play_hit_animation()
 	
 	pass
+
+func enter_pipe() -> void:
+	for pipe: PipePiece in get_tree().get_nodes_in_group("pipe_pieces"):
+		if pipe.can_enter(self):
+			MyStateMachine.InPipe.current_pipe = pipe
+			MyStateMachine.ChangeState(MyStateMachine.InPipe)
+			return
 
 func die():
 	

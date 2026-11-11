@@ -70,6 +70,29 @@ func connects_pipe(other: PipePiece) -> bool:
 			return has_opening_exit(direction) and other.has_opening_exit(-direction)
 	return false
 	
+func connected_pipe (direction: Vector2) -> PipePiece:
+	#checks for other connected pipes and sees if player can go that way
+	var next_position = global_position + direction * tile_size
+	for pipe: PipePiece in get_tree().get_nodes_in_group("pipe_pieces"):
+		if pipe.global_position.is_equal_approx(next_position):
+			if connects_pipe(pipe):
+				return pipe
+	return null
+
+func can_enter(player: CharacterBody2D) -> bool:
+	if exit_side == enums.pipe_side.NONE: return false
+	if not exit_area.overlaps_body(player): return false
+	
+	for body in exit_area.get_overlapping_bodies():
+		if body != player : return false
+		
+	var direction: Vector2 = DIRECTIONS[exit_side]
+	var outside_cell = to_global(direction * tile_size)
+	for pipe: PipePiece in get_tree().get_nodes_in_group("pipe_pieces"):
+		if pipe.global_position.is_equal_approx(outside_cell):
+			return false
+	return true
+	
 func update_art() -> void:
 	pipe_art = get_node_or_null("pipe_art") as Sprite2D
 	if pipe_art == null:

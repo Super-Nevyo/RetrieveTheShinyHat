@@ -5,6 +5,7 @@ var CurrentState:PlayerState
 var Move:PSMove
 var Fall:PSFalling
 var Swim:PSSwim
+var InPipe: PSInPipe
 var God:PSGodMode
 
 func _init(player: PlayerController):
@@ -12,6 +13,7 @@ func _init(player: PlayerController):
 	Move = PSMove.new(Player)
 	Fall = PSFalling.new(Player)
 	Swim = PSSwim.new(Player)
+	InPipe = PSInPipe.new(Player)
 	God = PSGodMode.new(Player)
 
 func Update(delta:float):

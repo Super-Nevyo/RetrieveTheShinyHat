@@ -112,6 +112,18 @@ region = Rect2(0, 0, 96, 96)
 atlas = ExtResource("3_aydsc")
 region = Rect2(96, 0, 96, 96)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_croeg"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(288, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kkg8"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(336, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li81j"]
+atlas = ExtResource("3_aydsc")
+region = Rect2(384, 432, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kb8hf"]
 atlas = ExtResource("3_aydsc")
 region = Rect2(0, 96, 96, 96)
@@ -260,6 +272,20 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_croeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kkg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li81j")
+}],
+"loop": 1,
+"name": &"InPipe",
 "speed": 5.0
 }, {
 "frames": [{
@@ -792,7 +818,7 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Death"
+animation = &"Attack"
 autoplay = "Idle"
 
 [node name="PlayerAudio" type="Node2D" parent="." unique_id=873921505]
