@@ -11,12 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="6_i77km"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="7_gifnk"]
 [ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="11_57bfk"]
-[ext_resource type="Texture2D" uid="uid://h1plsqu266db" path="res://03_Art/Environment/EnvSizesPen.png" id="12_4kyf8"]
 [ext_resource type="PackedScene" uid="uid://4mbxxradlt0r" path="res://02_Prefabs/PuzzlePrefabs/valve.tscn" id="13_drdyv"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c60fb"]
-atlas = ExtResource("12_4kyf8")
-region = Rect2(0, 144, 48, 48)
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
@@ -80,26 +75,15 @@ position = Vector2(1104, 828)
 
 [node name="pipe_piece" parent="." unique_id=1326704238 instance=ExtResource("11_57bfk")]
 position = Vector2(864, 490)
-ActivationAmount = 1.0
-signal_id = 9010
-
-[node name="pipe_piece_elv" parent="." unique_id=594327976 instance=ExtResource("11_57bfk")]
-position = Vector2(912, 490)
 shape = 1
-mouth_side = 0
-ActivationAmount = 1.0
-signal_id = 9010
-
-[node name="pipe_art" parent="pipe_piece_elv" index="0" unique_id=1089522977]
-rotation = 3.1415927
-texture = SubResource("AtlasTexture_c60fb")
+mouth_side = 4
+signal_id = -100
 
 [node name="valve" parent="." unique_id=583119961 instance=ExtResource("13_drdyv")]
 position = Vector2(624, 541)
-attached_ids = Array[int]([9010])
-activation_amount = Array[float]([0.0])
+attached_ids = Array[int]([-101])
+activation_amount = Array[float]([-1.0])
 puzzle_id = "valve_test"
 
 [editable path="EnvTiles/WaterTiles"]
 [editable path="EnvTiles/SecretArea"]
-[editable path="pipe_piece_elv"]
