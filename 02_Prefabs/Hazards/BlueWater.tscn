@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://16s6c8wmosbj"]
+
+[ext_resource type="TileSet" uid="uid://b3pvmaekwuqir" path="res://02_Prefabs/WorldPrefabs/Environment.tres" id="1_31x07"]
+[ext_resource type="Script" uid="uid://bnje7iyop20vr" path="res://01_Scripts/Hazards/Liquid.gd" id="1_g654g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
+size = Vector2(500, 300)
+
+[node name="BlueWater" type="Node2D" unique_id=1959433390]
+
+[node name="WaterTiles" type="TileMapLayer" parent="." unique_id=1066129013]
+modulate = Color(1, 1, 1, 0.5882353)
+tile_set = ExtResource("1_31x07")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1010538046 node_paths=PackedStringArray("surface")]
+collision_mask = 79
+script = ExtResource("1_g654g")
+surface = NodePath("../Surface")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2003433593]
+shape = SubResource("RectangleShape2D_qsmb2")
+
+[node name="Surface" type="Marker2D" parent="." unique_id=368556039]
+position = Vector2(0, -10)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
