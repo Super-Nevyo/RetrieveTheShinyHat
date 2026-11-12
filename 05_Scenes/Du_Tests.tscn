@@ -56,7 +56,7 @@ gizmo_extents = 105.0
 
 [node name="SecretArea" parent="EnvTiles" unique_id=716718294 instance=ExtResource("4_5iq5e")]
 
-[node name="Cover" parent="EnvTiles/SecretArea" index="0" unique_id=1548122823]
+[node name="Cover" parent="EnvTiles/SecretArea/Tiles" parent_id_path=PackedInt32Array(716718294, 912739327) index="1" unique_id=1548122823]
 z_index = 30
 
 [node name="RevealSecret" parent="EnvTiles/SecretArea" index="1" unique_id=1866784657]

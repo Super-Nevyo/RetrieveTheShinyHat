@@ -144,6 +144,11 @@ texture_region_size = Vector2i(48, 48)
 1:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(0, -24, 0, 0, -24, 0, -24, 24, 24, 24, 24, -24)
 2:2/0 = 0
 3:2/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epmgc"]
 resource_name = "TempEnvNew"

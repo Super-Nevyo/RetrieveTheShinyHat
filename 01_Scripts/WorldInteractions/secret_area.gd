@@ -4,7 +4,8 @@ class_name SecretArea
 @export var room_id: String
 @export var reveal_id: String
 
-@onready var cover: CanvasItem = $Cover
+@onready var cover: TileMapLayer = $Tiles/Cover
+@onready var edge: TileMapLayer = $Tiles/Edge
 @onready var reveal_trigger: Area2D = $RevealSecret
 
 var persistance: RoomPersistances
@@ -19,14 +20,13 @@ func _ready() -> void:
 func reveal() -> void:
 	if persistance != null:
 		persistance.remember_secret(room_id, reveal_id)
-
-	cover.visible = false
-
+	cover.hide()
+	edge.hide()
 	reveal_trigger.set_deferred("monitoring", false)
 
-
 func reveal_now() -> void:
-	cover.visible = false
+	cover.hide()
+	edge.hide()
 	reveal_trigger.set_deferred("monitoring", false)
 
 func _on_reveal_trigger_body_entered(body: Node2D) -> void:
