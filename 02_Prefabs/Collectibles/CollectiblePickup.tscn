@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bjxrdf1t11kav"]
+
+[ext_resource type="Script" uid="uid://c22jkd8brw0ic" path="res://01_Scripts/Collectibles/collectible_pickup.gd" id="1_sv01a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orkpj"]
+radius = 16.0
+
+[node name="CollectiblePickup" type="Area2D" unique_id=200780628]
+z_index = 5
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_sv01a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1758480265]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=939049978]
+shape = SubResource("CircleShape2D_orkpj")

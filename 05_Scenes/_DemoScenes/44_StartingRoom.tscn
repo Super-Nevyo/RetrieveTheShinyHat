@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="13_cktp8"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="14_o447k"]
 [ext_resource type="PackedScene" uid="uid://b1wr5mv21g2q1" path="res://02_Prefabs/PuzzlePrefabs/DoorConnection.tscn" id="16_y2t18"]
+[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="20_xt701"]
+[ext_resource type="Script" uid="uid://ci84dnnmaryqs" path="res://01_Scripts/Resources/CollectiblesData.gd" id="21_48ye2"]
+[ext_resource type="Texture2D" uid="uid://b4ipqu56c6jg6" path="res://03_Art/UI/Oxygenui.png" id="22_hxm43"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ju7u5"]
 atlas = ExtResource("5_pqrrg")
@@ -104,7 +107,17 @@ script = ExtResource("10_0fmk4")
 tex = ExtResource("11_cktp8")
 metadata/_custom_type_script = "uid://cv4ucm2x24qr8"
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bgewv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_srojb"]
+atlas = ExtResource("22_hxm43")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="Resource" id="Resource_srojb"]
+script = ExtResource("21_48ye2")
+collectible_id = "room_44"
+display_name = "Egg_Test"
+description = "Lalalalal"
+texture = SubResource("AtlasTexture_srojb")
+metadata/_custom_type_script = "uid://ci84dnnmaryqs"
 
 [node name="StartingRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0, 200.0, 0.0]
@@ -337,8 +350,9 @@ position = Vector2(-192, -400)
 [node name="Door2" parent="DoorConnection" index="1" unique_id=1750304808]
 position = Vector2(864, -400)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1967083737]
-sprite_frames = SubResource("SpriteFrames_bgewv")
+[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("20_xt701")]
+position = Vector2(816, 672)
+data = SubResource("Resource_srojb")
 
 [editable path="Environment/FleshBg"]
 [editable path="Environment/SecretAreaUmbrella"]
@@ -351,3 +365,4 @@ sprite_frames = SubResource("SpriteFrames_bgewv")
 [editable path="transition_traquea"]
 [editable path="Pickup"]
 [editable path="DoorConnection"]
+[editable path="CollectiblePickup"]

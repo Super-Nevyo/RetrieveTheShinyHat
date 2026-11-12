@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CollectibleData" format=3 uid="uid://cqtibhlhxr7d4"]
+
+[ext_resource type="Script" uid="uid://ci84dnnmaryqs" path="res://01_Scripts/Resources/CollectiblesData.gd" id="1_f8wyu"]
+
+[resource]
+script = ExtResource("1_f8wyu")
+metadata/_custom_type_script = "uid://ci84dnnmaryqs"
