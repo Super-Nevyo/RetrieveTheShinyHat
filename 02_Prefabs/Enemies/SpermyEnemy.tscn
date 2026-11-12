@@ -29,8 +29,9 @@ radius = 12.0
 height = 144.0
 
 [node name="LaneEnemy" type="RigidBody2D" unique_id=1227542854]
-z_index = 10
-collision_layer = 17
+z_index = -5
+collision_layer = 80
+collision_mask = 2
 gravity_scale = 0.0
 lock_rotation = true
 angular_damp = 100.0
@@ -59,6 +60,8 @@ drowned = 0
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("14_m7cgb")
+damage = 25.0
+enemy_dmg = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1863510905]
 rotation = 1.5707964

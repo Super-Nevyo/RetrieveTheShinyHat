@@ -80,6 +80,7 @@ var is_attacking: bool = false
 @export var DmgLayer : int = 15
 @export var invincibilityframes : int = 500
 @export var dead_delay: float = 0.3
+var blocks_enemy_dmg: bool = false
 var isdead : bool = false
 var ishurt: bool = false
 @onready var hitframe : int = -invincibilityframes

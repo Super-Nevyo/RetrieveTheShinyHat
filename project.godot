@@ -97,6 +97,7 @@ enter_pipe={
 2d_physics/layer_4="AttackReceiver"
 2d_physics/layer_5="Enemy"
 2d_physics/layer_6="EnemyAttack"
+2d_physics/layer_7="EnemySolid"
 2d_physics/layer_9="Items"
 
 [physics]

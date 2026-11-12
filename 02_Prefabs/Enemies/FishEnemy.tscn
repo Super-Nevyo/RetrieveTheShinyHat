@@ -100,7 +100,7 @@ metadata/_custom_type_script = "uid://cms4ksi8ats4m"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(41, 19)
 
-[node name="BaseEnemy" type="RigidBody2D" unique_id=1227542854]
+[node name="FishEnemy" type="RigidBody2D" unique_id=1227542854]
 z_index = 10
 collision_layer = 16
 lock_rotation = true

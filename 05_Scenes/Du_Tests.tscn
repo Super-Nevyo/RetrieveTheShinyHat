@@ -11,10 +11,21 @@
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="6_i77km"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="7_gifnk"]
 [ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="11_57bfk"]
+[ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="13_c60fb"]
 [ext_resource type="PackedScene" uid="uid://4mbxxradlt0r" path="res://02_Prefabs/PuzzlePrefabs/valve.tscn" id="13_drdyv"]
+[ext_resource type="Script" uid="uid://c63dx7w1wqdas" path="res://01_Scripts/Inventory/Condom.gd" id="14_awghf"]
+[ext_resource type="Texture2D" uid="uid://bwu5egusp3nvg" path="res://03_Art/Items/BreathingAparatus.png" id="15_awghf"]
+
+[sub_resource type="Resource" id="Resource_4kyf8"]
+script = ExtResource("14_awghf")
+tex = ExtResource("15_awghf")
+metadata/_custom_type_script = "uid://c63dx7w1wqdas"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
+
+[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("4_735ex")]
+position = Vector2(468, 528)
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_3h4vg")
@@ -42,9 +53,6 @@ script = ExtResource("4_htmdm")
 [node name="Surface" parent="EnvTiles/WaterTiles" index="2" unique_id=368556039]
 position = Vector2(1152, 576)
 gizmo_extents = 105.0
-
-[node name="PlayerCharacter" parent="EnvTiles/WaterTiles" unique_id=1797284452 instance=ExtResource("4_735ex")]
-position = Vector2(468, 528)
 
 [node name="SecretArea" parent="EnvTiles" unique_id=716718294 instance=ExtResource("4_5iq5e")]
 
@@ -155,5 +163,13 @@ attached_ids = Array[int]([-103])
 activation_amount = Array[float]([1.0])
 puzzle_id = "valve_test"
 
+[node name="Pickup" parent="." unique_id=483234207 instance=ExtResource("13_c60fb")]
+position = Vector2(720, 528)
+itemInfo = SubResource("Resource_4kyf8")
+
+[node name="Sprite2D" parent="Pickup" index="1" unique_id=1059875453]
+texture = ExtResource("15_awghf")
+
 [editable path="EnvTiles/WaterTiles"]
 [editable path="EnvTiles/SecretArea"]
+[editable path="Pickup"]
