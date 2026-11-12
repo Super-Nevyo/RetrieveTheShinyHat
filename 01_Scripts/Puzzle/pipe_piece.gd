@@ -53,6 +53,12 @@ func has_opening_exit(direction: Vector2) -> bool:
 	var local_direction = direction.rotated(-global_rotation).round()
 	return has_opening(local_direction)
 	
+func exit_direction() -> Vector2:
+	if exit_side == enums.pipe_side.NONE:
+		return Vector2.ZERO
+	var local_side: Vector2 = DIRECTIONS[exit_side]
+	return local_side.rotated(global_rotation).round()
+	
 func has_opening(direction: Vector2) -> bool:
 	match shape: #from enums (if adding, add to enums as well)
 		enums.pipe_shapes.STRAIGHT:
@@ -70,28 +76,30 @@ func connects_pipe(other: PipePiece) -> bool:
 			return has_opening_exit(direction) and other.has_opening_exit(-direction)
 	return false
 	
+func pipe_location(world_position: Vector2) -> PipePiece:
+	for pipe: PipePiece in get_tree().get_nodes_in_group("pipe_pieces"):
+		if pipe.global_position.is_equal_approx(world_position):
+			return pipe
+	return null
+	
 func connected_pipe (direction: Vector2) -> PipePiece:
 	#checks for other connected pipes and sees if player can go that way
-	var next_position = global_position + direction * tile_size
-	for pipe: PipePiece in get_tree().get_nodes_in_group("pipe_pieces"):
-		if pipe.global_position.is_equal_approx(next_position):
-			if connects_pipe(pipe):
-				return pipe
+	var neighbour = pipe_location(global_position + direction * tile_size)
+	if neighbour != null and connects_pipe(neighbour):
+		return neighbour
 	return null
 
 func can_enter(player: CharacterBody2D) -> bool:
 	if exit_side == enums.pipe_side.NONE: return false
-	if not exit_area.overlaps_body(player): return false
-	
+	return exit_area.overlaps_body(player) and exit_clear(player)
+
+func exit_clear(player: CharacterBody2D) -> bool:
+	if exit_side == enums.pipe_side.NONE: return false
 	for body in exit_area.get_overlapping_bodies():
 		if body != player : return false
 		
 	var direction: Vector2 = DIRECTIONS[exit_side]
-	var outside_cell = to_global(direction * tile_size)
-	for pipe: PipePiece in get_tree().get_nodes_in_group("pipe_pieces"):
-		if pipe.global_position.is_equal_approx(outside_cell):
-			return false
-	return true
+	return pipe_location(to_global(direction * tile_size)) == null
 	
 func update_art() -> void:
 	pipe_art = get_node_or_null("pipe_art") as Sprite2D
@@ -136,4 +144,3 @@ func _validate_property(property: Dictionary) -> void:
 			options.append("%s:%d" % [label, side])
 	property.hint = PROPERTY_HINT_ENUM
 	property.hint_string = ",".join(options)
-	

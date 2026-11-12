@@ -120,7 +120,7 @@ func _physics_process(delta: float) -> void:
 		swim_audio.stop()
 	
 	if MyStateMachine.CurrentState != MyStateMachine.InPipe:
-		if Input.is_action_pressed("enter_pipe"):
+		if Input.is_action_just_pressed("enter_pipe"):
 			enter_pipe()
 	if MyStateMachine.CurrentState == MyStateMachine.InPipe:
 		MyStateMachine.Update(delta)
