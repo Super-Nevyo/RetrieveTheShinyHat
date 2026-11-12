@@ -1,7 +1,8 @@
 extends "res://01_Scripts/Puzzle/PuzzleActivator.gd"
+class_name Switch
 
 @onready var anim : AnimationPlayer = $LeverAnimation
-@export var cooldown : float = 1.0
+@export var cooldown : float = 0.5
 var can_activate : bool = true
 
 func UseSwitch():

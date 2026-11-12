@@ -1,6 +1,10 @@
 extends "res://01_Scripts/Puzzle/switch.gd"
+class_name Valve
+
+var turns: int = 0
 
 func ActivatePuzzle() -> void:
+	turns = (turns + 1) % 4
 	switch_flipped = not switch_flipped
 	
 	for id in attached_ids:

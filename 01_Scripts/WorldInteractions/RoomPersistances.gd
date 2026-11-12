@@ -3,6 +3,7 @@ class_name RoomPersistances
 
 #dictionary of active puzzles in a room, needs to know what room is it, what is the puzzle and wether is on or off
 var activepuzzles = {}
+var valve_turns = {}
 enum meta_puzzles {NULL, RISING_ACID}
 var meta_puzzle_values : Dictionary[meta_puzzles,int] = {meta_puzzles.NULL : 0, meta_puzzles.RISING_ACID : 0}
 var revealedsecrets = {} #dictionary of secret rooms
@@ -34,6 +35,15 @@ func is_revealed(room_id: String, reveal_id: String) -> bool:
 
 func change_meta(id: meta_puzzles, amount: int):
 	meta_puzzle_values[id] += amount
+
+func remember_valve(room_id: String, puzzle_id: String, turns: int) -> void:
+	if not valve_turns.has(room_id):
+		valve_turns[room_id] = {}
+	valve_turns [room_id][puzzle_id] = turns
+
+func get_valve_turns(room_id: String, puzzle_id: String) -> int:
+	var room_valves: Dictionary = valve_turns.get(room_id, {})
+	return room_valves.get(puzzle_id, 0)
 
 func _enter_tree() -> void:
 	PuzzleSignalTransmiter.activate_meta.connect(change_meta)

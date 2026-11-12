@@ -22,16 +22,17 @@ func _ready() -> void:
 func load_room(room_scene: PackedScene, room_id: String) -> void:
 	
 	if room_scene == null:
-		print("Assign a room scene in the inspector")
 		return
 	
 	if is_instance_valid(current_room):
-		
 		for child in current_room.get_children(): 
 			if child is PuzzleActivator or child is MetaActivator:
-				if child.puzzle_id != "":
-					activated_puzzles.remember_active(child.puzzle_id, current_room_id, child.switch_flipped) #calls dictionary
-		
+				if child.puzzle_id == "":
+					continue #activated_puzzles.remember_active(child.puzzle_id, current_room_id, child.switch_flipped) #calls dictionary
+				if child is Valve:
+					activated_puzzles.remember_valve(current_room_id, child.puzzle_id, child.turns)
+				else:
+					activated_puzzles.remember_active(child.puzzle_id, current_room_id, child.switch_flipped)
 		current_room.queue_free() #room gets removed
 	
 	current_room_id = room_id
@@ -40,18 +41,23 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 	for child in current_room.get_children(): #needed to get children nodes and look for them
 		if child is RoomTransition: #if the node uses the room transition script the connect the signal
 			child.transition_started.connect(_on_transition_started) #connects listener
-	
 	room_container.add_child.call_deferred(current_room) #ask room container to add the room to a child
 	await current_room.ready
 	
-	if activated_puzzles.activepuzzles.has(current_room_id):
-		for child in current_room.get_children():
-			if child is PuzzleActivator or child is MetaActivator:
-				if child.puzzle_id != "":
-					var remembered_state: bool = activated_puzzles.puzzle_state(child.puzzle_id, current_room_id)
+	for child in current_room.get_children():
+		if child is PuzzleActivator or child is MetaActivator:
+			if child.puzzle_id == "":
+				continue
 					
-					if child.switch_flipped != remembered_state:
-						child.ActivatePuzzle()
+			if child is Valve:
+				var turns = activated_puzzles.get_valve_turns(current_room_id, child.puzzle_id)
+				for _turns in range(turns):
+					child.ActivatePuzzle()
+				
+			elif activated_puzzles.activepuzzles.has(current_room_id):
+				var remembered_state = activated_puzzles.puzzle_state(child.puzzle_id, current_room_id)
+				if child.switch_flipped != remembered_state:
+					child.ActivatePuzzle()
 		
 	for child in current_room.get_children():
 		if child is MetaActivated:
