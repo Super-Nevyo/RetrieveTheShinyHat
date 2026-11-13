@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://clsgpe00xjxqt"]
+
+[ext_resource type="Texture2D" uid="uid://cnpt20eb2lexw" path="res://03_Art/Environment/penisart.png" id="1_cdq7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
+atlas = ExtResource("1_cdq7c")
+region = Rect2(48, 456, 180, 312)
+
+[node name="Decoration" type="Node2D" unique_id=905467760]
+
+[node name="CornerGoop" type="Sprite2D" parent="." unique_id=1793570406]
+texture = SubResource("AtlasTexture_kw6nx")
