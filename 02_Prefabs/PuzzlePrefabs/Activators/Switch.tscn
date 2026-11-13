@@ -52,7 +52,6 @@ stream_0/stream = ExtResource("4_dlyqn")
 
 [node name="Switch" type="Node2D" unique_id=150077233]
 script = ExtResource("1_wj5h5")
-cooldown = 0.5
 metadata/test = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=424739996]

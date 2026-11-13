@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
 atlas = ExtResource("1_cdq7c")
-region = Rect2(48, 456, 180, 312)
+region = Rect2(48, 456, 336, 312)
 
 [node name="Decoration" type="Node2D" unique_id=905467760]
 

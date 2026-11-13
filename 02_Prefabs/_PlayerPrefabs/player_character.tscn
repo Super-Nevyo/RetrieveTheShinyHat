@@ -16,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://cwtr73nvx7l65" path="res://04_Audio/SFX/PlayerSFX/ouchy.mp3" id="11_dmcxg"]
 [ext_resource type="AudioStream" uid="uid://df2p33wrxqsi8" path="res://04_Audio/SFX/PlayerSFX/alientakedamage.mp3" id="12_gpf37"]
 [ext_resource type="AudioStream" uid="uid://bft3p3gcsyc7d" path="res://04_Audio/SFX/PlayerSFX/alienouch.mp3" id="13_5qys1"]
+[ext_resource type="Texture2D" uid="uid://brxf5idiokidd" path="res://03_Art/Items/PlayerVisible/Snorkel.png" id="16_gpf37"]
+[ext_resource type="Script" uid="uid://tgdae14h1bd" path="res://01_Scripts/Player/player_animations.gd" id="18_5qys1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wdy"]
 size = Vector2(56, 37.179)
@@ -368,8 +370,7 @@ atlas = ExtResource("3_aydsc")
 region = Rect2(0, 288, 96, 96)
 
 [sub_resource type="Animation" id="Animation_xc1es"]
-resource_name = "Idle_Umbrella"
-length = 0.8
+resource_name = "Idle"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -418,6 +419,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Snorkel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1.24), Vector2(0, -1.239), Vector2(0, -1.24)]
 }
 
 [sub_resource type="Animation" id="Animation_0gpal"]
@@ -471,6 +484,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Snorkel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 2.4999995), Vector2(0, -10), Vector2(0, -31.250002), Vector2(2.5000002, -35)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Snorkel:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.034906585, -0.034906585]
+}
 
 [sub_resource type="Animation" id="Animation_kb8hf"]
 length = 0.001
@@ -522,6 +559,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Snorkel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1.2500002)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Snorkel:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.034906585]
+}
 
 [sub_resource type="Animation" id="Animation_sudbt"]
 resource_name = "Swimming_Umbrella"
@@ -549,6 +610,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.29670596, 0.31066860685499087, 0.29670596]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Snorkel:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.31415927]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Snorkel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(17.500002, -33.750004), Vector2(17.5, -32.5), Vector2(17.5, -33.75), Vector2(17.5, -32.5)]
 }
 
 [sub_resource type="Animation" id="Animation_nt5uo"]
@@ -582,11 +667,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sudbt"]
 _data = {
-&"Idle_Umbrella": SubResource("Animation_xc1es"),
-&"Jump_Umbrella": SubResource("Animation_0gpal"),
+&"Idle": SubResource("Animation_xc1es"),
+&"Jump": SubResource("Animation_0gpal"),
 &"RESET": SubResource("Animation_kb8hf"),
-&"Swimming_Umbrella": SubResource("Animation_sudbt"),
-&"Walk_Umbrella": SubResource("Animation_nt5uo")
+&"Swimming": SubResource("Animation_sudbt"),
+&"Walk": SubResource("Animation_nt5uo")
 }
 
 [sub_resource type="Animation" id="Animation_urycm"]
@@ -819,7 +904,7 @@ shape = SubResource("RectangleShape2D_e8wdy")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=2145241236]
 sprite_frames = SubResource("SpriteFrames_bgewv")
-animation = &"Attack"
+animation = &"Walk"
 autoplay = "Idle"
 
 [node name="PlayerAudio" type="Node2D" parent="." unique_id=873921505]
@@ -869,6 +954,14 @@ position = Vector2(0, 2.5)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_kb8hf")
 
+[node name="Snorkel" type="Sprite2D" parent="HeadAnchor" unique_id=1781479119]
+visible = false
+z_index = 1
+position = Vector2(0, -1.2500002)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("16_gpf37")
+
 [node name="ArmAnchor" type="Marker2D" parent="." unique_id=1960853897]
 scale = Vector2(0.99999994, 0.99999994)
 
@@ -904,6 +997,13 @@ libraries/ = SubResource("AnimationLibrary_urycm")
 [node name="PlayerAttackAnimations" type="AnimationPlayer" parent="." unique_id=2019255926]
 callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_dmcxg")
+
+[node name="AllAnimations" type="Node" parent="." unique_id=1219674171 node_paths=PackedStringArray("player_anim", "item_anim", "head_mark", "snorkel")]
+script = ExtResource("18_5qys1")
+player_anim = NodePath("../PlayerAnim")
+item_anim = NodePath("../ItemsAnimations")
+head_mark = NodePath("../HeadAnchor")
+snorkel = NodePath("../HeadAnchor/Snorkel")
 
 [connection signal="area_entered" from="ItemInteractor" to="ItemInteractor" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemInteractor" to="ItemInteractor" method="_on_area_exited"]

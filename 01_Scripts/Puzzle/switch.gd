@@ -10,12 +10,15 @@ func UseSwitch():
 		return
 	can_activate = false
 	
-	if switch_flipped:
-		anim.play("lever")
-	else:
-		anim.play_backwards("lever")
+	play_animation()
 	ActivatePuzzle()
 	$PlayerSfx.play()
 	
 	await get_tree().create_timer(cooldown).timeout
 	can_activate = true
+
+func play_animation() -> void:
+	if switch_flipped:
+		anim.play("lever")
+	else:
+		anim.play_backwards("lever")
