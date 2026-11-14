@@ -1,44 +1,74 @@
 [gd_scene format=3 uid="uid://7cbkrkj2573a"]
 
-[ext_resource type="Texture2D" uid="uid://hsom0bbuvkie" path="res://03_Art/_Player/char_sheet.png" id="1_dnopr"]
 [ext_resource type="Script" uid="uid://bmedv46rwg8dq" path="res://01_Scripts/EnvironmentObjects/BrainBoss.gd" id="1_tgd2t"]
+[ext_resource type="Texture2D" uid="uid://cf4oubsn6yjgj" path="res://03_Art/Environment/brains.png" id="2_axj5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axj5o"]
-atlas = ExtResource("1_dnopr")
-region = Rect2(576, 0, 144, 144)
+atlas = ExtResource("2_axj5o")
+region = Rect2(0, 0, 240, 336)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrkxi"]
+atlas = ExtResource("2_axj5o")
+region = Rect2(480, 0, 240, 336)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7ch6"]
+atlas = ExtResource("2_axj5o")
+region = Rect2(240, 0, 240, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q7578"]
-atlas = ExtResource("1_dnopr")
-region = Rect2(720, 0, 144, 144)
+atlas = ExtResource("2_axj5o")
+region = Rect2(0, 336, 240, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_updo1"]
-atlas = ExtResource("1_dnopr")
-region = Rect2(864, 0, 144, 144)
+atlas = ExtResource("2_axj5o")
+region = Rect2(240, 336, 240, 336)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aa5o"]
+atlas = ExtResource("2_axj5o")
+region = Rect2(480, 336, 240, 336)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kw6nx"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.25,
 "texture": SubResource("AtlasTexture_axj5o")
 }, {
-"duration": 1.0,
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_hrkxi")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_e7ch6")
+}],
+"loop": 1,
+"name": &"PenisBoss",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.25,
 "texture": SubResource("AtlasTexture_q7578")
 }, {
-"duration": 1.0,
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_updo1")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_7aa5o")
+}, {
+"duration": 1.25,
 "texture": SubResource("AtlasTexture_updo1")
 }],
 "loop": 1,
-"name": &"Idle",
+"name": &"StomachBoss",
 "speed": 5.0
 }]
 
 [node name="BrainBoss" type="Node2D" unique_id=1698662619]
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_tgd2t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1075912230]
 sprite_frames = SubResource("SpriteFrames_kw6nx")
-animation = &"Idle"
-frame_progress = 0.35933292
+animation = &"StomachBoss"
+frame_progress = 0.11730972
 
 [node name="BitePoint" type="Marker2D" parent="." unique_id=1193860379]
-position = Vector2(-26, 90)
+position = Vector2(-22, 161)
