@@ -138,6 +138,7 @@ tile_set = ExtResource("3_uwa2f")
 metadata/_edit_lock_ = true
 
 [node name="FleshBg" parent="Environment" unique_id=1613371522 instance=ExtResource("4_r0so3")]
+z_index = -9
 
 [node name="BackgroundArea" parent="Environment/FleshBg" index="0" unique_id=1999783040]
 texture = SubResource("AtlasTexture_ju7u5")

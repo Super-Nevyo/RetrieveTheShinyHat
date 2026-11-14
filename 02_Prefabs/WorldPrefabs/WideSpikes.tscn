@@ -8,6 +8,7 @@ atlas = ExtResource("2_vpuuf")
 region = Rect2(624, 384, 96, 48)
 
 [node name="Spikes" unique_id=1094872775 instance=ExtResource("1_c0rs0")]
+enemy_dmg = true
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1560489136]
 position = Vector2(0, 27)
