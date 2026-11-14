@@ -4,7 +4,7 @@ class_name BrainBoss
 @onready var brain_anim: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
-	brain_anim.play("Idle")
+	brain_anim.play("StomachBoss")
 	
 #func ending_animation() -> void:
 	#brain_anim.play("Idle")
