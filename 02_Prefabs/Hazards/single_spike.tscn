@@ -16,6 +16,7 @@ z_index = 25
 collision_layer = 0
 collision_mask = 18
 script = ExtResource("1_0dun5")
+enemy_dmg = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1560489136]
 position = Vector2(-9, -17)
