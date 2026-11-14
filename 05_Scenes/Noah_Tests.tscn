@@ -9,6 +9,7 @@
 [ext_resource type="TileSet" uid="uid://b3pvmaekwuqir" path="res://02_Prefabs/WorldPrefabs/Environment.tres" id="7_ifvmg"]
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="8_eeuha"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="9_oetu8"]
+[ext_resource type="Script" uid="uid://bwmrfl6xm6j47" path="res://01_Scripts/Enemys/lane_pattern.gd" id="10_y8lxe"]
 [ext_resource type="PackedScene" uid="uid://4mbxxradlt0r" path="res://02_Prefabs/PuzzlePrefabs/valve.tscn" id="11_owlec"]
 [ext_resource type="Texture2D" uid="uid://cnpt20eb2lexw" path="res://03_Art/Environment/penisart.png" id="12_3l8ot"]
 [ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="13_lnee5"]
@@ -16,6 +17,28 @@
 [ext_resource type="Texture2D" uid="uid://bwu5egusp3nvg" path="res://03_Art/Items/BreathingAparatus.png" id="15_wivbb"]
 [ext_resource type="Texture2D" uid="uid://bjaf2kcu0vfgq" path="res://03_Art/TempAssets/Fishtemp.png" id="16_mq5sp"]
 [ext_resource type="PackedScene" uid="uid://clsgpe00xjxqt" path="res://02_Prefabs/WorldPrefabs/Decoration.tscn" id="17_hlct3"]
+[ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="17_thip3"]
+
+[sub_resource type="Resource" id="Resource_ln6cq"]
+script = ExtResource("10_y8lxe")
+enabled = false
+slots = Array[bool]([false, true, false])
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="Resource" id="Resource_xyukd"]
+script = ExtResource("10_y8lxe")
+slots = Array[bool]([true, true, false, false, true, false])
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="Resource" id="Resource_qta4h"]
+script = ExtResource("10_y8lxe")
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="Resource" id="Resource_m0om0"]
+script = ExtResource("10_y8lxe")
+move_speed = 288.0
+slots = Array[bool]([false, false, true])
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
 
 [sub_resource type="Resource" id="Resource_4kyf8"]
 script = ExtResource("14_dogcp")
@@ -41,7 +64,6 @@ transitions = [null, null]
 [node name="EnvTiles" type="Node" parent="." unique_id=1578182652]
 
 [node name="BlueWater" parent="EnvTiles" unique_id=1959433390 instance=ExtResource("4_xyukd")]
-visible = false
 position = Vector2(1104, 828)
 
 [node name="Area2D" parent="EnvTiles/BlueWater" index="1" unique_id=1010538046]
@@ -80,10 +102,11 @@ metadata/_edit_lock_ = true
 
 [node name="sperm_lane" parent="." unique_id=1586465063 instance=ExtResource("9_oetu8")]
 position = Vector2(1104, 816)
+rows = Array[ExtResource("10_y8lxe")]([SubResource("Resource_ln6cq"), SubResource("Resource_xyukd"), SubResource("Resource_qta4h"), SubResource("Resource_m0om0")])
 
 [node name="valve" parent="." unique_id=583119961 instance=ExtResource("11_owlec")]
 position = Vector2(576, 491)
-attached_ids = Array[int]([-103])
+attached_ids = Array[int]([621])
 activation_amount = Array[float]([1.0])
 puzzle_id = "valve_test"
 
@@ -104,6 +127,15 @@ texture = SubResource("AtlasTexture_83pp6")
 [node name="Decoration2" parent="." unique_id=932684953 instance=ExtResource("17_hlct3")]
 position = Vector2(1584, 491)
 rotation = 3.1415927
+
+[node name="pipe_piece" parent="." unique_id=1326704238 instance=ExtResource("17_thip3")]
+position = Vector2(864, 384)
+
+[node name="pipe_piece2" parent="." unique_id=1497905522 instance=ExtResource("17_thip3")]
+position = Vector2(864, 432)
+rotation = -1.5707964
+shape = 0
+exit_side = 2
 
 [editable path="EnvTiles/BlueWater"]
 [editable path="EnvTiles/SecretArea"]
