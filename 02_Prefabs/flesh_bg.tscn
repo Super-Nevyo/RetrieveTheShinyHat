@@ -12,7 +12,7 @@ atlas = ExtResource("2_l4rup")
 region = Rect2(0, 0, 1536, 1000)
 
 [node name="FleshBg" type="TileMapLayer" unique_id=1613371522]
-z_index = -6
+z_index = -10
 tile_set = ExtResource("1_mm1is")
 collision_enabled = false
 collision_visibility_mode = 2

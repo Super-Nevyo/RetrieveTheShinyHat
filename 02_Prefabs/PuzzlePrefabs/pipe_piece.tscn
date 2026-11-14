@@ -8,19 +8,20 @@ size = Vector2(10, 48)
 
 [node name="pipe_piece" type="Node2D" unique_id=1326704238 groups=["pipe_pieces"]]
 script = ExtResource("1_xqjre")
-shape = 1
-exit_side = 3
+shape = 2
 
 [node name="pipe_art" type="Sprite2D" parent="." unique_id=1089522977]
 texture = ExtResource("2_xqjre")
+flip_v = true
 region_enabled = true
-region_rect = Rect2(48, 144, 48, 48)
+region_rect = Rect2(528, 576, 48, 48)
 
 [node name="exit_area" type="Area2D" parent="." unique_id=1309847711]
-position = Vector2(0, 24)
-rotation = 1.5707964
+visible = false
+position = Vector2(24, 0)
 collision_layer = 0
 collision_mask = 3
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=324359723]
 position = Vector2(-1, 0)

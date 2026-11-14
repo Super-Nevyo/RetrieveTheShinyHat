@@ -11,6 +11,7 @@ atlas = ExtResource("1_cdq7c")
 region = Rect2(0, 0, 336, 336)
 
 [node name="Decoration" type="Node2D" unique_id=905467760]
+z_index = -8
 
 [node name="CornerGoop" type="Sprite2D" parent="." unique_id=1793570406]
 texture = SubResource("AtlasTexture_kw6nx")

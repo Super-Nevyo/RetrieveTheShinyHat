@@ -8,7 +8,6 @@
 [ext_resource type="TileSet" uid="uid://b3pvmaekwuqir" path="res://02_Prefabs/WorldPrefabs/Environment.tres" id="5_46swt"]
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="6_dutt5"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Hazards/Acid.tscn" id="8_ojs2f"]
-[ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="8_riau6"]
 [ext_resource type="PackedScene" uid="uid://4mbxxradlt0r" path="res://02_Prefabs/PuzzlePrefabs/valve.tscn" id="9_46swt"]
 [ext_resource type="Script" uid="uid://bnje7iyop20vr" path="res://01_Scripts/Hazards/Liquid.gd" id="9_gyhqi"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="10_46swt"]
@@ -79,7 +78,7 @@ metadata/_edit_lock_ = true
 
 [node name="SecretArea" parent="EnvTiles" unique_id=716718294 instance=ExtResource("4_riau6")]
 
-[node name="Cover" parent="EnvTiles/SecretArea" index="0" unique_id=1548122823]
+[node name="Cover" parent="EnvTiles/SecretArea/Tiles" parent_id_path=PackedInt32Array(716718294, 912739327) index="1" unique_id=1548122823]
 z_index = 30
 
 [node name="RevealSecret" parent="EnvTiles/SecretArea" index="1" unique_id=1866784657]
@@ -117,84 +116,8 @@ script = ExtResource("9_gyhqi")
 position = Vector2(1152, 576)
 gizmo_extents = 105.0
 
-[node name="pipe_piece" parent="." unique_id=1326704238 instance=ExtResource("8_riau6")]
-position = Vector2(876, 528)
-rotation = 3.1415927
-exit_side = 2
-signal_id = -200
-
-[node name="pipe_piece2" parent="." unique_id=6819482 instance=ExtResource("8_riau6")]
-position = Vector2(876, 480)
-rotation = 1.5707964
-shape = 0
-exit_side = 0
-signal_id = -200
-
-[node name="pipe_piece4" parent="." unique_id=115039375 instance=ExtResource("8_riau6")]
-position = Vector2(876, 432)
-rotation = 1.5707964
-shape = 0
-exit_side = 0
-signal_id = -200
-
-[node name="pipe_piece5" parent="." unique_id=436352077 instance=ExtResource("8_riau6")]
-position = Vector2(876, 384)
-shape = 0
-exit_side = 0
-signal_id = -201
-
-[node name="pipe_piece6" parent="." unique_id=359233075 instance=ExtResource("8_riau6")]
-position = Vector2(876, 336)
-rotation = 1.5707964
-shape = 0
-exit_side = 0
-signal_id = -200
-
-[node name="pipe_piece3" parent="." unique_id=98569054 instance=ExtResource("8_riau6")]
-position = Vector2(876, 288)
-rotation = 1.5707964
-shape = 0
-exit_side = 0
-signal_id = -200
-
-[node name="pipe_piece7" parent="." unique_id=1254677826 instance=ExtResource("8_riau6")]
-position = Vector2(876, 240)
-shape = 2
-exit_side = 0
-signal_id = -200
-
-[node name="pipe_piece11" parent="." unique_id=669795516 instance=ExtResource("8_riau6")]
-position = Vector2(828, 240)
-shape = 0
-exit_side = 0
-signal_id = -200
-
-[node name="pipe_piece12" parent="." unique_id=1105724527 instance=ExtResource("8_riau6")]
-position = Vector2(780, 240)
-shape = 0
-exit_side = 4
-signal_id = -200
-
-[node name="pipe_piece8" parent="." unique_id=382793214 instance=ExtResource("8_riau6")]
-position = Vector2(924, 240)
-shape = 0
-exit_side = 0
-signal_id = -200
-
-[node name="pipe_piece9" parent="." unique_id=115016779 instance=ExtResource("8_riau6")]
-position = Vector2(972, 240)
-shape = 0
-exit_side = 0
-signal_id = -200
-
-[node name="pipe_piece10" parent="." unique_id=1079950667 instance=ExtResource("8_riau6")]
-position = Vector2(1020, 240)
-shape = 0
-exit_side = 2
-signal_id = -200
-
 [node name="valve" parent="." unique_id=583119961 instance=ExtResource("9_46swt")]
-position = Vector2(624, 541)
+position = Vector2(624, 492)
 attached_ids = Array[int]([-201])
 activation_amount = Array[float]([1.0])
 puzzle_id = "valve_60"

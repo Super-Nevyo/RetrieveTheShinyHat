@@ -5,30 +5,54 @@ class_name PipePiece
 # constants - so the tool can always call them in
 const art_sheet = preload("res://03_Art/Environment/penisart.png")
 const tile_size = 48
-const ELBOW = Rect2(336, 576, tile_size, tile_size)
-const STRAIGHT = Rect2(480, 624, tile_size, tile_size)
-const T_SHAPE = Rect2(528, 476, tile_size, tile_size)
-const CROSS = Rect2(480, 576, tile_size, tile_size)
-# from enums finds directions for each pipe
 const DIRECTIONS = {
 	enums.pipe_side.UP: Vector2.UP,
 	enums.pipe_side.RIGHT: Vector2.RIGHT,
 	enums.pipe_side.DOWN: Vector2.DOWN,
 	enums.pipe_side.LEFT: Vector2.LEFT,}
+const PIPES = {
+	enums.pipe_shapes.STRAIGHT: {
+		"Normal": Vector2i(480, 624),
+		"Eyes": Vector2i(384, 624),
+		"Normal Low": Vector2i(480, 672),
+		"Eyes Low": Vector2i(384, 672),
+		"Thin": Vector2i(528, 624),
+		"Thin Eyes": Vector2i(432, 624),
+		"Thin Low": Vector2i(528, 672),
+		"Thin Low Eyes": Vector2i(432, 672),
+	},
+	enums.pipe_shapes.ELBOW: {
+		"Eyes": Vector2i(336, 576),
+		"Normal": Vector2i(576, 576),
+	},
+	enums.pipe_shapes.T_SHAPE: {
+		"Plain": Vector2i(528, 576),
+		"Normal": Vector2i(432, 576),
+	},
+	enums.pipe_shapes.CROSS: {
+		"Plain": Vector2i(480, 576),
+		"Normal": Vector2i(384, 576),
+	},}
 @export var shape: enums.pipe_shapes:
 	set(value):
 		shape = value
 		if is_node_ready():
+			pipe_variant = 0
 			if exit_side != enums.pipe_side.NONE:
 				if not has_opening(DIRECTIONS[exit_side]):
 					exit_side = enums.pipe_side.NONE
+			notify_property_list_changed()
+@export var pipe_variant : int = 0:
+	set(value):
+		var pieces: Dictionary = PIPES[shape]
+		pipe_variant = posmod(value, pieces.size()) #posmod to wrap in both directions so it circles
+		if is_node_ready():
 			update_art()
 @export var exit_side: enums.pipe_side:
 	set (value):
 		exit_side = value
 		if is_node_ready():
 			update_exit_area()
-
 @onready var pipe_art = get_node_or_null ("pipe_art") as Sprite2D
 @onready var exit_area: Area2D
 
@@ -108,19 +132,26 @@ func update_art() -> void:
 	pipe_art = get_node_or_null("pipe_art") as Sprite2D
 	if pipe_art == null:
 		return
+	
+	var pieces: Dictionary = PIPES[shape]
+	var index = clampi(pipe_variant, 0, pieces.size() - 1)
+	var top_left : Vector2i = pieces.values()[index]
 		
 	pipe_art.texture = art_sheet
 	pipe_art.region_enabled = true
+	pipe_art.region_rect = Rect2(top_left.x, top_left.y, tile_size, tile_size)
+	pipe_art.rotation_degrees = 0.0
+	pipe_art.flip_v = false
 	
-	match shape: 
+	match shape:
 		enums.pipe_shapes.STRAIGHT:
-			pipe_art.region_rect = STRAIGHT
+			pipe_art.rotation_degrees = 90.0
 		enums.pipe_shapes.ELBOW:
-			pipe_art.region_rect = ELBOW
+			if top_left == pieces["Eyes"]: pipe_art.flip_v = true
+			else:
+				pipe_art.rotation_degrees = 180.0
 		enums.pipe_shapes.T_SHAPE:
-			pipe_art.region_rect = T_SHAPE
-		enums.pipe_shapes.CROSS:
-			pipe_art.region_rect = CROSS
+			pipe_art.flip_v = true
 			
 func update_exit_area() -> void:
 	exit_area = get_node_or_null("exit_area") as Area2D
@@ -132,7 +163,7 @@ func update_exit_area() -> void:
 	if exit_side == enums.pipe_side.NONE:
 		return
 	var direction: Vector2 = DIRECTIONS[exit_side]
-	exit_area.position = direction * 24
+	exit_area.position = direction * (tile_size/2)
 	exit_area.rotation = direction.angle()
 	
 #validate property: Godot calls this when prepping the inspector for fields. 
@@ -142,10 +173,12 @@ func update_exit_area() -> void:
 func _validate_property(property: Dictionary) -> void:
 	if property.name != &"exit_side":
 		return
-	var options := PackedStringArray(["None:0"])
-	for side in DIRECTIONS:
-		if has_opening(DIRECTIONS[side]):
-			var label := str(enums.pipe_side.find_key(side)).capitalize()
-			options.append("%s:%d" % [label, side])
+
+	var options := PackedStringArray(["None:%d" % enums.pipe_side.NONE])
+	if has_opening(Vector2.UP): options.append("North:%d" % enums.pipe_side.UP)
+	if has_opening(Vector2.RIGHT): options.append("East:%d" % enums.pipe_side.RIGHT)
+	if has_opening(Vector2.DOWN): options.append("South:%d" % enums.pipe_side.DOWN)
+	if has_opening(Vector2.LEFT): options.append("West:%d" % enums.pipe_side.LEFT)
+
 	property.hint = PROPERTY_HINT_ENUM
 	property.hint_string = ",".join(options)

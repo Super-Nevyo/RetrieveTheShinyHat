@@ -59,6 +59,7 @@ streams_count = 1
 stream_0/stream = ExtResource("4_lyqxo")
 
 [node name="valve" type="Node2D" unique_id=583119961]
+z_index = -5
 script = ExtResource("1_h20ob")
 cooldown = 0.0
 
