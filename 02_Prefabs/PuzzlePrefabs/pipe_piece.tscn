@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://78o2q62vv8dq"]
 
 [ext_resource type="Script" uid="uid://cwaq3ga8fvd8t" path="res://01_Scripts/Puzzle/pipe_piece.gd" id="1_xqjre"]
-[ext_resource type="Texture2D" uid="uid://cu34m48slx3he" path="res://03_Art/Environment/unique.png" id="2_xqjre"]
+[ext_resource type="Texture2D" uid="uid://cnpt20eb2lexw" path="res://03_Art/Environment/penisart.png" id="2_xqjre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqjre"]
 size = Vector2(10, 48)

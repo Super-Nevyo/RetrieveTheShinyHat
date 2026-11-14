@@ -26,10 +26,10 @@ size = Vector2(41, 19)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
 atlas = ExtResource("5_5pe64")
-region = Rect2(816, 480, 144, 60)
+region = Rect2(384, 336, 144, 48)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kw6nx"]
-radius = 24.0
+radius = 16.79
 height = 144.0
 
 [node name="LaneEnemy" type="RigidBody2D" unique_id=1227542854]

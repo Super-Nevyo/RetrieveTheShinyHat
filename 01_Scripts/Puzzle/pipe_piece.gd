@@ -3,11 +3,12 @@ extends puzzle_activated
 class_name PipePiece
 
 # constants - so the tool can always call them in
-const art_sheet = preload("res://03_Art/Environment/unique.png")
+const art_sheet = preload("res://03_Art/Environment/penisart.png")
 const tile_size = 48
-const ELBOW = Rect2(48, 144, tile_size, tile_size)
-const STRAIGHT = Rect2(96, 144, tile_size, tile_size)
-const T_SHAPE = Rect2(144, 144, tile_size, tile_size)
+const ELBOW = Rect2(336, 576, tile_size, tile_size)
+const STRAIGHT = Rect2(480, 624, tile_size, tile_size)
+const T_SHAPE = Rect2(528, 476, tile_size, tile_size)
+const CROSS = Rect2(480, 576, tile_size, tile_size)
 # from enums finds directions for each pipe
 const DIRECTIONS = {
 	enums.pipe_side.UP: Vector2.UP,
@@ -67,6 +68,8 @@ func has_opening(direction: Vector2) -> bool:
 			return direction in [Vector2.RIGHT, Vector2.DOWN]
 		enums.pipe_shapes.T_SHAPE:
 			return direction in [Vector2.RIGHT, Vector2.LEFT, Vector2.DOWN]
+		enums.pipe_shapes.CROSS:
+			return direction in [Vector2.UP,Vector2.LEFT, Vector2.DOWN, Vector2.RIGHT]
 	return false
 	
 func connects_pipe(other: PipePiece) -> bool: 
@@ -116,6 +119,8 @@ func update_art() -> void:
 			pipe_art.region_rect = ELBOW
 		enums.pipe_shapes.T_SHAPE:
 			pipe_art.region_rect = T_SHAPE
+		enums.pipe_shapes.CROSS:
+			pipe_art.region_rect = CROSS
 			
 func update_exit_area() -> void:
 	exit_area = get_node_or_null("exit_area") as Area2D

@@ -4,9 +4,17 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
 atlas = ExtResource("1_cdq7c")
-region = Rect2(48, 456, 336, 312)
+region = Rect2(0, 336, 336, 336)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdq7c"]
+atlas = ExtResource("1_cdq7c")
+region = Rect2(0, 0, 336, 336)
 
 [node name="Decoration" type="Node2D" unique_id=905467760]
 
 [node name="CornerGoop" type="Sprite2D" parent="." unique_id=1793570406]
 texture = SubResource("AtlasTexture_kw6nx")
+
+[node name="Goop" type="Sprite2D" parent="." unique_id=623144524]
+visible = false
+texture = SubResource("AtlasTexture_cdq7c")

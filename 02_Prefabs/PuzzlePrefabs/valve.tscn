@@ -7,11 +7,11 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyqxo"]
 atlas = ExtResource("2_lyqxo")
-region = Rect2(576, 480, 96, 192)
+region = Rect2(864, 624, 96, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b127f"]
 atlas = ExtResource("2_lyqxo")
-region = Rect2(384, 336, 96, 96)
+region = Rect2(384, 240, 96, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqxo"]
 size = Vector2(29, 36.5)
@@ -66,11 +66,11 @@ cooldown = 0.0
 texture = SubResource("AtlasTexture_lyqxo")
 
 [node name="valve_wheel" type="Sprite2D" parent="." unique_id=1606980054]
-position = Vector2(0, 24)
+position = Vector2(0, 12)
 texture = SubResource("AtlasTexture_b127f")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=530448483]
-position = Vector2(0, 24)
+position = Vector2(0, 12)
 scale = Vector2(3.1565123, 2.4152176)
 collision_layer = 8
 script = ExtResource("3_oeixu")
