@@ -20,5 +20,5 @@ func start(enemy : Enemy, info : Dictionary):
 	if info.get("dash_hit_wall", false):
 		info["isfacingright"] = not info["isfacingright"]
 	
-func exit(enemy : Enemy, info : Dictionary):
+func exit(enemy : Enemy, _info : Dictionary):
 	return

@@ -38,5 +38,5 @@ func start(enemy : Enemy, info : Dictionary):
 	info["dash"] = enemy.global_position
 	enemy.linear_velocity = Vector2.ZERO
 
-func exit(enemy : Enemy, info : Dictionary):
+func exit(enemy : Enemy, _info : Dictionary):
 	enemy.linear_velocity = Vector2.ZERO

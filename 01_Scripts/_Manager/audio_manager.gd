@@ -4,8 +4,10 @@ extends Node
 
 const bg_music = {
 	GlobalAudio.BodyAreaMusic.stomach: "stomach_music",
-	GlobalAudio.BodyAreaMusic.stomach_boss: "boss_music"
-}
+	GlobalAudio.BodyAreaMusic.stomach_boss: "boss_music",
+	GlobalAudio.BodyAreaMusic.penis: "stomach_music",
+	GlobalAudio.BodyAreaMusic.penis_boss: "boss_music"
+	}
 
 var current_area: int = -1
 

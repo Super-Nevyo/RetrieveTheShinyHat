@@ -201,12 +201,14 @@ position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "49"
 room_scene = ExtResource("21_ttv8s")
+music_area = 6
 
 [node name="50" type="Node2D" parent="WorldMap" unique_id=168250500]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "50"
 room_scene = ExtResource("22_3c0bm")
+music_area = 5
 
 [node name="51_NewItem" type="Node2D" parent="WorldMap" unique_id=1850739881]
 position = Vector2(-4, 0)
@@ -248,48 +250,56 @@ position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "57"
 room_scene = ExtResource("23_f82dh")
+music_area = 5
 
 [node name="58" type="Node2D" parent="WorldMap" unique_id=2081228128]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "58"
 room_scene = ExtResource("24_3n6cw")
+music_area = 5
 
 [node name="59" type="Node2D" parent="WorldMap" unique_id=1784084216]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "59"
 room_scene = ExtResource("25_tpl70")
+music_area = 5
 
 [node name="60" type="Node2D" parent="WorldMap" unique_id=1015780961]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "60"
 room_scene = ExtResource("26_i1rhv")
+music_area = 5
 
 [node name="61" type="Node2D" parent="WorldMap" unique_id=1132205866]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "61"
 room_scene = ExtResource("27_srojb")
+music_area = 5
 
 [node name="62" type="Node2D" parent="WorldMap" unique_id=1136390630]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "62"
 room_scene = ExtResource("28_04q2y")
+music_area = 5
 
 [node name="63" type="Node2D" parent="WorldMap" unique_id=639253340]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "63"
 room_scene = ExtResource("29_2pbjt")
+music_area = 5
 
 [node name="64" type="Node2D" parent="WorldMap" unique_id=1481155996]
 position = Vector2(-4, 0)
 script = ExtResource("5_khsvw")
 room_id = "64"
 room_scene = ExtResource("30_l0afi")
+music_area = 5
 
 [node name="Connections_Stomach" type="Node2D" parent="WorldMap" unique_id=1648242519]
 

@@ -44,7 +44,6 @@ atlas = ExtResource("12_g6k1p")
 region = Rect2(864, 960, 96, 48)
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
-metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_xo4jy")

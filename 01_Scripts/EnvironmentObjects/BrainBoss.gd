@@ -4,7 +4,11 @@ class_name BrainBoss
 @onready var brain_anim: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
-	brain_anim.play("StomachBoss")
+	match GlobalAudio.current_area:
+		GlobalAudio.BodyAreaMusic.penis, GlobalAudio.BodyAreaMusic.penis_boss:
+			brain_anim.play("PenisBoss")
+		GlobalAudio.BodyAreaMusic.stomach, GlobalAudio.BodyAreaMusic.stomach_boss:
+			brain_anim.play("StomachBoss")
 	
 #func ending_animation() -> void:
 	#brain_anim.play("Idle")

@@ -21,7 +21,7 @@ func _ready() -> void:
 		timer.timeout.connect(read_next_slot.bind(row_index))
 		timer.start(144.0 / row.move_speed)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var rectangle = spawn_area.shape as RectangleShape2D
 	var right_end = rectangle.size.x / 2
 	

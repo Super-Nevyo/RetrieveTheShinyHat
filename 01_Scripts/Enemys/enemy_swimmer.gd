@@ -36,5 +36,5 @@ func start(enemy : Enemy, info : Dictionary):
 	info ["swim_time"] = 0
 	
 
-func exit(enemy : Enemy, info : Dictionary):
+func exit(enemy : Enemy, _info : Dictionary):
 	return
