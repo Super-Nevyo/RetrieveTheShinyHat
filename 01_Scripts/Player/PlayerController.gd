@@ -210,7 +210,7 @@ func play_hit_animation() -> void:
 
 func take_damage(type: int,amount:float, ignore_invincible: bool = false):
 	# maybe i should make a static function to handle this globally and better? # if enemies take damage, yes - tbd
-	if isdead or god_mode:
+	if isdead or god_mode or MyStateMachine.CurrentState == MyStateMachine.InPipe:
 		return
 		
 	var was_hit = false

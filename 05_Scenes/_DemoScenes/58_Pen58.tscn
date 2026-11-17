@@ -21,9 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="17_vlxp5"]
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="18_yulyv"]
 [ext_resource type="PackedScene" uid="uid://chwm57nxsyons" path="res://02_Prefabs/Hazards/single_spike.tscn" id="19_jwj2d"]
-[ext_resource type="PackedScene" uid="uid://n42r34pmo1fh" path="res://02_Prefabs/PuzzlePrefabs/Activated/Light.tscn" id="22_p4qh3"]
-[ext_resource type="Shader" uid="uid://cub6disctfoaq" path="res://06_Extras/Shaders/PaletteSwap.tres" id="23_oxfpl"]
-[ext_resource type="Texture2D" uid="uid://biowk03c2mfwa" path="res://06_Extras/PalletSwaps/BluePalletOff.png" id="24_6tthe"]
+[ext_resource type="PackedScene" uid="uid://bvbn1qi0u34uo" path="res://02_Prefabs/PuzzlePrefabs/Activated/blue_triangle_light.tscn" id="22_a7yki"]
 
 [sub_resource type="Resource" id="Resource_8drde"]
 script = ExtResource("3_8drde")
@@ -74,18 +72,6 @@ metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
 [sub_resource type="AtlasTexture" id="AtlasTexture_bf1i8"]
 atlas = ExtResource("17_nfim3")
 region = Rect2(864, 816, 96, 192)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ixnv3"]
-load_path = "res://.godot/imported/BluePalletOn.png-453f78a5780cfe6270f9be1f5da7e811.ctex"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aanr2"]
-shader = ExtResource("23_oxfpl")
-shader_parameter/original_palette = ExtResource("24_6tthe")
-shader_parameter/new_palette = SubResource("CompressedTexture2D_ixnv3")
-shader_parameter/colours_count = 5
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1r3l4"]
-load_path = "res://.godot/imported/Lights.png-b9a638f27e2eefa3bdce85adf0f6148d.ctex"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
@@ -216,32 +202,29 @@ scale = Vector2(1.12, 1)
 scale = Vector2(0.5250044, 0.52000123)
 
 [node name="sperm_lane" parent="." unique_id=1586465063 instance=ExtResource("8_a1c5v")]
-position = Vector2(825, 240)
-scale = Vector2(0.5600024, 0.75999874)
+position = Vector2(825, 220)
 rows = Array[ExtResource("9_hdjj0")]([SubResource("Resource_i2jt8"), SubResource("Resource_raskk"), SubResource("Resource_66p3u")])
 
 [node name="Area2D" parent="sperm_lane" index="0" unique_id=2093319916]
 position = Vector2(16, 64)
-scale = Vector2(0.95999753, 0.4399988)
+scale = Vector2(0.55999756, 0.27999943)
 
 [node name="sperm_lane3" parent="." unique_id=1586948721 instance=ExtResource("8_a1c5v")]
 position = Vector2(1080, 876)
-scale = Vector2(1.04, 1)
 rows = Array[ExtResource("9_hdjj0")]([SubResource("Resource_i2jt8"), SubResource("Resource_raskk"), SubResource("Resource_66p3u")])
 
 [node name="Area2D" parent="sperm_lane3" index="0" unique_id=2093319916]
 position = Vector2(16, 64)
-scale = Vector2(0.95999753, 0.4399988)
+scale = Vector2(0.9999951, 0.4399988)
 
 [node name="sperm_lane2" parent="." unique_id=917463330 instance=ExtResource("8_a1c5v")]
-position = Vector2(1233, 554.00006)
+position = Vector2(1239, 599)
 rotation = 1.5707964
-scale = Vector2(0.40000364, 0.88)
 rows = Array[ExtResource("9_hdjj0")]([SubResource("Resource_i2jt8"), SubResource("Resource_raskk"), SubResource("Resource_66p3u")])
 
 [node name="Area2D" parent="sperm_lane2" index="0" unique_id=2093319916]
 position = Vector2(16, 64)
-scale = Vector2(0.95999753, 0.4399988)
+scale = Vector2(0.5345633, 0.37272516)
 
 [node name="Spikes" parent="." unique_id=1094872775 instance=ExtResource("10_hdjj0")]
 position = Vector2(1128, 984)
@@ -267,18 +250,13 @@ position = Vector2(1584, 984)
 [node name="pipes" type="Node" parent="." unique_id=736678440]
 
 [node name="pipe_piece" parent="pipes" unique_id=1326704238 instance=ExtResource("11_bbpso")]
-position = Vector2(1440, 96)
+position = Vector2(1440, 144)
 rotation = 1.5707964
 shape = 1
 signal_id = 587
 
 [node name="pipe_piece8" parent="pipes" unique_id=1602291502 instance=ExtResource("11_bbpso")]
 position = Vector2(1440, 192)
-rotation = 1.5707964
-shape = 0
-
-[node name="pipe_piece13" parent="pipes" unique_id=1132842028 instance=ExtResource("11_bbpso")]
-position = Vector2(1440, 144)
 rotation = 1.5707964
 shape = 0
 
@@ -457,13 +435,17 @@ shape = 0
 exit_side = 2
 
 [node name="pipe_piece6" parent="pipes" unique_id=1373564226 instance=ExtResource("11_bbpso")]
-position = Vector2(1392, 96)
+position = Vector2(1392, 144)
 shape = 0
 exit_side = 4
 
 [node name="pipe_piece2" parent="pipes" unique_id=797754995 instance=ExtResource("11_bbpso")]
 position = Vector2(1488, 96)
 shape = 0
+
+[node name="pipe_piece7" parent="pipes" unique_id=301638050 instance=ExtResource("11_bbpso")]
+position = Vector2(1440, 96)
+shape = 1
 
 [node name="pipe_piece3" parent="pipes" unique_id=783673019 instance=ExtResource("11_bbpso")]
 position = Vector2(1584, 96)
@@ -534,13 +516,13 @@ move_speed = 1.0
 
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("13_exndq")]
 position = Vector2(552, 552)
-attached_ids = Array[int]([582, 583, 585, 589])
-activation_amount = Array[float]([1.0, 1.0, 1.0, 0.5])
+attached_ids = Array[int]([582, 583, 585, 589, 5811])
+activation_amount = Array[float]([1.0, 1.0, 1.0, 0.5, 1.0])
 
 [node name="Switch2" parent="." unique_id=237504866 instance=ExtResource("13_exndq")]
 position = Vector2(1032, 168)
-attached_ids = Array[int]([584, 583, 585, 589])
-activation_amount = Array[float]([1.0, -1.0, -1.0, 0.5])
+attached_ids = Array[int]([584, 583, 585, 589, 5812])
+activation_amount = Array[float]([1.0, -1.0, -1.0, 0.5, 1.0])
 
 [node name="Spikes10" parent="." unique_id=827291398 instance=ExtResource("14_sfbnq")]
 position = Vector2(1248, 192)
@@ -578,9 +560,6 @@ texture = SubResource("AtlasTexture_bf1i8")
 [node name="BaseEnemy" parent="." unique_id=1227542854 instance=ExtResource("17_vlxp5")]
 position = Vector2(1128, 168)
 
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("18_yulyv")]
-position = Vector2(1781, 324.00003)
-
 [node name="Spikes8" parent="." unique_id=12055727 instance=ExtResource("19_jwj2d")]
 position = Vector2(600, 480)
 rotation = 3.1415927
@@ -589,17 +568,86 @@ rotation = 3.1415927
 position = Vector2(480, 480)
 rotation = 3.1415927
 
-[node name="Light" parent="." unique_id=2073561881 instance=ExtResource("22_p4qh3")]
+[node name="blueTriangleLight" parent="." unique_id=2073561881 instance=ExtResource("22_a7yki")]
 z_index = 1
-position = Vector2(553, 604)
+position = Vector2(552, 600)
+scale = Vector2(3, 3)
+signal_id = 5811
 
-[node name="Sprite2D" parent="Light" index="0" unique_id=87334520]
-material = SubResource("ShaderMaterial_aanr2")
-texture = SubResource("CompressedTexture2D_1r3l4")
-region_rect = Rect2(48, 0, 16, 16)
+[node name="Sprite2D" parent="blueTriangleLight" index="0" unique_id=87334520]
+region_rect = Rect2(16, 0, 16, 16)
 
-[node name="Sprite2D2" parent="Light" index="1" unique_id=401355035]
-region_rect = Rect2(48, 0, 16, 16)
+[node name="Sprite2D2" parent="blueTriangleLight" index="1" unique_id=401355035]
+z_index = 1
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="blueTriangleLight5" parent="." unique_id=1572152896 instance=ExtResource("22_a7yki")]
+z_index = 1
+position = Vector2(912, 204)
+scale = Vector2(3, 3)
+signal_id = 5811
+
+[node name="Sprite2D" parent="blueTriangleLight5" index="0" unique_id=87334520]
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Sprite2D2" parent="blueTriangleLight5" index="1" unique_id=401355035]
+z_index = 1
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="blueTriangleLight2" parent="." unique_id=308039019 instance=ExtResource("22_a7yki")]
+z_index = 1
+position = Vector2(1033, 204)
+scale = Vector2(3, 3)
+signal_id = 5812
+
+[node name="Sprite2D" parent="blueTriangleLight2" index="0" unique_id=87334520]
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Sprite2D2" parent="blueTriangleLight2" index="1" unique_id=401355035]
+z_index = 1
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="blueTriangleLight6" parent="." unique_id=1788905191 instance=ExtResource("22_a7yki")]
+z_index = 1
+position = Vector2(1728, 204)
+scale = Vector2(3, 3)
+signal_id = 5812
+
+[node name="Sprite2D" parent="blueTriangleLight6" index="0" unique_id=87334520]
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Sprite2D2" parent="blueTriangleLight6" index="1" unique_id=401355035]
+z_index = 1
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="blueTriangleLight3" parent="." unique_id=1264486957 instance=ExtResource("22_a7yki")]
+z_index = 1
+position = Vector2(384, 660)
+scale = Vector2(2, 2)
+signal_id = 5811
+
+[node name="Sprite2D" parent="blueTriangleLight3" index="0" unique_id=87334520]
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Sprite2D2" parent="blueTriangleLight3" index="1" unique_id=401355035]
+z_index = 1
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="blueTriangleLight4" parent="." unique_id=805628935 instance=ExtResource("22_a7yki")]
+z_index = 1
+position = Vector2(384, 628)
+scale = Vector2(2, 2)
+signal_id = 5812
+
+[node name="Sprite2D" parent="blueTriangleLight4" index="0" unique_id=87334520]
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Sprite2D2" parent="blueTriangleLight4" index="1" unique_id=401355035]
+z_index = 1
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("18_yulyv")]
+position = Vector2(1404, 684)
 
 [editable path="RoomTransition_50R"]
 [editable path="RoomTransition_57"]
@@ -616,4 +664,9 @@ region_rect = Rect2(48, 0, 16, 16)
 [editable path="sperm_lane3"]
 [editable path="sperm_lane2"]
 [editable path="valve3"]
-[editable path="Light"]
+[editable path="blueTriangleLight"]
+[editable path="blueTriangleLight5"]
+[editable path="blueTriangleLight2"]
+[editable path="blueTriangleLight6"]
+[editable path="blueTriangleLight3"]
+[editable path="blueTriangleLight4"]
