@@ -5,4 +5,4 @@ class_name MoveForward
 
 func update(enemy: Enemy, _info: Dictionary) -> void:
 	var speed: float = _info.get ("lane_speed", move_speed)
-	enemy.linear_velocity = Vector2(speed, 0)
+	enemy.linear_velocity = enemy.global_transform.x.normalized()*speed
