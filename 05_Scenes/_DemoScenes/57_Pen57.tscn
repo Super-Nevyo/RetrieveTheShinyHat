@@ -140,18 +140,21 @@ puzzle_id = "switch_upo"
 
 [node name="Switch3" parent="." unique_id=150077233 instance=ExtResource("11_raskk")]
 position = Vector2(1188, 552)
-attached_ids = Array[int]([571, 572])
-activation_amount = Array[float]([-1.0, 0.5])
+attached_ids = Array[int]([571, 572, 575])
+activation_amount = Array[float]([-1.0, -0.5, 1.0])
 puzzle_id = "switch_dw"
 
 [node name="Switch4" parent="." unique_id=264805422 instance=ExtResource("11_raskk")]
 position = Vector2(1785, 504)
-attached_ids = Array[int]([571, 572])
-activation_amount = Array[float]([1.0, 0.5])
+attached_ids = Array[int]([571, 572, 574])
+activation_amount = Array[float]([1.0, 0.5, 1.0])
 puzzle_id = "switch_up"
 
 [node name="valve" parent="." unique_id=583119961 instance=ExtResource("12_66p3u")]
 position = Vector2(1740, 288)
+attached_ids = Array[int]([573])
+activation_amount = Array[float]([1.0])
+puzzle_id = "valve_pen57"
 
 [node name="DoorInvisible" parent="." unique_id=67996681 instance=ExtResource("13_ac7fn")]
 position = Vector2(912, 748)
@@ -165,11 +168,15 @@ DoorMovePosition = Vector2(-194, 0)
 move_speed = 0.8
 signal_id = 572
 
+[node name="StaticBody2D" parent="DoorInvisible/StaticBody2D/Door" index="0" unique_id=2113387722]
+sync_to_physics = false
+
 [node name="CollisionShape2D" parent="DoorInvisible/StaticBody2D" parent_id_path=PackedInt32Array(67996681, 2113387722) index="1" unique_id=2049032428]
 disabled = true
 
 [node name="Sprite2D" parent="DoorInvisible/StaticBody2D" parent_id_path=PackedInt32Array(67996681, 2113387722) index="2" unique_id=178328515]
 visible = false
+scale = Vector2(1e-05, 1e-05)
 
 [node name="pipe_piece" parent="." unique_id=1326704238 instance=ExtResource("14_okckf")]
 position = Vector2(1200, 432)
@@ -183,14 +190,16 @@ shape = 0
 
 [node name="pipe_piece10" parent="." unique_id=1629945220 instance=ExtResource("14_okckf")]
 position = Vector2(1296, 432)
-rotation = 1.5707964
+rotation = -1.5707964
 shape = 1
 pipe_variant = 1
+signal_id = 573
 
 [node name="pipe_piece11" parent="." unique_id=1107841893 instance=ExtResource("14_okckf")]
 position = Vector2(1296, 480)
 rotation = 1.5707964
 shape = 0
+exit_side = 2
 
 [node name="pipe_piece2" parent="." unique_id=1863470428 instance=ExtResource("14_okckf")]
 position = Vector2(1200, 336)
@@ -204,8 +213,9 @@ shape = 0
 
 [node name="pipe_piece3" parent="." unique_id=171231063 instance=ExtResource("14_okckf")]
 position = Vector2(1200, 288)
-rotation = 1.5707964
+rotation = -1.5707964
 shape = 1
+signal_id = 573
 
 [node name="pipe_piece4" parent="." unique_id=928042424 instance=ExtResource("14_okckf")]
 position = Vector2(1152, 288)
@@ -228,6 +238,24 @@ position = Vector2(960, 288)
 shape = 0
 exit_side = 4
 
+[node name="Door" parent="." unique_id=1422853810 instance=ExtResource("13_ac7fn")]
+position = Vector2(936, 900)
+DoorMovePosition = Vector2(0, 100)
+move_speed = 0.5
+signal_id = 574
+
+[node name="Door2" parent="." unique_id=1603328710 instance=ExtResource("13_ac7fn")]
+position = Vector2(936, 996)
+
+[node name="Door3" parent="." unique_id=852916922 instance=ExtResource("13_ac7fn")]
+position = Vector2(1536, 900)
+
+[node name="Door4" parent="." unique_id=1598565129 instance=ExtResource("13_ac7fn")]
+position = Vector2(1536, 996)
+DoorMovePosition = Vector2(0, -100)
+move_speed = 0.5
+signal_id = 575
+
 [editable path="RoomTransition_49NW"]
 [editable path="RoomTransition_49NE"]
 [editable path="RoomTransition_58"]
@@ -235,3 +263,4 @@ exit_side = 4
 [editable path="EnvTiles/sperm_lane"]
 [editable path="EnvTiles/sperm_lane2"]
 [editable path="DoorInvisible"]
+[editable path="DoorInvisible/StaticBody2D/Door"]

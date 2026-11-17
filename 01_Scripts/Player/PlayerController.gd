@@ -143,6 +143,11 @@ func _physics_process(delta: float) -> void:
 	velocity = velo
 	move_and_slide()
 	
+	if Input.is_action_just_pressed("ui_accept"):
+		for i in range(get_slide_collision_count()):
+			var hit := get_slide_collision(i)
+			print("Touching: ", hit.get_collider().get_path(), "  Normal: ", hit.get_normal())
+	
 #func get_input():
 	#direction_x = Input.get_axis("move_left", "move_right")
 	#direction_y = Input.get_axis("move_up", "move_down")
