@@ -9,7 +9,7 @@ class_name ConstantWander
 func update(enemy : Enemy, info : Dictionary):
 	if wall_check.check_collision(enemy,info) || !ground_check.check_collision(enemy,info):
 		info[is_facing_right_ID] = !info[is_facing_right_ID]
-	enemy.linear_velocity.x = enemy_movement_stats.move_speed * (1 if info[is_facing_right_ID] else -1)
+	enemy.apply_impulse(Vector2((enemy_movement_stats.move_speed * (1 if info[is_facing_right_ID] else -1) - enemy.linear_velocity.x)*enemy_movement_stats.accel_ratio,1)) 
 	return 
 
 func start(enemy : Enemy, info : Dictionary):
