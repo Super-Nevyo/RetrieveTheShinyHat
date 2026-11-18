@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://4mbxxradlt0r" path="res://02_Prefabs/PuzzlePrefabs/valve.tscn" id="16_yl3d4"]
 [ext_resource type="Texture2D" uid="uid://cnpt20eb2lexw" path="res://03_Art/Environment/penisart.png" id="17_nfim3"]
 [ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="17_vlxp5"]
-[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="18_yulyv"]
 [ext_resource type="PackedScene" uid="uid://chwm57nxsyons" path="res://02_Prefabs/Hazards/single_spike.tscn" id="19_jwj2d"]
 [ext_resource type="PackedScene" uid="uid://bvbn1qi0u34uo" path="res://02_Prefabs/PuzzlePrefabs/Activated/blue_triangle_light.tscn" id="22_a7yki"]
 
@@ -44,7 +43,13 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 [sub_resource type="Resource" id="Resource_u8g2s"]
 script = ExtResource("3_8drde")
 display_name = "To_59"
-transition_id = "58_exit_ne"
+transition_id = "58_exit_upper_e"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_82nil"]
+script = ExtResource("3_8drde")
+display_name = "To_59"
+transition_id = "58_exit_nn"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_a7yki"]
@@ -84,7 +89,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_iqjsl")
-transitions = [NodePath("../RoomTransition_57SSW"), NodePath("../RoomTransition_50R"), NodePath("../RoomTransition_57"), NodePath("../RoomTransition_59SE"), NodePath("../RoomTransition_58SSE"), NodePath("../RoomTransition_59NE")]
+transitions = [NodePath("../RoomTransition_50R"), NodePath("../RoomTransition_57"), NodePath("../RoomTransition_59SE"), NodePath("../RoomTransition_59NE"), NodePath("../RoomTransition_59NN"), NodePath("../RoomTransition_57SSW"), NodePath("../RoomTransition_58SSE")]
 
 [node name="RoomTransition_50R" parent="." unique_id=306758002 instance=ExtResource("2_8drde")]
 position = Vector2(500, 64)
@@ -118,6 +123,14 @@ transition_data = SubResource("Resource_u8g2s")
 [node name="ArrivalPoint" parent="RoomTransition_59NE" index="1" unique_id=1345594044]
 position = Vector2(-67, 23)
 
+[node name="RoomTransition_59NN" parent="." unique_id=513693011 instance=ExtResource("2_8drde")]
+position = Vector2(1776, 60)
+rotation = -1.5707964
+transition_data = SubResource("Resource_82nil")
+
+[node name="ArrivalPoint" parent="RoomTransition_59NN" index="1" unique_id=1345594044]
+position = Vector2(-67, 5)
+
 [node name="RoomTransition_57SSW" parent="." unique_id=1412387897 instance=ExtResource("2_8drde")]
 position = Vector2(352, 936)
 transition_data = SubResource("Resource_a7yki")
@@ -141,7 +154,7 @@ position = Vector2(-71, 0)
 [node name="EnvTiles" type="Node" parent="." unique_id=1578182652]
 
 [node name="GameBorder" parent="EnvTiles" unique_id=1529811716 instance=ExtResource("3_41hig")]
-tile_map_data = PackedByteArray("AAAHAAEAAQABAAIAADAHAAIAAQAAAAIAADAHAAMAAQAAAAIAADAHAAQAAQAAAAIAADAHAAUAAQAAAAIAADAHAAYAAQAAAAIAADAHAAcAAQAAAAIAADAHAAgAAQAAAAIAADAHAAkAAQAAAAIAADAHAAoAAQAAAAIAADAHAAsAAQAAAAIAADAHAAwAAQAAAAIAADAHAA0AAQAAAAIAADAHABAAAQAAAAIAADAHABEAAQAAAAIAADAHABUAAQABAAIAAFAIAAEAAQAAAAIAAGAIABUAAQAAAAIAAFAJABUAAQAAAAIAAFAKABUAAQAAAAIAAFALABUAAQAAAAIAAFAMAAEAAQAAAAIAAGAMABUAAQAAAAIAAFANAAEAAQAAAAIAAGANABUAAQAAAAIAAFAOAAEAAQAAAAIAAGAOABUAAQAAAAIAAFAPAAEAAQAAAAIAAGAPABUAAQAAAAIAAFAQAAEAAQAAAAIAAGAQABUAAQAAAAIAAFARAAEAAQAAAAIAAGASAAEAAQAAAAIAAGATAAEAAQAAAAIAAGAUAAEAAQAAAAIAAGAVAAEAAQAAAAIAAGAWAAEAAQAAAAIAAGAXAAEAAQAAAAIAAGAYAAEAAQAAAAIAAGAZAAEAAQAAAAIAAGAaAAEAAQAAAAIAAGAbAAEAAQAAAAIAAGAcAAEAAQAAAAIAAGAdAAEAAQAAAAIAAGAeAAEAAQAAAAIAAGAeABUAAQAAAAIAAFAfAAEAAQAAAAIAAGAfABUAAQAAAAIAAFAgAAEAAQAAAAIAAGAgABUAAQAAAAIAAFAhAAEAAQAAAAIAAGAhABUAAQAAAAIAAFAiAAEAAQAAAAIAAGAiABUAAQAAAAIAAFAjAAEAAQAAAAIAAGAjABUAAQAAAAIAAFAkAAEAAQAAAAIAAGAkABUAAQAAAAIAAFAlAAEAAQAAAAIAAGAlABUAAQAAAAIAAFAmAAEAAQABAAIAAGAmAAQAAQAAAAIAAAAmAAoAAQAAAAIAAAAmAAsAAQAAAAIAAAAmAAwAAQAAAAIAAAAmAA0AAQAAAAIAAAAmAA4AAQAAAAIAAAAmAA8AAQAAAAIAAAAmABAAAQAAAAIAAAAmABEAAQAAAAIAAAAdABUAAQAAAAIAAFARABUAAQAAAAIAAFASABUAAQAAAAIAAFATABUAAQAAAAIAAFAUABUAAQAAAAIAAFAVABUAAQAAAAIAAFAWABUAAQAAAAIAAFAXABUAAQAAAAIAAFAYABUAAQAAAAIAAFAZABUAAQAAAAIAAFAaABUAAQAAAAIAAFAbABUAAQAAAAIAAFAcABUAAQAAAAIAAFAmAAUAAQAAAAIAAAAmAAgAAQAAAAIAAAAmAAkAAQAAAAIAAAAmABUAAQABAAIAAAA=")
+tile_map_data = PackedByteArray("AAAHAAEAAQABAAIAADAHAAIAAQAAAAIAADAHAAMAAQAAAAIAADAHAAQAAQAAAAIAADAHAAUAAQAAAAIAADAHAAYAAQAAAAIAADAHAAcAAQAAAAIAADAHAAgAAQAAAAIAADAHAAkAAQAAAAIAADAHAAoAAQAAAAIAADAHAAsAAQAAAAIAADAHAAwAAQAAAAIAADAHAA0AAQAAAAIAADAHABAAAQAAAAIAADAHABEAAQAAAAIAADAHABUAAQABAAIAAFAIAAEAAQAAAAIAAGAIABUAAQAAAAIAAFAJABUAAQAAAAIAAFAKABUAAQAAAAIAAFALABUAAQAAAAIAAFAMAAEAAQAAAAIAAGAMABUAAQAAAAIAAFANAAEAAQAAAAIAAGANABUAAQAAAAIAAFAOAAEAAQAAAAIAAGAOABUAAQAAAAIAAFAPAAEAAQAAAAIAAGAPABUAAQAAAAIAAFAQAAEAAQAAAAIAAGAQABUAAQAAAAIAAFARAAEAAQAAAAIAAGASAAEAAQAAAAIAAGATAAEAAQAAAAIAAGAUAAEAAQAAAAIAAGAVAAEAAQAAAAIAAGAWAAEAAQAAAAIAAGAXAAEAAQAAAAIAAGAYAAEAAQAAAAIAAGAZAAEAAQAAAAIAAGAaAAEAAQAAAAIAAGAbAAEAAQAAAAIAAGAcAAEAAQAAAAIAAGAdAAEAAQAAAAIAAGAeAAEAAQAAAAIAAGAeABUAAQAAAAIAAFAfAAEAAQAAAAIAAGAfABUAAQAAAAIAAFAgAAEAAQAAAAIAAGAgABUAAQAAAAIAAFAhAAEAAQAAAAIAAGAhABUAAQAAAAIAAFAiAAEAAQAAAAIAAGAiABUAAQAAAAIAAFAjAAEAAQAAAAIAAGAjABUAAQAAAAIAAFAkABUAAQAAAAIAAFAlABUAAQAAAAIAAFAmAAEAAQABAAIAAGAmAAQAAQAAAAIAAAAmAAoAAQAAAAIAAAAmAAsAAQAAAAIAAAAmAAwAAQAAAAIAAAAmAA0AAQAAAAIAAAAmAA4AAQAAAAIAAAAmAA8AAQAAAAIAAAAmABAAAQAAAAIAAAAmABEAAQAAAAIAAAAdABUAAQAAAAIAAFARABUAAQAAAAIAAFASABUAAQAAAAIAAFATABUAAQAAAAIAAFAUABUAAQAAAAIAAFAVABUAAQAAAAIAAFAWABUAAQAAAAIAAFAXABUAAQAAAAIAAFAYABUAAQAAAAIAAFAZABUAAQAAAAIAAFAaABUAAQAAAAIAAFAbABUAAQAAAAIAAFAcABUAAQAAAAIAAFAmAAUAAQAAAAIAAAAmAAgAAQAAAAIAAAAmAAkAAQAAAAIAAAAmABUAAQABAAIAAAA=")
 metadata/_edit_lock_ = true
 
 [node name="SecretArea" parent="EnvTiles" unique_id=716718294 instance=ExtResource("4_a1c5v")]
@@ -505,7 +518,7 @@ move_speed = 1.0
 signal_id = 582
 
 [node name="Door8" parent="." unique_id=1815217342 instance=ExtResource("12_u8g2s")]
-position = Vector2(1728, 136)
+position = Vector2(1702, 136)
 DoorMovePosition = Vector2(0, -100)
 move_speed = 1.0
 signal_id = 585
@@ -660,13 +673,11 @@ region_rect = Rect2(16, 0, 16, 16)
 z_index = 1
 region_rect = Rect2(16, 0, 16, 16)
 
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("18_yulyv")]
-position = Vector2(1791, 341.00003)
-
 [editable path="RoomTransition_50R"]
 [editable path="RoomTransition_57"]
 [editable path="RoomTransition_59SE"]
 [editable path="RoomTransition_59NE"]
+[editable path="RoomTransition_59NN"]
 [editable path="RoomTransition_57SSW"]
 [editable path="RoomTransition_58SSE"]
 [editable path="EnvTiles/SecretArea"]

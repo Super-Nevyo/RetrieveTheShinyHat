@@ -33,7 +33,7 @@ metadata/_edit_horizontal_guides_ = [449.0, 300.0]
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 visible = false
 script = ExtResource("1_h4bfu")
-transitions = [NodePath("../transition_umbrella"), NodePath(""), NodePath("../transition_umbrelladoor")]
+transitions = [NodePath("../transition_umbrella"), NodePath("../transition_umbrelladoor")]
 
 [node name="EnvTiles" type="Node" parent="." unique_id=533673705]
 

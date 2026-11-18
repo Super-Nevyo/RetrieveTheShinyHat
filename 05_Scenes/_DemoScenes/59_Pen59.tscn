@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="14_iqrhe"]
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="15_5041q"]
 [ext_resource type="PackedScene" uid="uid://bdwhlwfw8xqio" path="res://02_Prefabs/WorldPrefabs/Spikes_Small.tscn" id="16_ihelp"]
-[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="17_fnuxw"]
 
 [sub_resource type="Resource" id="Resource_s5wrv"]
 script = ExtResource("3_s5wrv")
@@ -75,7 +74,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_fum2h")
-transitions = [null, NodePath("../RoomTransition_60")]
+transitions = [NodePath("../RoomTransition_60"), NodePath("../RoomTransition_58W"), NodePath("../RoomTransition_58NW"), NodePath("../RoomTransition_60NE"), NodePath("../RoomTransition_59SSW"), NodePath("../RoomTransition_59SSE")]
 
 [node name="RoomTransition_60" parent="." unique_id=1374123216 instance=ExtResource("2_s5wrv")]
 position = Vector2(1848, 624)
@@ -512,9 +511,6 @@ position = Vector2(480, 1008)
 [node name="Spikes8" parent="." unique_id=317151393 instance=ExtResource("16_ihelp")]
 position = Vector2(480, 864)
 rotation = 3.1415927
-
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("17_fnuxw")]
-position = Vector2(1524, 708)
 
 [editable path="RoomTransition_58W"]
 [editable path="RoomTransition_58NW"]

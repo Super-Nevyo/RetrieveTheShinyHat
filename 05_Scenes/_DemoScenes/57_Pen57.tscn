@@ -17,10 +17,16 @@
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="16_ecl4g"]
 [ext_resource type="PackedScene" uid="uid://chwm57nxsyons" path="res://02_Prefabs/Hazards/single_spike.tscn" id="17_e85x6"]
 
-[sub_resource type="Resource" id="Resource_r8f5y"]
+[sub_resource type="Resource" id="Resource_ecl4g"]
 script = ExtResource("3_c1rsc")
 display_name = "To_49"
 transition_id = "57_exit_n"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_r8f5y"]
+script = ExtResource("3_c1rsc")
+display_name = "To_49"
+transition_id = "57_exit_ne"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_re8mh"]
@@ -56,12 +62,12 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_s0owk")
-transitions = [NodePath("../RoomTransition_49NW"), NodePath("../RoomTransition_58")]
+transitions = [NodePath("../RoomTransition_49NW"), NodePath("../RoomTransition_58"), NodePath("../RoomTransition_58Sperm"), NodePath("../RoomTransition_49NE")]
 
 [node name="RoomTransition_49NW" parent="." unique_id=306758002 instance=ExtResource("2_c1rsc")]
 position = Vector2(552, 64)
 rotation = 1.5707964
-transition_data = SubResource("Resource_r8f5y")
+transition_data = SubResource("Resource_ecl4g")
 
 [node name="Trigger" parent="RoomTransition_49NW" index="0" unique_id=280245681]
 scale = Vector2(1, 3.0000007)
