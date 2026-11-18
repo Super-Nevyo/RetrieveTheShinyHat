@@ -9,12 +9,38 @@
 [ext_resource type="PackedScene" uid="uid://b5kgqbsnaxirq" path="res://02_Prefabs/PuzzlePrefabs/Box.tscn" id="7_828q7"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="8_0imss"]
 [ext_resource type="PackedScene" uid="uid://lrifvosj6wxe" path="res://02_Prefabs/Enemies/BaseEnemy.tscn" id="9_ulwqt"]
+[ext_resource type="Script" uid="uid://d3ebyys3svqk8" path="res://01_Scripts/Enemys/base_enemy.gd" id="11_i6lf4"]
+[ext_resource type="Script" uid="uid://bxw21dkarelou" path="res://01_Scripts/Enemys/enemy_state.gd" id="12_2agyp"]
+[ext_resource type="Script" uid="uid://cf6fa6iwmmiyj" path="res://01_Scripts/Enemys/enemy_null_swap_state.gd" id="13_jrxfx"]
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="13_osutn"]
+[ext_resource type="Script" uid="uid://cms4ksi8ats4m" path="res://01_Scripts/Enemys/enemy_state_machine.gd" id="14_a8017"]
+[ext_resource type="Script" uid="uid://bap710rumdjav" path="res://01_Scripts/Enemys/Speaking/speaking_state.gd" id="14_jrxfx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ulwqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(1144, 20)
+
+[sub_resource type="Resource" id="Resource_4aysw"]
+script = ExtResource("13_jrxfx")
+swap_to = 1
+metadata/_custom_type_script = "uid://cf6fa6iwmmiyj"
+
+[sub_resource type="Resource" id="Resource_xqe2s"]
+script = ExtResource("14_jrxfx")
+speaking_frames = 100
+state_machine_current_reference = "currentstate"
+metadata/_custom_type_script = "uid://bap710rumdjav"
+
+[sub_resource type="Resource" id="Resource_p2tw8"]
+script = ExtResource("14_a8017")
+States = Dictionary[int, ExtResource("12_2agyp")]({
+0: SubResource("Resource_4aysw"),
+1: SubResource("Resource_xqe2s")
+})
+metadata/_custom_type_script = "uid://cms4ksi8ats4m"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsmb2"]
 
 [node name="PuzzleTestScene" type="Node2D" unique_id=1037801544]
 
@@ -84,3 +110,31 @@ offset_left = -960.0
 offset_top = -540.0
 offset_right = -960.0
 offset_bottom = -540.0
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1331848694]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1782108401]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=301440089]
+layout_mode = 2
+text = "text goes here"
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1170304834]
+position = Vector2(777, 425)
+script = ExtResource("11_i6lf4")
+MyStateMachine = SubResource("Resource_p2tw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=435674365]
+shape = SubResource("CircleShape2D_qsmb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=541754501]
+texture = ExtResource("13_osutn")
