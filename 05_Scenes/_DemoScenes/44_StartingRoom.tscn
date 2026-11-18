@@ -334,6 +334,7 @@ position = Vector2(816, 720)
 position = Vector2(600, 696)
 attached_ids = Array[int]([-1, -2])
 activation_amount = Array[float]([1.0, 1.0])
+puzzle_id = "FirstSwitch"
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("14_o447k")]
 position = Vector2(528, 1032)
