@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 [sub_resource type="Resource" id="Resource_qymwy"]
 script = ExtResource("3_4hdun")
 display_name = "To_59"
-transition_id = "60_exit_w"
+transition_id = "60_exit_sw"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_ki76c"]

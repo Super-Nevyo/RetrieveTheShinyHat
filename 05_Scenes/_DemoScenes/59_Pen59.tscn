@@ -26,20 +26,32 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_q05s2"]
 script = ExtResource("3_s5wrv")
-display_name = "To_59"
-transition_id = "58_exit_e"
+display_name = "To_58"
+transition_id = "59_exit_w"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_fnuxw"]
+script = ExtResource("3_s5wrv")
+display_name = "To_58"
+transition_id = "59_exit_nw"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_vn5aa"]
 script = ExtResource("3_s5wrv")
+display_name = "To_60"
+transition_id = "59_exit_ne"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_yl818"]
+script = ExtResource("3_s5wrv")
 display_name = "To_59"
-transition_id = "58_exit_ne"
+transition_id = "59_exit_sw"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_tgpbf"]
 script = ExtResource("3_s5wrv")
-display_name = "To_59S"
-transition_id = "58_exit_se"
+display_name = "To_59"
+transition_id = "59_exit_se"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_i2jt8"]
@@ -69,16 +81,16 @@ transitions = [null, NodePath("../RoomTransition_60")]
 position = Vector2(1848, 624)
 transition_data = SubResource("Resource_s5wrv")
 
-[node name="RoomTransition_59SE" parent="." unique_id=1611172478 instance=ExtResource("2_s5wrv")]
+[node name="RoomTransition_58W" parent="." unique_id=1611172478 instance=ExtResource("2_s5wrv")]
 position = Vector2(360, 336)
 transition_data = SubResource("Resource_q05s2")
 
-[node name="ArrivalPoint" parent="RoomTransition_59SE" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_58W" index="1" unique_id=1345594044]
 position = Vector2(82, 23)
 
 [node name="RoomTransition_58NW" parent="." unique_id=610495296 instance=ExtResource("2_s5wrv")]
 position = Vector2(360, 144)
-transition_data = SubResource("Resource_vn5aa")
+transition_data = SubResource("Resource_fnuxw")
 
 [node name="ArrivalPoint" parent="RoomTransition_58NW" index="1" unique_id=1345594044]
 position = Vector2(82, 23)
@@ -92,7 +104,7 @@ position = Vector2(82, 23)
 
 [node name="RoomTransition_59SSW" parent="." unique_id=709991706 instance=ExtResource("2_s5wrv")]
 position = Vector2(352, 936)
-transition_data = SubResource("Resource_tgpbf")
+transition_data = SubResource("Resource_yl818")
 
 [node name="Trigger" parent="RoomTransition_59SSW" index="0" unique_id=280245681]
 scale = Vector2(1, 1.5200049)
@@ -504,7 +516,7 @@ rotation = 3.1415927
 [node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("17_fnuxw")]
 position = Vector2(1524, 708)
 
-[editable path="RoomTransition_59SE"]
+[editable path="RoomTransition_58W"]
 [editable path="RoomTransition_58NW"]
 [editable path="RoomTransition_60NE"]
 [editable path="RoomTransition_59SSW"]

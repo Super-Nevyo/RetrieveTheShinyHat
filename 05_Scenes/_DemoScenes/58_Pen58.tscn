@@ -47,6 +47,12 @@ display_name = "To_59"
 transition_id = "58_exit_ne"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
+[sub_resource type="Resource" id="Resource_a7yki"]
+script = ExtResource("3_8drde")
+display_name = "To_59"
+transition_id = "58_exit_sw"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
 [sub_resource type="Resource" id="Resource_bbpso"]
 script = ExtResource("3_8drde")
 display_name = "To_59S"
@@ -114,7 +120,7 @@ position = Vector2(-67, 23)
 
 [node name="RoomTransition_57SSW" parent="." unique_id=1412387897 instance=ExtResource("2_8drde")]
 position = Vector2(352, 936)
-transition_data = SubResource("Resource_bbpso")
+transition_data = SubResource("Resource_a7yki")
 
 [node name="Trigger" parent="RoomTransition_57SSW" index="0" unique_id=280245681]
 scale = Vector2(1, 1.5200049)

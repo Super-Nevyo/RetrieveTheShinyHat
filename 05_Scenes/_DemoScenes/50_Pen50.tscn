@@ -57,7 +57,7 @@ transition_data = SubResource("Resource_1v5n1")
 position = Vector2(66, 3.8146973e-06)
 
 [node name="RoomTransition_58_L" parent="." unique_id=1485730428 instance=ExtResource("2_38l63")]
-position = Vector2(500, 1044)
+position = Vector2(505, 1044)
 rotation = 1.5707964
 transition_data = SubResource("Resource_38l63")
 
@@ -68,7 +68,6 @@ scale = Vector2(1, 2)
 position = Vector2(-60, 5.2453663e-07)
 
 [node name="RoomTransition_58_R" parent="." unique_id=306758002 instance=ExtResource("2_38l63")]
-visible = false
 position = Vector2(1680, 1008)
 rotation = 1.5707964
 transition_data = SubResource("Resource_6e0fm")
