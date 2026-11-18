@@ -60,7 +60,7 @@ metadata/_edit_lock_ = true
 
 [node name="SecretArea" parent="EnvTiles" unique_id=716718294 instance=ExtResource("4_g77nw")]
 
-[node name="Cover" parent="EnvTiles/SecretArea" index="0" unique_id=1548122823]
+[node name="Cover" parent="EnvTiles/SecretArea/Tiles" parent_id_path=PackedInt32Array(716718294, 912739327) index="1" unique_id=1548122823]
 z_index = 30
 
 [node name="RevealSecret" parent="EnvTiles/SecretArea" index="1" unique_id=1866784657]
@@ -70,6 +70,7 @@ position = Vector2(0, 0)
 scale = Vector2(1, 1.6800005)
 
 [node name="Ground" type="TileMapLayer" parent="EnvTiles" unique_id=1118345256]
+tile_map_data = PackedByteArray("AAAkAAMABQAQAAQAAAAlAAMABQARAAQAAAAmAAMABQASAAQAAAAhAAMABQAQAAQAAAAiAAMABQARAAQAAAAjAAMABQASAAQAAAAgAAMABQARAAMAAAAgAAIABQARAAMAAAAgAAEABQARAAMAAAA=")
 tile_set = ExtResource("5_gfkmj")
 
 [node name="BlackBg" type="TileMapLayer" parent="EnvTiles" unique_id=1008032494]
