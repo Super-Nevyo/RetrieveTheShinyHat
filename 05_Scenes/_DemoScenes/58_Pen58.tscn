@@ -25,7 +25,7 @@
 
 [sub_resource type="Resource" id="Resource_8drde"]
 script = ExtResource("3_8drde")
-display_name = "To_50L"
+display_name = "To_50"
 transition_id = "58_exit_nw"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_bbpso"]
 script = ExtResource("3_8drde")
-display_name = "To_59S"
+display_name = "To_59"
 transition_id = "58_exit_se"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
@@ -84,7 +84,7 @@ metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_iqjsl")
-transitions = [null, NodePath("../RoomTransition_50R"), NodePath("../RoomTransition_57"), NodePath("../RoomTransition_59SE")]
+transitions = [NodePath("../RoomTransition_57SSW"), NodePath("../RoomTransition_50R"), NodePath("../RoomTransition_57"), NodePath("../RoomTransition_59SE"), NodePath("../RoomTransition_58SSE"), NodePath("../RoomTransition_59NE")]
 
 [node name="RoomTransition_50R" parent="." unique_id=306758002 instance=ExtResource("2_8drde")]
 position = Vector2(500, 64)
