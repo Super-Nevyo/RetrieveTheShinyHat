@@ -13,8 +13,9 @@ class_name Swimmer
 func update(enemy : Enemy, info : Dictionary):
 	if wall_check.check_collision(enemy,info):
 		info[is_facing_right_ID] = !info[is_facing_right_ID]
+		enemy.get_node("Sprite2D").flip_h = !info[is_facing_right_ID]
 	
-	enemy.get_node("Sprite2D").flip_h = info[is_facing_right_ID]
+	
 	
 	if player_check.check_collision(enemy, info):
 		var target = info[player_check.raycast_ID].get_collider()
@@ -34,7 +35,7 @@ func start(enemy : Enemy, info : Dictionary):
 	if !info.has(is_facing_right_ID):
 		info[is_facing_right_ID] = false
 	info ["swim_time"] = 0
-	
+	enemy.get_node("Sprite2D").flip_h = !info[is_facing_right_ID]
 
 func exit(enemy : Enemy, _info : Dictionary):
 	return
