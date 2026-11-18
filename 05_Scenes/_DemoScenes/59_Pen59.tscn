@@ -431,6 +431,7 @@ shape = 0
 [node name="pipe_piece60" parent="." unique_id=2039147854 instance=ExtResource("14_iqrhe")]
 position = Vector2(768, 384)
 shape = 0
+exit_side = 2
 
 [node name="pipe_piece14" parent="." unique_id=1936572135 instance=ExtResource("14_iqrhe")]
 position = Vector2(1440, 576)
@@ -459,6 +460,7 @@ shape = 0
 position = Vector2(1584, 672)
 rotation = 1.5707964
 shape = 1
+exit_side = 2
 
 [node name="pipe_piece8" parent="." unique_id=2145332346 instance=ExtResource("14_iqrhe")]
 position = Vector2(1488, 528)
@@ -480,6 +482,7 @@ shape = 1
 [node name="pipe_piece12" parent="." unique_id=2038528039 instance=ExtResource("14_iqrhe")]
 position = Vector2(1632, 480)
 shape = 1
+exit_side = 2
 
 [node name="pipe_piece2" parent="." unique_id=505425718 instance=ExtResource("14_iqrhe")]
 position = Vector2(1488, 336)
@@ -488,6 +491,7 @@ shape = 0
 [node name="pipe_piece3" parent="." unique_id=209642876 instance=ExtResource("14_iqrhe")]
 position = Vector2(1536, 336)
 shape = 0
+exit_side = 2
 
 [node name="Spikes" parent="." unique_id=1094872775 instance=ExtResource("15_5041q")]
 position = Vector2(1476, 972)

@@ -99,7 +99,7 @@ metadata/_custom_type_script = "uid://cms4ksi8ats4m"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
 atlas = ExtResource("11_cxftj")
-region = Rect2(720, 720, 96, 96)
+region = Rect2(424, 448, 104, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 size = Vector2(60, 23)

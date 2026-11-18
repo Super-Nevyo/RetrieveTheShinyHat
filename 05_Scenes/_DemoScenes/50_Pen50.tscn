@@ -656,6 +656,7 @@ puzzle_id = "valve_upper"
 
 [node name="valve4" parent="." unique_id=2103254111 instance=ExtResource("11_vft2p")]
 position = Vector2(480, 101)
+puzzle_id = "a_valve"
 
 [node name="valve_art" parent="valve4" index="0" unique_id=1424015601]
 texture = SubResource("AtlasTexture_ank4g")
