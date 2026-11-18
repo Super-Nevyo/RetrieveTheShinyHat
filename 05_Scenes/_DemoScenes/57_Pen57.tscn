@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="6_raskk"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="8_r8f5y"]
 [ext_resource type="Script" uid="uid://bwmrfl6xm6j47" path="res://01_Scripts/Enemys/lane_pattern.gd" id="9_re8mh"]
-[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="10_i2jt8"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="11_raskk"]
 [ext_resource type="PackedScene" uid="uid://4mbxxradlt0r" path="res://02_Prefabs/PuzzlePrefabs/valve.tscn" id="12_66p3u"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="13_ac7fn"]
@@ -288,9 +287,6 @@ DoorMovePosition = Vector2(0, -100)
 move_speed = 0.5
 signal_id = 575
 
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("10_i2jt8")]
-position = Vector2(1404, 684)
-
 [node name="Spikes" parent="." unique_id=1094872775 instance=ExtResource("16_ecl4g")]
 position = Vector2(936, 888)
 rotation = 3.1415927
@@ -325,11 +321,15 @@ position = Vector2(456, 972)
 rotation = 1.5707964
 
 [node name="Spikes10" parent="." unique_id=1908463809 instance=ExtResource("17_e85x6")]
-position = Vector2(456, 668)
+position = Vector2(456, 538)
 rotation = 1.5707964
 
 [node name="Spikes11" parent="." unique_id=747993858 instance=ExtResource("17_e85x6")]
 position = Vector2(648, 668)
+rotation = 4.712389
+
+[node name="Spikes12" parent="." unique_id=362188909 instance=ExtResource("17_e85x6")]
+position = Vector2(648, 384)
 rotation = 4.712389
 
 [editable path="RoomTransition_49NW"]
