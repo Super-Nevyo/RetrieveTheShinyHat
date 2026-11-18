@@ -288,3 +288,7 @@ func activate_god_mode (enabled:bool) -> void:
 
 func remove_god() -> void:
 	MyStateMachine.ChangeState(MyStateMachine.Fall)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	die()

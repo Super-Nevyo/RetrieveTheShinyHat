@@ -1005,7 +1005,10 @@ item_anim = NodePath("../ItemsAnimations")
 head_mark = NodePath("../HeadAnchor")
 snorkel = NodePath("../HeadAnchor/Snorkel")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=933120063]
+
 [connection signal="area_entered" from="ItemInteractor" to="ItemInteractor" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemInteractor" to="ItemInteractor" method="_on_area_exited"]
 [connection signal="area_entered" from="ArmAnchor/WhackPivotPoint/AttackHitBox" to="." method="_on_attack_hit_box_area_entered"]
 [connection signal="area_entered" from="ArmAnchor/WhackPivotPoint/AttackHitBox" to="ArmAnchor/WhackPivotPoint/AttackHitBox" method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
