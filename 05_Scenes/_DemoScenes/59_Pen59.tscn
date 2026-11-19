@@ -99,7 +99,7 @@ position = Vector2(1848, 144)
 transition_data = SubResource("Resource_vn5aa")
 
 [node name="ArrivalPoint" parent="RoomTransition_60NE" index="1" unique_id=1345594044]
-position = Vector2(82, 23)
+position = Vector2(-60, 23)
 
 [node name="RoomTransition_59SSW" parent="." unique_id=709991706 instance=ExtResource("2_s5wrv")]
 position = Vector2(352, 936)

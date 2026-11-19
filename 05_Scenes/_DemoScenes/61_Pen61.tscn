@@ -20,12 +20,24 @@ display_name = "To_62"
 transition_id = "61_exit_e"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
+[sub_resource type="Resource" id="Resource_1hxm6"]
+script = ExtResource("3_f4yps")
+display_name = "To_61"
+transition_id = "61_exit_nw"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_1dono"]
+script = ExtResource("3_f4yps")
+display_name = "To_62"
+transition_id = "61_exit_ne"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_thtr0")
-transitions = [NodePath("../RoomTransition_60"), NodePath("../RoomTransition_62")]
+transitions = [NodePath("../RoomTransition_60"), NodePath("../RoomTransition_62"), NodePath("../RoomTransition_60_NWShort"), NodePath("../RoomTransition_62_NEShort")]
 
 [node name="RoomTransition_60" parent="." unique_id=306758002 instance=ExtResource("2_f4yps")]
 position = Vector2(384, 720)
@@ -40,6 +52,20 @@ transition_data = SubResource("Resource_f4yps")
 
 [node name="ArrivalPoint" parent="RoomTransition_62" index="1" unique_id=1345594044]
 position = Vector2(-69, 12)
+
+[node name="RoomTransition_60_NWShort" parent="." unique_id=45795490 instance=ExtResource("2_f4yps")]
+position = Vector2(348, 144)
+transition_data = SubResource("Resource_1hxm6")
+
+[node name="ArrivalPoint" parent="RoomTransition_60_NWShort" index="1" unique_id=1345594044]
+position = Vector2(82, 16)
+
+[node name="RoomTransition_62_NEShort" parent="." unique_id=1696396212 instance=ExtResource("2_f4yps")]
+position = Vector2(1856, 144)
+transition_data = SubResource("Resource_1dono")
+
+[node name="ArrivalPoint" parent="RoomTransition_62_NEShort" index="1" unique_id=1345594044]
+position = Vector2(-80, 16)
 
 [node name="EnvTiles" type="Node" parent="." unique_id=1578182652]
 
@@ -72,4 +98,6 @@ metadata/_edit_lock_ = true
 
 [editable path="RoomTransition_60"]
 [editable path="RoomTransition_62"]
+[editable path="RoomTransition_60_NWShort"]
+[editable path="RoomTransition_62_NEShort"]
 [editable path="EnvTiles/SecretArea"]

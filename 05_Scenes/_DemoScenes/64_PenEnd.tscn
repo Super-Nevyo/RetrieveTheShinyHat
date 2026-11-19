@@ -45,28 +45,28 @@ script = ExtResource("1_wwocl")
 transitions = [NodePath("../RoomTransition_56"), NodePath("../RoomTransition_63SW"), NodePath("../RoomTransition_63NW"), NodePath("../RoomTransition_63S")]
 
 [node name="RoomTransition_63NW" parent="." unique_id=306758002 instance=ExtResource("2_jo763")]
-position = Vector2(384, 144)
+position = Vector2(348, 144)
 transition_data = SubResource("Resource_jo763")
 
 [node name="ArrivalPoint" parent="RoomTransition_63NW" index="1" unique_id=1345594044]
 position = Vector2(64, 0)
 
 [node name="RoomTransition_63SW" parent="." unique_id=216280201 instance=ExtResource("2_jo763")]
-position = Vector2(384, 480)
+position = Vector2(348, 480)
 transition_data = SubResource("Resource_0fsr7")
 
 [node name="ArrivalPoint" parent="RoomTransition_63SW" index="1" unique_id=1345594044]
 position = Vector2(64, 0)
 
 [node name="RoomTransition_63S" parent="." unique_id=788700602 instance=ExtResource("2_jo763")]
-position = Vector2(384, 768)
+position = Vector2(348, 768)
 transition_data = SubResource("Resource_j0ocg")
 
 [node name="ArrivalPoint" parent="RoomTransition_63S" index="1" unique_id=1345594044]
 position = Vector2(64, 0)
 
 [node name="RoomTransition_56" parent="." unique_id=530148102 instance=ExtResource("2_jo763")]
-position = Vector2(1104, 96)
+position = Vector2(1104, 72)
 rotation = 1.5707964
 transition_data = SubResource("Resource_mjtw6")
 
