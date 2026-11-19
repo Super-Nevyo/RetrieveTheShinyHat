@@ -181,7 +181,7 @@ metadata/_edit_vertical_guides_ = [780.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_qymwy")
-transitions = [NodePath("../RoomTransition_52"), NodePath("../RoomTransition_59Sperm"), NodePath("../RoomTransition_61SW"), NodePath("../RoomTransition_61_NWShort"), NodePath("../RoomTransition_61_NEShort")]
+transitions = [NodePath("../RoomTransition_52"), NodePath("../RoomTransition_59WMid"), NodePath("../RoomTransition_61SE"), NodePath("../RoomTransition_61_NWShort"), NodePath("../RoomTransition_61_NEShort")]
 
 [node name="RoomTransition_52" parent="." unique_id=306758002 instance=ExtResource("2_4hdun")]
 position = Vector2(1104, 72)
@@ -194,52 +194,52 @@ scale = Vector2(1, 1.96)
 [node name="ArrivalPoint" parent="RoomTransition_52" index="1" unique_id=1345594044]
 position = Vector2(-60, -5.2453663e-07)
 
-[node name="RoomTransition_59Sperm" parent="." unique_id=239272832 instance=ExtResource("2_4hdun")]
+[node name="RoomTransition_59WMid" parent="." unique_id=239272832 instance=ExtResource("2_4hdun")]
 position = Vector2(348, 624)
 transition_data = SubResource("Resource_qymwy")
 
-[node name="ArrivalPoint" parent="RoomTransition_59Sperm" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_59WMid" index="1" unique_id=1345594044]
 position = Vector2(72, 24)
 
-[node name="RoomTransition_59" parent="." unique_id=115583887 instance=ExtResource("2_4hdun")]
+[node name="RoomTransition_59SW_Sperm" parent="." unique_id=115583887 instance=ExtResource("2_4hdun")]
 position = Vector2(352, 936)
 transition_data = SubResource("Resource_riau6")
 
-[node name="Trigger" parent="RoomTransition_59" index="0" unique_id=280245681]
+[node name="Trigger" parent="RoomTransition_59SW_Sperm" index="0" unique_id=280245681]
 scale = Vector2(1, 1.5)
 
-[node name="ArrivalPoint" parent="RoomTransition_59" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_59SW_Sperm" index="1" unique_id=1345594044]
 position = Vector2(72, 24)
 
-[node name="RoomTransition_61SW" parent="." unique_id=2133991201 instance=ExtResource("2_4hdun")]
+[node name="RoomTransition_61SE" parent="." unique_id=2133991201 instance=ExtResource("2_4hdun")]
 position = Vector2(1856, 912)
 transition_data = SubResource("Resource_ki76c")
 
-[node name="ArrivalPoint" parent="RoomTransition_61SW" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_61SE" index="1" unique_id=1345594044]
 position = Vector2(-72, 12)
 
-[node name="RoomTransition_61WW" parent="." unique_id=1331041998 instance=ExtResource("2_4hdun")]
+[node name="RoomTransition_61EE" parent="." unique_id=1331041998 instance=ExtResource("2_4hdun")]
 position = Vector2(1856, 528)
 transition_data = SubResource("Resource_46swt")
 
-[node name="ArrivalPoint" parent="RoomTransition_61WW" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_61EE" index="1" unique_id=1345594044]
 position = Vector2(-72, 24)
 
-[node name="RoomTransition_61WUp" parent="." unique_id=243913277 instance=ExtResource("2_4hdun")]
+[node name="RoomTransition_61EUp" parent="." unique_id=243913277 instance=ExtResource("2_4hdun")]
 position = Vector2(1856, 336)
 transition_data = SubResource("Resource_dutt5")
 
-[node name="ArrivalPoint" parent="RoomTransition_61WUp" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_61EUp" index="1" unique_id=1345594044]
 position = Vector2(-72, 24)
 
-[node name="RoomTransition_61_SpermW" parent="." unique_id=1939309086 instance=ExtResource("2_4hdun")]
+[node name="RoomTransition_61_SpermE" parent="." unique_id=1939309086 instance=ExtResource("2_4hdun")]
 position = Vector2(1856, 696)
 transition_data = SubResource("Resource_e8rhe")
 
-[node name="Trigger" parent="RoomTransition_61_SpermW" index="0" unique_id=280245681]
+[node name="Trigger" parent="RoomTransition_61_SpermE" index="0" unique_id=280245681]
 scale = Vector2(1, 1.4799975)
 
-[node name="ArrivalPoint" parent="RoomTransition_61_SpermW" index="1" unique_id=1345594044]
+[node name="ArrivalPoint" parent="RoomTransition_61_SpermE" index="1" unique_id=1345594044]
 position = Vector2(-72, 24)
 
 [node name="RoomTransition_61_NWShort" parent="." unique_id=1228024956 instance=ExtResource("2_4hdun")]
@@ -972,12 +972,12 @@ region_rect = Rect2(16, 16, 16, 16)
 region_rect = Rect2(16, 16, 16, 16)
 
 [editable path="RoomTransition_52"]
-[editable path="RoomTransition_59Sperm"]
-[editable path="RoomTransition_59"]
-[editable path="RoomTransition_61SW"]
-[editable path="RoomTransition_61WW"]
-[editable path="RoomTransition_61WUp"]
-[editable path="RoomTransition_61_SpermW"]
+[editable path="RoomTransition_59WMid"]
+[editable path="RoomTransition_59SW_Sperm"]
+[editable path="RoomTransition_61SE"]
+[editable path="RoomTransition_61EE"]
+[editable path="RoomTransition_61EUp"]
+[editable path="RoomTransition_61_SpermE"]
 [editable path="RoomTransition_61_NWShort"]
 [editable path="RoomTransition_61_NEShort"]
 [editable path="EnvTiles/SecretArea"]

@@ -7,17 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://5rjx4pwy4x4a" path="res://02_Prefabs/SecretArea.tscn" id="4_g77nw"]
 [ext_resource type="TileSet" uid="uid://b3pvmaekwuqir" path="res://02_Prefabs/WorldPrefabs/Environment.tres" id="5_gfkmj"]
 [ext_resource type="PackedScene" uid="uid://bxknvlj4dedya" path="res://02_Prefabs/flesh_bg.tscn" id="6_diqro"]
+[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="8_gfkmj"]
+[ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="8_vq6bd"]
+[ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="9_g77nw"]
+[ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="11_diqro"]
+[ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="12_elnsf"]
+[ext_resource type="PackedScene" uid="uid://4mbxxradlt0r" path="res://02_Prefabs/PuzzlePrefabs/valve.tscn" id="13_1f4st"]
 
 [sub_resource type="Resource" id="Resource_6av24"]
 script = ExtResource("3_gogrw")
 display_name = "To_61"
-transition_id = "62_exit_w"
+transition_id = "62_exit_sw"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_gogrw"]
 script = ExtResource("3_gogrw")
 display_name = "To_63"
-transition_id = "62_exit_e"
+transition_id = "62_exit_se"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_vq6bd"]
@@ -38,23 +44,41 @@ display_name = "To_63"
 transition_id = "62_exit_ne"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
+[sub_resource type="Resource" id="Resource_diqro"]
+script = ExtResource("3_gogrw")
+display_name = "To_63"
+transition_id = "62_exit_e"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
+[sub_resource type="Resource" id="Resource_elnsf"]
+script = ExtResource("3_gogrw")
+display_name = "To_61"
+transition_id = "62_exit_w"
+metadata/_custom_type_script = "uid://uu6skijk5c6s"
+
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_6av24")
-transitions = [NodePath("../RoomTransition_54"), NodePath("../RoomTransition_61"), NodePath("../RoomTransition_63"), NodePath("../RoomTransition_61_NWShort"), NodePath("../RoomTransition_63_NEShort")]
+transitions = [NodePath("../RoomTransition_54"), NodePath("../RoomTransition_61Sperm"), NodePath("../RoomTransition_63Sperm"), NodePath("../RoomTransition_61_NWShort"), NodePath("../RoomTransition_63_NEShort"), NodePath("../RoomTransition_63_E"), NodePath("../RoomTransition_60EUp")]
 
-[node name="RoomTransition_61" parent="." unique_id=306758002 instance=ExtResource("2_gogrw")]
-position = Vector2(360, 720)
+[node name="RoomTransition_61Sperm" parent="." unique_id=306758002 instance=ExtResource("2_gogrw")]
+position = Vector2(348, 792)
 transition_data = SubResource("Resource_6av24")
 
-[node name="ArrivalPoint" parent="RoomTransition_61" index="1" unique_id=1345594044]
+[node name="Trigger" parent="RoomTransition_61Sperm" index="0" unique_id=280245681]
+scale = Vector2(1, 1.48)
+
+[node name="ArrivalPoint" parent="RoomTransition_61Sperm" index="1" unique_id=1345594044]
 position = Vector2(60, 12)
 
-[node name="RoomTransition_63" parent="." unique_id=1868013459 instance=ExtResource("2_gogrw")]
-position = Vector2(1848, 720)
+[node name="RoomTransition_63Sperm" parent="." unique_id=1868013459 instance=ExtResource("2_gogrw")]
+position = Vector2(1848, 840)
 transition_data = SubResource("Resource_gogrw")
+
+[node name="Trigger" parent="RoomTransition_63Sperm" index="0" unique_id=280245681]
+scale = Vector2(1, 1.48)
 
 [node name="RoomTransition_54" parent="." unique_id=1827569927 instance=ExtResource("2_gogrw")]
 position = Vector2(1776, 60)
@@ -78,10 +102,24 @@ transition_data = SubResource("Resource_gfkmj")
 [node name="ArrivalPoint" parent="RoomTransition_63_NEShort" index="1" unique_id=1345594044]
 position = Vector2(-80, 16)
 
+[node name="RoomTransition_63_E" parent="." unique_id=1341909516 instance=ExtResource("2_gogrw")]
+position = Vector2(1856, 624)
+transition_data = SubResource("Resource_diqro")
+
+[node name="ArrivalPoint" parent="RoomTransition_63_E" index="1" unique_id=1345594044]
+position = Vector2(-80, 16)
+
+[node name="RoomTransition_60EUp" parent="." unique_id=440951891 instance=ExtResource("2_gogrw")]
+position = Vector2(348, 288)
+transition_data = SubResource("Resource_elnsf")
+
+[node name="ArrivalPoint" parent="RoomTransition_60EUp" index="1" unique_id=1345594044]
+position = Vector2(82, 16)
+
 [node name="EnvTiles" type="Node" parent="." unique_id=1578182652]
 
 [node name="GameBorder" parent="EnvTiles" unique_id=1529811716 instance=ExtResource("3_vq6bd")]
-tile_map_data = PackedByteArray("AAAHAAEAAQABAAIAADAHAAIAAQAAAAIAADAHAAMAAQAAAAIAADAHAAQAAQAAAAIAADAHAAUAAQAAAAIAADAHAAYAAQAAAAIAADAHAAcAAQAAAAIAADAHAAgAAQAAAAIAADAHAAkAAQAAAAIAADAHAAoAAQAAAAIAADAHAAsAAQAAAAIAADAHAAwAAQAAAAIAADAHAA0AAQAAAAIAADAHABAAAQAAAAIAADAHABEAAQAAAAIAADAHABIAAQAAAAIAADAHABMAAQAAAAIAADAHABQAAQAAAAIAADAHABUAAQABAAIAAFAIAAEAAQAAAAIAAGAIABUAAQAAAAIAAFAJAAEAAQAAAAIAAGAJABUAAQAAAAIAAFAKAAEAAQAAAAIAAGAKABUAAQAAAAIAAFALAAEAAQAAAAIAAGALABUAAQAAAAIAAFAMAAEAAQAAAAIAAGAMABUAAQAAAAIAAFANAAEAAQAAAAIAAGANABUAAQAAAAIAAFAOAAEAAQAAAAIAAGAOABUAAQAAAAIAAFAPAAEAAQAAAAIAAGAPABUAAQAAAAIAAFAQAAEAAQAAAAIAAGAQABUAAQAAAAIAAFARAAEAAQAAAAIAAGASAAEAAQAAAAIAAGATAAEAAQAAAAIAAGAUAAEAAQAAAAIAAGAVAAEAAQAAAAIAAGAWAAEAAQAAAAIAAGAXAAEAAQAAAAIAAGAYAAEAAQAAAAIAAGAZAAEAAQAAAAIAAGAaAAEAAQAAAAIAAGAbAAEAAQAAAAIAAGAcAAEAAQAAAAIAAGAdAAEAAQAAAAIAAGAeAAEAAQAAAAIAAGAeABUAAQAAAAIAAFAfAAEAAQAAAAIAAGAfABUAAQAAAAIAAFAgAAEAAQAAAAIAAGAgABUAAQAAAAIAAFAhAAEAAQAAAAIAAGAhABUAAQAAAAIAAFAiAAEAAQAAAAIAAGAiABUAAQAAAAIAAFAjAAEAAQAAAAIAAGAjABUAAQAAAAIAAFAkABUAAQAAAAIAAFAlABUAAQAAAAIAAFAmAAEAAQABAAIAAGAmAAIAAQAAAAIAAAAmAAMAAQAAAAIAAAAmAAQAAQAAAAIAAAAmAAoAAQAAAAIAAAAmAAsAAQAAAAIAAAAmAAwAAQAAAAIAAAAmAA0AAQAAAAIAAAAmABAAAQAAAAIAAAAmABEAAQAAAAIAAAAmABIAAQAAAAIAAAAmABMAAQAAAAIAAAAmABQAAQAAAAIAAAAdABUAAQAAAAIAAFARABUAAQAAAAIAAFASABUAAQAAAAIAAFATABUAAQAAAAIAAFAUABUAAQAAAAIAAFAVABUAAQAAAAIAAFAWABUAAQAAAAIAAFAXABUAAQAAAAIAAFAYABUAAQAAAAIAAFAZABUAAQAAAAIAAFAaABUAAQAAAAIAAFAbABUAAQAAAAIAAFAcABUAAQAAAAIAAFAmAAcAAQAAAAIAAAAmAAYAAQAAAAIAAAAmAAUAAQAAAAIAAAAmAAgAAQAAAAIAAAAmAAkAAQAAAAIAAAAmABUAAQABAAIAAAA=")
+tile_map_data = PackedByteArray("AAAHAAEAAQABAAIAADAHAAQAAQAAAAIAADAHAAgAAQAAAAIAADAHAAkAAQAAAAIAADAHAAoAAQAAAAIAADAHAAsAAQAAAAIAADAHAAwAAQAAAAIAADAHAA0AAQAAAAIAADAHABIAAQAAAAIAADAHABMAAQAAAAIAADAHABQAAQAAAAIAADAHABUAAQABAAIAAFAIAAEAAQAAAAIAAGAIABUAAQAAAAIAAFAJAAEAAQAAAAIAAGAJABUAAQAAAAIAAFAKAAEAAQAAAAIAAGAKABUAAQAAAAIAAFALAAEAAQAAAAIAAGALABUAAQAAAAIAAFAMAAEAAQAAAAIAAGAMABUAAQAAAAIAAFANAAEAAQAAAAIAAGANABUAAQAAAAIAAFAOAAEAAQAAAAIAAGAOABUAAQAAAAIAAFAPAAEAAQAAAAIAAGAPABUAAQAAAAIAAFAQAAEAAQAAAAIAAGAQABUAAQAAAAIAAFARAAEAAQAAAAIAAGASAAEAAQAAAAIAAGATAAEAAQAAAAIAAGAUAAEAAQAAAAIAAGAVAAEAAQAAAAIAAGAWAAEAAQAAAAIAAGAXAAEAAQAAAAIAAGAYAAEAAQAAAAIAAGAZAAEAAQAAAAIAAGAaAAEAAQAAAAIAAGAbAAEAAQAAAAIAAGAcAAEAAQAAAAIAAGAdAAEAAQAAAAIAAGAeAAEAAQAAAAIAAGAeABUAAQAAAAIAAFAfAAEAAQAAAAIAAGAfABUAAQAAAAIAAFAgAAEAAQAAAAIAAGAgABUAAQAAAAIAAFAhAAEAAQAAAAIAAGAhABUAAQAAAAIAAFAiAAEAAQAAAAIAAGAiABUAAQAAAAIAAFAjAAEAAQAAAAIAAGAjABUAAQAAAAIAAFAkABUAAQAAAAIAAFAlABUAAQAAAAIAAFAmAAEAAQABAAIAAGAmAAQAAQAAAAIAAAAmAAoAAQAAAAIAAAAmAAsAAQAAAAIAAAAmABMAAQAAAAIAAAAmABQAAQAAAAIAAAAdABUAAQAAAAIAAFARABUAAQAAAAIAAFASABUAAQAAAAIAAFATABUAAQAAAAIAAFAUABUAAQAAAAIAAFAVABUAAQAAAAIAAFAWABUAAQAAAAIAAFAXABUAAQAAAAIAAFAYABUAAQAAAAIAAFAZABUAAQAAAAIAAFAaABUAAQAAAAIAAFAbABUAAQAAAAIAAFAcABUAAQAAAAIAAFAmAAcAAQAAAAIAAAAmAAYAAQAAAAIAAAAmAAUAAQAAAAIAAAAmAAgAAQAAAAIAAAAmAAkAAQAAAAIAAAAmABUAAQABAAIAAAAmAA4AAQAAAAIAAAAHAA4AAQAAAAIAABAHAAcAAQAAAAIAABAmAA8AAQAAAAIAAAA=")
 metadata/_edit_lock_ = true
 
 [node name="SecretArea" parent="EnvTiles" unique_id=716718294 instance=ExtResource("4_g77nw")]
@@ -96,7 +134,7 @@ position = Vector2(0, 0)
 scale = Vector2(1, 1.6800005)
 
 [node name="Ground" type="TileMapLayer" parent="EnvTiles" unique_id=1118345256]
-tile_map_data = PackedByteArray("AAAkAAMABQAQAAQAAAAlAAMABQARAAQAAAAmAAMABQASAAQAAAAhAAMABQAQAAQAAAAiAAMABQARAAQAAAAjAAMABQASAAQAAAAgAAMABQARAAMAAAAgAAIABQARAAMAAAAgAAEABQARAAMAAAA=")
+tile_map_data = PackedByteArray("AAAcAAQABQARAAwAAAAdAAQABQARAAwAAAAeAAQABQARAAwAAAAfAAQABQARAAwAAAAgAAQABQARAAwAAAAhAAQABQARAAwAAAAiAAQABQARAAwAAAAjAAQABQARAAwAAAAkAAQABQARAAwAAAAlAAQABQARAAwAAAAmAAQABQARAAwAAAAHAA4ABQAMABQAACAIAA4ABQANABQAACAJAA4ABQAOABQAACAKAA4ABQAPABQAACALAA4ABQAQABQAACAMAA4ABQABABAAADARAA4ABQAQAAoAAAAYAA4ABQAQAAoAAAAZAA4ABQAQAAoAAAAaAA4ABQAQAAoAAAAbAA4ABQARAAoAAAAgAA4ABQAMABQAACAhAA4ABQANABQAACAiAA4ABQAOABQAACAjAA4ABQAPABQAACAkAA4ABQAQABQAACAlAA4ABQAMABQAACAmAA4ABQANABQAACAHABIABQAMABQAAAAIABIABQANABQAAAAJABIABQAOABQAAAAKABIABQAPABQAAAALABIABQAQABQAAAAMABIABQAMABQAAAAMAAkABQAMABQAAFAMAAoABQANABQAAFAMAAsABQAOABQAAFAMAAwABQAPABQAAFAMAA0ABQAQABQAAFAKAA0ABQANAA0AAAALAA0ABQAPAA0AAAAHAAcABQAQAAkAAAAIAAcABQARAAkAAAAJAAcABQASAAkAAAAKAAcABQASAAkAAAARAAsABQAPAAoAAAARAAwABQAPAAoAAAARAA0ABQAPAAoAAAARAAoABQAPAAoAAAARAAkABQAPAAkAAAASAAkABQATAAkAAAASAAoABQATAAoAAAASAAsABQAQAAoAAAATAAsABQAQAAoAAAAUAAsABQAQAAoAAAAVAAsABQAQAAoAAAAWAAsABQAQAAoAAAAXAAsABQARAAoAAAAXAAkABQAPAAkAAAAXAAoABQAPAAoAAAAbAAkABQATAAkAAAAbAAoABQATAAoAAAAbAAsABQATAAsAAAAbAAwABQATAAoAAAAbAA0ABQATAAsAAAAYAAkABQARAAkAAAAZAAkABQASAAkAAAAaAAkABQAQAAkAAAATABIABQAQAAkAAAATABMABQAQAAoAAAATABQABQAQAAoAAAATABUABQAQAAoAAAAUABIABQARAAkAAAAUABMABQAQAAoAAAAUABQABQAQAAoAAAAUABUABQAQAAoAAAAVABIABQASAAkAAAAVABMABQAQAAoAAAAVABQABQAQAAoAAAAVABUABQAQAAoAAAAWABIABQATAAkAAAAWABMABQATAAsAAAAWABQABQATAAoAAAAWABUABQATAAsAAAAdABQABQAPAAkAAAAdABUABQAQAAoAAAAeABQABQARAAkAAAAeABUABQAQAAoAAAAfABQABQASAAkAAAAfABUABQAQAAoAAAAgABQABQAQAAkAAAAgABUABQAQAAoAAAAhABQABQARAAkAAAAhABUABQAQAAoAAAAiABQABQASAAkAAAAiABUABQAQAAoAAAAjABQABQAQAAkAAAAjABUABQAQAAoAAAAkABQABQARAAkAAAAkABUABQAQAAoAAAAlABQABQASAAkAAAAlABUABQAQAAoAAAAmABQABQAQAAkAAAAmABUABQAQAAoAAAAHABMABQAPAAkAAAAHABQABQAQAAoAAAAHABUABQAQAAoAAAAIABMABQAQAAkAAAAIABQABQAQAAoAAAAIABUABQAQAAoAAAAJABMABQARAAkAAAAJABQABQAQAAoAAAAJABUABQAQAAoAAAAKABMABQASAAkAAAAKABQABQAQAAoAAAAKABUABQAQAAoAAAALABMABQAQAAkAAAALABQABQAQAAoAAAALABUABQAQAAoAAAAMABMABQATAAkAAAAMABQABQATAAsAAAAMABUABQATAAoAAAASABIABQAPAAkAAAASABMABQAPAAsAAAASABQABQAPAAoAAAASABUABQAPAAsAAAAVAAkABQANAA0AAAAWAAkABQAOAA0AAAANABUABQAPAAkAAAAOABUABQARAAkAAAAPABUABQASAAkAAAAQABUABQAQAAkAAAARABUABQATAAkAAAAXABUABQAPAAkAAAAYABUABQARAAkAAAAZABUABQASAAkAAAAaABUABQAQAAkAAAAMAAcABQAPABQAAFAMAAgABQAQABQAAFARAAYABQAMABQAADASAAYABQAQABQAADATAAYABQAPABQAADAUAAYABQAOABQAADAVAAYABQANABQAADAWAAYABQAMABQAADAXAAYABQAQABQAADAYAAYABQAPABQAADAZAAYABQAOABQAADAaAAYABQANABQAADAbAAYABQAMABQAADAcAAYABQAQABQAADAdAAYABQAPABQAADAeAAYABQAOABQAADALAAcABQATAAkAAAAfAAcABQAQABQAAGAfAAgABQAPABQAAGAfAAkABQAOABQAAGAfAAoABQANABQAAGAfAAsABQAMABQAAGAfAA0ABQAPABQAAGAfAAwABQAQABQAAGAfAA4ABQABABQAAAAMAAYABQABABQAAFAfAAYABQABABQAAEAcABUABQATAAkAAAAbABUABQASAAkAAAAgAAcABQAQAAsAAAAhAAcABQARAAsAAAAiAAcABQASAAsAAAAbAAQABQAQAAwAAAAHAAQABQARAAwAAAAIAAQABQARAAwAAAAJAAQABQARAAwAAAAKAAQABQARAAwAAAALAAQABQARAAwAAAAMAAQABQARAAwAAAANAAQABQARAAwAAAAOAAQABQARAAwAAAAPAAQABQARAAwAAAAQAAQABQARAAwAAAARAAQABQARAAwAAAASAAQABQARAAwAAAATAAQABQARAAwAAAAUAAQABQARAAwAAAAVAAQABQARAAwAAAAWAAQABQASAAwAAAAKAAsABQANAA0AAAALAAsABQAPAA0AAAAdABMABQAMABQAAAAeABMABQANABQAAAAfABMABQAOABQAAAAgABMABQAPABQAAAAhABMABQAQABQAAAAiABMABQAMABQAAAAjABMABQANABQAAAAkABMABQAOABQAAAAlABMABQAPABQAAAAmABMABQAQABQAAAA=")
 tile_set = ExtResource("5_gfkmj")
 
 [node name="BlackBg" type="TileMapLayer" parent="EnvTiles" unique_id=1008032494]
@@ -108,9 +146,341 @@ metadata/_edit_lock_ = true
 
 [node name="FleshBg" parent="EnvTiles" unique_id=1613371522 instance=ExtResource("6_diqro")]
 
-[editable path="RoomTransition_61"]
-[editable path="RoomTransition_63"]
+[node name="PlayerCharacter" parent="EnvTiles" unique_id=1797284452 instance=ExtResource("8_gfkmj")]
+position = Vector2(900, 252)
+
+[node name="Switch2" parent="." unique_id=751923701 instance=ExtResource("8_vq6bd")]
+position = Vector2(744, 984)
+puzzle_id = "switch62_2"
+
+[node name="Switch3" parent="." unique_id=2067667134 instance=ExtResource("8_vq6bd")]
+position = Vector2(1260, 648)
+puzzle_id = "switch62_3"
+
+[node name="Switch4" parent="." unique_id=919108056 instance=ExtResource("8_vq6bd")]
+position = Vector2(1584, 672)
+puzzle_id = "switch62_4"
+
+[node name="Switch5" parent="." unique_id=1512837229 instance=ExtResource("8_vq6bd")]
+position = Vector2(1008, 504)
+puzzle_id = "switch62_4"
+
+[node name="Door" parent="." unique_id=425038002 instance=ExtResource("9_g77nw")]
+position = Vector2(384, 516)
+rotation = 1.5707964
+
+[node name="Door2" parent="." unique_id=2091335830 instance=ExtResource("9_g77nw")]
+position = Vector2(480, 516)
+rotation = 1.5707964
+
+[node name="Door16" parent="." unique_id=608139065 instance=ExtResource("9_g77nw")]
+position = Vector2(572, 516)
+rotation = 1.5707964
+
+[node name="Door3" parent="." unique_id=1981883871 instance=ExtResource("9_g77nw")]
+position = Vector2(744, 888)
+rotation = 1.5707964
+
+[node name="Door4" parent="." unique_id=63066299 instance=ExtResource("9_g77nw")]
+position = Vector2(840, 888)
+rotation = 1.5707964
+
+[node name="Door5" parent="." unique_id=356635479 instance=ExtResource("9_g77nw")]
+position = Vector2(648, 888)
+rotation = 1.5707964
+
+[node name="Door6" parent="." unique_id=1109627164 instance=ExtResource("9_g77nw")]
+position = Vector2(550, 288)
+
+[node name="Door12" parent="." unique_id=891459292 instance=ExtResource("9_g77nw")]
+position = Vector2(1008, 840)
+
+[node name="Door14" parent="." unique_id=1467710034 instance=ExtResource("9_g77nw")]
+position = Vector2(1008, 744)
+
+[node name="Door13" parent="." unique_id=1662759650 instance=ExtResource("9_g77nw")]
+position = Vector2(1237, 768)
+
+[node name="Door10" parent="." unique_id=1915074834 instance=ExtResource("9_g77nw")]
+position = Vector2(1856, 144)
+
+[node name="Door11" parent="." unique_id=1869692043 instance=ExtResource("9_g77nw")]
+position = Vector2(1332, 264)
+
+[node name="Door7" parent="." unique_id=1387449842 instance=ExtResource("9_g77nw")]
+position = Vector2(768, 324)
+rotation = 1.5707964
+
+[node name="Door15" parent="." unique_id=1523007255 instance=ExtResource("9_g77nw")]
+position = Vector2(1200, 266)
+rotation = 1.5707964
+
+[node name="Door9" parent="." unique_id=1921505974 instance=ExtResource("9_g77nw")]
+position = Vector2(672, 324)
+rotation = 1.5707964
+
+[node name="Door8" parent="." unique_id=256161056 instance=ExtResource("9_g77nw")]
+position = Vector2(480, 288)
+
+[node name="Spikes" parent="." unique_id=1094872775 instance=ExtResource("11_diqro")]
+position = Vector2(1164, 960)
+
+[node name="Spikes2" parent="." unique_id=1669234207 instance=ExtResource("11_diqro")]
+position = Vector2(1249, 960)
+
+[node name="Spikes3" parent="." unique_id=393454853 instance=ExtResource("11_diqro")]
+position = Vector2(1332, 960)
+
+[node name="Spikes8" parent="." unique_id=1960797888 instance=ExtResource("11_diqro")]
+position = Vector2(912, 672)
+
+[node name="Spikes9" parent="." unique_id=1882245971 instance=ExtResource("11_diqro")]
+position = Vector2(1008, 672)
+
+[node name="Spikes10" parent="." unique_id=116440949 instance=ExtResource("11_diqro")]
+position = Vector2(1104, 672)
+
+[node name="Spikes4" parent="." unique_id=1042037179 instance=ExtResource("11_diqro")]
+position = Vector2(1128, 912)
+rotation = 1.5707964
+
+[node name="Spikes5" parent="." unique_id=279261026 instance=ExtResource("11_diqro")]
+position = Vector2(1128, 984)
+rotation = 1.5707964
+
+[node name="Spikes6" parent="." unique_id=775465459 instance=ExtResource("11_diqro")]
+position = Vector2(1344, 912)
+rotation = -1.5707964
+
+[node name="Spikes7" parent="." unique_id=878504216 instance=ExtResource("11_diqro")]
+position = Vector2(1344, 984)
+rotation = -1.5707964
+
+[node name="Spikes11" parent="." unique_id=940712656 instance=ExtResource("11_diqro")]
+position = Vector2(816, 912)
+rotation = -1.5707964
+
+[node name="Spikes12" parent="." unique_id=1844255379 instance=ExtResource("11_diqro")]
+position = Vector2(816, 984)
+rotation = -1.5707964
+
+[node name="pipe_piece" parent="." unique_id=1326704238 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(528, 432)
+shape = 0
+
+[node name="pipe_piece2" parent="." unique_id=1665649761 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(576, 432)
+shape = 0
+
+[node name="pipe_piece3" parent="." unique_id=1596683075 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(624, 432)
+shape = 0
+
+[node name="pipe_piece4" parent="." unique_id=177287374 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(672, 432)
+shape = 0
+
+[node name="pipe_piece5" parent="." unique_id=689261622 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(720, 432)
+rotation = 1.5707964
+shape = 1
+
+[node name="pipe_piece6" parent="." unique_id=181280036 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(720, 480)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece7" parent="." unique_id=914382838 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(720, 528)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece8" parent="." unique_id=1685680604 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(720, 576)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece9" parent="." unique_id=1422330541 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(720, 624)
+rotation = -1.5707964
+shape = 1
+
+[node name="pipe_piece10" parent="." unique_id=3274648 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(768, 624)
+shape = 0
+
+[node name="pipe_piece11" parent="." unique_id=121968395 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(816, 624)
+shape = 0
+
+[node name="pipe_piece12" parent="." unique_id=699723446 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(864, 624)
+shape = 0
+
+[node name="pipe_piece13" parent="." unique_id=1510671900 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(912, 624)
+shape = 0
+
+[node name="pipe_piece14" parent="." unique_id=23111653 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(960, 624)
+shape = 0
+
+[node name="pipe_piece15" parent="." unique_id=1996632472 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1008, 624)
+shape = 0
+
+[node name="pipe_piece16" parent="." unique_id=490076654 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1056, 624)
+shape = 0
+
+[node name="pipe_piece17" parent="." unique_id=1034710266 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1104, 624)
+shape = 0
+
+[node name="pipe_piece18" parent="." unique_id=204154689 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1152, 624)
+shape = 0
+
+[node name="pipe_piece19" parent="." unique_id=1381818795 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1248, 576)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece20" parent="." unique_id=1962616480 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1248, 528)
+shape = 1
+
+[node name="pipe_piece21" parent="." unique_id=485209052 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1296, 528)
+shape = 0
+
+[node name="pipe_piece22" parent="." unique_id=2057104560 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1344, 528)
+shape = 0
+
+[node name="pipe_piece23" parent="." unique_id=563725818 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1392, 528)
+shape = 0
+
+[node name="pipe_piece24" parent="." unique_id=713853635 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1440, 528)
+shape = 0
+
+[node name="pipe_piece25" parent="." unique_id=1606529764 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1488, 528)
+shape = 0
+
+[node name="pipe_piece26" parent="." unique_id=359662803 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1536, 528)
+shape = 0
+
+[node name="pipe_piece27" parent="." unique_id=1718122471 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1584, 528)
+shape = 0
+
+[node name="pipe_piece28" parent="." unique_id=730051555 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1632, 528)
+shape = 0
+
+[node name="pipe_piece29" parent="." unique_id=1986139756 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1680, 528)
+shape = 0
+
+[node name="pipe_piece30" parent="." unique_id=100506961 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1728, 528)
+rotation = 1.5707964
+
+[node name="pipe_piece38" parent="." unique_id=526540385 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1728, 576)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece39" parent="." unique_id=472359085 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1728, 624)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece31" parent="." unique_id=2016042582 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1728, 480)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece32" parent="." unique_id=914939686 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1728, 432)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece33" parent="." unique_id=1317935067 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1728, 384)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece34" parent="." unique_id=1090680275 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1728, 336)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece35" parent="." unique_id=1303330176 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1728, 288)
+rotation = 1.5707964
+shape = 1
+
+[node name="pipe_piece36" parent="." unique_id=1472971100 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1680, 288)
+shape = 0
+
+[node name="pipe_piece37" parent="." unique_id=1215561294 instance=ExtResource("12_elnsf")]
+z_index = 1
+position = Vector2(1632, 288)
+shape = 0
+
+[node name="valve" parent="." unique_id=583119961 instance=ExtResource("13_1f4st")]
+position = Vector2(420, 613)
+puzzle_id = "valve62_1"
+
+[editable path="RoomTransition_61Sperm"]
+[editable path="RoomTransition_63Sperm"]
 [editable path="RoomTransition_54"]
 [editable path="RoomTransition_61_NWShort"]
 [editable path="RoomTransition_63_NEShort"]
+[editable path="RoomTransition_63_E"]
+[editable path="RoomTransition_60EUp"]
 [editable path="EnvTiles/SecretArea"]
