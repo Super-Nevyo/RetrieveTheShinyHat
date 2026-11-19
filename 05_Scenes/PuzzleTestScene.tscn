@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="13_osutn"]
 [ext_resource type="Script" uid="uid://cms4ksi8ats4m" path="res://01_Scripts/Enemys/enemy_state_machine.gd" id="14_a8017"]
 [ext_resource type="Script" uid="uid://bap710rumdjav" path="res://01_Scripts/Enemys/Speaking/speaking_state.gd" id="14_jrxfx"]
+[ext_resource type="Script" uid="uid://852xshj0j6qq" path="res://01_Scripts/Enemys/Speaking/considering_state.gd" id="15_a8017"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ulwqt"]
 
@@ -29,14 +30,23 @@ metadata/_custom_type_script = "uid://cf6fa6iwmmiyj"
 [sub_resource type="Resource" id="Resource_xqe2s"]
 script = ExtResource("14_jrxfx")
 speaking_frames = 100
+state_machine_state = 2
 state_machine_current_reference = "currentstate"
 metadata/_custom_type_script = "uid://bap710rumdjav"
+
+[sub_resource type="Resource" id="Resource_jrxfx"]
+script = ExtResource("15_a8017")
+next_state_machine_state = 1
+state_machine_current_reference = "currentstate"
+strings_to_cycle_through = Array[String](["one", "two", "three"])
+metadata/_custom_type_script = "uid://852xshj0j6qq"
 
 [sub_resource type="Resource" id="Resource_p2tw8"]
 script = ExtResource("14_a8017")
 States = Dictionary[int, ExtResource("12_2agyp")]({
 0: SubResource("Resource_4aysw"),
-1: SubResource("Resource_xqe2s")
+1: SubResource("Resource_xqe2s"),
+2: SubResource("Resource_jrxfx")
 })
 metadata/_custom_type_script = "uid://cms4ksi8ats4m"
 
@@ -94,7 +104,7 @@ does_respawn = true
 position = Vector2(863, 601)
 
 [node name="BaseEnemy2" parent="." unique_id=2039302970 instance=ExtResource("9_ulwqt")]
-position = Vector2(1174, 542)
+position = Vector2(1104, 505)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=813930900]
 visible = false
