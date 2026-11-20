@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://dcr2bvq3s174g" path="res://01_Scripts/Enemys/constant_wander.gd" id="24_slavy"]
 [ext_resource type="Resource" uid="uid://dtfdx73o56for" path="res://01_Scripts/Enemys/enemy_wall_check.tres" id="25_8cwvy"]
 [ext_resource type="PackedScene" uid="uid://n42r34pmo1fh" path="res://02_Prefabs/PuzzlePrefabs/Activated/Light.tscn" id="28_slavy"]
+[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="30_omp7j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgb6i"]
 atlas = ExtResource("6_g1lfo")
@@ -561,6 +562,9 @@ region_rect = Rect2(32, 0, 16, 16)
 [node name="Sprite2D2" parent="Light14" index="1" unique_id=401355035]
 rotation = 3.1415927
 region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("30_omp7j")]
+position = Vector2(444, 732)
 
 [editable path="EnvTiles/GameBorder"]
 [editable path="EnvTiles/SecretAreaLeft"]

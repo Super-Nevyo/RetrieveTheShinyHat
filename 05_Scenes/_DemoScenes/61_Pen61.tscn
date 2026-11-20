@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="12_ucuk5"]
 [ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="13_5jyj5"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="15_m3g6w"]
+[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="17_itjsm"]
 
 [sub_resource type="Resource" id="Resource_thtr0"]
 script = ExtResource("3_f4yps")
@@ -230,63 +231,104 @@ position = Vector2(912, 782)
 [node name="valve2" parent="." unique_id=198663053 instance=ExtResource("8_1hxm6")]
 position = Vector2(1200, 782)
 
-[node name="Spikes" type="Node" parent="." unique_id=627056581]
-
-[node name="Switch" parent="Spikes" unique_id=150077233 instance=ExtResource("11_coayd")]
+[node name="Switch" parent="." unique_id=150077233 instance=ExtResource("11_coayd")]
 position = Vector2(1056, 504)
 
+[node name="Spikes" type="Node" parent="." unique_id=627056581]
+
 [node name="Spikes4" parent="Spikes" unique_id=1094872775 instance=ExtResource("9_1dono")]
+z_index = -1
 position = Vector2(1020, 816)
 rotation = 3.1415927
 
 [node name="Spikes5" parent="Spikes" unique_id=130172449 instance=ExtResource("9_1dono")]
+z_index = -1
 position = Vector2(1056, 828)
 rotation = 3.1415927
 
 [node name="Spikes6" parent="Spikes" unique_id=1477818008 instance=ExtResource("9_1dono")]
+z_index = -1
 position = Vector2(1092, 816)
 rotation = 3.1415927
 
 [node name="Spikes" parent="Spikes" unique_id=217766625 instance=ExtResource("9_1dono")]
+z_index = -1
 position = Vector2(1020, 720)
 
 [node name="Spikes2" parent="Spikes" unique_id=1468211264 instance=ExtResource("9_1dono")]
+z_index = -1
 position = Vector2(1056, 708)
 
 [node name="Spikes3" parent="Spikes" unique_id=1576853518 instance=ExtResource("9_1dono")]
+z_index = -1
 position = Vector2(1092, 720)
 
 [node name="Spikes11" parent="Spikes" unique_id=1226809912 instance=ExtResource("9_1dono")]
-position = Vector2(1356, 204)
+z_index = -1
+position = Vector2(1356, 192)
 
 [node name="Spikes12" parent="Spikes" unique_id=84362094 instance=ExtResource("9_1dono")]
-position = Vector2(1392, 204)
+z_index = -1
+position = Vector2(1392, 192)
 
 [node name="Spikes13" parent="Spikes" unique_id=1231903395 instance=ExtResource("9_1dono")]
-position = Vector2(1428, 204)
+z_index = -1
+position = Vector2(1428, 192)
 
 [node name="Spikes14" parent="Spikes" unique_id=874227839 instance=ExtResource("9_1dono")]
-position = Vector2(647, 204)
+z_index = -1
+position = Vector2(647, 192)
 
 [node name="Spikes15" parent="Spikes" unique_id=1830881097 instance=ExtResource("9_1dono")]
-position = Vector2(683, 204)
+z_index = -1
+position = Vector2(683, 192)
 
 [node name="Spikes16" parent="Spikes" unique_id=1351412950 instance=ExtResource("9_1dono")]
-position = Vector2(719, 204)
+z_index = -1
+position = Vector2(719, 192)
 
 [node name="Spikes7" parent="Spikes" unique_id=2059364731 instance=ExtResource("10_ai50f")]
+z_index = -1
 position = Vector2(1632, 312)
 rotation = -3.1415925
 
 [node name="Spikes8" parent="Spikes" unique_id=2023895308 instance=ExtResource("12_ucuk5")]
+z_index = -1
 position = Vector2(624, 960)
 
 [node name="Spikes9" parent="Spikes" unique_id=1720627 instance=ExtResource("12_ucuk5")]
-position = Vector2(768, 936)
+z_index = -1
+position = Vector2(768, 948)
 rotation = -3.1415925
 
 [node name="Spikes10" parent="Spikes" unique_id=1031130345 instance=ExtResource("12_ucuk5")]
+z_index = -1
 position = Vector2(912, 960)
+
+[node name="Spikes17" parent="Spikes" unique_id=908970662 instance=ExtResource("12_ucuk5")]
+z_index = -1
+position = Vector2(660, 540)
+rotation = 1.5707964
+
+[node name="Spikes18" parent="Spikes" unique_id=1602992891 instance=ExtResource("12_ucuk5")]
+z_index = -1
+position = Vector2(1332, 504)
+rotation = 1.5707964
+
+[node name="Spikes19" parent="Spikes" unique_id=983415097 instance=ExtResource("12_ucuk5")]
+z_index = -1
+position = Vector2(1404, 660)
+rotation = -1.5707964
+
+[node name="Spikes20" parent="Spikes" unique_id=1278785856 instance=ExtResource("12_ucuk5")]
+z_index = -1
+position = Vector2(780, 504)
+rotation = -1.5707964
+
+[node name="Spikes21" parent="Spikes" unique_id=1950057057 instance=ExtResource("12_ucuk5")]
+z_index = -1
+position = Vector2(780, 604)
+rotation = -1.5707964
 
 [node name="Pipes" type="Node" parent="." unique_id=1037416320]
 
@@ -568,30 +610,8 @@ position = Vector2(1024, 312)
 [node name="CollisionShape2D" parent="sperm_lane3/Area2D" parent_id_path=PackedInt32Array(1189201697, 2093319916) index="0" unique_id=930390904]
 scale = Vector2(0.48, 0.24000064)
 
-[node name="Spikes3" parent="." unique_id=908970662 instance=ExtResource("12_ucuk5")]
-z_index = 0
-position = Vector2(660, 540)
-rotation = 1.5707964
-
-[node name="Spikes6" parent="." unique_id=1602992891 instance=ExtResource("12_ucuk5")]
-z_index = 0
-position = Vector2(1332, 504)
-rotation = 1.5707964
-
-[node name="Spikes7" parent="." unique_id=983415097 instance=ExtResource("12_ucuk5")]
-z_index = 0
-position = Vector2(1404, 660)
-rotation = -1.5707964
-
-[node name="Spikes4" parent="." unique_id=1278785856 instance=ExtResource("12_ucuk5")]
-z_index = 0
-position = Vector2(780, 504)
-rotation = -1.5707964
-
-[node name="Spikes5" parent="." unique_id=1950057057 instance=ExtResource("12_ucuk5")]
-z_index = 0
-position = Vector2(780, 604)
-rotation = -1.5707964
+[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("17_itjsm")]
+position = Vector2(1415, 984)
 
 [connection signal="body_entered" from="EnvTiles/BlueWater/Area2D2" to="EnvTiles/BlueWater/Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="EnvTiles/BlueWater/Area2D2" to="EnvTiles/BlueWater/Area2D2" method="_on_body_exited"]

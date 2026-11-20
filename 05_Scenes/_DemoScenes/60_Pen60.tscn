@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="13_e8rhe"]
 [ext_resource type="PackedScene" uid="uid://bvbn1qi0u34uo" path="res://02_Prefabs/PuzzlePrefabs/Activated/blue_triangle_light.tscn" id="14_7hvfa"]
 [ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="14_havph"]
+[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="16_ojs2f"]
 
 [sub_resource type="Resource" id="Resource_4hdun"]
 script = ExtResource("3_4hdun")
@@ -898,6 +899,9 @@ rows = Array[ExtResource("10_7hvfa")]([SubResource("Resource_ojs2f"), SubResourc
 
 [node name="CollisionShape2D" parent="sperm_lane3/Area2D" parent_id_path=PackedInt32Array(1630474931, 2093319916) index="0" unique_id=930390904]
 scale = Vector2(0.48000002, 0.31999996)
+
+[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("16_ojs2f")]
+position = Vector2(1632, 168)
 
 [editable path="RoomTransition_52"]
 [editable path="RoomTransition_59WMid"]

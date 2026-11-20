@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ds8wv51qapj7k" path="res://06_Extras/PalletSwaps/GreenPalletOff.png" id="16_1gdf8"]
 [ext_resource type="Texture2D" uid="uid://biowk03c2mfwa" path="res://06_Extras/PalletSwaps/BluePalletOff.png" id="16_3xloq"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="19_1gdf8"]
+[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="21_gvgq2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1gxo"]
 atlas = ExtResource("6_re327")
@@ -339,6 +340,9 @@ region_rect = Rect2(16, 0, 16, 16)
 [node name="RisingAcid" parent="." unique_id=364923058 instance=ExtResource("19_1gdf8")]
 partly_filled_liquid_level = 200.0
 move_speed = 120.0
+
+[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("21_gvgq2")]
+position = Vector2(1776, 168)
 
 [editable path="Environment/AcidTiles"]
 [editable path="Environment/SecretAreaCarapaceDown"]

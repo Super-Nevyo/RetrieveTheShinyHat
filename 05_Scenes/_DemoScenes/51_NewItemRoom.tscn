@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bhkg7dsrv6pv" path="res://02_Prefabs/WorldPrefabs/RoomTransition.tscn" id="5_bxbb6"]
 [ext_resource type="Script" uid="uid://uu6skijk5c6s" path="res://01_Scripts/Resources/RoomTransitionData.gd" id="6_tv0c3"]
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="9_s8fw8"]
+[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="10_a6s0u"]
 [ext_resource type="PackedScene" uid="uid://da85jdonec7tu" path="res://02_Prefabs/Hazards/Acid.tscn" id="10_bxbb6"]
 [ext_resource type="PackedScene" uid="uid://drhsj2xcmcups" path="res://02_Prefabs/PuzzlePrefabs/Meta/RisingAcid.tscn" id="11_tv0c3"]
 
@@ -147,6 +148,9 @@ position = Vector2(912, 976)
 z_index = -1
 position = Vector2(1200, 864)
 rotation = -3.1415925
+
+[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("10_a6s0u")]
+position = Vector2(1644, 984)
 
 [editable path="EnvTiles/AcidTiles"]
 [editable path="EnvTiles/AcidTiles2"]

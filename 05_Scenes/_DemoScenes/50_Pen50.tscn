@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cnpt20eb2lexw" path="res://03_Art/Environment/penisart.png" id="12_g6k1p"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="13_ank4g"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="14_h0k8o"]
+[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="15_jp1sk"]
 
 [sub_resource type="Resource" id="Resource_1v5n1"]
 script = ExtResource("3_38l63")
@@ -691,6 +692,12 @@ position = Vector2(720, 312)
 attached_ids = Array[int]([501])
 activation_amount = Array[float]([1.0])
 puzzle_id = "uretra_entrance"
+
+[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("15_jp1sk")]
+position = Vector2(1644, 984)
+
+[node name="CollectiblePickup2" parent="." unique_id=1744733235 instance=ExtResource("15_jp1sk")]
+position = Vector2(1800, 360)
 
 [editable path="RoomTransition_49"]
 [editable path="RoomTransition_59_L"]

@@ -83,7 +83,7 @@ gizmo_extents = 40.0
 room_id = "meta01"
 reveal_id = "spike_secret"
 
-[node name="Cover" parent="tiles/SecretArea" index="0" unique_id=1548122823]
+[node name="Cover" parent="tiles/SecretArea/Tiles" parent_id_path=PackedInt32Array(716718294, 912739327) index="1" unique_id=1548122823]
 tile_map_data = PackedByteArray("AAAMABAAAAAAAAEAAAAMABEAAAAAAAIAAAAMABIAAAAAAAMAAAANABAAAAABAAEAAAANABEAAAABAAIAAAANABIAAAABAAMAAAA=")
 
 [node name="RevealSecret" parent="tiles/SecretArea" index="1" unique_id=1866784657]
@@ -96,7 +96,7 @@ scale = Vector2(1, 1.56)
 room_id = "meta01"
 reveal_id = "spike_secret2"
 
-[node name="Cover" parent="tiles/SecretArea2" index="0" unique_id=1548122823]
+[node name="Cover" parent="tiles/SecretArea2/Tiles" parent_id_path=PackedInt32Array(403713954, 912739327) index="1" unique_id=1548122823]
 tile_map_data = PackedByteArray("AAAMABMAAAAGAAUAAAAMABQAAAAGAAYAAAANABMAAAAHAAUAAAANABQAAAAHAAYAAAA=")
 
 [node name="RevealSecret" parent="tiles/SecretArea2" index="1" unique_id=1866784657]

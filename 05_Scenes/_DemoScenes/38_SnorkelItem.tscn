@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="13_bwpyo"]
 [ext_resource type="Script" uid="uid://dd810oe6klldp" path="res://01_Scripts/Inventory/Snorkle.gd" id="15_hsw8g"]
 [ext_resource type="Texture2D" uid="uid://bwu5egusp3nvg" path="res://03_Art/Items/BreathingAparatus.png" id="17_hsw8g"]
+[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="17_k408g"]
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="17_oo3mi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
@@ -204,6 +205,9 @@ rotation = 3.1415927
 z_index = 5
 position = Vector2(1284, 768)
 rotation = 3.1415927
+
+[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("17_k408g")]
+position = Vector2(1032, 552)
 
 [connection signal="body_entered" from="EnvTiles/AcidTiles2/Area2" to="EnvTiles/AcidTiles2/Area2" method="_on_body_entered"]
 [connection signal="body_exited" from="EnvTiles/AcidTiles2/Area2" to="EnvTiles/AcidTiles2/Area2" method="_on_body_exited"]
