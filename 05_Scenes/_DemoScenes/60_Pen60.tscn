@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 [sub_resource type="Resource" id="Resource_e8rhe"]
 script = ExtResource("3_4hdun")
 display_name = "To_61"
-transition_id = "60_exit_e"
+transition_id = "60_exit_e_lower"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
 [sub_resource type="Resource" id="Resource_havph"]
@@ -70,6 +70,22 @@ display_name = "To_61"
 transition_id = "60_exit_ne"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
+[sub_resource type="Resource" id="Resource_13frh"]
+script = ExtResource("10_7hvfa")
+enabled = false
+slots = Array[bool]([true, false, false])
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="Resource" id="Resource_gqdra"]
+script = ExtResource("10_7hvfa")
+slots = Array[bool]([true, true, false, false, true, false])
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="Resource" id="Resource_lb4ij"]
+script = ExtResource("10_7hvfa")
+enabled = false
+metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
 [sub_resource type="Resource" id="Resource_ojs2f"]
 script = ExtResource("10_7hvfa")
 slots = Array[bool]([true, false, false])
@@ -82,97 +98,6 @@ metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
 
 [sub_resource type="Resource" id="Resource_rf17o"]
 script = ExtResource("10_7hvfa")
-enabled = false
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_13frh"]
-script = ExtResource("10_7hvfa")
-move_speed = 288.0
-slots = Array[bool]([false, false, true])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_gqdra"]
-script = ExtResource("10_7hvfa")
-slots = Array[bool]([true, false, false])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_lb4ij"]
-script = ExtResource("10_7hvfa")
-slots = Array[bool]([true, true, false, false, true, false])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_m1k0n"]
-script = ExtResource("10_7hvfa")
-enabled = false
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_sivit"]
-script = ExtResource("10_7hvfa")
-move_speed = 288.0
-slots = Array[bool]([false, false, true])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_0wqvo"]
-script = ExtResource("10_7hvfa")
-slots = Array[bool]([true, false, false])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_4p7th"]
-script = ExtResource("10_7hvfa")
-slots = Array[bool]([true, true, false, false, true, false])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_m06we"]
-script = ExtResource("10_7hvfa")
-enabled = false
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_mvhvk"]
-script = ExtResource("10_7hvfa")
-move_speed = 288.0
-slots = Array[bool]([false, false, true])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_0eiac"]
-script = ExtResource("10_7hvfa")
-slots = Array[bool]([true, false, false])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_g2s1i"]
-script = ExtResource("10_7hvfa")
-slots = Array[bool]([true, true, false, false, true, false])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_qnocw"]
-script = ExtResource("10_7hvfa")
-enabled = false
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_6qx3b"]
-script = ExtResource("10_7hvfa")
-move_speed = 288.0
-slots = Array[bool]([false, false, true])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_olvde"]
-script = ExtResource("10_7hvfa")
-slots = Array[bool]([true, false, false])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_mjexy"]
-script = ExtResource("10_7hvfa")
-slots = Array[bool]([true, true, false, false, true, false])
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_pshva"]
-script = ExtResource("10_7hvfa")
-enabled = false
-metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
-
-[sub_resource type="Resource" id="Resource_ik823"]
-script = ExtResource("10_7hvfa")
-move_speed = 288.0
-slots = Array[bool]([false, false, true])
 metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
@@ -274,7 +199,7 @@ position = Vector2(0, 0)
 scale = Vector2(1, 1.6800005)
 
 [node name="Ground" type="TileMapLayer" parent="EnvTiles" unique_id=1118345256]
-tile_map_data = PackedByteArray("AAAHAAQABQARAAwAAAAIAAQABQARAAwAAAAJAAQABQARAAwAAAAKAAQABQARAAwAAAALAAQABQARAAwAAAAMAAQABQARAAwAAAANAAQABQARAAwAAAAOAAQABQARAAwAAAAPAAQABQARAAwAAAAQAAQABQARAAwAAAARAAQABQARAAwAAAASAAQABQARAAwAAAATAAQABQARAAwAAAAUAAQABQARAAwAAAAVAAQABQARAAwAAAAWAAQABQARAAwAAAAXAAQABQARAAwAAAAYAAQABQARAAwAAAAZAAQABQARAAwAAAAaAAQABQARAAwAAAAbAAQABQARAAwAAAAcAAQABQARAAwAAAAdAAQABQARAAwAAAAeAAQABQARAAwAAAAfAAQABQARAAwAAAAgAAQABQARAAwAAAAhAAQABQARAAwAAAAiAAQABQARAAwAAAAjAAQABQARAAwAAAAkAAQABQARAAwAAAAlAAQABQARAAwAAAAmAAQABQARAAwAAAAeABQABQAPAAkAAAAfABQABQARAAkAAAAgABQABQASAAkAAAAeABUABQAPAAoAAAAfABUABQARAAoAAAAgABUABQASAAoAAAAhABQABQAQAAkAAAAiABQABQARAAkAAAAjABQABQASAAkAAAAhABUABQAQAAoAAAAiABUABQARAAoAAAAjABUABQASAAoAAAAkABQABQAQAAkAAAAlABQABQARAAkAAAAmABQABQASAAkAAAAkABUABQAQAAoAAAAlABUABQARAAoAAAAmABUABQASAAoAAAAjAAgABQAQAAkAAAAkAAgABQARAAkAAAAlAAgABQASAAkAAAAmAAgABQAQAAkAAAAHABUABQAMABQAAAAIABUABQANABQAAAAJABUABQAOABQAAAAKABUABQAPABQAAAALABUABQAQABQAAAAMABUABQAMABQAAAANABUABQANABQAAAALABEABQAMABQAADAKABEABQANABQAADAJABEABQAOABQAADAIABEABQAPABQAADAHABEABQAQABQAADAMABEABQABABAAADAMAAwABQAQABQAAFAMAAsABQAPABQAAFAMAAoABQAOABQAAFAMABAABQAPABQAAFAMAA8ABQAOABQAAFAMAA4ABQANABQAAFAMAA0ABQAMABQAAFAZABAABQANABQAAAAaABAABQAOABQAAAAbABAABQAPABQAAAAcABAABQAQABQAAAAdABAABQAMABQAAAAeABAABQANABQAAAAfABAABQAOABQAAAAgABAABQAPABQAAAAhABAABQAQABQAAAAiABAABQAMABQAAAAjABAABQANABQAAAAkABAABQAOABQAAAAlABAABQAPABQAAAAmABAABQAQABQAAAAMAAcABQABABAAAAANAAcABQAQABQAADAOAAcABQAPABQAADAPAAcABQAOABQAADAQAAcABQANABQAADARAAcABQAMABQAADASAAcABQAQABQAADATAAcABQAPABQAADAUAAcABQAOABQAADAVAAcABQANABQAADAMAAkABQANABQAAFAMAAgABQAMABQAAFAOABUABQAOABQAAAAPABUABQAMABQAAAAQAAoABQABABAAAAAQAAsABQAMABQAAGAQAAwABQAQABQAAGAQAA0ABQAPABQAAGAQAA4ABQAOABQAAGAQAA8ABQANABQAAGAQABAABQAMABQAAGAQABEABQAQABQAAGAQABIABQAPABQAAGAQABMABQAOABQAAGAQABQABQANABQAAGAQABUABQABABAAADAYAAcABQANABQAADAXAAcABQAOABQAADAWAAcABQAPABQAADAZAAcABQAPABQAADAYABAABQAPABQAAAARABMABQAPAAkAAAARABQABQAQAAoAAAASABMABQARAAkAAAASABQABQARAAoAAAATABMABQASAAkAAAATABQABQASAAoAAAARABUABQAQAAoAAAASABUABQARAAoAAAATABUABQASAAoAAAAUABMABQAQAAkAAAAUABQABQAQAAoAAAAVABMABQATAAkAAAAVABQABQARAAoAAAAUABUABQAQAAoAAAAVABUABQARAAoAAAAJAA8ABQANAA0AAAAKAA8ABQAOAA0AAAALAA8ABQAPAA0AAAAKAA0ABQANAA0AAAALAA0ABQAOAA0AAAAKAAsABQANAA0AAAALAAsABQAOAA0AAAAKAAkABQANAA0AAAALAAkABQAOAA0AAAARAAoABQANABQAAAASAAoABQAOABQAAAATAAoABQAPABQAAAAUAAoABQANABQAAAAcAAwABQAMABQAADAdAAwABQAQABQAADAeAAwABQAPABQAADAfAAwABQAOABQAADAgAAwABQANABQAADAhAAwABQAMABQAADAiAAwABQAQABQAADAjAAwABQAPABQAADAkAAwABQAOABQAADAlAAwABQANABQAADAmAAwABQAMABQAADAaAAsABQAMABQAAGAaAAoABQANABQAAGAaAAkABQAOABQAAGAaAAgABQAPABQAAGAaAAcABQABABQAADAaAAwABQABABQAAAAVAAoABQAMABQAAAAWAAoABQABABQAADAbAAwABQAQABQAADAXABAABQAOABQAAAAWAAsABQAOABQAAFAWAAwABQAOABQAAFAWAA0ABQAOABQAAFAWAA4ABQAOABQAAFAWAA8ABQAOABQAAFAWABAABQABABQAAAARABEABQAOAAoAAAAVAA0ABQAOAAoAACAUAA0ABQAOAAoAACAiAAgABQAQAAkAAAAhAAgABQAPAAkAAAAbAAoABQAOAAoAAAAcAAoABQAOAAoAAAAbAAgABQAOAAoAAAA=")
+tile_map_data = PackedByteArray("AAAHAAQABQARAAwAAAAIAAQABQARAAwAAAAJAAQABQARAAwAAAAKAAQABQARAAwAAAALAAQABQARAAwAAAAMAAQABQARAAwAAAANAAQABQARAAwAAAAOAAQABQARAAwAAAAPAAQABQARAAwAAAAQAAQABQARAAwAAAARAAQABQARAAwAAAASAAQABQARAAwAAAATAAQABQARAAwAAAAUAAQABQARAAwAAAAVAAQABQARAAwAAAAWAAQABQARAAwAAAAXAAQABQARAAwAAAAYAAQABQARAAwAAAAZAAQABQARAAwAAAAaAAQABQARAAwAAAAbAAQABQARAAwAAAAcAAQABQARAAwAAAAdAAQABQARAAwAAAAeAAQABQARAAwAAAAfAAQABQARAAwAAAAgAAQABQARAAwAAAAhAAQABQARAAwAAAAiAAQABQARAAwAAAAjAAQABQARAAwAAAAkAAQABQARAAwAAAAlAAQABQARAAwAAAAmAAQABQARAAwAAAAeABQABQAPAAkAAAAfABQABQARAAkAAAAgABQABQASAAkAAAAeABUABQAPAAoAAAAfABUABQARAAoAAAAgABUABQASAAoAAAAhABQABQAQAAkAAAAiABQABQARAAkAAAAjABQABQASAAkAAAAhABUABQAQAAoAAAAiABUABQARAAoAAAAjABUABQASAAoAAAAkABQABQAQAAkAAAAlABQABQARAAkAAAAmABQABQASAAkAAAAkABUABQAQAAoAAAAlABUABQARAAoAAAAmABUABQASAAoAAAAjAAgABQAQAAkAAAAkAAgABQARAAkAAAAlAAgABQASAAkAAAAmAAgABQAQAAkAAAAHABUABQAIABAAACAIABUABQAFABAAACAJABUABQAGABAAACAKABUABQAHABAAACALABUABQAIABAAACAMABUABQAFABAAACANABUABQAGABAAACALABEABQAIABAAAAAKABEABQAHABAAAAAJABEABQAGABAAAAAIABEABQAFABAAAAAHABEABQAEABAAAAAMABEABQAJABAAAAAMAAwABQAQABIAABAMAAsABQAQABEAABAMAAoABQAQABMAABAMABAABQAQABMAABAMAA8ABQAQABIAABAMAA4ABQAQABEAABAMAA0ABQAQABMAABAZABAABQAGABAAACAaABAABQAHABAAACAbABAABQAIABAAACAcABAABQAJABAAACAdABAABQAKABAAACAeABAABQAEABAAACAfABAABQAFABAAACAgABAABQAGABAAACAhABAABQAHABAAACAiABAABQAIABAAACAjABAABQAJABAAACAkABAABQAKABAAACAlABAABQAEABAAACAmABAABQAFABAAACAMAAcABQAQABAAABANAAcABQAFABAAAAAOAAcABQAGABAAAAAPAAcABQAHABAAAAAQAAcABQAIABAAAAARAAcABQAJABAAAAASAAcABQAKABAAAAATAAcABQAEABAAAAAUAAcABQAFABAAAAAVAAcABQAGABAAAAAMAAkABQAQABIAABAMAAgABQAQABEAABAOABUABQAHABAAACAPABUABQAIABAAACAQAAoABQAQABQAADAQAAsABQAQABEAAAAQAAwABQAQABIAAAAQAA0ABQAQABMAAAAQAA4ABQAQABEAAAAQAA8ABQAQABIAAAAQABAABQAQABMAAAAQABEABQAQABEAAAAQABIABQAQABIAAAAQABMABQAQABMAAAAQABQABQAQABEAAAAQABUABQAQABQAAAAYAAcABQAJABAAAAAXAAcABQAIABAAAAAWAAcABQAHABAAAAAZAAcABQAKABAAAAAYABAABQAFABAAACARABMABQAPAAkAAAARABQABQAQAAoAAAASABMABQARAAkAAAASABQABQARAAoAAAATABMABQASAAkAAAATABQABQASAAoAAAARABUABQAQAAoAAAASABUABQARAAoAAAATABUABQASAAoAAAAUABMABQAQAAkAAAAUABQABQAQAAoAAAAVABMABQATAAkAAAAVABQABQARAAoAAAAUABUABQAQAAoAAAAVABUABQARAAoAAAAJAA8ABQANAA0AAAAKAA8ABQAOAA0AAAALAA8ABQAPAA0AAAAKAA0ABQANAA0AAAALAA0ABQAOAA0AAAAKAAsABQANAA0AAAALAAsABQAOAA0AAAAKAAkABQANAA0AAAALAAkABQAOAA0AAAARAAoABQAFABAAAAASAAoABQAGABAAAAATAAoABQAHABAAAAAUAAoABQAIABAAAAAcAAwABQAGABAAAAAdAAwABQAHABAAAAAeAAwABQAIABAAAAAfAAwABQAJABAAAAAgAAwABQAKABAAAAAhAAwABQAEABAAAAAiAAwABQAFABAAAAAjAAwABQAGABAAAAAkAAwABQAHABAAAAAlAAwABQAIABAAAAAmAAwABQAJABAAAAAaAAsABQAQABMAAAAaAAoABQAQABIAAAAaAAkABQAQABEAAAAaAAgABQAQABMAAAAaAAcABQAQABAAAAAaAAwABQALABAAAAAVAAoABQAJABAAAAAWAAoABQAQABQAACAbAAwABQAMABAAAAAXABAABQAEABAAACAWAAsABQAQABEAAAAWAAwABQAQABIAAAAWAA0ABQAQABMAAAAWAA4ABQAQABEAAAAWAA8ABQAQABIAAAAWABAABQAQABQAABARABEABQAOAAoAAAAVAA0ABQAOAAoAACAUAA0ABQAOAAoAACAiAAgABQAQAAkAAAAhAAgABQAPAAkAAAAbAAoABQAOAAoAAAAcAAoABQAOAAoAAAAbAAgABQAOAAoAAAA=")
 tile_set = ExtResource("5_46swt")
 metadata/_edit_lock_ = true
 
@@ -290,6 +215,9 @@ metadata/_edit_lock_ = true
 [node name="BlueWater" parent="EnvTiles" unique_id=1959433390 instance=ExtResource("8_e8rhe")]
 position = Vector2(1476, 696)
 scale = Vector2(1.0800024, 1)
+
+[node name="WaterTiles" parent="EnvTiles/BlueWater" index="0" unique_id=1066129013]
+tile_map_data = PackedByteArray("AADq/wMABQAEABIAAADq/wQABQAEABMAAADq/wUABQAEABIAAADr/wMABQAFABIAAADr/wQABQAFABMAAADr/wUABQAFABIAAADs/wMABQAGABIAAADs/wQABQAGABMAAADs/wUABQAGABIAAADt/wMABQAHABIAAADt/wQABQAHABMAAADt/wUABQAHABIAAADu/wMABQAEABIAAADu/wQABQAEABMAAADu/wUABQAEABIAAADq/wYABQAEABMAAADr/wYABQAFABMAAADs/wYABQAGABMAAADt/wYABQAHABMAAADu/wYABQAEABMAAADv/wMABQAEABMAAADv/wQABQAEABIAAADv/wUABQAEABMAAADw/wMABQAFABMAAADw/wQABQAFABIAAADw/wUABQAFABMAAADx/wMABQAGABMAAADx/wQABQAGABIAAADx/wUABQAGABMAAADy/wMABQAHABMAAADy/wQABQAHABIAAADy/wUABQAHABMAAADv/wYABQAEABIAAADw/wYABQAFABIAAADx/wYABQAGABIAAADy/wYABQAHABIAAADv//n/BQAEABIAAADv//r/BQAEABMAAADv//v/BQAEABIAAADw//n/BQAFABIAAADw//r/BQAFABMAAADw//v/BQAFABIAAADx//n/BQAGABIAAADx//r/BQAGABMAAADx//v/BQAGABIAAADy//n/BQAHABIAAADy//r/BQAHABMAAADy//v/BQAHABIAAADv//z/BQAEABIAAADv//3/BQAEABMAAADv//7/BQAEABIAAADw//z/BQAFABIAAADw//3/BQAFABMAAADw//7/BQAFABIAAADx//z/BQAGABIAAADx//3/BQAGABMAAADx//7/BQAGABIAAADy//z/BQAHABIAAADy//3/BQAHABMAAADy//7/BQAHABIAAADv////BQAEABMAAADv/wAABQAEABIAAADv/wEABQAEABMAAADw////BQAFABMAAADw/wAABQAFABIAAADw/wEABQAFABMAAADx////BQAGABMAAADx/wAABQAGABIAAADx/wEABQAGABMAAADy////BQAHABMAAADy/wAABQAHABIAAADy/wEABQAHABMAAADv/wIABQAEABIAAADw/wIABQAFABIAAADx/wIABQAGABIAAADy/wIABQAHABIAAADz//n/BQAEABIAAADz//r/BQAEABMAAADz//v/BQAEABIAAAD0//n/BQAFABIAAAD0//r/BQAFABMAAAD0//v/BQAFABIAAAD1//n/BQAGABIAAAD1//r/BQAGABMAAAD1//v/BQAGABIAAAD2//n/BQAHABIAAAD2//r/BQAHABMAAAD2//v/BQAHABIAAAD3//n/BQAEABIAAAD3//r/BQAEABMAAAD3//v/BQAEABIAAAD4//n/BQAFABIAAAD4//r/BQAFABMAAAD4//v/BQAFABIAAAD5//n/BQAGABIAAAD5//r/BQAGABMAAAD5//v/BQAGABIAAAD6//n/BQAHABIAAAD6//r/BQAHABMAAAD6//v/BQAHABIAAAD7//n/BQAEABIAAAD7//r/BQAEABMAAAD7//v/BQAEABIAAAD5//z/BQAEABIAAAD6//z/BQAFABIAAAD7//z/BQAGABIAAAD5//3/BQAEABMAAAD5//7/BQAEABIAAAD5////BQAEABMAAAD6//3/BQAFABMAAAD6//7/BQAFABIAAAD6////BQAFABMAAAD7//3/BQAGABMAAAD7//7/BQAGABIAAAD7////BQAGABMAAAD5/wAABQAEABIAAAD5/wEABQAEABMAAAD6/wAABQAFABIAAAD6/wEABQAFABMAAAD7/wAABQAGABIAAAD7/wEABQAGABMAAAD8//7/BQAEABIAAAD8////BQAEABMAAAD8/wAABQAEABIAAAD9//7/BQAFABIAAAD9////BQAFABMAAAD9/wAABQAFABIAAAD8/wEABQAEABMAAAD9/wEABQAFABMAAAD+//7/BQAGABIAAAD+////BQAGABMAAAD+/wAABQAGABIAAAD///7/BQAHABIAAAD/////BQAHABMAAAD//wAABQAHABIAAAAAAP7/BQAEABIAAAAAAP//BQAEABMAAAAAAAAABQAEABIAAAABAP7/BQAFABIAAAABAP//BQAFABMAAAABAAAABQAFABIAAAACAP7/BQAGABIAAAACAP//BQAGABMAAAACAAAABQAGABIAAAD+/wEABQAGABMAAAD//wEABQAHABMAAAAAAAEABQAEABMAAAABAAEABQAFABMAAAACAAEABQAGABMAAAADAP7/BQAHABIAAAADAP//BQAHABMAAAADAAAABQAHABIAAAAEAP7/BQAEABIAAAAEAP//BQAEABMAAAAEAAAABQAEABIAAAAFAP7/BQAFABIAAAAFAP//BQAFABMAAAAFAAAABQAFABIAAAAGAP7/BQAGABIAAAAGAP//BQAGABMAAAAGAAAABQAGABIAAAAHAP7/BQAHABIAAAAHAP//BQAHABMAAAAHAAAABQAHABIAAAADAAEABQAHABMAAAAEAAEABQAEABMAAAAFAAEABQAFABMAAAAGAAEABQAGABMAAAAHAAEABQAHABMAAAA=")
 
 [node name="Area2D" parent="EnvTiles/BlueWater" index="1" unique_id=1010538046]
 scale = Vector2(1.4, 0.52)
@@ -323,133 +251,6 @@ scale = Vector2(1.0800024, 1)
 
 [node name="Area2D" parent="EnvTiles/BlueWater2" index="1" unique_id=1010538046]
 scale = Vector2(0.7528144, 0.52)
-
-[node name="sperm_lane" parent="EnvTiles" unique_id=1586465063 instance=ExtResource("9_havph")]
-position = Vector2(1476, 696)
-scale = Vector2(0.48000002, 0.36)
-rows = Array[ExtResource("10_7hvfa")]([SubResource("Resource_ojs2f"), SubResource("Resource_gyhqi"), SubResource("Resource_rf17o"), SubResource("Resource_13frh")])
-
-[node name="sperm_lane2" parent="EnvTiles" unique_id=820906634 instance=ExtResource("9_havph")]
-position = Vector2(564, 936)
-scale = Vector2(0.26880002, 0.36)
-rows = Array[ExtResource("10_7hvfa")]([SubResource("Resource_gqdra"), SubResource("Resource_lb4ij"), SubResource("Resource_m1k0n"), SubResource("Resource_sivit")])
-
-[node name="sperm_lane3" parent="EnvTiles" unique_id=1783744046 instance=ExtResource("9_havph")]
-position = Vector2(944, 432.00003)
-scale = Vector2(0.43008003, 0.23040001)
-rows = Array[ExtResource("10_7hvfa")]([SubResource("Resource_0wqvo"), SubResource("Resource_4p7th"), SubResource("Resource_m06we"), SubResource("Resource_mvhvk")])
-
-[node name="sperm_lane4" parent="EnvTiles" unique_id=2088453820 instance=ExtResource("9_havph")]
-position = Vector2(696.00006, 696)
-rotation = -1.5707964
-scale = Vector2(0.39567414, 0.318505)
-rows = Array[ExtResource("10_7hvfa")]([SubResource("Resource_0eiac"), SubResource("Resource_g2s1i"), SubResource("Resource_qnocw"), SubResource("Resource_6qx3b")])
-
-[node name="sperm_lane5" parent="EnvTiles" unique_id=637754113 instance=ExtResource("9_havph")]
-position = Vector2(1176, 576)
-rotation = 1.5707964
-scale = Vector2(0.24753407, 0.318505)
-rows = Array[ExtResource("10_7hvfa")]([SubResource("Resource_olvde"), SubResource("Resource_mjexy"), SubResource("Resource_pshva"), SubResource("Resource_ik823")])
-
-[node name="Door" parent="." unique_id=425038002 instance=ExtResource("11_dutt5")]
-position = Vector2(362, 624)
-rotation = 3.1415927
-DoorMovePosition = Vector2(0, 100)
-move_speed = 1.0
-signal_id = 6015
-
-[node name="Door5" parent="." unique_id=640049800 instance=ExtResource("11_dutt5")]
-position = Vector2(743, 144)
-rotation = 3.1415927
-DoorMovePosition = Vector2(0, -150)
-move_speed = 1.0
-signal_id = 6011
-
-[node name="valve" parent="." unique_id=583119961 instance=ExtResource("12_8yi7b")]
-position = Vector2(1728, 307)
-attached_ids = Array[int]([603, 604, 6012, 6016])
-activation_amount = Array[float]([1.0, 1.0, 2.0, 1.0])
-puzzle_id = "valve60_2"
-
-[node name="valve3" parent="." unique_id=74084717 instance=ExtResource("12_8yi7b")]
-position = Vector2(528, 360)
-attached_ids = Array[int]([601, 602, 604])
-activation_amount = Array[float]([1.0, 1.0, 1.0, 1.0])
-puzzle_id = "valve60_1"
-
-[node name="valve4" parent="." unique_id=1699761136 instance=ExtResource("12_8yi7b")]
-position = Vector2(1598, 880)
-attached_ids = Array[int]([604, 603, 605, 6013, 6012])
-activation_amount = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0])
-puzzle_id = "valve60_3"
-
-[node name="valve2" parent="." unique_id=345578382 instance=ExtResource("12_8yi7b")]
-position = Vector2(1008, 576)
-attached_ids = Array[int]([605, 6016])
-activation_amount = Array[float]([1.0, 1.0])
-puzzle_id = "valve60_4"
-
-[node name="Door2" parent="." unique_id=574353694 instance=ExtResource("11_dutt5")]
-z_index = 1
-position = Vector2(840, 749)
-rotation = 1.5707964
-DoorMovePosition = Vector2(0, 200)
-move_speed = 1.0
-signal_id = 608
-
-[node name="Door3" parent="." unique_id=186313994 instance=ExtResource("11_dutt5")]
-z_index = 1
-position = Vector2(936, 749)
-rotation = 1.5707964
-DoorMovePosition = Vector2(0, 200)
-move_speed = 1.0
-signal_id = 609
-
-[node name="Door7" parent="." unique_id=1893120233 instance=ExtResource("11_dutt5")]
-z_index = 1
-position = Vector2(1032, 749)
-rotation = 1.5707964
-DoorMovePosition = Vector2(200, 0)
-move_speed = 1.0
-signal_id = 6010
-
-[node name="Door4" parent="." unique_id=35760923 instance=ExtResource("11_dutt5")]
-z_index = 1
-position = Vector2(907, 677)
-DoorMovePosition = Vector2(0, -250)
-move_speed = 1.0
-signal_id = 607
-
-[node name="Door6" parent="." unique_id=636676965 instance=ExtResource("11_dutt5")]
-z_index = 1
-position = Vector2(907, 576)
-DoorMovePosition = Vector2(0, -131)
-move_speed = 1.0
-signal_id = 606
-
-[node name="Switch" parent="." unique_id=150077233 instance=ExtResource("13_e8rhe")]
-position = Vector2(900, 888)
-attached_ids = Array[int]([608, 610, 6011, 6015, 6026, 6027, 6029, 6028, 6030])
-activation_amount = Array[float]([1.0, 1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0])
-puzzle_id = "switch60_7"
-
-[node name="Switch2" parent="." unique_id=1307619237 instance=ExtResource("13_e8rhe")]
-position = Vector2(1728, 936)
-attached_ids = Array[int]([606, 607, 608, 609, 610, 6015, 6020, 6022, 6024, 6025])
-activation_amount = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0])
-puzzle_id = "switch60_5"
-
-[node name="Switch3" parent="." unique_id=293368122 instance=ExtResource("13_e8rhe")]
-position = Vector2(936, 168)
-attached_ids = Array[int]([608, 609, 6010, 6015, 6023, 6025])
-activation_amount = Array[float]([-1.0, -1.0, -1.0, 0.5, 1.0, -1.0])
-puzzle_id = "switch60_6"
-
-[node name="Switch4" parent="." unique_id=1751867641 instance=ExtResource("13_e8rhe")]
-position = Vector2(528, 168)
-attached_ids = Array[int]([6011, 6030, 6031])
-activation_amount = Array[float]([1.0, 1.0, 1.0])
-puzzle_id = "switch60_8"
 
 [node name="Pipes" type="Node" parent="." unique_id=39643187]
 
@@ -824,152 +625,279 @@ position = Vector2(1632, 336)
 shape = 0
 exit_side = 2
 
-[node name="Node" type="Node" parent="." unique_id=147363881]
+[node name="Lights" type="Node" parent="." unique_id=147363881]
 
-[node name="blueTriangleLight" parent="Node" unique_id=2073561881 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight" parent="Lights" unique_id=2073561881 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(356, 696)
 scale = Vector2(2.5, 2.5)
 signal_id = 6020
 
-[node name="Sprite2D" parent="Node/blueTriangleLight" index="0" unique_id=87334520]
+[node name="Sprite2D" parent="Lights/blueTriangleLight" index="0" unique_id=87334520]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Sprite2D2" parent="Node/blueTriangleLight" index="1" unique_id=401355035]
+[node name="Sprite2D2" parent="Lights/blueTriangleLight" index="1" unique_id=401355035]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="blueTriangleLight2" parent="Node" unique_id=1619985726 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight2" parent="Lights" unique_id=1619985726 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(356, 737.00006)
 scale = Vector2(2.5, 2.5)
 signal_id = 6023
 
-[node name="Sprite2D" parent="Node/blueTriangleLight2" index="0" unique_id=87334520]
+[node name="Sprite2D" parent="Lights/blueTriangleLight2" index="0" unique_id=87334520]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Sprite2D2" parent="Node/blueTriangleLight2" index="1" unique_id=401355035]
+[node name="Sprite2D2" parent="Lights/blueTriangleLight2" index="1" unique_id=401355035]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="blueTriangleLight3" parent="Node" unique_id=1334657498 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight3" parent="Lights" unique_id=1334657498 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(743, 211)
 scale = Vector2(2.5, 2.5)
 signal_id = 6030
 
-[node name="Sprite2D" parent="Node/blueTriangleLight3" index="0" unique_id=87334520]
+[node name="Sprite2D" parent="Lights/blueTriangleLight3" index="0" unique_id=87334520]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Sprite2D2" parent="Node/blueTriangleLight3" index="1" unique_id=401355035]
+[node name="Sprite2D2" parent="Lights/blueTriangleLight3" index="1" unique_id=401355035]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="blueTriangleLight15" parent="Node" unique_id=1729279393 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight15" parent="Lights" unique_id=1729279393 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(529, 211)
 scale = Vector2(2.5, 2.5)
 signal_id = 6031
 
-[node name="Sprite2D" parent="Node/blueTriangleLight15" index="0" unique_id=87334520]
+[node name="Sprite2D" parent="Lights/blueTriangleLight15" index="0" unique_id=87334520]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Sprite2D2" parent="Node/blueTriangleLight15" index="1" unique_id=401355035]
+[node name="Sprite2D2" parent="Lights/blueTriangleLight15" index="1" unique_id=401355035]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="blueTriangleLight5" parent="Node" unique_id=763067644 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight5" parent="Lights" unique_id=763067644 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(912, 211)
 scale = Vector2(2.5, 2.5)
 signal_id = 6023
 
-[node name="Sprite2D" parent="Node/blueTriangleLight5" index="0" unique_id=87334520]
+[node name="Sprite2D" parent="Lights/blueTriangleLight5" index="0" unique_id=87334520]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Sprite2D2" parent="Node/blueTriangleLight5" index="1" unique_id=401355035]
+[node name="Sprite2D2" parent="Lights/blueTriangleLight5" index="1" unique_id=401355035]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="blueTriangleLight9" parent="Node" unique_id=663149204 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight9" parent="Lights" unique_id=663149204 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(960, 211)
 scale = Vector2(2.5, 2.5)
 signal_id = 6023
 
-[node name="blueTriangleLight6" parent="Node" unique_id=2116256911 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight6" parent="Lights" unique_id=2116256911 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(785.0001, 748)
 scale = Vector2(2.5, 2.5)
 signal_id = 6025
 
-[node name="blueTriangleLight10" parent="Node" unique_id=1510395411 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight10" parent="Lights" unique_id=1510395411 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(605, 748)
 scale = Vector2(2.5, 2.5)
 signal_id = 6026
 
-[node name="blueTriangleLight12" parent="Node" unique_id=1080551250 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight12" parent="Lights" unique_id=1080551250 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(901, 950)
 scale = Vector2(2.5, 2.5)
 signal_id = 6026
 
-[node name="blueTriangleLight13" parent="Node" unique_id=1895388007 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight13" parent="Lights" unique_id=1895388007 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(944, 950)
 scale = Vector2(2.5, 2.5)
 signal_id = 6028
 
-[node name="Sprite2D" parent="Node/blueTriangleLight13" index="0" unique_id=87334520]
+[node name="Sprite2D" parent="Lights/blueTriangleLight13" index="0" unique_id=87334520]
 region_rect = Rect2(48, 0, 16, 16)
 
-[node name="Sprite2D2" parent="Node/blueTriangleLight13" index="1" unique_id=401355035]
+[node name="Sprite2D2" parent="Lights/blueTriangleLight13" index="1" unique_id=401355035]
 region_rect = Rect2(48, 0, 16, 16)
 
-[node name="blueTriangleLight14" parent="Node" unique_id=1001775463 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight14" parent="Lights" unique_id=1001775463 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(356, 780)
 scale = Vector2(2.5, 2.5)
 ActivationAmount = 1.0
 signal_id = 6029
 
-[node name="Sprite2D" parent="Node/blueTriangleLight14" index="0" unique_id=87334520]
+[node name="Sprite2D" parent="Lights/blueTriangleLight14" index="0" unique_id=87334520]
 region_rect = Rect2(48, 0, 16, 16)
 
-[node name="Sprite2D2" parent="Node/blueTriangleLight14" index="1" unique_id=401355035]
+[node name="Sprite2D2" parent="Lights/blueTriangleLight14" index="1" unique_id=401355035]
 region_rect = Rect2(48, 0, 16, 16)
 
-[node name="blueTriangleLight7" parent="Node" unique_id=1765230289 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight7" parent="Lights" unique_id=1765230289 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(907, 506)
 scale = Vector2(2.5, 2.5)
 signal_id = 6024
 
-[node name="blueTriangleLight8" parent="Node" unique_id=753978600 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight8" parent="Lights" unique_id=753978600 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(1752, 984)
 scale = Vector2(2.5, 2.5)
 signal_id = 6022
 
-[node name="blueTriangleLight4" parent="Node" unique_id=473239684 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight4" parent="Lights" unique_id=473239684 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(1704, 984)
 scale = Vector2(2.5, 2.5)
 signal_id = 6020
 
-[node name="Sprite2D" parent="Node/blueTriangleLight4" index="0" unique_id=87334520]
+[node name="Sprite2D" parent="Lights/blueTriangleLight4" index="0" unique_id=87334520]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Sprite2D2" parent="Node/blueTriangleLight4" index="1" unique_id=401355035]
+[node name="Sprite2D2" parent="Lights/blueTriangleLight4" index="1" unique_id=401355035]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="blueTriangleLight11" parent="Node" unique_id=1556666642 instance=ExtResource("14_7hvfa")]
+[node name="blueTriangleLight11" parent="Lights" unique_id=1556666642 instance=ExtResource("14_7hvfa")]
 z_index = 30
 position = Vector2(853, 950)
 scale = Vector2(2.5, 2.5)
 signal_id = 6027
 
-[node name="Sprite2D" parent="Node/blueTriangleLight11" index="0" unique_id=87334520]
+[node name="Sprite2D" parent="Lights/blueTriangleLight11" index="0" unique_id=87334520]
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Sprite2D2" parent="Node/blueTriangleLight11" index="1" unique_id=401355035]
+[node name="Sprite2D2" parent="Lights/blueTriangleLight11" index="1" unique_id=401355035]
 region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Door" parent="." unique_id=425038002 instance=ExtResource("11_dutt5")]
+position = Vector2(362, 624)
+rotation = 3.1415927
+DoorMovePosition = Vector2(0, 100)
+move_speed = 1.0
+signal_id = 6015
+
+[node name="Door5" parent="." unique_id=640049800 instance=ExtResource("11_dutt5")]
+position = Vector2(743, 144)
+rotation = 3.1415927
+DoorMovePosition = Vector2(0, -150)
+move_speed = 1.0
+signal_id = 6011
+
+[node name="valve" parent="." unique_id=583119961 instance=ExtResource("12_8yi7b")]
+position = Vector2(1728, 307)
+attached_ids = Array[int]([603, 604, 6012, 6016])
+activation_amount = Array[float]([1.0, 1.0, 2.0, 1.0])
+puzzle_id = "valve60_2"
+
+[node name="valve3" parent="." unique_id=74084717 instance=ExtResource("12_8yi7b")]
+position = Vector2(528, 360)
+attached_ids = Array[int]([601, 602, 604])
+activation_amount = Array[float]([1.0, 1.0, 1.0, 1.0])
+puzzle_id = "valve60_1"
+
+[node name="valve4" parent="." unique_id=1699761136 instance=ExtResource("12_8yi7b")]
+position = Vector2(1598, 880)
+attached_ids = Array[int]([604, 603, 605, 6013, 6012])
+activation_amount = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0])
+puzzle_id = "valve60_3"
+
+[node name="valve2" parent="." unique_id=345578382 instance=ExtResource("12_8yi7b")]
+position = Vector2(1008, 576)
+attached_ids = Array[int]([605, 6016])
+activation_amount = Array[float]([1.0, 1.0])
+puzzle_id = "valve60_4"
+
+[node name="Door2" parent="." unique_id=574353694 instance=ExtResource("11_dutt5")]
+z_index = 1
+position = Vector2(840, 749)
+rotation = 1.5707964
+DoorMovePosition = Vector2(0, 200)
+move_speed = 1.0
+signal_id = 608
+
+[node name="Door3" parent="." unique_id=186313994 instance=ExtResource("11_dutt5")]
+z_index = 1
+position = Vector2(936, 749)
+rotation = 1.5707964
+DoorMovePosition = Vector2(0, 200)
+move_speed = 1.0
+signal_id = 609
+
+[node name="Door7" parent="." unique_id=1893120233 instance=ExtResource("11_dutt5")]
+z_index = 1
+position = Vector2(1032, 749)
+rotation = 1.5707964
+DoorMovePosition = Vector2(200, 0)
+move_speed = 1.0
+signal_id = 6010
+
+[node name="Door4" parent="." unique_id=35760923 instance=ExtResource("11_dutt5")]
+z_index = 1
+position = Vector2(907, 677)
+DoorMovePosition = Vector2(0, -250)
+move_speed = 1.0
+signal_id = 607
+
+[node name="Door6" parent="." unique_id=636676965 instance=ExtResource("11_dutt5")]
+z_index = 1
+position = Vector2(907, 576)
+DoorMovePosition = Vector2(0, -131)
+move_speed = 1.0
+signal_id = 606
+
+[node name="Switch" parent="." unique_id=150077233 instance=ExtResource("13_e8rhe")]
+position = Vector2(900, 888)
+attached_ids = Array[int]([608, 610, 6011, 6015, 6026, 6027, 6029, 6028, 6030])
+activation_amount = Array[float]([1.0, 1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0])
+puzzle_id = "switch60_7"
+
+[node name="Switch2" parent="." unique_id=1307619237 instance=ExtResource("13_e8rhe")]
+position = Vector2(1728, 936)
+attached_ids = Array[int]([606, 607, 608, 609, 610, 6015, 6020, 6022, 6024, 6025])
+activation_amount = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0])
+puzzle_id = "switch60_5"
+
+[node name="Switch3" parent="." unique_id=293368122 instance=ExtResource("13_e8rhe")]
+position = Vector2(936, 168)
+attached_ids = Array[int]([608, 609, 6010, 6015, 6023, 6025])
+activation_amount = Array[float]([-1.0, -1.0, -1.0, 0.5, 1.0, -1.0])
+puzzle_id = "switch60_6"
+
+[node name="Switch4" parent="." unique_id=1751867641 instance=ExtResource("13_e8rhe")]
+position = Vector2(528, 168)
+attached_ids = Array[int]([6011, 6030, 6031])
+activation_amount = Array[float]([1.0, 1.0, 1.0])
+puzzle_id = "switch60_8"
+
+[node name="sperm_lane" parent="." unique_id=1586465063 instance=ExtResource("9_havph")]
+position = Vector2(564, 936)
+
+[node name="CollisionShape2D" parent="sperm_lane/Area2D" parent_id_path=PackedInt32Array(1586465063, 2093319916) index="0" unique_id=930390904]
+scale = Vector2(0.24000004, 0.31999996)
+
+[node name="sperm_lane2" parent="." unique_id=1275291340 instance=ExtResource("9_havph")]
+position = Vector2(937, 432)
+
+[node name="CollisionShape2D" parent="sperm_lane2/Area2D" parent_id_path=PackedInt32Array(1275291340, 2093319916) index="0" unique_id=930390904]
+scale = Vector2(0.40000004, 0.19999996)
+
+[node name="sperm_lane4" parent="." unique_id=2100589887 instance=ExtResource("9_havph")]
+position = Vector2(696, 677)
+rotation = -1.5707964
+rows = Array[ExtResource("10_7hvfa")]([SubResource("Resource_13frh"), SubResource("Resource_gqdra"), SubResource("Resource_lb4ij")])
+
+[node name="CollisionShape2D" parent="sperm_lane4/Area2D" parent_id_path=PackedInt32Array(2100589887, 2093319916) index="0" unique_id=930390904]
+scale = Vector2(0.24000004, 0.31999993)
+
+[node name="sperm_lane3" parent="." unique_id=1630474931 instance=ExtResource("9_havph")]
+position = Vector2(1476, 696)
+rows = Array[ExtResource("10_7hvfa")]([SubResource("Resource_ojs2f"), SubResource("Resource_gyhqi"), SubResource("Resource_rf17o")])
+
+[node name="CollisionShape2D" parent="sperm_lane3/Area2D" parent_id_path=PackedInt32Array(1630474931, 2093319916) index="0" unique_id=930390904]
+scale = Vector2(0.48000002, 0.31999996)
 
 [editable path="RoomTransition_52"]
 [editable path="RoomTransition_59WMid"]
@@ -986,18 +914,22 @@ region_rect = Rect2(16, 16, 16, 16)
 [editable path="EnvTiles/BlueWater4"]
 [editable path="EnvTiles/BlueWater5"]
 [editable path="EnvTiles/BlueWater2"]
-[editable path="Node/blueTriangleLight"]
-[editable path="Node/blueTriangleLight2"]
-[editable path="Node/blueTriangleLight3"]
-[editable path="Node/blueTriangleLight15"]
-[editable path="Node/blueTriangleLight5"]
-[editable path="Node/blueTriangleLight9"]
-[editable path="Node/blueTriangleLight6"]
-[editable path="Node/blueTriangleLight10"]
-[editable path="Node/blueTriangleLight12"]
-[editable path="Node/blueTriangleLight13"]
-[editable path="Node/blueTriangleLight14"]
-[editable path="Node/blueTriangleLight7"]
-[editable path="Node/blueTriangleLight8"]
-[editable path="Node/blueTriangleLight4"]
-[editable path="Node/blueTriangleLight11"]
+[editable path="Lights/blueTriangleLight"]
+[editable path="Lights/blueTriangleLight2"]
+[editable path="Lights/blueTriangleLight3"]
+[editable path="Lights/blueTriangleLight15"]
+[editable path="Lights/blueTriangleLight5"]
+[editable path="Lights/blueTriangleLight9"]
+[editable path="Lights/blueTriangleLight6"]
+[editable path="Lights/blueTriangleLight10"]
+[editable path="Lights/blueTriangleLight12"]
+[editable path="Lights/blueTriangleLight13"]
+[editable path="Lights/blueTriangleLight14"]
+[editable path="Lights/blueTriangleLight7"]
+[editable path="Lights/blueTriangleLight8"]
+[editable path="Lights/blueTriangleLight4"]
+[editable path="Lights/blueTriangleLight11"]
+[editable path="sperm_lane"]
+[editable path="sperm_lane2"]
+[editable path="sperm_lane4"]
+[editable path="sperm_lane3"]

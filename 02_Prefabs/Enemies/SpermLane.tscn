@@ -6,7 +6,8 @@
 
 [sub_resource type="Resource" id="Resource_735ex"]
 script = ExtResource("2_k6y5o")
-slots = Array[bool]([true, false, false])
+move_speed = 48.0
+slots = Array[bool]([true, false, false, false])
 metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
 
 [sub_resource type="Resource" id="Resource_htmdm"]

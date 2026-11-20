@@ -1,7 +1,7 @@
 extends "res://01_Scripts/Puzzle/PuzzleActivator.gd"
 class_name Switch
 
-@onready var anim : AnimationPlayer = $LeverAnimation
+@onready var anim : AnimationPlayer = get_node_or_null("LeverAnimation") as AnimationPlayer
 @export var cooldown : float = 0.5
 var can_activate : bool = true
 

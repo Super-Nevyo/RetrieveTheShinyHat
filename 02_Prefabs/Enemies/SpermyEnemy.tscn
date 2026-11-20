@@ -26,11 +26,11 @@ size = Vector2(41, 19)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
 atlas = ExtResource("5_5pe64")
-region = Rect2(384, 336, 144, 48)
+region = Rect2(432, 336, 96, 48)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kw6nx"]
-radius = 16.79
-height = 144.0
+radius = 8.0
+height = 96.0
 
 [node name="LaneEnemy" type="RigidBody2D" unique_id=1227542854]
 z_index = -5
@@ -50,6 +50,7 @@ shape = SubResource("RectangleShape2D_qsmb2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=922720508]
 z_index = 5
+scale = Vector2(0.9975384, 1)
 texture = SubResource("AtlasTexture_kw6nx")
 
 [node name="LiquidDetector" parent="." unique_id=555614275 instance=ExtResource("12_ddgco")]
@@ -63,6 +64,8 @@ underwater = 0
 drowned = 0
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1795488665]
+position = Vector2(16, 14)
+scale = Vector2(0.6799996, 1)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("14_m7cgb")
