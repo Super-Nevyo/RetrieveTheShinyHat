@@ -27,12 +27,6 @@ display_name = "To_58"
 transition_id = "50_exit_sw"
 metadata/_custom_type_script = "uid://uu6skijk5c6s"
 
-[sub_resource type="Resource" id="Resource_6e0fm"]
-script = ExtResource("3_38l63")
-display_name = "To_58"
-transition_id = "50_exit_se"
-metadata/_custom_type_script = "uid://uu6skijk5c6s"
-
 [sub_resource type="Resource" id="Resource_47ys8"]
 script = ExtResource("3_38l63")
 display_name = "To_51"
@@ -47,7 +41,7 @@ region = Rect2(864, 960, 96, 48)
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_xo4jy")
-transitions = [NodePath("../RoomTransition_49"), NodePath("../RoomTransition_59_L"), NodePath("../RoomTransition_59_R"), NodePath("../RoomTransition_51")]
+transitions = [NodePath("../RoomTransition_49"), NodePath("../RoomTransition_59_L"), NodePath("../RoomTransition_51")]
 
 [node name="RoomTransition_49" parent="." unique_id=568191496 instance=ExtResource("2_38l63")]
 position = Vector2(352, 240)
@@ -65,14 +59,6 @@ transition_data = SubResource("Resource_38l63")
 scale = Vector2(1, 2)
 
 [node name="ArrivalPoint" parent="RoomTransition_59_L" index="1" unique_id=1345594044]
-position = Vector2(-60, 5.2453663e-07)
-
-[node name="RoomTransition_59_R" parent="." unique_id=306758002 instance=ExtResource("2_38l63")]
-position = Vector2(1680, 1008)
-rotation = 1.5707964
-transition_data = SubResource("Resource_6e0fm")
-
-[node name="ArrivalPoint" parent="RoomTransition_59_R" index="1" unique_id=1345594044]
 position = Vector2(-60, 5.2453663e-07)
 
 [node name="RoomTransition_51" parent="." unique_id=1246452373 instance=ExtResource("2_38l63")]
@@ -688,7 +674,6 @@ puzzle_id = "uretra_entrance"
 
 [editable path="RoomTransition_49"]
 [editable path="RoomTransition_59_L"]
-[editable path="RoomTransition_59_R"]
 [editable path="RoomTransition_51"]
 [editable path="EnvTiles/BlueWater"]
 [editable path="EnvTiles/SecretArea"]

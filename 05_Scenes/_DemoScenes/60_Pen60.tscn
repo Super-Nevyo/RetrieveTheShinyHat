@@ -181,7 +181,7 @@ metadata/_edit_vertical_guides_ = [780.0]
 
 [node name="MapMetadata" type="Node2D" parent="." unique_id=1099898414 node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_qymwy")
-transitions = [NodePath("../RoomTransition_52"), NodePath("../RoomTransition_59WMid"), NodePath("../RoomTransition_61SE"), NodePath("../RoomTransition_61_NWShort"), NodePath("../RoomTransition_61_NEShort")]
+transitions = [NodePath("../RoomTransition_52"), NodePath("../RoomTransition_59WMid"), NodePath("../RoomTransition_59SW_Sperm"), NodePath("../RoomTransition_61SE"), NodePath("../RoomTransition_61EE"), NodePath("../RoomTransition_61_NWShort"), NodePath("../RoomTransition_61_NEShort"), NodePath("../RoomTransition_61EUp"), NodePath("../RoomTransition_61_SpermE")]
 
 [node name="RoomTransition_52" parent="." unique_id=306758002 instance=ExtResource("2_4hdun")]
 position = Vector2(1104, 72)
