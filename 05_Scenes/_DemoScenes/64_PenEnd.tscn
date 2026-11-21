@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="14_4yqxt"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="15_daxgi"]
 [ext_resource type="Script" uid="uid://bwmrfl6xm6j47" path="res://01_Scripts/Enemys/lane_pattern.gd" id="16_4yqxt"]
+[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="19_exlbt"]
 
 [sub_resource type="Resource" id="Resource_jo763"]
 script = ExtResource("3_jo763")
@@ -361,6 +362,9 @@ rows = Array[ExtResource("16_4yqxt")]([SubResource("Resource_3ywo8"), SubResourc
 
 [node name="CollisionShape2D" parent="sperm_lane2/Area2D" parent_id_path=PackedInt32Array(1733625198, 2093319916) index="0" unique_id=930390904]
 scale = Vector2(0.27999625, 0.19999753)
+
+[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("19_exlbt")]
+position = Vector2(1405, 312)
 
 [connection signal="body_entered" from="EnvTiles/BlueWater/Area2D2" to="EnvTiles/BlueWater/Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="EnvTiles/BlueWater/Area2D2" to="EnvTiles/BlueWater/Area2D2" method="_on_body_exited"]

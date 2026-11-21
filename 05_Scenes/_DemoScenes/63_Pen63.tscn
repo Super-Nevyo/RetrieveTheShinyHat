@@ -10,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://16s6c8wmosbj" path="res://02_Prefabs/Hazards/BlueWater.tscn" id="7_ojfd7"]
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="8_eow62"]
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="9_6fuir"]
+[ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="9_wsi8y"]
 [ext_resource type="PackedScene" uid="uid://4mbxxradlt0r" path="res://02_Prefabs/PuzzlePrefabs/valve.tscn" id="10_c3k3y"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="11_lm2vx"]
+[ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="11_wsi8y"]
 
 [sub_resource type="Resource" id="Resource_j8msg"]
 script = ExtResource("3_0fsr7")
@@ -128,9 +130,15 @@ tile_map_data = PackedByteArray("AAAHAAEAAQABAAIAADAHAAQAAQAAAAIAADAHAAUAAQAAAAI
 metadata/_edit_lock_ = true
 
 [node name="SecretArea" parent="EnvTiles" unique_id=716718294 instance=ExtResource("4_6fuir")]
+position = Vector2(1463, 720)
+scale = Vector2(5.04, 0.6)
+
+[node name="Edge" parent="EnvTiles/SecretArea/Tiles" parent_id_path=PackedInt32Array(716718294, 912739327) index="0" unique_id=884957339]
+tile_map_data = PackedByteArray("AAAcAA4ABQAPAAoAAAAcAA8ABQAPAAsAAAA=")
 
 [node name="Cover" parent="EnvTiles/SecretArea/Tiles" parent_id_path=PackedInt32Array(716718294, 912739327) index="1" unique_id=1548122823]
 z_index = 30
+tile_map_data = PackedByteArray("AAAdAA4ABQARAAoAAAAdAA8ABQARAAoAAAAeAA4ABQARAAoAAAAeAA8ABQARAAoAAAAfAA4ABQARAAoAAAAfAA8ABQARAAoAAAAgAA4ABQARAAoAAAAgAA8ABQARAAoAAAA=")
 
 [node name="RevealSecret" parent="EnvTiles/SecretArea" index="1" unique_id=1866784657]
 position = Vector2(0, 0)
@@ -138,8 +146,19 @@ position = Vector2(0, 0)
 [node name="Trigger" parent="EnvTiles/SecretArea/RevealSecret" index="0" unique_id=1857902071]
 scale = Vector2(1, 1.6800005)
 
+[node name="SecretArea2" parent="EnvTiles" unique_id=1960932275 instance=ExtResource("4_6fuir")]
+
+[node name="Cover" parent="EnvTiles/SecretArea2/Tiles" parent_id_path=PackedInt32Array(1960932275, 912739327) index="1" unique_id=1548122823]
+z_index = 30
+
+[node name="RevealSecret" parent="EnvTiles/SecretArea2" index="1" unique_id=1866784657]
+position = Vector2(0, 0)
+
+[node name="Trigger" parent="EnvTiles/SecretArea2/RevealSecret" index="0" unique_id=1857902071]
+scale = Vector2(1, 1.6800005)
+
 [node name="Ground" type="TileMapLayer" parent="EnvTiles" unique_id=1118345256]
-tile_map_data = PackedByteArray("AAAHAAQABQARAAsAAAAIAAQABQARAAsAAAAJAAQABQARAAsAAAAKAAQABQARAAsAAAALAAQABQARAAsAAAAMAAQABQARAAsAAAANAAQABQARAAsAAAAOAAQABQARAAsAAAAPAAQABQARAAsAAAAQAAQABQARAAsAAAARAAQABQARAAsAAAASAAQABQARAAsAAAATAAQABQARAAsAAAAUAAQABQARAAsAAAAVAAQABQARAAsAAAAWAAQABQARAAsAAAAXAAQABQARAAsAAAAYAAQABQARAAsAAAAZAAQABQARAAsAAAAaAAQABQARAAsAAAAbAAQABQARAAsAAAAcAAQABQARAAsAAAAdAAQABQARAAsAAAAeAAQABQARAAsAAAAfAAQABQARAAsAAAAgAAQABQARAAsAAAAhAAQABQARAAsAAAAiAAQABQARAAsAAAAjAAQABQARAAsAAAAkAAQABQARAAsAAAAlAAQABQARAAsAAAAmAAQABQARAAsAAAAHABAABQAEABAAAAAIABAABQAFABAAAAAJABAABQAGABAAAAAKABAABQAHABAAAAALABAABQAIABAAAAAMABAABQAJABAAAAANABAABQAKABAAAAAOABAABQAEABAAAAAPABAABQAFABAAAAAQABAABQAGABAAAAARABAABQAHABAAAAASABAABQAIABAAAAATABAABQAJABAAAAAUABAABQAKABAAAAAVABAABQAEABAAAAAWABAABQAFABAAAAAXABAABQAGABAAAAAYABAABQAHABAAAAAZABAABQAIABAAAAAaABAABQAJABAAAAAbABAABQAKABAAAAAcABAABQAEABAAAAAdABAABQAFABAAAAAeABAABQAGABAAAAAfABAABQAHABAAAAAgABAABQAIABAAAAAhABAABQAJABAAAAAiABAABQAKABAAAAAjABAABQAEABAAAAAkABAABQAFABAAAAAlABAABQAGABAAAAAmABAABQAHABAAAAAHAA4ABQAQAAkAAAAHAA8ABQARAAoAAAAIAA4ABQARAAkAAAAIAA8ABQARAAoAAAAkAA8ABQARAAoAAAAlAA4ABQARAAkAAAAlAA8ABQARAAoAAAAmAA4ABQASAAkAAAAmAA8ABQARAAoAAAAJAA4ABQATAAkAAAAJAA8ABQARAAoAAAAkAA4ABQAPAAkAAAASAAoABQAQAAoAAAARAAsABQAQAAoAAAAQAAwABQAQAAoAAAAPAA0ABQAQAAoAAAAcAAoABQAQAAoAAAAdAAsABQAQAAoAAAAeAAwABQAQAAoAAAAfAA0ABQAQAAoAAAAgAA4ABQAQAAoAAAAOAA4ABQAQAAoAAAAPAA4ABQAQAAoAAAAQAA4ABQARAAoAAAARAA4ABQAQAAoAAAASAA4ABQARAAoAAAAcAA4ABQAQAAoAAAAdAA4ABQARAAoAAAAeAA4ABQAQAAoAAAAfAA4ABQARAAoAAAAcAA0ABQARAAoAAAAdAA0ABQAQAAoAAAAeAA0ABQARAAoAAAAcAAwABQAQAAoAAAAdAAwABQARAAoAAAAcAAsABQARAAoAAAASAAsABQAQAAoAAAASAAwABQAQAAoAAAASAA0ABQAQAAoAAAARAAwABQAQAAoAAAARAA0ABQAQAAoAAAAQAA0ABQAQAAoAAAAgAAkABQAQAAwAAAAhAAkABQARAAsAAAAiAAkABQARAAsAAAAjAAkABQARAAsAAAAkAAkABQARAAsAAAAlAAkABQARAAsAAAAmAAkABQARAAsAAAAHABQABQAEABAAACAIABQABQAFABAAACAJABQABQAGABAAACAKABQABQAHABAAACALABQABQAIABAAACAMABQABQAJABAAACANABQABQAKABAAACAOABQABQAEABAAACAPABQABQAFABAAACAQABQABQAGABAAACARABQABQAHABAAACASABQABQAIABAAACATABQABQAJABAAACAUABQABQAKABAAACAVABQABQAEABAAACAWABQABQAFABAAACAXABQABQAGABAAACAYABQABQAHABAAACAZABQABQAIABAAACAaABQABQAJABAAACAbABQABQAKABAAACAcABQABQAEABAAACAdABQABQAFABAAACAeABQABQAGABAAACAfABQABQAHABAAACAgABQABQAIABAAACAhABQABQAJABAAACAiABQABQAKABAAACAjABQABQAEABAAACAkABQABQAFABAAACAlABQABQAGABAAACAmABQABQAHABAAACAKAA8ABQAQAAoAAAALAA8ABQARAAoAAAAMAA8ABQASAAoAAAANAA8ABQAQAAoAAAAOAA8ABQARAAoAAAAPAA8ABQASAAoAAAAQAA8ABQAQAAoAAAARAA8ABQARAAoAAAASAA8ABQASAAoAAAATAA8ABQAQAAoAAAAUAA8ABQARAAoAAAAVAA8ABQASAAoAAAAWAA8ABQAQAAoAAAAXAA8ABQARAAoAAAAYAA8ABQASAAoAAAAZAA8ABQAQAAoAAAAaAA8ABQARAAoAAAAbAA8ABQASAAoAAAAcAA8ABQAQAAoAAAAdAA8ABQARAAoAAAAeAA8ABQASAAoAAAAfAA8ABQAQAAoAAAAgAA8ABQARAAoAAAAhAA8ABQASAAoAAAAiAA8ABQAQAAoAAAAjAA8ABQARAAoAAAA=")
+tile_map_data = PackedByteArray("AAAHAAQABQARAAsAAAAIAAQABQARAAsAAAAJAAQABQARAAsAAAAKAAQABQARAAsAAAALAAQABQARAAsAAAAMAAQABQARAAsAAAANAAQABQARAAsAAAAOAAQABQARAAsAAAAPAAQABQARAAsAAAAQAAQABQARAAsAAAARAAQABQARAAsAAAASAAQABQARAAsAAAATAAQABQARAAsAAAAUAAQABQARAAsAAAAVAAQABQARAAsAAAAWAAQABQARAAsAAAAXAAQABQARAAsAAAAYAAQABQARAAsAAAAZAAQABQARAAsAAAAaAAQABQARAAsAAAAbAAQABQARAAsAAAAcAAQABQARAAsAAAAdAAQABQARAAsAAAAeAAQABQARAAsAAAAfAAQABQARAAsAAAAgAAQABQARAAsAAAAhAAQABQARAAsAAAAiAAQABQARAAsAAAAjAAQABQARAAsAAAAkAAQABQARAAsAAAAlAAQABQARAAsAAAAmAAQABQARAAsAAAAHABAABQAEABAAAAAIABAABQAFABAAAAAJABAABQAGABAAAAAKABAABQAHABAAAAALABAABQAIABAAAAAMABAABQAJABAAAAANABAABQAKABAAAAAOABAABQAEABAAAAAPABAABQAFABAAAAAQABAABQAGABAAAAARABAABQAHABAAAAASABAABQAIABAAAAATABAABQAJABAAAAAUABAABQAKABAAAAAVABAABQAEABAAAAAWABAABQAFABAAAAAXABAABQAGABAAAAAYABAABQAHABAAAAAZABAABQAIABAAAAAaABAABQAJABAAAAAbABAABQAKABAAAAAcABAABQAEABAAAAAdABAABQAFABAAAAAeABAABQAGABAAAAAfABAABQAHABAAAAAgABAABQAIABAAAAAhABAABQAJABAAAAAiABAABQAKABAAAAAjABAABQAEABAAAAAkABAABQAFABAAAAAlABAABQAGABAAAAAmABAABQAHABAAAAAHAA4ABQAQAAkAAAAHAA8ABQARAAoAAAAIAA4ABQARAAkAAAAIAA8ABQARAAoAAAAlAA4ABQARAAkAAAAlAA8ABQARAAoAAAAmAA4ABQASAAkAAAAmAA8ABQARAAoAAAAJAA4ABQATAAkAAAAJAA8ABQARAAoAAAAkAA4ABQAPAAkAAAAdAAsABQAQAAoAAAAeAAwABQAQAAoAAAAfAA0ABQAQAAoAAAAdAA0ABQAQAAoAAAAeAA0ABQARAAoAAAAdAAwABQARAAoAAAAgAAkABQAQAAwAAAAhAAkABQARAAsAAAAiAAkABQARAAsAAAAjAAkABQARAAsAAAAkAAkABQARAAsAAAAlAAkABQARAAsAAAAmAAkABQARAAsAAAAHABQABQAEABAAACAIABQABQAFABAAACAJABQABQAGABAAACAKABQABQAHABAAACALABQABQAIABAAACAMABQABQAJABAAACANABQABQAKABAAACAOABQABQAEABAAACAPABQABQAFABAAACAQABQABQAGABAAACARABQABQAHABAAACASABQABQAIABAAACATABQABQAJABAAACAUABQABQAKABAAACAVABQABQAEABAAACAWABQABQAFABAAACAXABQABQAGABAAACAYABQABQAHABAAACAZABQABQAIABAAACAaABQABQAJABAAACAbABQABQAKABAAACAcABQABQAEABAAACAdABQABQAFABAAACAeABQABQAGABAAACAfABQABQAHABAAACAgABQABQAIABAAACAhABQABQAJABAAACAiABQABQAKABAAACAjABQABQAEABAAACAkABQABQAFABAAACAlABQABQAGABAAACAmABQABQAHABAAACAKAA8ABQAQAAoAAAALAA8ABQARAAoAAAAMAA8ABQASAAoAAAANAA8ABQAQAAoAAAAgAA0ABQAQAAoAAAAfAAwABQAQAAoAAAANAA4ABQAQAAoAAAANAA0ABQAQAAoAAAANAAwABQAQAAoAAAANAAsABQAQAAoAAAANAAoABQAQAAoAAAAMAAsABQAQAAoAAAAMAAwABQAQAAoAAAAMAA0ABQAQAAoAAAAMAA4ABQAQAAoAAAALAA0ABQAQAAoAAAALAA4ABQAQAAoAAAAKAA0ABQAQAAoAAAAKAA4ABQAQAAoAAAAdAAoABQAQAAoAAAAcAAoABQAQAAoAAAAcAAsABQAQAAoAAAAcAAwABQAQAAoAAAAcAA0ABQAQAAoAAAAQAA8ABQAQAAkAAAATAA8ABQARAAkAAAAWAA8ABQASAAkAAAAZAA8ABQAPAAkAAAA=")
 tile_set = ExtResource("5_c3k3y")
 
 [node name="BlueWater" parent="EnvTiles" unique_id=1959433390 instance=ExtResource("7_ojfd7")]
@@ -166,52 +185,249 @@ metadata/_edit_lock_ = true
 
 [node name="Spikes" parent="Spikes" unique_id=1094872775 instance=ExtResource("8_eow62")]
 z_index = 0
-position = Vector2(528, 684)
-
-[node name="Spikes2" parent="Spikes" unique_id=1499103969 instance=ExtResource("8_eow62")]
-position = Vector2(624, 684)
+position = Vector2(912, 528)
+rotation = 1.5707964
 
 [node name="Spikes5" parent="Spikes" unique_id=61730278 instance=ExtResource("8_eow62")]
-position = Vector2(924, 684)
+position = Vector2(721, 732)
+
+[node name="Spikes3" parent="Spikes" unique_id=943948491 instance=ExtResource("8_eow62")]
+z_index = 0
+position = Vector2(1200, 528)
+rotation = 1.5707964
+
+[node name="Spikes2" parent="Spikes" unique_id=1499103969 instance=ExtResource("8_eow62")]
+position = Vector2(816, 528)
+rotation = 4.712389
+
+[node name="Spikes4" parent="Spikes" unique_id=657694529 instance=ExtResource("8_eow62")]
+position = Vector2(1104, 528)
+rotation = 4.712389
 
 [node name="Spikes6" parent="Spikes" unique_id=746042317 instance=ExtResource("8_eow62")]
-position = Vector2(1020, 684)
+position = Vector2(864, 732)
 
 [node name="Spikes7" parent="Spikes" unique_id=636807222 instance=ExtResource("8_eow62")]
-position = Vector2(1116, 684)
+position = Vector2(1008, 732)
 
-[node name="Spikes8" parent="Spikes" unique_id=1011067852 instance=ExtResource("8_eow62")]
-position = Vector2(1212, 684)
+[node name="Spikes8" parent="Spikes" unique_id=511367171 instance=ExtResource("8_eow62")]
+position = Vector2(1728, 732)
 
-[node name="Spikes9" parent="Spikes" unique_id=1135430044 instance=ExtResource("8_eow62")]
-position = Vector2(1308, 684)
-
-[node name="Spikes12" parent="Spikes" unique_id=2060450707 instance=ExtResource("8_eow62")]
-position = Vector2(1596, 684)
-
-[node name="Spikes13" parent="Spikes" unique_id=511367171 instance=ExtResource("8_eow62")]
-position = Vector2(1692, 684)
+[node name="Spikes9" parent="Spikes" unique_id=26614425 instance=ExtResource("8_eow62")]
+position = Vector2(1152, 732)
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("9_6fuir")]
-position = Vector2(996, 672)
+position = Vector2(720, 624)
 rotation = 1.5707964
+DoorMovePosition = Vector2(-142, 0)
+signal_id = 633
+
+[node name="Switch" parent="Door/StaticBody2D" parent_id_path=PackedInt32Array(425038002, 2113387722) index="2" unique_id=150077233 instance=ExtResource("11_wsi8y")]
+position = Vector2(-40, 0)
+rotation = -1.5707964
+attached_ids = Array[int]([631])
+activation_amount = Array[float]([1.0])
+puzzle_id = "switch_lm"
 
 [node name="Door2" parent="." unique_id=1981881241 instance=ExtResource("9_6fuir")]
-position = Vector2(1128, 672)
+position = Vector2(1008, 480)
 rotation = 1.5707964
+DoorMovePosition = Vector2(142, 0)
+signal_id = 631
+
+[node name="Switch2" parent="Door2/StaticBody2D" parent_id_path=PackedInt32Array(1981881241, 2113387722) index="2" unique_id=91749350 instance=ExtResource("11_wsi8y")]
+position = Vector2(-40, 0)
+rotation = -1.5707964
+attached_ids = Array[int]([632])
+activation_amount = Array[float]([1.0])
+puzzle_id = "switch__mr"
 
 [node name="Door3" parent="." unique_id=1620352397 instance=ExtResource("9_6fuir")]
-position = Vector2(1260, 672)
+position = Vector2(1296, 624)
 rotation = 1.5707964
+DoorMovePosition = Vector2(-142, 0)
+signal_id = 632
+
+[node name="Switch3" parent="Door3/StaticBody2D" parent_id_path=PackedInt32Array(1620352397, 2113387722) index="2" unique_id=1034815880 instance=ExtResource("11_wsi8y")]
+position = Vector2(-40, 0)
+rotation = -1.5707964
+attached_ids = Array[int]([633])
+activation_amount = Array[float]([1.0])
+puzzle_id = "switch_rl"
 
 [node name="valve" parent="." unique_id=583119961 instance=ExtResource("10_c3k3y")]
 position = Vector2(1728, 336)
+attached_ids = Array[int]([634])
+activation_amount = Array[float]([1.0])
+puzzle_id = "valve_ne"
 
 [node name="sperm_lane" parent="." unique_id=1586465063 instance=ExtResource("11_lm2vx")]
 position = Vector2(1104, 888)
 
 [node name="CollisionShape2D" parent="sperm_lane/Area2D" parent_id_path=PackedInt32Array(1586465063, 2093319916) index="0" unique_id=930390904]
 scale = Vector2(0.9600025, 0.32000244)
+
+[node name="Pipes" type="Node" parent="." unique_id=1882585552]
+
+[node name="pipe_piece6" parent="Pipes" unique_id=1001459541 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1008, 312)
+shape = 1
+signal_id = 634
+
+[node name="pipe_piece19" parent="Pipes" unique_id=1326704238 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1008, 264)
+rotation = 1.5707964
+shape = 1
+
+[node name="pipe_piece20" parent="Pipes" unique_id=1561936156 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(960, 264)
+shape = 0
+
+[node name="pipe_piece21" parent="Pipes" unique_id=677922821 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(912, 264)
+shape = 0
+
+[node name="pipe_piece22" parent="Pipes" unique_id=2011709394 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(864, 264)
+shape = 0
+
+[node name="pipe_piece23" parent="Pipes" unique_id=684476408 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(816, 264)
+shape = 0
+
+[node name="pipe_piece28" parent="Pipes" unique_id=1378237338 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(768, 264)
+shape = 0
+
+[node name="pipe_piece29" parent="Pipes" unique_id=693843394 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(720, 264)
+shape = 1
+
+[node name="pipe_piece30" parent="Pipes" unique_id=1923617342 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(720, 312)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece31" parent="Pipes" unique_id=1510554168 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(720, 360)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece32" parent="Pipes" unique_id=2126891543 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(720, 408)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece33" parent="Pipes" unique_id=720228910 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(720, 456)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece34" parent="Pipes" unique_id=15165211 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(720, 504)
+rotation = 1.5707964
+shape = 0
+exit_side = 2
+
+[node name="pipe_piece24" parent="Pipes" unique_id=2042194863 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1008, 360)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece25" parent="Pipes" unique_id=950770200 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1008, 408)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece26" parent="Pipes" unique_id=1307463549 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1008, 456)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece27" parent="Pipes" unique_id=1017392184 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1008, 504)
+rotation = 1.5707964
+shape = 0
+exit_side = 2
+
+[node name="pipe_piece7" parent="Pipes" unique_id=1286197006 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1056, 312)
+shape = 0
+
+[node name="pipe_piece8" parent="Pipes" unique_id=95687342 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1104, 312)
+shape = 0
+
+[node name="pipe_piece9" parent="Pipes" unique_id=1244285878 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1152, 312)
+shape = 0
+
+[node name="pipe_piece10" parent="Pipes" unique_id=1678009351 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1200, 312)
+shape = 0
+
+[node name="pipe_piece11" parent="Pipes" unique_id=200891107 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1248, 312)
+shape = 0
+
+[node name="pipe_piece12" parent="Pipes" unique_id=845800997 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1296, 312)
+shape = 0
+
+[node name="pipe_piece13" parent="Pipes" unique_id=1825275090 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1344, 312)
+shape = 0
+
+[node name="pipe_piece14" parent="Pipes" unique_id=1515948906 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1392, 312)
+shape = 0
+
+[node name="pipe_piece15" parent="Pipes" unique_id=165928836 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1440, 312)
+shape = 0
+
+[node name="pipe_piece16" parent="Pipes" unique_id=1846359694 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1488, 312)
+shape = 0
+
+[node name="pipe_piece17" parent="Pipes" unique_id=1429492717 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1536, 312)
+shape = 0
+
+[node name="pipe_piece18" parent="Pipes" unique_id=1944151467 instance=ExtResource("9_wsi8y")]
+z_index = -1
+position = Vector2(1584, 312)
+rotation = 1.5707964
+shape = 1
+exit_side = 2
 
 [editable path="RoomTransition_62Sperm"]
 [editable path="RoomTransition_64Sperm"]
@@ -221,5 +437,9 @@ scale = Vector2(0.9600025, 0.32000244)
 [editable path="RoomTransition_63_W"]
 [editable path="RoomTransition_64_E"]
 [editable path="EnvTiles/SecretArea"]
+[editable path="EnvTiles/SecretArea2"]
 [editable path="EnvTiles/BlueWater"]
+[editable path="Door"]
+[editable path="Door2"]
+[editable path="Door3"]
 [editable path="sperm_lane"]
