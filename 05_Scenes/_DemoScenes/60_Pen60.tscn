@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bvbn1qi0u34uo" path="res://02_Prefabs/PuzzlePrefabs/Activated/blue_triangle_light.tscn" id="14_7hvfa"]
 [ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="14_havph"]
 [ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="16_ojs2f"]
+[ext_resource type="Script" uid="uid://ci84dnnmaryqs" path="res://01_Scripts/Resources/CollectiblesData.gd" id="17_rf17o"]
+[ext_resource type="Texture2D" uid="uid://c2nxglvjlgj62" path="res://03_Art/Environment/coll_art.png" id="18_13frh"]
 
 [sub_resource type="Resource" id="Resource_4hdun"]
 script = ExtResource("3_4hdun")
@@ -100,6 +102,18 @@ metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
 [sub_resource type="Resource" id="Resource_rf17o"]
 script = ExtResource("10_7hvfa")
 metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04q2y"]
+atlas = ExtResource("18_13frh")
+region = Rect2(144, 112, 48, 48)
+
+[sub_resource type="Resource" id="Resource_srojb"]
+script = ExtResource("17_rf17o")
+collectible_id = "Collectible60_1"
+display_name = "Bow Bae"
+description = "Lalalalala"
+texture = SubResource("AtlasTexture_04q2y")
+metadata/_custom_type_script = "uid://ci84dnnmaryqs"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
@@ -902,6 +916,7 @@ scale = Vector2(0.48000002, 0.31999996)
 
 [node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("16_ojs2f")]
 position = Vector2(1632, 168)
+data = SubResource("Resource_srojb")
 
 [editable path="RoomTransition_52"]
 [editable path="RoomTransition_59WMid"]

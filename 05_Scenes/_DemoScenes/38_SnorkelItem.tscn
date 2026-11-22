@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bwu5egusp3nvg" path="res://03_Art/Items/BreathingAparatus.png" id="17_hsw8g"]
 [ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="17_k408g"]
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="17_oo3mi"]
+[ext_resource type="Script" uid="uid://ci84dnnmaryqs" path="res://01_Scripts/Resources/CollectiblesData.gd" id="18_y1auo"]
+[ext_resource type="Texture2D" uid="uid://c2nxglvjlgj62" path="res://03_Art/Environment/coll_art.png" id="19_l3s04"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmb2"]
 
@@ -45,6 +47,18 @@ metadata/_custom_type_script = "uid://uu6skijk5c6s"
 script = ExtResource("15_hsw8g")
 tex = ExtResource("17_hsw8g")
 metadata/_custom_type_script = "uid://dd810oe6klldp"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5kcx"]
+atlas = ExtResource("19_l3s04")
+region = Rect2(144, 112, 48, 48)
+
+[sub_resource type="Resource" id="Resource_jgk27"]
+script = ExtResource("18_y1auo")
+collectible_id = "C38_1"
+display_name = "Wawa"
+description = "lalalal"
+texture = SubResource("AtlasTexture_k5kcx")
+metadata/_custom_type_script = "uid://ci84dnnmaryqs"
 
 [node name="SnorkelItem" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0, 200.0, 300.0]
@@ -208,6 +222,7 @@ rotation = 3.1415927
 
 [node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("17_k408g")]
 position = Vector2(1032, 552)
+data = SubResource("Resource_jgk27")
 
 [connection signal="body_entered" from="EnvTiles/AcidTiles2/Area2" to="EnvTiles/AcidTiles2/Area2" method="_on_body_entered"]
 [connection signal="body_exited" from="EnvTiles/AcidTiles2/Area2" to="EnvTiles/AcidTiles2/Area2" method="_on_body_exited"]

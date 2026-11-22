@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="13_ank4g"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="14_h0k8o"]
 [ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="15_jp1sk"]
+[ext_resource type="Script" uid="uid://ci84dnnmaryqs" path="res://01_Scripts/Resources/CollectiblesData.gd" id="16_4acf6"]
+[ext_resource type="Texture2D" uid="uid://c2nxglvjlgj62" path="res://03_Art/Environment/coll_art.png" id="17_x8fwb"]
 
 [sub_resource type="Resource" id="Resource_1v5n1"]
 script = ExtResource("3_38l63")
@@ -41,6 +43,26 @@ height = 72.0
 [sub_resource type="AtlasTexture" id="AtlasTexture_ank4g"]
 atlas = ExtResource("12_g6k1p")
 region = Rect2(864, 960, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5kcx"]
+atlas = ExtResource("17_x8fwb")
+region = Rect2(144, 112, 48, 48)
+
+[sub_resource type="Resource" id="Resource_fxc2j"]
+script = ExtResource("16_4acf6")
+collectible_id = "C50_2"
+display_name = "Cute"
+description = "lalalalala"
+texture = SubResource("AtlasTexture_k5kcx")
+metadata/_custom_type_script = "uid://ci84dnnmaryqs"
+
+[sub_resource type="Resource" id="Resource_4acf6"]
+script = ExtResource("16_4acf6")
+collectible_id = "C50_1"
+display_name = "Wormmms"
+description = "Llalala"
+texture = SubResource("AtlasTexture_k5kcx")
+metadata/_custom_type_script = "uid://ci84dnnmaryqs"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 
@@ -695,9 +717,11 @@ puzzle_id = "uretra_entrance"
 
 [node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("15_jp1sk")]
 position = Vector2(1644, 984)
+data = SubResource("Resource_fxc2j")
 
 [node name="CollectiblePickup2" parent="." unique_id=1744733235 instance=ExtResource("15_jp1sk")]
 position = Vector2(1800, 360)
+data = SubResource("Resource_4acf6")
 
 [editable path="RoomTransition_49"]
 [editable path="RoomTransition_59_L"]

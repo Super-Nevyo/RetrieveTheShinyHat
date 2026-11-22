@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bdwhlwfw8xqio" path="res://02_Prefabs/WorldPrefabs/Spikes_Small.tscn" id="16_ihelp"]
 [ext_resource type="PackedScene" uid="uid://bvbn1qi0u34uo" path="res://02_Prefabs/PuzzlePrefabs/Activated/blue_triangle_light.tscn" id="18_yl818"]
 [ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="19_6fq2u"]
+[ext_resource type="Script" uid="uid://ci84dnnmaryqs" path="res://01_Scripts/Resources/CollectiblesData.gd" id="20_1rkqb"]
 
 [sub_resource type="Resource" id="Resource_s5wrv"]
 script = ExtResource("3_s5wrv")
@@ -77,6 +78,13 @@ metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnuxw"]
 size = Vector2(1500, 384)
+
+[sub_resource type="Resource" id="Resource_rf17o"]
+script = ExtResource("20_1rkqb")
+collectible_id = "C59_1"
+display_name = "A worm"
+description = "lallaa"
+metadata/_custom_type_script = "uid://ci84dnnmaryqs"
 
 [node name="NewRoom" type="Node2D" unique_id=1910544872]
 metadata/_edit_horizontal_guides_ = [449.0]
@@ -764,6 +772,7 @@ signal_id = 5021
 
 [node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("19_6fq2u")]
 position = Vector2(828, 792)
+data = SubResource("Resource_rf17o")
 
 [connection signal="body_entered" from="EnvTiles/BlueWater/Area2D2" to="EnvTiles/BlueWater/Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="EnvTiles/BlueWater/Area2D2" to="EnvTiles/BlueWater/Area2D2" method="_on_body_exited"]
