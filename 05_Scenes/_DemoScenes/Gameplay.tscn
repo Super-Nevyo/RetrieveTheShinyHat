@@ -761,6 +761,12 @@ offset_top = -111.87496
 offset_right = 1014.8334
 offset_bottom = 912.12506
 
+[node name="WormCounter" parent="Camera2D/GameHud" index="5" unique_id=185887048]
+offset_left = 85.55556
+offset_top = 315.55557
+offset_right = 281.55554
+offset_bottom = 411.55557
+
 [editable path="Camera2D/GameHud"]
 [editable path="Camera2D/GameHud/InventoryUi"]
 [editable path="Camera2D/GameHud/PlayerUIArt"]

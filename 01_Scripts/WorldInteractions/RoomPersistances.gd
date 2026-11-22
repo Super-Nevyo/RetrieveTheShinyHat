@@ -8,6 +8,7 @@ enum meta_puzzles {NULL, RISING_ACID}
 var meta_puzzle_values : Dictionary[meta_puzzles,int] = {meta_puzzles.NULL : 0, meta_puzzles.RISING_ACID : 0}
 var revealedsecrets = {} #dictionary of secret rooms
 var collectibles_found = {} #collectibles dictionary
+signal collectible_count_up(total:int)
 
 #records the puzzle that was activated
 func remember_active(puzzle_id: String, room_id: String, is_active: bool) -> void:
@@ -50,6 +51,7 @@ func has_collectible(collectible_id: String)-> bool:
 
 func collect_collectible(collectible_id: String) -> bool:
 	collectibles_found[collectible_id] = true
+	collectible_count_up.emit(collectible_count())
 	return true
 
 func collectible_count()-> int:

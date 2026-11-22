@@ -5,7 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://cv2gct0dh0q70" path="res://02_Prefabs/UIPrefabs/InventoryUI.tscn" id="2_awiqt"]
 [ext_resource type="PackedScene" uid="uid://dxfwg2fx08ek" path="res://02_Prefabs/UIPrefabs/BreathBar.tscn" id="4_vk3oh"]
 [ext_resource type="PackedScene" uid="uid://d0gvqo2qadp7c" path="res://02_Prefabs/health_art.tscn" id="5_sc7ta"]
+[ext_resource type="Texture2D" uid="uid://c2nxglvjlgj62" path="res://03_Art/Environment/coll_art.png" id="7_tyo16"]
+[ext_resource type="FontFile" uid="uid://btay63b8ca008" path="res://06_Extras/Fonts/BubbleStone-5yAXB.otf" id="8_mlbno"]
 [ext_resource type="Texture2D" uid="uid://73pghl0asf6m" path="res://03_Art/UI/map.png" id="12_fd2vb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw6nx"]
+atlas = ExtResource("7_tyo16")
+region = Rect2(48, 64, 96, 96)
 
 [node name="GameHud" type="Control" unique_id=1741115912]
 layout_mode = 3
@@ -75,6 +81,35 @@ mouse_filter = 2
 texture = ExtResource("12_fd2vb")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="WormCounter" type="HBoxContainer" parent="." unique_id=185887048]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 366.0
+offset_right = 284.0
+offset_bottom = 462.0
+
+[node name="Icon" type="TextureRect" parent="WormCounter" unique_id=545186392]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = SubResource("AtlasTexture_kw6nx")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Counter" type="Label" parent="WormCounter" unique_id=352140026]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.8392157, 0, 0.93333334, 0.6745098)
+theme_override_colors/font_outline_color = Color(0.8666667, 0, 0.90588236, 0.9764706)
+theme_override_fonts/font = ExtResource("8_mlbno")
+theme_override_font_sizes/font_size = 60
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+max_lines_visible = 5
+visible_characters = 6
+visible_ratio = 3.0
 
 [editable path="InventoryUi"]
 [editable path="PlayerUIArt"]
