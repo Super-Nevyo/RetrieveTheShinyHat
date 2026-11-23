@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://i26khqhnbjke" path="res://02_Prefabs/liquid_detector.tscn" id="21_axkr6"]
 [ext_resource type="Script" uid="uid://cekns0gxrmdab" path="res://02_Prefabs/Enemies/liquid_signal.gd" id="22_8oj68"]
 [ext_resource type="Script" uid="uid://cqul4etn4bj1" path="res://01_Scripts/Hazards/hitbox.gd" id="23_gc3pv"]
-[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="24_3a0ak"]
 
 [sub_resource type="Resource" id="Resource_6av24"]
 script = ExtResource("3_gogrw")
@@ -135,6 +134,7 @@ metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
 
 [sub_resource type="Resource" id="Resource_axkr6"]
 script = ExtResource("15_ubbif")
+enabled = false
 metadata/_custom_type_script = "uid://bwmrfl6xm6j47"
 
 [sub_resource type="PackedScene" id="PackedScene_axkr6"]
@@ -634,57 +634,67 @@ puzzle_id = "switch62_5"
 position = Vector2(384, 516)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, 700)
+move_speed = 1.0
 signal_id = 621
 
 [node name="Door2" parent="Doors" unique_id=2091335830 instance=ExtResource("9_g77nw")]
 position = Vector2(480, 516)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, 700)
+move_speed = 1.0
 signal_id = 621
 
 [node name="Door16" parent="Doors" unique_id=608139065 instance=ExtResource("9_g77nw")]
 position = Vector2(572, 516)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, 700)
+move_speed = 1.0
 signal_id = 621
 
 [node name="Door3" parent="Doors" unique_id=1981883871 instance=ExtResource("9_g77nw")]
 position = Vector2(744, 888)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, -144)
+move_speed = 1.0
 signal_id = 622
 
 [node name="Door4" parent="Doors" unique_id=63066299 instance=ExtResource("9_g77nw")]
 position = Vector2(840, 888)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, -48)
+move_speed = 1.0
 signal_id = 622
 
 [node name="Door5" parent="Doors" unique_id=356635479 instance=ExtResource("9_g77nw")]
 position = Vector2(648, 888)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, -240)
+move_speed = 1.0
 signal_id = 622
 
 [node name="Door6" parent="Doors" unique_id=1109627164 instance=ExtResource("9_g77nw")]
 position = Vector2(550, 288)
 DoorMovePosition = Vector2(0, -500)
+move_speed = 1.0
 signal_id = 621
 
 [node name="Door10" parent="Doors" unique_id=1915074834 instance=ExtResource("9_g77nw")]
 position = Vector2(1856, 144)
 DoorMovePosition = Vector2(0, -500)
+move_speed = 1.0
 signal_id = 624
 
 [node name="Door11" parent="Doors" unique_id=1869692043 instance=ExtResource("9_g77nw")]
 position = Vector2(1332, 264)
 DoorMovePosition = Vector2(0, -500)
+move_speed = 1.0
 signal_id = 621
 
 [node name="Door7" parent="Doors" unique_id=1387449842 instance=ExtResource("9_g77nw")]
 position = Vector2(768, 324)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, -192)
+move_speed = 1.0
 ActivationAmount = 1.0
 signal_id = 626
 
@@ -692,18 +702,21 @@ signal_id = 626
 position = Vector2(960, 449)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, 96)
+move_speed = 1.0
 signal_id = 623
 
 [node name="Door9" parent="Doors" unique_id=1921505974 instance=ExtResource("9_g77nw")]
 position = Vector2(672, 324)
 rotation = 1.5707964
 DoorMovePosition = Vector2(0, -192)
+move_speed = 1.0
 ActivationAmount = 1.0
 signal_id = 626
 
 [node name="Door8" parent="Doors" unique_id=256161056 instance=ExtResource("9_g77nw")]
 position = Vector2(480, 288)
 DoorMovePosition = Vector2(0, -500)
+move_speed = 1.0
 signal_id = 624
 
 [node name="sperm_lane" parent="." unique_id=1586465063 instance=ExtResource("14_0qyka")]
@@ -712,39 +725,35 @@ rows = Array[ExtResource("15_ubbif")]([SubResource("Resource_ubbif"), SubResourc
 enemy_scene = SubResource("PackedScene_ims1e")
 
 [node name="CollisionShape2D" parent="sperm_lane/Area2D" parent_id_path=PackedInt32Array(1586465063, 2093319916) index="0" unique_id=930390904]
-scale = Vector2(0.9600024, 0.32000002)
+scale = Vector2(1, 0.35999757)
 
 [node name="sperm_lane2" parent="." unique_id=216131578 instance=ExtResource("14_0qyka")]
 position = Vector2(1056, 384)
 rotation = 3.1415927
-scale = Vector2(1.0303538, 1.3466922)
 rows = Array[ExtResource("15_ubbif")]([SubResource("Resource_v5vna"), SubResource("Resource_jsnss"), SubResource("Resource_axkr6")])
 enemy_scene = SubResource("PackedScene_axkr6")
 
 [node name="CollisionShape2D" parent="sperm_lane2/Area2D" parent_id_path=PackedInt32Array(216131578, 2093319916) index="0" unique_id=930390904]
-scale = Vector2(0.55999994, 0.20000003)
+scale = Vector2(0.59999996, 0.24000004)
 shape = SubResource("RectangleShape2D_bc7l5")
 
 [node name="sperm_lane3" parent="." unique_id=1342724648 instance=ExtResource("14_0qyka")]
-position = Vector2(1415, 588)
+position = Vector2(1420, 646)
 rotation = 4.712389
 rows = Array[ExtResource("15_ubbif")]([SubResource("Resource_8oj68"), SubResource("Resource_bc7l5"), SubResource("Resource_3a0ak")])
 enemy_scene = SubResource("PackedScene_gc3pv")
 
 [node name="CollisionShape2D" parent="sperm_lane3/Area2D" parent_id_path=PackedInt32Array(1342724648, 2093319916) index="0" unique_id=930390904]
-scale = Vector2(0.2799999, 0.3999976)
+scale = Vector2(0.39999992, 0.3599927)
 
 [node name="sperm_lane4" parent="." unique_id=1648456012 instance=ExtResource("14_0qyka")]
-position = Vector2(720, 588)
+position = Vector2(720, 579)
 rotation = 1.5707964
 rows = Array[ExtResource("15_ubbif")]([SubResource("Resource_4xnvn"), SubResource("Resource_p6v1q"), SubResource("Resource_o7tjt"), SubResource("Resource_a3cy3")])
 enemy_scene = SubResource("PackedScene_oabcx")
 
 [node name="CollisionShape2D" parent="sperm_lane4/Area2D" parent_id_path=PackedInt32Array(1648456012, 2093319916) index="0" unique_id=930390904]
-scale = Vector2(0.2799999, 0.4000013)
-
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("24_3a0ak")]
-position = Vector2(1680, 624)
+scale = Vector2(0.32000113, 0.40214306)
 
 [editable path="RoomTransition_61Sperm"]
 [editable path="RoomTransition_63Sperm"]

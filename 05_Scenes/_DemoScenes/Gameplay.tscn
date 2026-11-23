@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c65san5kq2b3e" path="res://01_Scripts/_Manager/RoomManager.gd" id="2_8w24r"]
 [ext_resource type="AudioStream" uid="uid://b6jcofyuw56vs" path="res://04_Audio/BGMusic/calm_bgmusic.mp3" id="2_o7nea"]
 [ext_resource type="AudioStream" uid="uid://bw7vusbjacame" path="res://04_Audio/BGMusic/bg_music.mp3" id="3_3xmti"]
-[ext_resource type="PackedScene" uid="uid://d16myrmq1kru" path="res://05_Scenes/_DemoScenes/51_NewItemRoom.tscn" id="5_6ij2g"]
+[ext_resource type="PackedScene" uid="uid://d16myrmq1kru" path="res://05_Scenes/_DemoScenes/51_EntrancePenis.tscn" id="5_6ij2g"]
 [ext_resource type="PackedScene" uid="uid://ceo7k687ylrlw" path="res://05_Scenes/_DemoScenes/52_FirstPuzzle.tscn" id="5_e2ro4"]
 [ext_resource type="Script" uid="uid://bvyll42gdi632" path="res://01_Scripts/WorldInteractions/MapRoom.gd" id="5_khsvw"]
 [ext_resource type="Script" uid="uid://cvitv2plkwb3d" path="res://01_Scripts/WorldInteractions/WorldMap.gd" id="5_wg5p8"]
@@ -338,6 +338,13 @@ room_a = NodePath("../../52_Puzzle1")
 exit_a_id = "puzzle1_exit_nw"
 room_b = NodePath("../../51_NewItem")
 exit_b_id = "newitem_exit_e"
+
+[node name="52_51Upper" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=723909395 node_paths=PackedStringArray("room_a", "room_b")]
+script = ExtResource("6_jsr1b")
+room_a = NodePath("../../52_Puzzle1")
+exit_a_id = "52_exit_nnw"
+room_b = NodePath("../../51_NewItem")
+exit_b_id = "51_exit_nne"
 
 [node name="Puzzle1_ItemSecret" type="Node2D" parent="WorldMap/Connections_Stomach" unique_id=1025645543 node_paths=PackedStringArray("room_a", "room_b")]
 script = ExtResource("6_jsr1b")
