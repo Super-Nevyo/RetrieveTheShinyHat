@@ -11,12 +11,12 @@
 [ext_resource type="Script" uid="uid://bnje7iyop20vr" path="res://01_Scripts/Hazards/Liquid.gd" id="6_heeeu"]
 [ext_resource type="PackedScene" uid="uid://4mbxxradlt0r" path="res://02_Prefabs/PuzzlePrefabs/valve.tscn" id="8_1hxm6"]
 [ext_resource type="PackedScene" uid="uid://bdwhlwfw8xqio" path="res://02_Prefabs/WorldPrefabs/Spikes_Small.tscn" id="9_1dono"]
-[ext_resource type="PackedScene" uid="uid://chwm57nxsyons" path="res://02_Prefabs/Hazards/single_spike.tscn" id="10_ai50f"]
+[ext_resource type="PackedScene" uid="uid://ct4ttmynks3os" path="res://02_Prefabs/PuzzlePrefabs/Activated/Door.tscn" id="10_itjsm"]
 [ext_resource type="PackedScene" uid="uid://c00xddtqq7urj" path="res://02_Prefabs/PuzzlePrefabs/Activators/Switch.tscn" id="11_coayd"]
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="12_ucuk5"]
 [ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="13_5jyj5"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="15_m3g6w"]
-[ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="17_itjsm"]
+[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="15_rfr33"]
 
 [sub_resource type="Resource" id="Resource_thtr0"]
 script = ExtResource("3_f4yps")
@@ -153,6 +153,9 @@ tile_map_data = PackedByteArray("AAAHAA0ABQAEABIAAAAHAA4ABQAEABMAAAAIAA0ABQAFABI
 position = Vector2(1031, 312)
 scale = Vector2(1.6, 0.52)
 
+[node name="CollisionShape2D" parent="EnvTiles/BlueWater/Area2D" index="0" unique_id=2003433593]
+scale = Vector2(0.5856348, 1.0023315)
+
 [node name="Area2D2" type="Area2D" parent="EnvTiles/BlueWater" unique_id=449257627 node_paths=PackedStringArray("surface")]
 position = Vector2(1572, 792)
 scale = Vector2(1.16, 0.52)
@@ -213,7 +216,7 @@ position = Vector2(1284, 948)
 scale = Vector2(1, 1.6800005)
 
 [node name="Ground" type="TileMapLayer" parent="EnvTiles" unique_id=1118345256]
-tile_map_data = PackedByteArray("AAAIAAwABQAFABAAAAAHAAwABQAEABAAAAALAAwABQAMABAAABAKAAwABQAHABAAAAAJAAwABQAGABAAAAAHAAQABQARAAwAAAAIAAQABQARAAwAAAAJAAQABQARAAwAAAAKAAQABQARAAwAAAALAAQABQARAAwAAAAfAAQABQARAAwAAAAgAAQABQARAAwAAAAhAAQABQARAAwAAAAiAAQABQARAAwAAAAjAAQABQARAAwAAAAkAAQABQARAAwAAAAlAAQABQARAAwAAAAmAAQABQARAAwAAAAHAAgABQAQAAwAAAAIAAgABQARAAwAAAAJAAgABQASAAwAAAAmAAgABQAPAAkAAAAlAAkABQAPAAkAAAAkAAoABQAPAAkAAAAjAAsABQAPAAkAAAAiAAwABQAPAAkAAAAjAAwABQAQAAoAAAAkAAwABQARAAoAAAAlAAwABQASAAoAAAAmAAwABQAQAAoAAAAkAAsABQAQAAoAAAAlAAsABQAQAAoAAAAmAAsABQARAAoAAAAlAAoABQAQAAoAAAAmAAoABQAQAAoAAAAmAAkABQAQAAoAAAAHABUABQAQAAkAAAAIABUABQARAAkAAAAJABUABQASAAkAAAAKABUABQAQAAkAAAALABUABQARAAkAAAAMABUABQASAAkAAAANABUABQAQAAkAAAAOABUABQARAAkAAAAPABUABQASAAkAAAAQABUABQAQAAkAAAARABUABQARAAkAAAASABUABQASAAkAAAATABUABQAQAAkAAAAUABUABQARAAkAAAAVABUABQASAAkAAAAWABUABQAQAAkAAAAXABUABQARAAkAAAAYABUABQASAAkAAAAZABUABQAQAAkAAAAaABUABQARAAkAAAAbABUABQASAAkAAAAcABUABQAQAAkAAAAdABUABQARAAkAAAAeABUABQASAAkAAAAfABUABQAQAAkAAAAgABUABQARAAkAAAAhABUABQASAAkAAAAiABUABQAQAAkAAAAjABUABQARAAkAAAAkABUABQASAAkAAAAlABUABQAQAAkAAAAmABUABQARAAkAAAAHABIABQAEABAAACAIABIABQAFABAAACAJABIABQAGABAAACAKABIABQAHABAAACALABIABQAIABAAACAbABIABQAMABAAAAAcABIABQANABAAAAAdABIABQANABAAAAAeABIABQANABAAAAAfABIABQANABAAAAAgABIABQANABAAAAAhABIABQANABAAAAAiABIABQANABAAAAAjABIABQANABAAAAAkABIABQANABAAAAAlABIABQANABAAAAAmABIABQANABAAAAAMABIABQAJABAAACANABIABQAKABAAACAOABIABQAEABAAACAPABIABQAFABAAACAQABIABQAGABAAACAMAAYABQAQABIAABAMAAcABQAQABMAABAMAAgABQAQABEAABAMAAkABQAQABIAABAMAAoABQAQABMAABAMAAsABQAQABEAABAMAAwABQALABAAABAeAAYABQAQABIAAAAeAAcABQAQABMAAAAeAAgABQAQABEAAAAeAAkABQAQABIAAAAeAAoABQAQABMAAAAeAAsABQAQABEAAAAeAAwABQAQABIAAAAeAA0ABQAQABMAAAAeAA4ABQAEABAAAAAfAA4ABQAFABAAAAAgAA4ABQAGABAAAAAhAA4ABQAHABAAAAAiAA4ABQAIABAAAAAjAA4ABQAJABAAAAAkAA4ABQAKABAAAAAlAA4ABQAEABAAAAAmAA4ABQAFABAAAAARAAoABQAQABIAAAARAAsABQAQABMAAAARAAwABQAQABEAAAARAA0ABQAQABIAAAARAA4ABQAQABMAAAARAA8ABQAQABEAAAARABAABQAQABIAAAARABEABQAQABMAAAAaAAoABQAQABIAAAAaAAsABQAQABMAAAAaAAwABQAQABEAAAAaAA0ABQAQABIAAAAaAA4ABQAQABMAAAAaAA8ABQAQABEAAAAaABAABQAQABIAAAAaABEABQAQABMAAAAaABIABQALABAAAAARABIABQAQABQAAAASABIABQAQAAwAAAATABIABQASAAwAAAAZABIABQASAAwAAAAYABIABQAQAAwAAAATAAsABQAQAAwAAAAUAAsABQARAAwAAAAVAAsABQARAAwAAAAWAAsABQARAAwAAAAXAAsABQARAAwAAAAYAAsABQASAAwAAAARAAQABQAJABAAAAAQAAQABQAIABAAAAAPAAQABQAHABAAAAAOAAQABQAGABAAAAANAAQABQAFABAAAAAWAAQABQAHABAAAAAVAAQABQAGABAAAAAUAAQABQAFABAAAAATAAQABQAEABAAAAASAAQABQAKABAAAAAbAAQABQAFABAAAAAaAAQABQAEABAAAAAZAAQABQAKABAAAAAYAAQABQAJABAAAAAXAAQABQAIABAAAAAdAAQABQAHABAAAAAcAAQABQAGABAAAAAMAAUABQAQABEAABAeAAUABQAQABEAAAAMAAQABQAQABAAABAeAAQABQAQABAAAAAaAAkABQAQABEAAAARAAkABQAQABEAAAARAAgABQAQABAAABAaAAgABQAQABAAAAASAAgABQAEABAAAAATAAgABQAFABAAAAAUAAgABQAGABAAAAAVAAgABQAHABAAAAAWAAgABQAIABAAAAAXAAgABQAJABAAAAAYAAgABQAKABAAAAAZAAgABQAEABAAAAAhAA0ABQAPAAkAAAAiAA0ABQARAAoAAAAjAA0ABQARAAoAAAAkAA0ABQARAAoAAAAlAA0ABQARAAoAAAAmAA0ABQARAAoAAAAVAA8ABQAQAAoAAAAWAA8ABQARAAoAAAAVABAABQAQAAoAAAAWABAABQARAAoAAAAfAAgABQAQAAwAAAAgAAgABQASAAwAAAAgABMABQAPAAoAAAAgABQABQAPAAsAAAAhABMABQAQAAoAAAAiABMABQARAAoAAAAjABMABQASAAoAAAAhABQABQAQAAoAAAAiABQABQARAAoAAAAjABQABQASAAoAAAAkABMABQAQAAoAAAAlABMABQARAAoAAAAmABMABQASAAoAAAAkABQABQAQAAoAAAAlABQABQARAAoAAAAmABQABQASAAoAAAAhAAUABQAOAAsAAAAiAAUABQAOAAsAAAA=")
+tile_map_data = PackedByteArray("AAAIAAwABQAFABAAAAAHAAwABQAEABAAAAALAAwABQAMABAAABAKAAwABQAHABAAAAAJAAwABQAGABAAAAAHAAQABQARAAwAAAAIAAQABQARAAwAAAAJAAQABQARAAwAAAAKAAQABQARAAwAAAALAAQABQARAAwAAAAfAAQABQAQAAsAAAAgAAQABQARAAsAAAAhAAQABQARAAsAAAAiAAQABQARAAsAAAAjAAQABQARAAsAAAAkAAQABQARAAsAAAAlAAQABQARAAsAAAAmAAQABQARAAsAAAAmAAgABQAPAAkAAAAlAAkABQAPAAkAAAAkAAoABQAPAAkAAAAjAAsABQAPAAkAAAAiAAwABQAPAAkAAAAjAAwABQAQAAoAAAAkAAwABQARAAoAAAAlAAwABQASAAoAAAAmAAwABQAQAAoAAAAkAAsABQAQAAoAAAAlAAsABQAQAAoAAAAmAAsABQARAAoAAAAlAAoABQAQAAoAAAAmAAoABQAQAAoAAAAmAAkABQAQAAoAAAAHABUABQAQAAkAAAAIABUABQARAAkAAAAJABUABQASAAkAAAAKABUABQAQAAkAAAALABUABQARAAkAAAAMABUABQASAAkAAAANABUABQAQAAkAAAAOABUABQARAAkAAAAPABUABQASAAkAAAAQABUABQAQAAkAAAARABUABQARAAkAAAASABUABQASAAkAAAATABUABQAQAAkAAAAUABUABQARAAkAAAAVABUABQASAAkAAAAWABUABQAQAAkAAAAXABUABQARAAkAAAAYABUABQASAAkAAAAZABUABQAQAAkAAAAaABUABQARAAkAAAAbABUABQASAAkAAAAcABUABQAQAAkAAAAdABUABQARAAkAAAAeABUABQASAAkAAAAfABUABQAQAAkAAAAgABUABQARAAkAAAAhABUABQASAAkAAAAiABUABQAQAAkAAAAjABUABQARAAkAAAAkABUABQASAAkAAAAlABUABQAQAAkAAAAmABUABQARAAkAAAAHABIABQAEABAAACAIABIABQAFABAAACAJABIABQAGABAAACAKABIABQAHABAAACALABIABQAIABAAACAbABIABQAMABAAAAAcABIABQANABAAAAAdABIABQANABAAAAAeABIABQANABAAAAAfABIABQANABAAAAAgABIABQANABAAAAAhABIABQANABAAAAAiABIABQANABAAAAAjABIABQANABAAAAAkABIABQANABAAAAAlABIABQANABAAAAAmABIABQANABAAAAAMABIABQAJABAAACANABIABQAKABAAACAOABIABQAEABAAACAPABIABQAFABAAACAQABIABQAGABAAACAMAAYABQAQABIAABAMAAcABQAQABMAABAMAAgABQAQABEAABAMAAkABQAQABIAABAMAAoABQAQABMAABAMAAsABQAQABEAABAMAAwABQALABAAABAeAAYABQAQABIAAAAeAAcABQAQABMAAAAeAAgABQAQABEAAAAeAAkABQAQABIAAAAeAAoABQAQABMAAAAeAAsABQAQABEAAAAeAAwABQAQABIAAAAeAA0ABQAQABMAAAAeAA4ABQAEABAAAAAfAA4ABQAFABAAAAAgAA4ABQAGABAAAAAhAA4ABQAHABAAAAAiAA4ABQAIABAAAAAjAA4ABQAJABAAAAAkAA4ABQAKABAAAAAlAA4ABQAEABAAAAAmAA4ABQAFABAAAAARAAoABQAQABIAAAARAAsABQAQABMAAAARAAwABQAQABEAAAARAA0ABQAQABIAAAARAA4ABQAQABMAAAARAA8ABQAQABEAAAARABAABQAQABIAAAARABEABQAQABMAAAAaAAoABQAQABIAAAAaAAsABQAQABMAAAAaAAwABQAQABEAAAAaAA0ABQAQABIAAAAaAA4ABQAQABMAAAAaAA8ABQAQABEAAAAaABAABQAQABIAAAAaABEABQAQABMAAAAaABIABQALABAAAAARABIABQAQABQAAAASABIABQAQAAwAAAATABIABQASAAwAAAAZABIABQASAAwAAAAYABIABQAQAAwAAAARAAQABQAJABAAAAAQAAQABQAIABAAAAAPAAQABQAHABAAAAAOAAQABQAGABAAAAANAAQABQAFABAAAAAWAAQABQAHABAAAAAVAAQABQAGABAAAAAUAAQABQAFABAAAAATAAQABQAEABAAAAASAAQABQAKABAAAAAbAAQABQAFABAAAAAaAAQABQAEABAAAAAZAAQABQAKABAAAAAYAAQABQAJABAAAAAXAAQABQAIABAAAAAdAAQABQAHABAAAAAcAAQABQAGABAAAAAMAAUABQAQABEAABAeAAUABQAQABEAAAAMAAQABQAQABAAABAeAAQABQAQABAAAAAaAAkABQAQABEAAAARAAkABQAQABEAAAARAAgABQAQABAAABAaAAgABQAQABAAAAASAAgABQAEABAAAAATAAgABQAFABAAAAAUAAgABQAGABAAAAAVAAgABQAHABAAAAAWAAgABQAIABAAAAAXAAgABQAJABAAAAAYAAgABQAKABAAAAAZAAgABQAEABAAAAAhAA0ABQAPAAkAAAAiAA0ABQARAAoAAAAjAA0ABQARAAoAAAAkAA0ABQARAAoAAAAlAA0ABQARAAoAAAAmAA0ABQARAAoAAAAfAAgABQAQAAwAAAAgAAgABQASAAwAAAAgABMABQAPAAoAAAAgABQABQAPAAsAAAAhABMABQAQAAoAAAAiABMABQARAAoAAAAjABMABQASAAoAAAAhABQABQAQAAoAAAAiABQABQARAAoAAAAjABQABQASAAoAAAAkABMABQAQAAoAAAAlABMABQARAAoAAAAmABMABQASAAoAAAAkABQABQAQAAoAAAAlABQABQARAAoAAAAmABQABQASAAoAAAAjAAYABQARAAcAAAAjAAcABQARAAgAAAAiAAUABQAPAAoAAAAkAAUABQATAAoAAAAjAAUABQARAAoAAAAkAAYABQAOAAgAAAAgAAUABQAOAAgAAAAiAAYABQANAAgAAAASAA0ABQAQAAwAAAATAA0ABQASAAwAAAA=")
 tile_set = ExtResource("5_ai50f")
 
 [node name="BlackBg" type="TileMapLayer" parent="EnvTiles" unique_id=1008032494]
@@ -225,47 +228,41 @@ metadata/_edit_lock_ = true
 
 [node name="FleshBg" parent="EnvTiles" unique_id=1613371522 instance=ExtResource("6_coayd")]
 
+[node name="Door" parent="." unique_id=425038002 instance=ExtResource("10_itjsm")]
+position = Vector2(414, 240)
+rotation = 1.5707964
+DoorMovePosition = Vector2(168, 0)
+signal_id = 613
+
 [node name="valve" parent="." unique_id=583119961 instance=ExtResource("8_1hxm6")]
 position = Vector2(912, 782)
+attached_ids = Array[int]([611])
+activation_amount = Array[float]([2.0])
 
 [node name="valve2" parent="." unique_id=198663053 instance=ExtResource("8_1hxm6")]
 position = Vector2(1200, 782)
+attached_ids = Array[int]([612])
+activation_amount = Array[float]([2.0])
 
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("11_coayd")]
-position = Vector2(1056, 504)
+position = Vector2(912, 600)
+attached_ids = Array[int]([613])
+activation_amount = Array[float]([1.0])
 
 [node name="Spikes" type="Node" parent="." unique_id=627056581]
-
-[node name="Spikes4" parent="Spikes" unique_id=1094872775 instance=ExtResource("9_1dono")]
-z_index = -1
-position = Vector2(1020, 816)
-rotation = 3.1415927
-
-[node name="Spikes5" parent="Spikes" unique_id=130172449 instance=ExtResource("9_1dono")]
-z_index = -1
-position = Vector2(1056, 828)
-rotation = 3.1415927
-
-[node name="Spikes6" parent="Spikes" unique_id=1477818008 instance=ExtResource("9_1dono")]
-z_index = -1
-position = Vector2(1092, 816)
-rotation = 3.1415927
-
-[node name="Spikes" parent="Spikes" unique_id=217766625 instance=ExtResource("9_1dono")]
-z_index = -1
-position = Vector2(1020, 720)
-
-[node name="Spikes2" parent="Spikes" unique_id=1468211264 instance=ExtResource("9_1dono")]
-z_index = -1
-position = Vector2(1056, 708)
-
-[node name="Spikes3" parent="Spikes" unique_id=1576853518 instance=ExtResource("9_1dono")]
-z_index = -1
-position = Vector2(1092, 720)
 
 [node name="Spikes11" parent="Spikes" unique_id=1226809912 instance=ExtResource("9_1dono")]
 z_index = -1
 position = Vector2(1356, 192)
+
+[node name="Spikes24" parent="Spikes" unique_id=1094872775 instance=ExtResource("9_1dono")]
+z_index = -1
+position = Vector2(1056, 768)
+
+[node name="Spikes25" parent="Spikes" unique_id=1336423033 instance=ExtResource("9_1dono")]
+z_index = -1
+position = Vector2(1056, 799)
+rotation = 3.1415927
 
 [node name="Spikes12" parent="Spikes" unique_id=84362094 instance=ExtResource("9_1dono")]
 z_index = -1
@@ -287,23 +284,18 @@ position = Vector2(683, 192)
 z_index = -1
 position = Vector2(719, 192)
 
-[node name="Spikes7" parent="Spikes" unique_id=2059364731 instance=ExtResource("10_ai50f")]
-z_index = -1
-position = Vector2(1632, 312)
-rotation = -3.1415925
-
 [node name="Spikes8" parent="Spikes" unique_id=2023895308 instance=ExtResource("12_ucuk5")]
 z_index = -1
-position = Vector2(624, 960)
+position = Vector2(576, 973)
 
 [node name="Spikes9" parent="Spikes" unique_id=1720627 instance=ExtResource("12_ucuk5")]
 z_index = -1
-position = Vector2(768, 948)
+position = Vector2(743, 948)
 rotation = -3.1415925
 
 [node name="Spikes10" parent="Spikes" unique_id=1031130345 instance=ExtResource("12_ucuk5")]
 z_index = -1
-position = Vector2(912, 960)
+position = Vector2(936, 973)
 
 [node name="Spikes17" parent="Spikes" unique_id=908970662 instance=ExtResource("12_ucuk5")]
 z_index = -1
@@ -327,8 +319,11 @@ rotation = -1.5707964
 
 [node name="Spikes21" parent="Spikes" unique_id=1950057057 instance=ExtResource("12_ucuk5")]
 z_index = -1
-position = Vector2(780, 604)
+position = Vector2(780, 750)
 rotation = -1.5707964
+
+[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("15_rfr33")]
+position = Vector2(1776, 384)
 
 [node name="Pipes" type="Node" parent="." unique_id=1037416320]
 
@@ -343,16 +338,17 @@ z_index = 1
 position = Vector2(528, 336)
 rotation = 1.5707964
 shape = 1
-
-[node name="pipe_piece16" parent="Pipes" unique_id=1881104065 instance=ExtResource("13_5jyj5")]
-z_index = 1
-position = Vector2(480, 336)
-shape = 0
+exit_side = 3
 
 [node name="pipe_piece12" parent="Pipes" unique_id=785438168 instance=ExtResource("13_5jyj5")]
 z_index = 1
 position = Vector2(528, 432)
-rotation = -1.5707964
+signal_id = 611
+
+[node name="pipe_piece52" parent="Pipes" unique_id=1486935425 instance=ExtResource("13_5jyj5")]
+z_index = 1
+position = Vector2(480, 432)
+shape = 0
 
 [node name="pipe_piece17" parent="Pipes" unique_id=329604806 instance=ExtResource("13_5jyj5")]
 z_index = 1
@@ -397,12 +393,15 @@ shape = 0
 [node name="pipe_piece25" parent="Pipes" unique_id=624564719 instance=ExtResource("13_5jyj5")]
 z_index = 1
 position = Vector2(960, 432)
+rotation = 3.1415927
+signal_id = 612
 
 [node name="pipe_piece39" parent="Pipes" unique_id=628997316 instance=ExtResource("13_5jyj5")]
 z_index = 1
 position = Vector2(960, 480)
 rotation = -1.5707964
-shape = 1
+shape = 0
+exit_side = 4
 
 [node name="pipe_piece26" parent="Pipes" unique_id=526549115 instance=ExtResource("13_5jyj5")]
 z_index = 1
@@ -413,6 +412,7 @@ shape = 0
 z_index = 1
 position = Vector2(1056, 576)
 shape = 1
+exit_side = 3
 
 [node name="pipe_piece41" parent="Pipes" unique_id=1215850995 instance=ExtResource("13_5jyj5")]
 z_index = 1
@@ -463,6 +463,7 @@ shape = 0
 z_index = 1
 position = Vector2(1536, 576)
 shape = 0
+exit_side = 2
 
 [node name="pipe_piece27" parent="Pipes" unique_id=97402175 instance=ExtResource("13_5jyj5")]
 z_index = 1
@@ -519,6 +520,7 @@ shape = 1
 z_index = 1
 position = Vector2(1488, 336)
 shape = 0
+exit_side = 2
 
 [node name="pipe_piece36" parent="Pipes" unique_id=843814720 instance=ExtResource("13_5jyj5")]
 z_index = 1
@@ -528,39 +530,57 @@ shape = 1
 
 [node name="pipe_piece13" parent="Pipes" unique_id=809817283 instance=ExtResource("13_5jyj5")]
 z_index = 1
-position = Vector2(528, 480)
+position = Vector2(432, 480)
 rotation = 1.5707964
 shape = 0
+
+[node name="pipe_piece51" parent="Pipes" unique_id=1354258660 instance=ExtResource("13_5jyj5")]
+z_index = 1
+position = Vector2(432, 432)
+shape = 1
 
 [node name="pipe_piece14" parent="Pipes" unique_id=2020793912 instance=ExtResource("13_5jyj5")]
 z_index = 1
-position = Vector2(528, 528)
+position = Vector2(432, 528)
 rotation = 1.5707964
 shape = 0
+exit_side = 2
 
 [node name="pipe_piece2" parent="Pipes" unique_id=1332156290 instance=ExtResource("13_5jyj5")]
 z_index = 1
-position = Vector2(432, 528)
+position = Vector2(528, 624)
+rotation = 1.5707964
+shape = 0
+
+[node name="pipe_piece16" parent="Pipes" unique_id=1239378086 instance=ExtResource("13_5jyj5")]
+z_index = 1
+position = Vector2(528, 576)
 rotation = 1.5707964
 shape = 0
 
 [node name="pipe_piece3" parent="Pipes" unique_id=1910515323 instance=ExtResource("13_5jyj5")]
 z_index = 1
-position = Vector2(432, 576)
+position = Vector2(528, 528)
 rotation = 1.5707964
 shape = 0
+exit_side = 4
 
 [node name="pipe_piece4" parent="Pipes" unique_id=1482018127 instance=ExtResource("13_5jyj5")]
 z_index = 1
-position = Vector2(432, 624)
-rotation = 1.5707964
+position = Vector2(528, 672)
+rotation = 3.1415927
+shape = 1
+
+[node name="pipe_piece53" parent="Pipes" unique_id=1641257073 instance=ExtResource("13_5jyj5")]
+z_index = 1
+position = Vector2(480, 672)
+rotation = 3.1415927
 shape = 0
 
 [node name="pipe_piece5" parent="Pipes" unique_id=727865518 instance=ExtResource("13_5jyj5")]
 z_index = 1
 position = Vector2(432, 672)
-rotation = 1.5707964
-shape = 0
+shape = 1
 
 [node name="pipe_piece6" parent="Pipes" unique_id=1856944367 instance=ExtResource("13_5jyj5")]
 z_index = 1
@@ -591,27 +611,31 @@ z_index = 1
 position = Vector2(432, 912)
 rotation = 1.5707964
 shape = 0
+exit_side = 2
 
 [node name="sperm_lane" parent="." unique_id=1586465063 instance=ExtResource("15_m3g6w")]
 position = Vector2(587, 746)
 
-[node name="CollisionShape2D" parent="sperm_lane/Area2D" parent_id_path=PackedInt32Array(1586465063, 2093319916) index="0" unique_id=930390904]
+[node name="Area2D" parent="sperm_lane" index="0" unique_id=2093319916]
+position = Vector2(0, -2)
+scale = Vector2(1.28, 1.12)
+
+[node name="CollisionShape2D" parent="sperm_lane/Area2D" index="0" unique_id=930390904]
 scale = Vector2(0.23999998, 0.6)
 
 [node name="sperm_lane2" parent="." unique_id=530170230 instance=ExtResource("15_m3g6w")]
 position = Vector2(1570, 794)
+scale = Vector2(1.16, 1.4800024)
 
 [node name="CollisionShape2D" parent="sperm_lane2/Area2D" parent_id_path=PackedInt32Array(530170230, 2093319916) index="0" unique_id=930390904]
 scale = Vector2(0.32000244, 0.28000003)
 
 [node name="sperm_lane3" parent="." unique_id=1189201697 instance=ExtResource("15_m3g6w")]
 position = Vector2(1024, 312)
+scale = Vector2(1.2, 1.52)
 
 [node name="CollisionShape2D" parent="sperm_lane3/Area2D" parent_id_path=PackedInt32Array(1189201697, 2093319916) index="0" unique_id=930390904]
 scale = Vector2(0.48, 0.24000064)
-
-[node name="CollectiblePickup" parent="." unique_id=200780628 instance=ExtResource("17_itjsm")]
-position = Vector2(1415, 984)
 
 [connection signal="body_entered" from="EnvTiles/BlueWater/Area2D2" to="EnvTiles/BlueWater/Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="EnvTiles/BlueWater/Area2D2" to="EnvTiles/BlueWater/Area2D2" method="_on_body_exited"]
