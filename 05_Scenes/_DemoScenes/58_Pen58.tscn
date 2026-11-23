@@ -534,11 +534,13 @@ move_speed = 1.0
 position = Vector2(552, 552)
 attached_ids = Array[int]([582, 583, 589, 5811])
 activation_amount = Array[float]([1.0, 1.0, 0.5, 1.0])
+puzzle_id = "switch59_1"
 
 [node name="Switch2" parent="." unique_id=237504866 instance=ExtResource("13_exndq")]
 position = Vector2(1032, 168)
 attached_ids = Array[int]([584, 583, 585, 589, 5812])
 activation_amount = Array[float]([1.0, -1.0, 1.0, 0.5, 1.0])
+puzzle_id = "switch58_2"
 
 [node name="Spikes10" parent="." unique_id=827291398 instance=ExtResource("14_sfbnq")]
 z_index = 0
@@ -559,18 +561,19 @@ puzzle_id = "pressure_up58"
 position = Vector2(948, 683)
 attached_ids = Array[int]([588])
 activation_amount = Array[float]([1.0])
+puzzle_id = "valve58_1"
 
 [node name="valve2" parent="." unique_id=2022506545 instance=ExtResource("16_yl3d4")]
 position = Vector2(1776, 683)
 attached_ids = Array[int]([586, 587])
 activation_amount = Array[float]([1.0, 1.0])
-puzzle_id = "valve_58SE"
+puzzle_id = "valve58_2"
 
 [node name="valve3" parent="." unique_id=863066932 instance=ExtResource("16_yl3d4")]
 position = Vector2(1776, 504)
 attached_ids = Array[int]([588])
 activation_amount = Array[float]([1.0])
-puzzle_id = "valve_58NE"
+puzzle_id = "valve58_3"
 
 [node name="valve_art" parent="valve3" index="0" unique_id=1424015601]
 texture = SubResource("AtlasTexture_bf1i8")

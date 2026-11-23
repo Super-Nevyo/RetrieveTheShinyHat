@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://o8fys0rtd0c" path="res://02_Prefabs/WorldPrefabs/WideSpikes.tscn" id="12_ucuk5"]
 [ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="13_5jyj5"]
 [ext_resource type="PackedScene" uid="uid://di2ow0eotx1by" path="res://02_Prefabs/Enemies/SpermLane.tscn" id="15_m3g6w"]
-[ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="15_rfr33"]
 
 [sub_resource type="Resource" id="Resource_thtr0"]
 script = ExtResource("3_f4yps")
@@ -238,16 +237,19 @@ signal_id = 613
 position = Vector2(912, 782)
 attached_ids = Array[int]([611])
 activation_amount = Array[float]([2.0])
+puzzle_id = "valve61_1"
 
 [node name="valve2" parent="." unique_id=198663053 instance=ExtResource("8_1hxm6")]
 position = Vector2(1200, 782)
 attached_ids = Array[int]([612])
 activation_amount = Array[float]([2.0])
+puzzle_id = "valve61_2"
 
 [node name="Switch" parent="." unique_id=150077233 instance=ExtResource("11_coayd")]
 position = Vector2(912, 600)
 attached_ids = Array[int]([613])
 activation_amount = Array[float]([1.0])
+puzzle_id = "switch61_1"
 
 [node name="Spikes" type="Node" parent="." unique_id=627056581]
 
@@ -321,9 +323,6 @@ rotation = -1.5707964
 z_index = -1
 position = Vector2(780, 750)
 rotation = -1.5707964
-
-[node name="PlayerCharacter" parent="." unique_id=1797284452 instance=ExtResource("15_rfr33")]
-position = Vector2(1776, 384)
 
 [node name="Pipes" type="Node" parent="." unique_id=1037416320]
 

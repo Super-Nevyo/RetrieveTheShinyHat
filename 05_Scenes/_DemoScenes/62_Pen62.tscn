@@ -626,7 +626,7 @@ puzzle_id = "switch62_4"
 position = Vector2(1008, 504)
 attached_ids = Array[int]([624, 626])
 activation_amount = Array[float]([1.0, -1.0])
-puzzle_id = "switch62_4"
+puzzle_id = "switch62_5"
 
 [node name="Doors" type="Node" parent="." unique_id=354190329]
 

@@ -18,14 +18,13 @@ var current_room_id: String
 func _ready() -> void:
 	GlobalAudio.current_area = starting_room.music_area
 	load_room(starting_room.room_scene, starting_room.room_id)
-
 func load_room(room_scene: PackedScene, room_id: String) -> void:
 	
 	if room_scene == null:
 		return
 	
 	if is_instance_valid(current_room):
-		for child in current_room.get_children(): 
+		for child in current_room.find_children("*", "", true, false): 
 			if child is PuzzleActivator or child is MetaActivator:
 				if child.puzzle_id == "":
 					continue #activated_puzzles.remember_active(child.puzzle_id, current_room_id, child.switch_flipped) #calls dictionary
@@ -44,7 +43,7 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 	room_container.add_child.call_deferred(current_room) #ask room container to add the room to a child
 	await current_room.ready
 	
-	for child in current_room.get_children():
+	for child in current_room.find_children("*", "", true, false):
 		if child is PuzzleActivator or child is MetaActivator:
 			if child.puzzle_id == "":
 				continue
@@ -54,16 +53,14 @@ func load_room(room_scene: PackedScene, room_id: String) -> void:
 				for _turns in range(turns):
 					child.ActivatePuzzle()
 				
-			elif activated_puzzles.activepuzzles.has(current_room_id):
+			elif activated_puzzles.activepuzzles.get(current_room_id, {}).has(child.puzzle_id):
 				var remembered_state = activated_puzzles.puzzle_state(child.puzzle_id, current_room_id)
 				if child.switch_flipped != remembered_state:
 					child.ActivatePuzzle()
 		
-	for child in current_room.get_children():
+	for child in current_room.find_children("*", "", true, false): #asterisk to match all node names, " not filter by type
 		if child is MetaActivated:
 			child.set_puzzle(activated_puzzles.meta_puzzle_values[child.puzzle_type])
-
-
 func _on_transition_started(transition_id: String) -> void: #Signals the world map to find the connection to an exit
 	
 	if is_transitioning:
