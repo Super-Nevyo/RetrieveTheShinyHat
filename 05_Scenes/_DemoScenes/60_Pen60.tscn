@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://78o2q62vv8dq" path="res://02_Prefabs/PuzzlePrefabs/pipe_piece.tscn" id="14_havph"]
 [ext_resource type="PackedScene" uid="uid://bjxrdf1t11kav" path="res://02_Prefabs/Collectibles/CollectiblePickup.tscn" id="16_ojs2f"]
 [ext_resource type="PackedScene" uid="uid://cgubd8cqbbchk" path="res://02_Prefabs/_PlayerPrefabs/player_character.tscn" id="17_gyhqi"]
+[ext_resource type="Script" uid="uid://ci84dnnmaryqs" path="res://01_Scripts/Resources/CollectiblesData.gd" id="17_rf17o"]
+[ext_resource type="Texture2D" uid="uid://c2nxglvjlgj62" path="res://03_Art/Environment/coll_art.png" id="18_13frh"]
 
 [sub_resource type="Resource" id="Resource_4hdun"]
 script = ExtResource("3_4hdun")
@@ -110,7 +112,7 @@ region = Rect2(144, 112, 48, 48)
 script = ExtResource("17_rf17o")
 collectible_id = "Collectible60_1"
 display_name = "Bow Bae"
-description = "Lalalalala"
+description = "Lalalalalaaaaa"
 texture = SubResource("AtlasTexture_04q2y")
 metadata/_custom_type_script = "uid://ci84dnnmaryqs"
 
