@@ -20,7 +20,7 @@ func update(enemy : Enemy, info : Dictionary):
 	if info[speaking_frame_reference] <= 0:
 		info[state_machine_current_reference] = state_machine_state
 		return
-	enemy.get_child(1).scale.y = wiggle_amplitude * cos(wiggle_period * info[speaking_frame_reference]) + 1
+	enemy.get_child(1).scale.y = wiggle_amplitude * sin(wiggle_period * info[speaking_frame_reference]) + 1
 	pass
 
 func start(enemy : Enemy, info : Dictionary):
@@ -47,6 +47,10 @@ func start(enemy : Enemy, info : Dictionary):
 		enemy.add_child(panel)
 	else:
 		enemy.get_parent().add_child(panel)
+	
+	if requires_translator:
+		panel.visible=false
+		PuzzleSignalTransmiter.speaking.emit(panel)
 	
 
 func exit(enemy : Enemy, info : Dictionary):

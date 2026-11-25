@@ -15,6 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://b8prbgl2nr1gq" path="res://Sprites/icon.svg" id="13_osutn"]
 [ext_resource type="Script" uid="uid://cms4ksi8ats4m" path="res://01_Scripts/Enemys/enemy_state_machine.gd" id="14_a8017"]
 [ext_resource type="Script" uid="uid://bap710rumdjav" path="res://01_Scripts/Enemys/Speaking/speaking_state.gd" id="14_jrxfx"]
+[ext_resource type="Script" uid="uid://852xshj0j6qq" path="res://01_Scripts/Enemys/Speaking/considering_state.gd" id="15_a8017"]
+[ext_resource type="Script" uid="uid://caspebr44pwla" path="res://01_Scripts/Enemys/enemy_dasher_recovery.gd" id="16_lq2ka"]
+[ext_resource type="PackedScene" uid="uid://dbj83dtmk7hmb" path="res://02_Prefabs/ItemsPrefabs/Pickup.tscn" id="18_ej553"]
+[ext_resource type="Script" uid="uid://2lt3rsc7kc3e" path="res://01_Scripts/Inventory/translator.gd" id="19_fghuj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ulwqt"]
 
@@ -28,19 +32,40 @@ metadata/_custom_type_script = "uid://cf6fa6iwmmiyj"
 
 [sub_resource type="Resource" id="Resource_xqe2s"]
 script = ExtResource("14_jrxfx")
-speaking_frames = 100
+speaking_frames = 200
+state_machine_state = 2
 state_machine_current_reference = "currentstate"
+wiggle_amplitude = 0.05
+wiggle_period = 0.1
 metadata/_custom_type_script = "uid://bap710rumdjav"
+
+[sub_resource type="Resource" id="Resource_jrxfx"]
+script = ExtResource("15_a8017")
+next_state_machine_state = 3
+state_machine_current_reference = "currentstate"
+strings_to_cycle_through = Array[String](["speaking1", "now speaking 2", "this is the third of 3 lines"])
+metadata/_custom_type_script = "uid://852xshj0j6qq"
+
+[sub_resource type="Resource" id="Resource_a8017"]
+script = ExtResource("16_lq2ka")
+metadata/_custom_type_script = "uid://caspebr44pwla"
 
 [sub_resource type="Resource" id="Resource_p2tw8"]
 script = ExtResource("14_a8017")
 States = Dictionary[int, ExtResource("12_2agyp")]({
 0: SubResource("Resource_4aysw"),
-1: SubResource("Resource_xqe2s")
+1: SubResource("Resource_xqe2s"),
+2: SubResource("Resource_jrxfx"),
+3: SubResource("Resource_a8017")
 })
 metadata/_custom_type_script = "uid://cms4ksi8ats4m"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qsmb2"]
+
+[sub_resource type="Resource" id="Resource_fghuj"]
+script = ExtResource("19_fghuj")
+tex = ExtResource("13_osutn")
+metadata/_custom_type_script = "uid://2lt3rsc7kc3e"
 
 [node name="PuzzleTestScene" type="Node2D" unique_id=1037801544]
 
@@ -94,7 +119,7 @@ does_respawn = true
 position = Vector2(863, 601)
 
 [node name="BaseEnemy2" parent="." unique_id=2039302970 instance=ExtResource("9_ulwqt")]
-position = Vector2(1174, 542)
+position = Vector2(1104, 505)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=813930900]
 visible = false
@@ -138,3 +163,7 @@ shape = SubResource("CircleShape2D_qsmb2")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=541754501]
 texture = ExtResource("13_osutn")
+
+[node name="Pickup" parent="." unique_id=483234207 instance=ExtResource("18_ej553")]
+position = Vector2(418, 499)
+itemInfo = SubResource("Resource_fghuj")

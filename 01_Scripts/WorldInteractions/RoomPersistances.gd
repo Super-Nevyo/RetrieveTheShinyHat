@@ -4,8 +4,8 @@ class_name RoomPersistances
 #dictionary of active puzzles in a room, needs to know what room is it, what is the puzzle and wether is on or off
 var activepuzzles = {}
 var valve_turns = {}
-enum meta_puzzles {NULL, RISING_ACID}
-var meta_puzzle_values : Dictionary[meta_puzzles,int] = {meta_puzzles.NULL : 0, meta_puzzles.RISING_ACID : 0}
+enum meta_puzzles {NULL, RISING_ACID, REPUTATION}
+var meta_puzzle_values : Dictionary[meta_puzzles,int] = {meta_puzzles.NULL : 0, meta_puzzles.RISING_ACID : 0, meta_puzzles.REPUTATION : 2}
 var revealedsecrets = {} #dictionary of secret rooms
 var collectibles_found = {} #collectibles dictionary
 signal collectible_count_up(total:int)
