@@ -218,19 +218,16 @@ move_speed = 150.0
 position = Vector2(468, 144)
 attached_ids = Array[int]([68])
 activation_amount = Array[float]([-1.0])
-puzzle_id = "platform_exit_w"
 
 [node name="PressurePlate2" parent="." unique_id=1599343283 instance=ExtResource("12_vqwmo")]
 position = Vector2(1056, 144)
 attached_ids = Array[int]([60])
 activation_amount = Array[float]([-1.0])
-puzzle_id = "platform_exit_e"
 
 [node name="PressurePlate3" parent="." unique_id=1728765442 instance=ExtResource("12_vqwmo")]
 position = Vector2(1356, 144)
 attached_ids = Array[int]([61, 62])
 activation_amount = Array[float]([1.0, -1.0])
-puzzle_id = "plate_37_1"
 
 [node name="Door" parent="." unique_id=425038002 instance=ExtResource("13_baoby")]
 position = Vector2(1200, 144)
